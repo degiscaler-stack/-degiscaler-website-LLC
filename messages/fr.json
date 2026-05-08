@@ -1,0 +1,653 @@
+{
+  "common": {
+    "viewServices": "Voir les services",
+    "seePricing": "Voir les tarifs",
+    "getStarted": "Commencer",
+    "contactUs": "Nous contacter",
+    "learnMore": "En savoir plus",
+    "backToHome": "Retour à l'accueil",
+    "readMore": "Lire la suite",
+    "companyName": "DegiScaler LLC"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "getStarted": "Commencer",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "footer": {
+    "tagline": "Services numériques professionnels et consultation commerciale pour les fondateurs et les entreprises en croissance.",
+    "company": "Entreprise",
+    "legal": "Juridique",
+    "contactTitle": "Contact",
+    "supportEmail": "support@degiscaler.com",
+    "responseTime": "Réponse sous 24 à 48 heures ouvrables",
+    "links": {
+      "services": "Services",
+      "pricing": "Tarifs",
+      "about": "À propos",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "refund": "Politique de remboursement"
+    },
+    "copyright": "DegiScaler LLC. Tous droits réservés.",
+    "disclaimer": "DegiScaler LLC est une société américaine enregistrée spécialisée dans les services numériques. Nous ne garantissons pas l'approbation des processeurs de paiement ni des résultats commerciaux spécifiques."
+  },
+  "home": {
+    "hero": {
+      "headline": "Sites web professionnels et consultation numérique pour les entreprises en croissance",
+      "subheadline": "DegiScaler LLC aide les fondateurs et les petites entreprises à construire des sites web crédibles, améliorer leur parcours client et préparer leur présence en ligne pour les ventes réelles et l'examen des paiements.",
+      "ctaPrimary": "Voir les services",
+      "ctaSecondary": "Voir les tarifs",
+      "badge": "LLC enregistrée aux États-Unis",
+      "trust1": "LLC enregistrée aux États-Unis",
+      "trust2": "Forfaits de services clairs",
+      "trust3": "Sites web et e-commerce",
+      "trust4": "Aucune garantie d'approbation de paiement"
+    },
+    "trustBar": {
+      "item1": "LLC enregistrée aux États-Unis",
+      "item2": "Tarifs transparents",
+      "item3": "Sites web et e-commerce",
+      "item4": "Consultation numérique",
+      "item5": "Processus transparent"
+    },
+    "problemSolution": {
+      "problemLabel": "Le problème",
+      "headline": "La plupart des sites de petites entreprises perdent des clients avant qu'ils ne convertissent",
+      "subheadline": "Si votre site web semble non professionnel, votre processus de paiement est peu clair, ou votre boutique en ligne est difficile à naviguer — vous perdez de vraies opportunités commerciales.",
+      "problems": [
+        "Votre site web semble obsolète ou peu fiable",
+        "Les visiteurs abandonnent votre processus de paiement",
+        "Votre boutique en ligne est difficile à naviguer",
+        "Les processeurs de paiement signalent votre site pour examen"
+      ],
+      "solutionLabel": "Notre solution",
+      "solutionHeadline": "Nous résolvons ce qui freine votre activité en ligne",
+      "solutions": [
+        "Conception de sites web professionnels qui inspirent confiance",
+        "Amélioration du processus de paiement et des signaux de confiance",
+        "Boutiques e-commerce qui convertissent les visiteurs en acheteurs",
+        "Audits de sites qui identifient et résolvent les problèmes"
+      ]
+    },
+    "services": {
+      "sectionLabel": "Ce que nous faisons",
+      "headline": "Des services conçus pour de vrais résultats commerciaux",
+      "subheadline": "De la consultation initiale à la livraison complète du site, nous couvrons l'essentiel pour construire une présence en ligne crédible et professionnelle.",
+      "items": {
+        "websiteDesign": {
+          "title": "Conception de sites web",
+          "description": "Sites web professionnels adaptés à vos objectifs commerciaux. Propres, rapides et conçus pour inspirer confiance à vos visiteurs.",
+          "outcome": "Un site web professionnel qui représente clairement votre marque"
+        },
+        "ecommerce": {
+          "title": "Développement e-commerce",
+          "description": "Configuration complète de boutique en ligne avec listes de produits, paiement sécurisé et intégration des paiements prête à l'examen.",
+          "outcome": "Une boutique en ligne prête pour les ventes réelles"
+        },
+        "landingPage": {
+          "title": "Conception de pages d'atterrissage",
+          "description": "Pages d'atterrissage à fort taux de conversion axées sur un seul objectif clair — inciter vos visiteurs à agir.",
+          "outcome": "Une page ciblée qui génère des conversions"
+        },
+        "audit": {
+          "title": "Audit de site web",
+          "description": "Un examen approfondi de votre site actuel couvrant le design, les performances, les signaux de confiance et l'expérience utilisateur.",
+          "outcome": "Un rapport clair avec des améliorations concrètes"
+        },
+        "uiux": {
+          "title": "Revue UI/UX",
+          "description": "Examen expert de l'interface et du parcours utilisateur de votre site pour identifier les points de friction et les opportunités.",
+          "outcome": "Un meilleur flux utilisateur et une expérience client améliorée"
+        },
+        "consultation": {
+          "title": "Consultation numérique d'entreprise",
+          "description": "Consultation numérique stratégique pour les fondateurs. Nous examinons votre présence en ligne et fournissons des recommandations claires et pratiques.",
+          "outcome": "Une stratégie numérique claire et des prochaines étapes définies"
+        }
+      },
+      "viewAll": "Voir tous les services"
+    },
+    "whyUs": {
+      "sectionLabel": "Pourquoi DegiScaler",
+      "headline": "Conçu pour les fondateurs qui ont besoin de résultats, pas de jargon",
+      "items": [
+        {
+          "title": "Entreprise enregistrée aux États-Unis",
+          "description": "DegiScaler LLC est une entreprise américaine enregistrée. Vous travaillez avec une vraie société responsable."
+        },
+        {
+          "title": "Forfaits de services clairs",
+          "description": "Pas de frais cachés, pas de portée vague. Chaque forfait comprend un ensemble défini de livrables et de résultats."
+        },
+        {
+          "title": "Sites prêts pour le paiement",
+          "description": "Nous construisons des sites avec des signaux de confiance, des processus de paiement clairs et un design professionnel qui soutient votre processus d'examen des paiements."
+        },
+        {
+          "title": "Communication directe",
+          "description": "Vous communiquez directement avec notre équipe. Pas d'intermédiaires. Un support clair et professionnel à chaque étape."
+        },
+        {
+          "title": "Processus transparent",
+          "description": "Vous savez exactement ce que nous faisons et quand. Notre processus en quatre étapes vous tient informé du début à la fin."
+        },
+        {
+          "title": "Pas de promesses vides",
+          "description": "Nous ne garantissons pas l'approbation des processeurs de paiement. Nous garantissons un travail professionnel, des livrables clairs et un service honnête."
+        }
+      ]
+    },
+    "process": {
+      "sectionLabel": "Comment ça marche",
+      "headline": "Quatre étapes de la conversation à la livraison",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Découverte",
+          "description": "Nous commençons par une consultation structurée pour comprendre votre activité, vos objectifs et votre présence en ligne actuelle."
+        },
+        {
+          "number": "02",
+          "title": "Diagnostic",
+          "description": "Nous examinons votre site actuel, identifions les problèmes et définissons exactement ce qui doit être construit ou amélioré."
+        },
+        {
+          "number": "03",
+          "title": "Construction / Amélioration",
+          "description": "Nous concevons et développons votre site, appliquons des améliorations ou livrons le rapport d'audit selon votre forfait choisi."
+        },
+        {
+          "number": "04",
+          "title": "Livraison",
+          "description": "Nous livrons le travail final, vous expliquons ce qui a été fait et fournissons des conseils sur les prochaines étapes."
+        }
+      ]
+    },
+    "pricing": {
+      "sectionLabel": "Tarifs",
+      "headline": "Des forfaits transparents. Sans surprises.",
+      "subheadline": "Choisissez le forfait de consultation adapté à votre stade actuel. Tous les forfaits incluent un examen structuré et des recommandations écrites.",
+      "viewAll": "Voir tous les tarifs",
+      "mostPopular": "Le plus populaire",
+      "getStarted": "Commencer"
+    },
+    "faq": {
+      "sectionLabel": "FAQ",
+      "headline": "Réponses aux questions fréquentes",
+      "items": [
+        {
+          "question": "Qu'est-ce qu'une consultation numérique ?",
+          "answer": "Une consultation numérique est un examen structuré de votre présence commerciale en ligne. Nous examinons votre site web, votre processus de paiement, vos signaux de confiance et votre configuration numérique globale, puis fournissons des recommandations écrites claires."
+        },
+        {
+          "question": "Garantissez-vous l'approbation Stripe ou PayPal ?",
+          "answer": "Non. Nous ne garantissons pas l'approbation de Stripe, PayPal ou de tout autre processeur de paiement. Nous aidons à améliorer le professionnalisme, la clarté et les signaux de confiance de votre site, ce qui peut soutenir votre processus d'examen des paiements. Les décisions finales sont prises par les processeurs de paiement eux-mêmes."
+        },
+        {
+          "question": "Combien de temps dure une consultation ?",
+          "answer": "La durée de la consultation dépend du forfait sélectionné. Les forfaits vont de 30 minutes à 90 minutes. Le forfait Elite comprend la conception et le développement complet d'un site web, ce qui prend généralement 5 à 10 jours ouvrables."
+        },
+        {
+          "question": "Comment je reçois mon rapport de consultation ?",
+          "answer": "Votre rapport de consultation écrit est livré par e-mail dans le délai spécifié pour votre forfait. Nous répondons généralement dans les 24 à 48 heures ouvrables."
+        },
+        {
+          "question": "Proposez-vous des remboursements ?",
+          "answer": "Les services de consultation numérique ne sont pas remboursables une fois la session de consultation effectuée ou le rapport livré. Veuillez consulter notre politique de remboursement pour tous les détails."
+        }
+      ],
+      "viewAll": "Voir toutes les FAQ"
+    },
+    "cta": {
+      "headline": "Prêt à construire une présence en ligne crédible ?",
+      "subheadline": "Commencez par une consultation. Découvrez ce qui freine votre site et obtenez un plan clair pour aller de l'avant.",
+      "ctaPrimary": "Voir les tarifs",
+      "ctaSecondary": "Nous contacter"
+    }
+  },
+  "servicesPage": {
+    "title": "Services",
+    "headline": "Ce que nous construisons et ce que nous examinons",
+    "subheadline": "Chaque service est conçu autour d'un seul objectif : aider votre entreprise à construire une présence en ligne crédible et professionnelle qui soutient les ventes réelles.",
+    "services": {
+      "websiteDesign": {
+        "title": "Conception de sites web",
+        "description": "Nous concevons et développons des sites web professionnels adaptés à vos objectifs commerciaux. Chaque site que nous construisons est propre, rapide, responsive et structuré pour inspirer confiance à vos visiteurs.",
+        "outcomes": [
+          "Design de site web professionnel et moderne",
+          "Responsive mobile et chargement rapide",
+          "Navigation claire et parcours utilisateur fluide",
+          "Signaux de confiance intégrés tout au long du site",
+          "Prêt pour l'examen des processeurs de paiement"
+        ]
+      },
+      "ecommerce": {
+        "title": "Développement e-commerce",
+        "description": "Nous configurons des boutiques en ligne complètes avec listes de produits, processus de paiement sécurisé et intégration des paiements. Nos boutiques sont structurées avec des pages produits claires, des prix transparents et des processus de paiement qui soutiennent l'examen des paiements.",
+        "outcomes": [
+          "Configuration complète de boutique en ligne",
+          "Listes et catégorisation de produits",
+          "Processus de paiement sécurisé et clair",
+          "Support d'intégration des paiements",
+          "Signaux de confiance et pages de politique inclus"
+        ]
+      },
+      "landingPage": {
+        "title": "Conception de pages d'atterrissage",
+        "description": "Une page d'atterrissage a un seul rôle : convertir les visiteurs en prospects ou clients. Nous concevons des pages d'atterrissage ciblées et à fort taux de conversion avec des titres clairs, des textes axés sur les bénéfices et des appels à l'action directs.",
+        "outcomes": [
+          "Design de page axé sur un objectif unique",
+          "Titre principal et sous-titre convaincants",
+          "Texte et mise en page axés sur les bénéfices",
+          "Appel à l'action direct et visible",
+          "Optimisé mobile et rapide"
+        ]
+      },
+      "audit": {
+        "title": "Audit de site web",
+        "description": "Un audit de site est un examen approfondi et structuré de votre site actuel. Nous examinons le design, l'expérience utilisateur, la vitesse des pages, les signaux de confiance, la clarté du paiement et le contenu. Vous recevez un rapport écrit détaillé avec des recommandations spécifiques et exploitables.",
+        "outcomes": [
+          "Examen complet du design et de l'UX",
+          "Évaluation des signaux de confiance et de crédibilité",
+          "Vérification de la clarté du paiement et de la préparation",
+          "Recommandations spécifiques et priorisées",
+          "Rapport écrit livré par e-mail"
+        ]
+      },
+      "uiux": {
+        "title": "Revue UI/UX",
+        "description": "Une revue UI/UX examine l'apparence de votre site et la façon dont les utilisateurs le naviguent. Nous identifions les points de friction, les mises en page confuses, la hiérarchie visuelle médiocre et les appels à l'action peu clairs. Vous recevez des recommandations exploitables.",
+        "outcomes": [
+          "Examen de l'interface et de la hiérarchie visuelle",
+          "Analyse du parcours utilisateur et de la navigation",
+          "Identification des points de friction",
+          "Recommandations d'amélioration claires et priorisées",
+          "Rapport écrit livré par e-mail"
+        ]
+      },
+      "consultation": {
+        "title": "Consultation numérique d'entreprise",
+        "description": "Une consultation numérique stratégique pour les fondateurs et les propriétaires d'entreprise. Nous examinons votre présence numérique complète — site web, marque, processus de paiement et positionnement numérique — et fournissons un plan d'action écrit et clair.",
+        "outcomes": [
+          "Examen complet de la présence numérique",
+          "Évaluation de la crédibilité commerciale",
+          "Retour sur la préparation aux paiements",
+          "Stratégie numérique claire et plan d'action",
+          "Résumé écrit livré par e-mail"
+        ]
+      }
+    },
+    "ctaHeadline": "Vous ne savez pas quel service convient à votre activité ?",
+    "ctaSubheadline": "Commencez par un forfait de consultation et nous identifierons exactement ce dont votre entreprise a besoin.",
+    "ctaButton": "Voir les tarifs",
+    "whatYouGet": "Ce que vous obtenez"
+  },
+  "pricingPage": {
+    "title": "Tarifs",
+    "headline": "Des forfaits transparents. Sans surprises.",
+    "subheadline": "Chaque forfait comprend un examen structuré et des recommandations écrites. Choisissez le niveau adapté à votre stade actuel.",
+    "mostPopular": "Le plus populaire",
+    "getStarted": "Commencer",
+    "perPackage": "par forfait",
+    "disclaimer": "Tous les prix sont en USD. Il s'agit de services de consultation numérique. DegiScaler LLC ne garantit pas l'approbation Stripe, PayPal, banque, ou tout autre processeur de paiement, ni aucun résultat commercial ou financier spécifique.",
+    "ctaHeadline": "Vous avez des questions sur le forfait qui vous convient ?",
+    "ctaButton": "Nous contacter",
+    "packages": [
+      {
+        "id": "starter",
+        "name": "Consultation Starter",
+        "price": "$9.99",
+        "description": "Une consultation d'entrée de gamme ciblée pour les fondateurs qui ont besoin d'une évaluation professionnelle rapide de leur présence en ligne.",
+        "features": [
+          "Consultation numérique de 30 minutes",
+          "Revue de crédibilité du site",
+          "3 recommandations d'amélioration clés",
+          "Résumé écrit livré par e-mail",
+          "Réponse sous 48 heures ouvrables"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "growth",
+        "name": "Consultation Croissance",
+        "price": "$19.99",
+        "description": "Une consultation structurée pour les entreprises souhaitant améliorer leur présence en ligne et leur parcours client.",
+        "features": [
+          "Consultation numérique de 45 minutes",
+          "Revue du site et du processus de paiement",
+          "5 recommandations d'amélioration",
+          "Évaluation des signaux de confiance",
+          "Rapport écrit livré par e-mail"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "pro",
+        "name": "Consultation Pro",
+        "price": "$29.99",
+        "description": "Une consultation complète couvrant votre présence numérique totale et la préparation aux paiements.",
+        "features": [
+          "Consultation numérique de 60 minutes",
+          "Revue complète du site et de l'UX",
+          "Évaluation de la clarté du paiement",
+          "Revue de la préparation aux paiements",
+          "Rapport écrit détaillé avec plan d'action"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "advanced",
+        "name": "Consultation Avancée",
+        "price": "$49.99",
+        "description": "Une consultation approfondie avec une analyse détaillée et une feuille de route complète d'amélioration pour votre activité.",
+        "features": [
+          "Consultation numérique de 90 minutes",
+          "Audit complet du site et revue UX",
+          "Analyse e-commerce et processus de paiement",
+          "Évaluation de la préparation aux paiements",
+          "Support prioritaire 7 jours après livraison"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "elite",
+        "name": "Forfait Elite Launch",
+        "price": "$149.99",
+        "description": "Notre forfait complet pour les fondateurs prêts à lancer une activité en ligne professionnelle et crédible de A à Z.",
+        "features": [
+          "Conception et développement complet du site",
+          "Configuration e-commerce ou page d'atterrissage",
+          "Revue complète UI/UX et signaux de confiance",
+          "Préparation à l'examen des paiements",
+          "Support prioritaire 30 jours après livraison"
+        ],
+        "highlighted": true
+      }
+    ]
+  },
+  "aboutPage": {
+    "title": "À propos",
+    "headline": "Une société américaine enregistrée spécialisée dans les services numériques",
+    "subheadline": "DegiScaler LLC a été créée pour aider les fondateurs et les petites entreprises à établir une présence numérique crédible et professionnelle.",
+    "missionLabel": "Notre mission",
+    "missionText": "La plupart des petites entreprises font face aux mêmes problèmes : des sites web non professionnels, des processus de paiement peu clairs et des boutiques en ligne qui n'inspirent pas confiance. DegiScaler LLC existe pour résoudre ces problèmes directement. Nous proposons des services de conception de sites web professionnels, de consultation numérique et d'audits de sites qui donnent aux propriétaires d'entreprise un chemin clair vers l'avant.",
+    "whatWeDoLabel": "Ce que nous faisons",
+    "whatWeDoText": "Nous concevons et développons des sites web professionnels, configurons des boutiques e-commerce, créons des pages d'atterrissage à fort taux de conversion et effectuons des audits complets de sites web. Pour chaque client, notre objectif est le même : une présence numérique crédible et professionnelle qui soutient les ventes réelles et l'examen des paiements.",
+    "valuesLabel": "Notre façon de travailler",
+    "values": [
+      {
+        "title": "Entreprise américaine enregistrée",
+        "description": "DegiScaler LLC est une société à responsabilité limitée américaine enregistrée. Nous opérons de manière transparente avec une vraie responsabilité."
+      },
+      {
+        "title": "Pas de promesses vagues",
+        "description": "Nous ne garantissons pas l'approbation des processeurs de paiement ni des résultats commerciaux spécifiques. Nous garantissons un travail professionnel et des livrables clairs."
+      },
+      {
+        "title": "Direct et professionnel",
+        "description": "Nous communiquons directement, livrons dans les délais et fournissons un travail qui répond à un standard professionnel pour chaque client."
+      },
+      {
+        "title": "Focalisé sur les fondateurs",
+        "description": "Nos services sont conçus pour les fondateurs et les propriétaires de petites entreprises qui ont besoin d'un soutien numérique pratique et axé sur les résultats."
+      }
+    ],
+    "contactCta": "Démarrer une consultation",
+    "companyDetails": {
+      "label": "Détails de la société",
+      "nameLabel": "Société",
+      "typeLabel": "Type",
+      "focusLabel": "Spécialité",
+      "emailLabel": "E-mail",
+      "name": "DegiScaler LLC",
+      "type": "Société à responsabilité limitée américaine",
+      "focus": "Services numériques et consultation commerciale",
+      "email": "support@degiscaler.com"
+    }
+  },
+  "contactPage": {
+    "title": "Contact",
+    "headline": "Prenez contact",
+    "subheadline": "Vous avez une question sur nos services ou vous êtes prêt à commencer ? Envoyez-nous un message et nous répondrons dans les 24 à 48 heures ouvrables.",
+    "form": {
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "votre@email.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "service": "Service d'intérêt",
+      "servicePlaceholder": "Sélectionnez un service",
+      "services": [
+        "Conception de sites web",
+        "Développement e-commerce",
+        "Conception de pages d'atterrissage",
+        "Audit de site web",
+        "Revue UI/UX",
+        "Consultation numérique d'entreprise",
+        "Question sur les tarifs",
+        "Renseignement général"
+      ],
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de votre activité et de ce pour quoi vous avez besoin d'aide.",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "successTitle": "Message envoyé",
+      "successText": "Merci de nous avoir contactés. Nous examinerons votre message et vous répondrons dans les 24 à 48 heures ouvrables.",
+      "errorText": "Une erreur s'est produite. Veuillez réessayer ou nous envoyer un e-mail directement."
+    },
+    "info": {
+      "emailLabel": "E-mail de support",
+      "email": "support@degiscaler.com",
+      "responseLabel": "Délai de réponse",
+      "response": "24 à 48 heures ouvrables",
+      "trustNote": "DegiScaler LLC est une société américaine enregistrée spécialisée dans les services numériques. Toutes les demandes sont examinées par notre équipe et traitées de manière professionnelle."
+    }
+  },
+  "faqPage": {
+    "title": "FAQ",
+    "headline": "Questions fréquemment posées",
+    "subheadline": "Réponses aux questions les plus fréquentes sur nos services, notre processus et nos politiques.",
+    "categories": {
+      "services": "Services",
+      "process": "Processus",
+      "pricing": "Tarifs",
+      "legal": "Juridique et politiques"
+    },
+    "items": [
+      {
+        "category": "services",
+        "question": "Qu'est-ce qu'une consultation numérique ?",
+        "answer": "Une consultation numérique est un examen structuré de votre présence commerciale en ligne. Nous examinons votre site, votre processus de paiement, vos signaux de confiance et votre configuration numérique globale, puis fournissons des recommandations écrites claires adaptées à votre activité."
+      },
+      {
+        "category": "services",
+        "question": "Que comprend un audit de site web ?",
+        "answer": "Un audit de site comprend un examen complet du design, de l'expérience utilisateur, de la vitesse des pages, des signaux de confiance, de la clarté du paiement et du contenu. Vous recevez un rapport écrit détaillé avec des recommandations spécifiques et priorisées."
+      },
+      {
+        "category": "services",
+        "question": "Pouvez-vous construire mon site web de zéro ?",
+        "answer": "Oui. Le forfait Elite Launch comprend une conception et un développement complet de site web. Pour les autres forfaits, nous fournissons des recommandations que vous pouvez appliquer vous-même ou nous contacter pour un devis d'implémentation personnalisé."
+      },
+      {
+        "category": "services",
+        "question": "Avec quels secteurs travaillez-vous ?",
+        "answer": "Nous travaillons avec des fondateurs et des petites entreprises dans divers secteurs incluant la vente au détail, les services, le freelance et l'e-commerce. Notre approche de consultation est adaptée à chaque type d'activité et objectif."
+      },
+      {
+        "category": "process",
+        "question": "Comment fonctionne le processus ?",
+        "answer": "Notre processus comporte quatre étapes : Découverte (consultation structurée pour comprendre votre activité), Diagnostic (examen et identification des améliorations), Construction ou Amélioration (conception, développement ou livraison du rapport d'audit) et Livraison (livraison finale avec conseils)."
+      },
+      {
+        "category": "process",
+        "question": "Combien de temps dure une consultation ?",
+        "answer": "Les durées vont de 30 minutes pour le forfait Starter à 90 minutes pour le forfait Avancé. Le forfait Elite comprend la conception et le développement complet d'un site, ce qui prend généralement 5 à 10 jours ouvrables."
+      },
+      {
+        "category": "process",
+        "question": "Comment je reçois mon rapport de consultation ?",
+        "answer": "Votre rapport de consultation écrit est livré par e-mail dans le délai spécifié pour votre forfait. Nous répondons généralement dans les 24 à 48 heures ouvrables."
+      },
+      {
+        "category": "pricing",
+        "question": "Que comprend le forfait Elite Launch ?",
+        "answer": "Le forfait Elite comprend : conception et développement complet du site, configuration e-commerce ou page d'atterrissage, revue complète UI/UX et signaux de confiance, préparation à l'examen des paiements, et support prioritaire 30 jours après livraison."
+      },
+      {
+        "category": "pricing",
+        "question": "Y a-t-il des frais cachés ?",
+        "answer": "Non. Tous les prix des forfaits sont clairement affichés. Il n'y a pas de frais cachés ni de surprises. Si vous avez besoin de services au-delà de ce qu'un forfait comprend, nous vous fournirons un devis clair avant tout travail supplémentaire."
+      },
+      {
+        "category": "legal",
+        "question": "Garantissez-vous l'approbation Stripe ou PayPal ?",
+        "answer": "Non. DegiScaler LLC ne garantit pas l'approbation de Stripe, PayPal ou de tout autre processeur de paiement ou institution financière. Nous aidons à améliorer le professionnalisme, la clarté et les signaux de confiance de votre site. Les décisions de traitement des paiements sont prises indépendamment par les processeurs de paiement."
+      },
+      {
+        "category": "legal",
+        "question": "Proposez-vous des remboursements ?",
+        "answer": "Les services de consultation numérique ne sont pas remboursables une fois la session effectuée ou le rapport livré. Si le service n'a pas encore été initié, vous pouvez demander une annulation dans les 24 heures suivant l'achat. Veuillez consulter notre politique de remboursement complète pour les détails."
+      },
+      {
+        "category": "legal",
+        "question": "Où est enregistrée DegiScaler LLC ?",
+        "answer": "DegiScaler LLC est une société à responsabilité limitée américaine enregistrée. Nous opérons en tant que société légitime de services numériques et de consultation commerciale."
+      }
+    ]
+  },
+  "privacyPage": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : mai 2025",
+    "headline": "Politique de confidentialité",
+    "intro": "DegiScaler LLC s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre site web et nos services.",
+    "sections": [
+      {
+        "title": "Informations que nous collectons",
+        "content": "Nous collectons les informations que vous nous fournissez directement lorsque vous nous contactez, remplissez un formulaire de consultation ou achetez un forfait de service. Cela peut inclure votre nom, adresse e-mail et des informations sur votre activité. Nous ne collectons pas directement les données de carte de paiement — tous les paiements sont traités par des processeurs de paiement tiers."
+      },
+      {
+        "title": "Comment nous utilisons vos informations",
+        "content": "Nous utilisons les informations collectées pour fournir et améliorer nos services, communiquer avec vous concernant votre consultation ou projet, répondre à vos demandes et envoyer des communications liées au service. Nous ne vendons pas vos informations personnelles à des tiers à des fins marketing."
+      },
+      {
+        "title": "Services tiers",
+        "content": "Nous pouvons utiliser des services tiers pour traiter les paiements, héberger notre site et communiquer avec les clients. Ces tiers ont leurs propres politiques de confidentialité et nous vous recommandons de les consulter. Nous ne sommes pas responsables des pratiques de confidentialité des processeurs de paiement tiers ou des prestataires de services."
+      },
+      {
+        "title": "Sécurité des données",
+        "content": "Nous mettons en œuvre des mesures de sécurité raisonnables pour protéger vos informations. Cependant, aucune méthode de transmission sur Internet n'est complètement sécurisée. Nous ne pouvons pas garantir la sécurité absolue de vos informations."
+      },
+      {
+        "title": "Cookies",
+        "content": "Notre site peut utiliser des cookies pour améliorer votre expérience de navigation. Vous pouvez contrôler les paramètres des cookies via les préférences de votre navigateur. Désactiver les cookies peut affecter certaines fonctionnalités de notre site."
+      },
+      {
+        "title": "Vos droits",
+        "content": "Vous avez le droit d'accéder à vos informations personnelles, de les corriger ou d'en demander la suppression. Pour exercer ces droits, contactez-nous à support@degiscaler.com."
+      },
+      {
+        "title": "Modifications de cette politique",
+        "content": "Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Nous vous informerons des changements importants en publiant la politique mise à jour sur notre site. L'utilisation continue de nos services après les modifications constitue une acceptation de la politique mise à jour."
+      },
+      {
+        "title": "Contact",
+        "content": "Pour toute question sur cette politique de confidentialité, contactez-nous à support@degiscaler.com."
+      }
+    ]
+  },
+  "termsPage": {
+    "title": "Conditions d'utilisation",
+    "lastUpdated": "Dernière mise à jour : mai 2025",
+    "headline": "Conditions d'utilisation",
+    "intro": "Ces conditions d'utilisation régissent votre utilisation du site web et des services de DegiScaler LLC. En utilisant nos services, vous acceptez ces conditions.",
+    "sections": [
+      {
+        "title": "Services",
+        "content": "DegiScaler LLC fournit des services numériques et de consultation commerciale incluant la conception de sites web, le développement e-commerce, la conception de pages d'atterrissage, les audits de sites, les revues UI/UX et la consultation numérique d'entreprise. Tous les services sont fournis tels que décrits dans nos forfaits."
+      },
+      {
+        "title": "Aucune garantie d'approbation de processeur de paiement",
+        "content": "DegiScaler LLC ne garantit pas l'approbation de Stripe, PayPal, d'une banque, d'une institution financière ou d'un processeur de paiement. Nos services améliorent la qualité du site, les signaux de confiance et la clarté du paiement, ce qui peut soutenir les processus d'examen des paiements. Toutes les décisions d'approbation sont prises indépendamment par les processeurs de paiement et institutions financières concernés."
+      },
+      {
+        "title": "Paiement",
+        "content": "Tous les services doivent être payés en totalité avant le début du travail. Les prix sont en USD. Le paiement est traité par des processeurs de paiement tiers. Nous ne stockons pas les données de carte de paiement."
+      },
+      {
+        "title": "Services numériques",
+        "content": "Nos services de consultation et d'audit sont des services numériques livrés par voie électronique. Une fois la consultation effectuée ou le rapport livré, le service est considéré comme accompli. Les rapports écrits et les notes de consultation sont la propriété intellectuelle de DegiScaler LLC jusqu'au paiement complet."
+      },
+      {
+        "title": "Responsabilités du client",
+        "content": "Les clients sont responsables de fournir des informations commerciales exactes, de répondre aux communications en temps opportun et de s'assurer que les informations partagées avec nous sont véridiques et complètes. Une fausse déclaration d'activités commerciales peut entraîner la résiliation du service sans remboursement."
+      },
+      {
+        "title": "Limitation de responsabilité",
+        "content": "DegiScaler LLC ne sera pas responsable des dommages indirects, accessoires ou consécutifs découlant de l'utilisation de nos services. Notre responsabilité est limitée au montant payé pour le service spécifique en question. Nous ne garantissons pas de résultats commerciaux spécifiques, de résultats de vente ou de décisions des processeurs de paiement."
+      },
+      {
+        "title": "Propriété intellectuelle",
+        "content": "Tout le contenu, les designs et les rapports créés par DegiScaler LLC restent la propriété intellectuelle de DegiScaler LLC jusqu'au paiement complet. Après paiement complet, les clients reçoivent les droits complets sur le produit livré."
+      },
+      {
+        "title": "Droit applicable",
+        "content": "Ces conditions d'utilisation sont régies par les lois des États-Unis. Tout litige sera résolu par négociation de bonne foi ou, si nécessaire, par les voies juridiques appropriées."
+      },
+      {
+        "title": "Modifications des conditions",
+        "content": "Nous pouvons mettre à jour ces conditions d'utilisation à tout moment. L'utilisation continue de nos services après les modifications constitue une acceptation des conditions mises à jour."
+      },
+      {
+        "title": "Contact",
+        "content": "Pour toute question sur ces conditions d'utilisation, contactez-nous à support@degiscaler.com."
+      }
+    ]
+  },
+  "refundPage": {
+    "title": "Politique de remboursement",
+    "lastUpdated": "Dernière mise à jour : mai 2025",
+    "headline": "Politique de remboursement et d'annulation",
+    "intro": "DegiScaler LLC fournit des services de consultation numérique et des services de sites web. Veuillez lire attentivement cette politique de remboursement avant d'acheter tout service.",
+    "sections": [
+      {
+        "title": "Services de consultation numérique",
+        "content": "Tous les services de consultation numérique — incluant les forfaits Starter, Croissance, Pro et Avancé — ne sont pas remboursables une fois la session de consultation effectuée ou le rapport écrit livré au client."
+      },
+      {
+        "title": "Annulation avant l'initiation du service",
+        "content": "Si vous souhaitez annuler un service avant son initiation, vous devez nous contacter à support@degiscaler.com dans les 24 heures suivant votre achat. Les demandes d'annulation soumises dans ce délai seront examinées au cas par cas. Nous ne pouvons pas garantir un remboursement après ce délai."
+      },
+      {
+        "title": "Forfait Elite Launch",
+        "content": "Le forfait Elite implique un travail de conception et de développement de site personnalisé. Une fois le travail commencé sur votre projet, les remboursements ne sont pas disponibles. Si le travail n'a pas encore été initié, les demandes d'annulation soumises dans les 24 heures suivant l'achat seront examinées."
+      },
+      {
+        "title": "Circonstances non remboursables",
+        "content": "Les remboursements ne seront pas accordés dans les circonstances suivantes : après qu'une session de consultation a été effectuée, après qu'un rapport écrit a été livré, après que le travail de conception ou de développement du site a commencé, ou si le client a fourni des informations commerciales inexactes ou incomplètes."
+      },
+      {
+        "title": "Aucun remboursement pour les décisions des processeurs de paiement",
+        "content": "DegiScaler LLC ne garantit pas l'approbation de Stripe, PayPal, d'une banque ou d'une institution financière. L'insatisfaction face aux décisions des processeurs de paiement n'est pas un motif de remboursement. Nos services améliorent la qualité du site et les signaux de confiance, mais les décisions des processeurs de paiement sont prises indépendamment."
+      },
+      {
+        "title": "Comment demander un examen",
+        "content": "Pour demander un examen de remboursement, contactez-nous à support@degiscaler.com avec vos informations de commande et la raison de votre demande. Nous examinerons votre demande et répondrons dans les 3 à 5 jours ouvrables."
+      },
+      {
+        "title": "Contact",
+        "content": "Pour toute question sur cette politique de remboursement, contactez-nous à support@degiscaler.com."
+      }
+    ]
+  }
+}

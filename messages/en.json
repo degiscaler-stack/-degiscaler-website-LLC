@@ -1,0 +1,653 @@
+{
+  "common": {
+    "viewServices": "View Services",
+    "seePricing": "See Pricing",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "backToHome": "Back to Home",
+    "readMore": "Read More",
+    "companyName": "DegiScaler LLC"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "getStarted": "Get Started",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Professional digital services and business consultation for founders and growing businesses.",
+    "company": "Company",
+    "legal": "Legal",
+    "contactTitle": "Contact",
+    "supportEmail": "support@degiscaler.com",
+    "responseTime": "Response within 24–48 business hours",
+    "links": {
+      "services": "Services",
+      "pricing": "Pricing",
+      "about": "About",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "refund": "Refund Policy"
+    },
+    "copyright": "DegiScaler LLC. All rights reserved.",
+    "disclaimer": "DegiScaler LLC is a U.S.-registered digital services and consultation company. We do not guarantee payment processor approvals, Stripe approvals, PayPal approvals, or specific business outcomes."
+  },
+  "home": {
+    "hero": {
+      "headline": "Professional websites and digital consultation for growing businesses",
+      "subheadline": "DegiScaler LLC helps founders and small businesses build credible websites, improve customer journeys, and prepare their online presence for real-world sales and payment review.",
+      "ctaPrimary": "View Services",
+      "ctaSecondary": "See Pricing",
+      "badge": "U.S.-Registered LLC",
+      "trust1": "U.S.-registered LLC",
+      "trust2": "Clear service packages",
+      "trust3": "Website and e-commerce support",
+      "trust4": "No payment approval guarantees"
+    },
+    "trustBar": {
+      "item1": "U.S.-Registered LLC",
+      "item2": "Clear Pricing",
+      "item3": "Website & E-Commerce",
+      "item4": "Digital Consultation",
+      "item5": "Transparent Process"
+    },
+    "problemSolution": {
+      "problemLabel": "The Problem",
+      "headline": "Most small business websites lose customers before they convert",
+      "subheadline": "If your website looks unprofessional, your checkout is unclear, or your online store is hard to navigate — you are losing real business.",
+      "problems": [
+        "Your website looks outdated or untrustworthy",
+        "Visitors abandon your checkout process",
+        "Your online store is hard to navigate",
+        "Payment processors flag your website for review"
+      ],
+      "solutionLabel": "Our Solution",
+      "solutionHeadline": "We fix what is holding your business back online",
+      "solutions": [
+        "Professional website design that builds trust",
+        "Clear checkout flow and trust signal improvements",
+        "E-commerce stores that convert visitors to buyers",
+        "Website audits that identify and resolve issues"
+      ]
+    },
+    "services": {
+      "sectionLabel": "What We Do",
+      "headline": "Services designed for real business results",
+      "subheadline": "From initial consultation to full website delivery, we cover the essentials for building a credible, professional online presence.",
+      "items": {
+        "websiteDesign": {
+          "title": "Website Design",
+          "description": "Professional websites tailored to your business goals. Clean, fast, and built to build trust with your visitors.",
+          "outcome": "A professional website that represents your brand clearly"
+        },
+        "ecommerce": {
+          "title": "E-Commerce Development",
+          "description": "Full online store setup with product listings, secure checkout, and payment integration ready for review.",
+          "outcome": "An online store ready for real-world sales"
+        },
+        "landingPage": {
+          "title": "Landing Page Design",
+          "description": "High-conversion landing pages focused on one clear goal — getting your visitors to take action.",
+          "outcome": "A focused page that drives conversions"
+        },
+        "audit": {
+          "title": "Website Audit",
+          "description": "A thorough review of your current website covering design, performance, trust signals, and user experience.",
+          "outcome": "A clear report with actionable improvements"
+        },
+        "uiux": {
+          "title": "UI/UX Review",
+          "description": "Expert review of your website's interface and user journey to identify friction points and opportunities.",
+          "outcome": "Improved user flow and a better customer experience"
+        },
+        "consultation": {
+          "title": "Digital Business Consultation",
+          "description": "Strategic digital consultation for founders. We review your online presence and provide clear, practical recommendations.",
+          "outcome": "A clear digital strategy and next steps"
+        }
+      },
+      "viewAll": "View All Services"
+    },
+    "whyUs": {
+      "sectionLabel": "Why DegiScaler",
+      "headline": "Built for founders who need results, not jargon",
+      "items": [
+        {
+          "title": "U.S.-Registered Company",
+          "description": "DegiScaler LLC is a registered U.S. business. You work with a real, accountable company."
+        },
+        {
+          "title": "Clear Service Packages",
+          "description": "No hidden fees, no vague scope. Every package includes a defined set of deliverables and outcomes."
+        },
+        {
+          "title": "Payment-Ready Websites",
+          "description": "We build websites with trust signals, clear checkout flows, and professional design that supports your payment review process."
+        },
+        {
+          "title": "Direct Communication",
+          "description": "You communicate directly with our team. No middlemen. Just clear, professional support."
+        },
+        {
+          "title": "Transparent Process",
+          "description": "You know exactly what we are doing and when. Our four-step process keeps you informed from start to finish."
+        },
+        {
+          "title": "No Empty Guarantees",
+          "description": "We do not guarantee payment processor approvals. We guarantee professional work, clear deliverables, and honest service."
+        }
+      ]
+    },
+    "process": {
+      "sectionLabel": "How It Works",
+      "headline": "Four steps from conversation to delivery",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Discover",
+          "description": "We start with a structured consultation to understand your business, goals, and current online presence."
+        },
+        {
+          "number": "02",
+          "title": "Diagnose",
+          "description": "We review your current website, identify issues, and map out exactly what needs to be built or improved."
+        },
+        {
+          "number": "03",
+          "title": "Build / Improve",
+          "description": "We design and develop your website, apply improvements, or deliver the audit report based on your selected package."
+        },
+        {
+          "number": "04",
+          "title": "Deliver",
+          "description": "We deliver the final work, walk you through what was done, and provide guidance on your next steps."
+        }
+      ]
+    },
+    "pricing": {
+      "sectionLabel": "Pricing",
+      "headline": "Transparent packages. No surprises.",
+      "subheadline": "Choose the consultation package that fits your current stage. All packages include structured review and written recommendations.",
+      "viewAll": "View Full Pricing",
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started"
+    },
+    "faq": {
+      "sectionLabel": "FAQ",
+      "headline": "Common questions answered",
+      "items": [
+        {
+          "question": "What exactly is a digital consultation?",
+          "answer": "A digital consultation is a structured review of your online business presence. We review your website, checkout process, trust signals, and overall digital setup, then provide clear written recommendations."
+        },
+        {
+          "question": "Do you guarantee Stripe or PayPal approval?",
+          "answer": "No. We do not guarantee approval from Stripe, PayPal, or any other payment processor. We help improve your website's professionalism, clarity, and trust signals, which may support your payment review process. Final decisions are made by the payment processors."
+        },
+        {
+          "question": "How long does a consultation take?",
+          "answer": "Consultation length depends on the package selected. Packages range from 30 minutes to 90 minutes. The Elite Launch Package includes full website design and build, which typically takes 5 to 10 business days."
+        },
+        {
+          "question": "How do I receive my consultation report?",
+          "answer": "Your written consultation report is delivered via email within the timeframe specified for your package. We typically respond within 24 to 48 business hours."
+        },
+        {
+          "question": "Do you offer refunds?",
+          "answer": "Digital consultation services are non-refundable once the consultation session has been conducted or the report has been delivered. Please review our Refund Policy for full details."
+        }
+      ],
+      "viewAll": "View All FAQs"
+    },
+    "cta": {
+      "headline": "Ready to build a credible online presence?",
+      "subheadline": "Start with a consultation. See what is holding your website back and get a clear plan to move forward.",
+      "ctaPrimary": "View Pricing",
+      "ctaSecondary": "Contact Us"
+    }
+  },
+  "servicesPage": {
+    "title": "Services",
+    "headline": "What we build and what we review",
+    "subheadline": "Every service is built around one goal: helping your business build a credible, professional online presence that supports real-world sales.",
+    "services": {
+      "websiteDesign": {
+        "title": "Website Design",
+        "description": "We design and build professional websites tailored to your business goals. Every website we build is clean, fast, mobile-responsive, and structured to build trust with your visitors. We focus on clarity, professional layout, and clear calls to action.",
+        "outcomes": [
+          "Professional, modern website design",
+          "Mobile-responsive and fast-loading",
+          "Clear navigation and user journey",
+          "Trust signals integrated throughout",
+          "Ready for payment processor review"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-Commerce Development",
+        "description": "We set up complete online stores with product listings, secure checkout flows, and payment integration. Our e-commerce builds are structured with clear product pages, transparent pricing, and checkout processes that support payment-readiness review.",
+        "outcomes": [
+          "Complete online store setup",
+          "Product listing and categorization",
+          "Secure, clear checkout flow",
+          "Payment integration support",
+          "Trust signals and policy pages included"
+        ]
+      },
+      "landingPage": {
+        "title": "Landing Page Design",
+        "description": "A landing page has one job: convert visitors into leads or customers. We design focused, high-conversion landing pages with clear headlines, benefit-driven copy, and direct calls to action. No distractions, no clutter.",
+        "outcomes": [
+          "Single-goal, focused page design",
+          "Clear headline and subheadline",
+          "Benefit-driven copy and layout",
+          "Direct and visible call to action",
+          "Mobile-optimized and fast"
+        ]
+      },
+      "audit": {
+        "title": "Website Audit",
+        "description": "A website audit is a thorough, structured review of your current website. We examine design, user experience, page speed, trust signals, checkout clarity, and content. You receive a detailed written report with specific, actionable recommendations.",
+        "outcomes": [
+          "Full website design and UX review",
+          "Trust signal and credibility assessment",
+          "Checkout and payment-readiness check",
+          "Specific, prioritized recommendations",
+          "Written report delivered via email"
+        ]
+      },
+      "uiux": {
+        "title": "UI/UX Review",
+        "description": "A UI/UX review examines how your website looks and how users navigate it. We identify friction points, confusing layouts, poor visual hierarchy, and unclear calls to action. You receive actionable feedback you can apply directly to improve your website.",
+        "outcomes": [
+          "Interface and visual hierarchy review",
+          "User journey and navigation analysis",
+          "Friction point identification",
+          "Clear, prioritized improvement recommendations",
+          "Written report delivered via email"
+        ]
+      },
+      "consultation": {
+        "title": "Digital Business Consultation",
+        "description": "A strategic digital consultation for founders and business owners. We review your complete online presence — website, branding, checkout flow, and digital positioning — and provide a clear, written action plan to move forward.",
+        "outcomes": [
+          "Full digital presence review",
+          "Business credibility assessment",
+          "Payment-readiness feedback",
+          "Clear digital strategy and action plan",
+          "Written summary delivered via email"
+        ]
+      }
+    },
+    "ctaHeadline": "Not sure which service fits your business?",
+    "ctaSubheadline": "Start with a consultation package and we will identify exactly what your business needs.",
+    "ctaButton": "View Pricing",
+    "whatYouGet": "What you get"
+  },
+  "pricingPage": {
+    "title": "Pricing",
+    "headline": "Transparent packages. No surprises.",
+    "subheadline": "Every package includes a structured review and written recommendations. Choose the level that fits your current stage.",
+    "mostPopular": "Most Popular",
+    "getStarted": "Get Started",
+    "perPackage": "per package",
+    "disclaimer": "All prices are in USD. These are digital consultation services. DegiScaler LLC does not guarantee Stripe approval, PayPal approval, bank approval, or any specific business or payment outcome. Results may vary based on business type and platform policies.",
+    "ctaHeadline": "Have questions about which package is right for you?",
+    "ctaButton": "Contact Us",
+    "packages": [
+      {
+        "id": "starter",
+        "name": "Starter Consultation",
+        "price": "$9.99",
+        "description": "A focused entry-level consultation for founders who need a quick professional assessment of their online presence.",
+        "features": [
+          "30-minute digital consultation",
+          "Website credibility review",
+          "3 key improvement recommendations",
+          "Written summary delivered by email",
+          "Response within 48 business hours"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "growth",
+        "name": "Growth Consultation",
+        "price": "$19.99",
+        "description": "A structured consultation for businesses looking to improve their online presence and customer journey.",
+        "features": [
+          "45-minute digital consultation",
+          "Website and checkout review",
+          "5 improvement recommendations",
+          "Trust signal assessment",
+          "Written report delivered by email"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "pro",
+        "name": "Pro Consultation",
+        "price": "$29.99",
+        "description": "A comprehensive consultation covering your full digital presence and payment-readiness.",
+        "features": [
+          "60-minute digital consultation",
+          "Full website and UX review",
+          "Checkout clarity assessment",
+          "Payment-readiness review",
+          "Detailed written report with action plan"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "advanced",
+        "name": "Advanced Consultation",
+        "price": "$49.99",
+        "description": "An in-depth consultation with detailed analysis and a complete improvement roadmap for your business.",
+        "features": [
+          "90-minute digital consultation",
+          "Full website audit and UX review",
+          "E-commerce and checkout analysis",
+          "Payment-readiness assessment",
+          "Priority support for 7 days after delivery"
+        ],
+        "highlighted": false
+      },
+      {
+        "id": "elite",
+        "name": "Elite Launch Package",
+        "price": "$149.99",
+        "description": "Our complete package for founders ready to launch a professional, credible online business from the ground up.",
+        "features": [
+          "Complete website design and build",
+          "E-commerce or landing page setup",
+          "Full UI/UX and trust signal review",
+          "Payment-readiness preparation",
+          "Priority support for 30 days after delivery"
+        ],
+        "highlighted": true
+      }
+    ]
+  },
+  "aboutPage": {
+    "title": "About",
+    "headline": "A U.S.-registered digital services company",
+    "subheadline": "DegiScaler LLC was built to help founders and small businesses establish a credible, professional online presence.",
+    "missionLabel": "Our Mission",
+    "missionText": "Most small businesses struggle with the same problems: unprofessional websites, unclear checkout flows, and online stores that do not build trust. DegiScaler LLC exists to solve these problems directly. We provide professional website design, digital consultation, and website audit services that give business owners a clear path forward.",
+    "whatWeDoLabel": "What We Do",
+    "whatWeDoText": "We design and build professional websites, set up e-commerce stores, create high-conversion landing pages, and conduct thorough website audits. For every client, our goal is the same: a credible, professional online presence that supports real-world business and payment review.",
+    "valuesLabel": "How We Operate",
+    "values": [
+      {
+        "title": "Registered U.S. Business",
+        "description": "DegiScaler LLC is a registered U.S. limited liability company. We operate transparently with real accountability."
+      },
+      {
+        "title": "No Vague Promises",
+        "description": "We do not guarantee payment processor approvals or specific business outcomes. We guarantee professional work and clear deliverables."
+      },
+      {
+        "title": "Direct and Professional",
+        "description": "We communicate directly, deliver on time, and provide work that meets a professional standard for every client."
+      },
+      {
+        "title": "Focused on Founders",
+        "description": "Our services are built for founders and small business owners who need practical, results-focused digital support."
+      }
+    ],
+    "contactCta": "Start a Consultation",
+    "companyDetails": {
+      "label": "Company Details",
+      "nameLabel": "Company",
+      "typeLabel": "Type",
+      "focusLabel": "Focus",
+      "emailLabel": "Email",
+      "name": "DegiScaler LLC",
+      "type": "U.S. Limited Liability Company",
+      "focus": "Digital Services & Business Consultation",
+      "email": "support@degiscaler.com"
+    }
+  },
+  "contactPage": {
+    "title": "Contact",
+    "headline": "Get in touch",
+    "subheadline": "Have a question about our services or ready to start? Send us a message and we will respond within 24 to 48 business hours.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "service": "Service Interest",
+      "servicePlaceholder": "Select a service",
+      "services": [
+        "Website Design",
+        "E-Commerce Development",
+        "Landing Page Design",
+        "Website Audit",
+        "UI/UX Review",
+        "Digital Business Consultation",
+        "Pricing Question",
+        "General Inquiry"
+      ],
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your business and what you need help with.",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent",
+      "successText": "Thank you for reaching out. We will review your message and respond within 24 to 48 business hours.",
+      "errorText": "Something went wrong. Please try again or email us directly."
+    },
+    "info": {
+      "emailLabel": "Support Email",
+      "email": "support@degiscaler.com",
+      "responseLabel": "Response Time",
+      "response": "24 to 48 business hours",
+      "trustNote": "DegiScaler LLC is a U.S.-registered digital services company. All inquiries are reviewed by our team and responded to professionally."
+    }
+  },
+  "faqPage": {
+    "title": "FAQ",
+    "headline": "Frequently asked questions",
+    "subheadline": "Answers to the most common questions about our services, process, and policies.",
+    "categories": {
+      "services": "Services",
+      "process": "Process",
+      "pricing": "Pricing",
+      "legal": "Legal & Policies"
+    },
+    "items": [
+      {
+        "category": "services",
+        "question": "What exactly is a digital consultation?",
+        "answer": "A digital consultation is a structured review of your online business presence. We review your website, checkout process, trust signals, and overall digital setup, then provide clear written recommendations tailored to your business."
+      },
+      {
+        "category": "services",
+        "question": "What does a website audit include?",
+        "answer": "A website audit includes a full review of your website design, user experience, page speed, trust signals, checkout clarity, and content. You receive a detailed written report with specific, prioritized recommendations."
+      },
+      {
+        "category": "services",
+        "question": "Can you build my website from scratch?",
+        "answer": "Yes. The Elite Launch Package includes a complete website design and build. For other packages, we provide consultation and recommendations. You can then implement them yourself or contact us for a custom implementation quote."
+      },
+      {
+        "category": "services",
+        "question": "What industries do you work with?",
+        "answer": "We work with founders and small businesses across various industries including retail, services, freelancing, and e-commerce. Our consultation approach is adapted to each business type and goal."
+      },
+      {
+        "category": "process",
+        "question": "How does the process work?",
+        "answer": "Our process has four steps: Discover (structured consultation to understand your business), Diagnose (review and identify what needs improvement), Build or Improve (design, develop, or deliver the audit report), and Deliver (final delivery with guidance on next steps)."
+      },
+      {
+        "category": "process",
+        "question": "How long does a consultation take?",
+        "answer": "Consultation length depends on the package selected. Packages range from 30 minutes for the Starter to 90 minutes for the Advanced package. The Elite Launch Package includes full website design and build, which typically takes 5 to 10 business days."
+      },
+      {
+        "category": "process",
+        "question": "How do I receive my consultation report?",
+        "answer": "Your written consultation report is delivered via email within the timeframe specified for your package. We typically respond within 24 to 48 business hours."
+      },
+      {
+        "category": "pricing",
+        "question": "What is included in the Elite Launch Package?",
+        "answer": "The Elite Launch Package includes complete website design and build, e-commerce or landing page setup, full UI/UX and trust signal review, payment-readiness preparation, and priority support for 30 days after delivery."
+      },
+      {
+        "category": "pricing",
+        "question": "Are there any hidden fees?",
+        "answer": "No. All package prices are clearly listed. There are no hidden fees or surprise charges. If you need services beyond what a package includes, we will provide a clear quote before any additional work begins."
+      },
+      {
+        "category": "legal",
+        "question": "Do you guarantee Stripe or PayPal approval?",
+        "answer": "No. DegiScaler LLC does not guarantee approval from Stripe, PayPal, or any other payment processor or financial institution. We help improve your website's professionalism, clarity, and trust signals. Final payment processing decisions are made by the payment processors themselves."
+      },
+      {
+        "category": "legal",
+        "question": "Do you offer refunds?",
+        "answer": "Digital consultation services are non-refundable once the consultation session has been conducted or the report has been delivered. If the service has not yet been initiated, you may request a cancellation within 24 hours of purchase. Please review our full Refund Policy for details."
+      },
+      {
+        "category": "legal",
+        "question": "Where is DegiScaler LLC registered?",
+        "answer": "DegiScaler LLC is a registered U.S. Limited Liability Company. We operate as a legitimate digital services and business consultation company."
+      }
+    ]
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 2025",
+    "headline": "Privacy Policy",
+    "intro": "DegiScaler LLC (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you use our website and services.",
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "content": "We collect information you provide directly to us when you contact us, complete a consultation form, or purchase a service package. This may include your name, email address, and information about your business. We do not collect payment card information directly — all payments are processed through third-party payment processors."
+      },
+      {
+        "title": "How We Use Your Information",
+        "content": "We use the information we collect to provide and improve our services, communicate with you about your consultation or project, respond to your inquiries, and send service-related communications. We do not sell or share your personal information with third parties for marketing purposes."
+      },
+      {
+        "title": "Third-Party Services",
+        "content": "We may use third-party services to process payments, host our website, and communicate with clients. These third parties have their own privacy policies and we recommend reviewing them. We are not responsible for the privacy practices of third-party payment processors or service providers."
+      },
+      {
+        "title": "Data Security",
+        "content": "We implement reasonable security measures to protect your information. However, no method of transmission over the internet is completely secure. We cannot guarantee the absolute security of your information."
+      },
+      {
+        "title": "Cookies",
+        "content": "Our website may use cookies to improve your browsing experience. You can control cookie settings through your browser preferences. Disabling cookies may affect some functionality of our website."
+      },
+      {
+        "title": "Your Rights",
+        "content": "You have the right to access, correct, or request deletion of your personal information. To exercise these rights, please contact us at support@degiscaler.com."
+      },
+      {
+        "title": "Changes to This Policy",
+        "content": "We may update this Privacy Policy from time to time. We will notify you of significant changes by posting the updated policy on our website. Continued use of our services after changes constitutes acceptance of the updated policy."
+      },
+      {
+        "title": "Contact",
+        "content": "If you have questions about this Privacy Policy, please contact us at support@degiscaler.com."
+      }
+    ]
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: May 2025",
+    "headline": "Terms of Service",
+    "intro": "These Terms of Service govern your use of the DegiScaler LLC website and services. By using our services, you agree to these terms.",
+    "sections": [
+      {
+        "title": "Services",
+        "content": "DegiScaler LLC provides digital services and business consultation including website design, e-commerce development, landing page design, website audits, UI/UX reviews, and digital business consultation. All services are provided as described in our service packages."
+      },
+      {
+        "title": "No Payment Processor Guarantee",
+        "content": "DegiScaler LLC does not guarantee approval from Stripe, PayPal, any bank, any financial institution, or any payment processor. Our services improve website quality, trust signals, and checkout clarity, which may support payment review processes. All approval decisions are made independently by the respective payment processors and financial institutions."
+      },
+      {
+        "title": "Payment",
+        "content": "All services must be paid in full before work begins. Prices are listed in USD. Payment is processed through third-party payment processors. We do not store payment card information."
+      },
+      {
+        "title": "Digital Services",
+        "content": "Our consultation and audit services are digital services delivered electronically. Once a consultation has been conducted or a report delivered, the service is considered fulfilled. Written reports and consultation notes are the intellectual property of DegiScaler LLC until full payment is received."
+      },
+      {
+        "title": "Client Responsibilities",
+        "content": "Clients are responsible for providing accurate business information, responding to communications in a timely manner, and ensuring that the information shared with us is truthful and complete. Misrepresentation of business activities may result in service termination without refund."
+      },
+      {
+        "title": "Limitation of Liability",
+        "content": "DegiScaler LLC shall not be liable for any indirect, incidental, or consequential damages arising from use of our services. Our liability is limited to the amount paid for the specific service in question. We do not guarantee specific business outcomes, sales results, or payment processor decisions."
+      },
+      {
+        "title": "Intellectual Property",
+        "content": "All content, designs, and reports created by DegiScaler LLC remain the intellectual property of DegiScaler LLC until full payment is received. Upon full payment, clients receive full rights to the delivered work product."
+      },
+      {
+        "title": "Governing Law",
+        "content": "These Terms of Service are governed by the laws of the United States. Any disputes shall be resolved through good-faith negotiation or, if necessary, through appropriate legal channels."
+      },
+      {
+        "title": "Changes to Terms",
+        "content": "We may update these Terms of Service at any time. Continued use of our services after changes constitutes acceptance of the updated terms."
+      },
+      {
+        "title": "Contact",
+        "content": "For questions about these Terms of Service, contact us at support@degiscaler.com."
+      }
+    ]
+  },
+  "refundPage": {
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated: May 2025",
+    "headline": "Refund & Cancellation Policy",
+    "intro": "DegiScaler LLC provides digital consultation and website services. Please read this Refund Policy carefully before purchasing any service.",
+    "sections": [
+      {
+        "title": "Digital Consultation Services",
+        "content": "All digital consultation services — including the Starter, Growth, Pro, and Advanced consultation packages — are non-refundable once the consultation session has been conducted or the written report has been delivered to the client."
+      },
+      {
+        "title": "Cancellation Before Service Initiation",
+        "content": "If you wish to cancel a service before it has been initiated, you must contact us at support@degiscaler.com within 24 hours of your purchase. Cancellation requests submitted within this window will be reviewed on a case-by-case basis. We cannot guarantee a refund after this period."
+      },
+      {
+        "title": "Elite Launch Package",
+        "content": "The Elite Launch Package involves custom website design and build work. Once work has begun on your project, refunds are not available. If work has not yet been initiated, cancellation requests submitted within 24 hours of purchase will be reviewed."
+      },
+      {
+        "title": "Non-Refundable Circumstances",
+        "content": "Refunds will not be issued in the following circumstances: after a consultation session has been conducted, after a written report has been delivered, after website design or build work has been initiated, or if the client provided inaccurate or incomplete business information."
+      },
+      {
+        "title": "No Payment Processor Outcomes",
+        "content": "DegiScaler LLC does not guarantee approval from Stripe, PayPal, any bank, or any financial institution. Dissatisfaction with payment processor decisions is not grounds for a refund. Our services improve website quality and trust signals, but payment processor decisions are made independently."
+      },
+      {
+        "title": "How to Request a Review",
+        "content": "To request a refund review, contact us at support@degiscaler.com with your order information and the reason for your request. We will review your request and respond within 3 to 5 business days."
+      },
+      {
+        "title": "Contact",
+        "content": "For questions about this Refund Policy, contact us at support@degiscaler.com."
+      }
+    ]
+  }
+}
