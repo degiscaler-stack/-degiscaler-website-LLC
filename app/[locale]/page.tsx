@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import Hero from '@/components/home/Hero';
 import TrustBar from '@/components/home/TrustBar';
@@ -8,6 +7,7 @@ import WhyUs from '@/components/home/WhyUs';
 import ProcessSection from '@/components/home/ProcessSection';
 import HomePricing from '@/components/home/HomePricing';
 import HomeFaq from '@/components/home/HomeFaq';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
 import FinalCta from '@/components/home/FinalCta';
 
 export default async function HomePage({
@@ -28,6 +28,7 @@ export default async function HomePage({
       <ProcessSection />
       <HomePricing />
       <HomeFaq />
+      <TestimonialsSection />
       <FinalCta />
     </>
   );

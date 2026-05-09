@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ChatWidget from '@/components/chat/ChatWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -48,12 +49,13 @@ export default async function LocaleLayout({
         )}
       </head>
       <body
+        className="antialiased"
         style={{
           fontFamily: isRtl
             ? "'Cairo', system-ui, sans-serif"
             : "var(--font-inter, system-ui, sans-serif)",
-          backgroundColor: '#0a0a0a',
-          color: '#f5f5f5',
+          backgroundColor: '#050505',
+          color: '#F5F2E9',
         }}
       >
         <NextIntlClientProvider messages={messages}>
@@ -62,6 +64,7 @@ export default async function LocaleLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <ChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>

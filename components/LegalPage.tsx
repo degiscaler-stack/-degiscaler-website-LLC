@@ -1,84 +1,121 @@
+﻿import type { ReactNode } from 'react';
+import {
+  ds,
+  pageMainTopClass,
+  accentEyebrowClass,
+  cardSurfaceBgImage,
+  cardTopHighlight,
+  contentMax,
+  sectionPad,
+} from '@/components/home/homeTheme';
+
 type Section = { title: string; content: string };
 
 interface LegalPageProps {
+  eyebrow?: string;
   headline: string;
   lastUpdated: string;
-  intro: string;
+  intro?: string;
   sections: Section[];
+  disclaimer?: string;
+  contactNote?: ReactNode;
 }
 
 export default function LegalPage({
+  eyebrow,
   headline,
   lastUpdated,
   intro,
   sections,
+  disclaimer,
+  contactNote,
 }: LegalPageProps) {
   return (
-    <div className="pt-24">
-      {/* Header */}
-      <div
-        className="py-14 lg:py-18"
-        style={{ backgroundColor: '#0d0d0d', borderBottom: '1px solid #1a1a1a' }}
+    <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
+      <section
+        style={{
+          backgroundColor: ds.bgDeep,
+          borderBottom: `1px solid ${ds.borderStrong}`,
+        }}
       >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs mb-3" style={{ color: '#52525b' }}>
-            {lastUpdated}
-          </p>
-          <h1
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold"
-            style={{ color: '#f5f5f5' }}
-          >
-            {headline}
-          </h1>
+        <div className={`${contentMax} px-4 sm:px-6 lg:px-10 py-12 md:py-14 lg:py-16`}>
+          <div className="max-w-[52rem] mx-auto text-start md:text-center">
+            {eyebrow ? (
+              <p className={`text-[12px] font-bold uppercase tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>{eyebrow}</p>
+            ) : null}
+            <p className="text-[13px] font-medium mb-3" style={{ color: ds.textMuted }}>
+              {lastUpdated}
+            </p>
+            <h1
+              className="text-[1.75rem] sm:text-[2.15rem] md:text-[2.5rem] font-bold tracking-tight leading-[1.12] text-balance"
+              style={{ color: ds.text }}
+            >
+              {headline}
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="py-14 lg:py-18" style={{ backgroundColor: '#0a0a0a' }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Intro */}
-          <p className="text-sm leading-relaxed mb-10" style={{ color: '#a1a1aa' }}>
-            {intro}
-          </p>
+      <section
+        className={sectionPad}
+        style={{
+          backgroundColor: ds.bgAlt,
+          borderTop: `1px solid ${ds.borderStrong}`,
+        }}
+      >
+        <div className={`px-4 sm:px-6 lg:px-10 ${contentMax} max-w-[44rem] mx-auto`}>
+          {intro ? (
+            <p className="text-[15px] md:text-[1.02rem] leading-[1.75] mb-12 md:mb-14 text-pretty" style={{ color: ds.textMuted }}>
+              {intro}
+            </p>
+          ) : null}
 
-          {/* Sections */}
-          <div className="space-y-8">
+          <div className="space-y-10 md:space-y-12">
             {sections.map((section, i) => (
-              <div key={i}>
-                <h2
-                  className="text-base font-semibold mb-3"
-                  style={{ color: '#f5f5f5' }}
-                >
+              <div
+                key={i}
+                className="rounded-2xl md:rounded-[1.35rem] p-7 md:p-9"
+                style={{
+                  border: `1px solid ${ds.borderStrong}`,
+                  backgroundImage: cardSurfaceBgImage,
+                  backgroundColor: ds.card,
+                  boxShadow: `${cardTopHighlight}, 0 14px 40px rgba(0,0,0,0.3)`,
+                }}
+              >
+                <h2 className="text-[1.05rem] md:text-[1.15rem] font-bold mb-4 tracking-tight" style={{ color: ds.text }}>
                   {section.title}
                 </h2>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: '#71717a' }}
-                >
+                <p className="text-[14.5px] md:text-[15px] leading-[1.75] whitespace-pre-line" style={{ color: ds.textSecondary }}>
                   {section.content}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Contact note */}
+          {disclaimer ? (
+            <p className="mt-12 md:mt-14 text-[13px] md:text-[14px] leading-[1.72] italic text-pretty px-2" style={{ color: ds.textMuted }}>
+              {disclaimer}
+            </p>
+          ) : null}
+
           <div
-            className="mt-12 p-5 rounded-xl"
+            className="mt-12 md:mt-14 rounded-2xl p-7 md:p-8"
             style={{
-              backgroundColor: '#0d0d0d',
-              border: '1px solid rgba(255,132,17,0.15)',
+              border: `1px solid ${ds.border}`,
+              backgroundImage: cardSurfaceBgImage,
+              backgroundColor: ds.bgDeep,
             }}
           >
-            <p className="text-xs" style={{ color: '#71717a' }}>
-              <a
-                href="mailto:support@degiscaler.com"
-                style={{ color: '#FF8411' }}
-              >
-                support@degiscaler.com
-              </a>
-            </p>
+            {contactNote ?? (
+              <p className="text-[14.5px] leading-relaxed">
+                <a href="mailto:support@degiscaler.com" className="font-semibold underline-offset-2 hover:opacity-90" style={{ color: ds.iconGold }}>
+                  support@degiscaler.com
+                </a>
+              </p>
+            )}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

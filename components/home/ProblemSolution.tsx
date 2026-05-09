@@ -1,64 +1,78 @@
 import { useTranslations } from 'next-intl';
-import { XCircle, CheckCircle2 } from 'lucide-react';
+import { AlertTriangle, CheckCircle2 } from 'lucide-react';
+import {
+  contentMax,
+  ds,
+  sectionPad,
+  sectionIntroBottom,
+  sectionTitleClass,
+  accentEyebrowClass,
+  accentDotMicroClass,
+  iconWellGlyphClass,
+  iconWellSmGlyphClass,
+  cardSurfaceBgImage,
+  cardTopHighlight,
+} from './homeTheme';
 
 export default function ProblemSolution() {
   const t = useTranslations('home.problemSolution');
-
   const problems: string[] = t.raw('problems') as string[];
   const solutions: string[] = t.raw('solutions') as string[];
 
   return (
-    <section className="py-20 lg:py-28" style={{ backgroundColor: '#0a0a0a' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Intro */}
-        <div className="text-center mb-14">
-          <span
-            className="inline-block text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: '#FF8411' }}
-          >
-            {t('problemLabel')}
-          </span>
-          <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
-            style={{ color: '#f5f5f5' }}
-          >
+    <section
+      className={`${sectionPad} relative`}
+      style={{
+        backgroundColor: ds.bgMain,
+        borderTop: `1px solid ${ds.borderStrong}`,
+        backgroundImage:
+          'linear-gradient(180deg, rgba(255,132,17,0.02) 0%, transparent 42%), linear-gradient(90deg, rgba(232,204,101,0.015) 0%, transparent 38%, transparent 62%, rgba(255,132,17,0.02) 100%)',
+      }}
+    >
+      <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
+        <div className={`max-w-[46rem] mx-auto text-center ${sectionIntroBottom}`}>
+          <span className={`inline-block text-[12px] font-bold uppercase tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>{t('problemLabel')}</span>
+          <h2 className={`${sectionTitleClass} mb-6 md:mb-8`} style={{ color: ds.text }}>
             {t('headline')}
           </h2>
-          <p
-            className="text-base max-w-2xl mx-auto"
-            style={{ color: '#71717a' }}
-          >
+          <p className="text-[1.05rem] md:text-[1.125rem] leading-[1.72] max-w-[40rem] mx-auto" style={{ color: ds.textMuted }}>
             {t('subheadline')}
           </p>
         </div>
 
-        {/* Two columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Problems */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-9 lg:gap-11 xl:gap-14 items-stretch">
+          {/* Calm warning — amber/stone, not aggressive red */}
           <div
-            className="rounded-xl p-6 lg:p-8"
+            className="rounded-2xl md:rounded-[1.4rem] relative overflow-hidden"
             style={{
-              backgroundColor: '#0d0d0d',
-              border: '1px solid #1f1f1f',
+              backgroundImage: cardSurfaceBgImage,
+              backgroundColor: ds.card,
+              border: `1px solid ${ds.borderStrong}`,
+              boxShadow: `${cardTopHighlight}, 0 18px 48px rgba(0,0,0,0.28)`,
+              padding: 'clamp(1.85rem, 5vw, 2.65rem)',
             }}
           >
-            <div className="flex items-center gap-2 mb-6">
-              <XCircle size={18} style={{ color: '#ef4444' }} />
-              <span
-                className="text-xs font-semibold uppercase tracking-wider"
-                style={{ color: '#ef4444' }}
-              >
+            <div
+              className="absolute start-0 top-0 bottom-0 w-[3px] rounded-s-2xl"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(255,132,17,0.45) 0%, rgba(214,167,0,0.35) 50%, rgba(232,204,101,0.22) 100%)',
+              }}
+              aria-hidden
+            />
+            <div className="flex items-center gap-5 mb-10 ps-1">
+              <div className={`${iconWellGlyphClass} flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-0 md:h-[56px] md:w-[56px]`}>
+                <AlertTriangle className="w-[26px] h-[26px]" strokeWidth={1.85} style={{ color: ds.iconGold }} aria-hidden />
+              </div>
+              <span className="text-[12px] font-bold uppercase tracking-[0.14em]" style={{ color: ds.textMuted }}>
                 {t('problemLabel')}
               </span>
             </div>
-            <ul className="space-y-4">
-              {problems.map((problem) => (
-                <li key={problem} className="flex items-start gap-3">
-                  <div
-                    className="mt-1 w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: '#3f3f46' }}
-                  />
-                  <span className="text-sm leading-relaxed" style={{ color: '#71717a' }}>
+            <ul className="space-y-7 ps-1">
+              {problems.map((problem, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className={`${accentDotMicroClass} mt-2.5 shrink-0`} aria-hidden />
+                  <span className="text-[15.5px] md:text-[1.02rem] leading-[1.7]" style={{ color: ds.textSecondary }}>
                     {problem}
                   </span>
                 </li>
@@ -66,38 +80,33 @@ export default function ProblemSolution() {
             </ul>
           </div>
 
-          {/* Solutions */}
           <div
-            className="rounded-xl p-6 lg:p-8"
+            className="rounded-2xl md:rounded-[1.4rem]"
             style={{
-              backgroundColor: '#0d0d0d',
-              border: '1px solid rgba(255,132,17,0.15)',
+              backgroundImage:
+                `linear-gradient(90deg, rgba(255,132,17,0.07) 0%, transparent 26%, transparent 74%, rgba(232,204,101,0.06) 100%), ${cardSurfaceBgImage}`,
+              backgroundColor: ds.cardElevated,
+              border: `1px solid ${ds.warmIconBorder}`,
+              boxShadow: `${cardTopHighlight}, 0 24px 56px rgba(0,0,0,0.42)`,
+              padding: 'clamp(1.85rem, 5vw, 2.65rem)',
             }}
           >
-            <div className="flex items-center gap-2 mb-6">
-              <CheckCircle2 size={18} style={{ color: '#FF8411' }} />
-              <span
-                className="text-xs font-semibold uppercase tracking-wider"
-                style={{ color: '#FF8411' }}
-              >
-                {t('solutionLabel')}
-              </span>
+            <div className="flex items-center gap-5 mb-8 ps-1">
+              <div className={`${iconWellGlyphClass} flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-0 md:h-[56px] md:w-[56px]`}>
+                <CheckCircle2 className="w-[26px] h-[26px]" strokeWidth={1.85} style={{ color: ds.iconGold }} aria-hidden />
+              </div>
+              <span className={`text-[12px] font-bold uppercase tracking-[0.14em] ${accentEyebrowClass}`}>{t('solutionLabel')}</span>
             </div>
-            <p
-              className="text-base font-medium mb-5"
-              style={{ color: '#f5f5f5' }}
-            >
+            <p className="text-[1.15rem] md:text-[1.25rem] font-semibold mb-9 leading-snug tracking-tight" style={{ color: ds.text }}>
               {t('solutionHeadline')}
             </p>
-            <ul className="space-y-4">
-              {solutions.map((solution) => (
-                <li key={solution} className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={16}
-                    className="mt-0.5 shrink-0"
-                    style={{ color: '#FF8411' }}
-                  />
-                  <span className="text-sm leading-relaxed" style={{ color: '#a1a1aa' }}>
+            <ul className="space-y-7">
+              {solutions.map((solution, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span className={`${iconWellSmGlyphClass} mt-1 flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg border-0`}>
+                    <CheckCircle2 className="h-[15px] w-[15px]" strokeWidth={2} style={{ color: ds.iconGold }} aria-hidden />
+                  </span>
+                  <span className="text-[15.5px] md:text-[1.02rem] leading-[1.7]" style={{ color: ds.textSecondary }}>
                     {solution}
                   </span>
                 </li>

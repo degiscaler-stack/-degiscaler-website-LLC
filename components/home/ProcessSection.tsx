@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { contentMax, ds, sectionPad, sectionIntroBottom, sectionTitleClass, accentEyebrowClass, accentStatClass, cardSurfaceBgImage, cardTopHighlight, iconWellGlyphClass } from './homeTheme';
 
 export default function ProcessSection() {
   const t = useTranslations('home.process');
@@ -7,73 +8,79 @@ export default function ProcessSection() {
 
   return (
     <section
-      className="py-20 lg:py-28"
-      style={{ backgroundColor: '#0d0d0d', borderTop: '1px solid #1a1a1a' }}
+      className={`${sectionPad} relative`}
+      style={{
+        backgroundColor: ds.bgAlt,
+        borderTop: `1px solid ${ds.borderStrong}`,
+      }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span
-            className="inline-block text-xs font-semibold uppercase tracking-widest mb-3"
-            style={{ color: '#FF8411' }}
-          >
+      <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
+        <div className={`max-w-[46rem] mx-auto text-center ${sectionIntroBottom}`}>
+          <span className={`inline-block text-[12px] font-bold uppercase tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>
             {t('sectionLabel')}
           </span>
-          <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold"
-            style={{ color: '#f5f5f5' }}
-          >
+          <h2 className={sectionTitleClass} style={{ color: ds.text }}>
             {t('headline')}
           </h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative">
-              {/* Connector line (desktop) */}
-              {i < steps.length - 1 && (
+        <div className="relative">
+          {/* Desktop timeline spine */}
+          <div
+            className="pointer-events-none absolute z-0 hidden xl:block inset-x-[8%] top-[62px]"
+            aria-hidden
+          >
+            <div
+              className="h-[1px] rounded-full w-full opacity-95"
+              style={{
+                background:
+                  'linear-gradient(90deg, transparent 6%, rgba(255,132,17,0.12) 18%, rgba(232,204,101,0.14) 50%, rgba(255,132,17,0.12) 82%, transparent 94%)',
+              }}
+            />
+            <div className="flex justify-between mt-[-5px] px-[5%]">
+              {steps.map((s) => (
                 <div
-                  className="absolute top-5 start-full w-full h-px hidden lg:block"
+                  key={s.number}
+                  className="size-2.5 rounded-full border shrink-0"
                   style={{
-                    background:
-                      'linear-gradient(to right, #2a2a2a, transparent)',
-                    width: 'calc(100% - 2rem)',
-                    transform: 'translateX(1rem)',
+                    borderColor: ds.warmIconBorder,
+                    backgroundColor: '#121110',
+                    boxShadow: `0 0 0 3px ${ds.bgAlt}, inset 0 0 0 1px rgba(255,132,17,0.15)`,
                   }}
-                  aria-hidden="true"
                 />
-              )}
-
-              <div
-                className="rounded-xl p-6 h-full"
-                style={{
-                  backgroundColor: '#111111',
-                  border: '1px solid #1a1a1a',
-                }}
-              >
-                {/* Step number */}
-                <div className="mb-4 flex items-center gap-3">
-                  <span
-                    className="text-2xl font-bold tabular-nums"
-                    style={{ color: 'rgba(255,132,17,0.2)' }}
-                  >
-                    {step.number}
-                  </span>
-                </div>
-
-                <h3
-                  className="text-base font-semibold mb-2"
-                  style={{ color: '#f5f5f5' }}
-                >
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#71717a' }}>
-                  {step.description}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className="relative z-[1] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-10">
+            {steps.map((step) => (
+              <div key={step.number} className="group">
+                <div
+                  className="rounded-2xl md:rounded-[1.4rem] h-full flex flex-col transition-colors duration-200 xl:pt-[4.75rem]"
+                  style={{
+                    backgroundImage: cardSurfaceBgImage,
+                    backgroundColor: ds.cardElevated,
+                    border: `1px solid ${ds.borderStrong}`,
+                    padding: 'clamp(1.85rem, 4.5vw, 2.5rem)',
+                    boxShadow: `${cardTopHighlight}, 0 18px 46px rgba(0,0,0,0.32)`,
+                  }}
+                >
+                  <div className={`${iconWellGlyphClass} mb-8 inline-flex size-[56px] shrink-0 items-center justify-center rounded-xl border-0`}>
+                    <span className={`text-[1.2rem] font-bold tabular-nums tracking-tight ${accentStatClass}`}>
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="text-[1.1rem] md:text-[1.15rem] font-bold mb-4 tracking-tight leading-snug" style={{ color: ds.text }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-[15.5px] leading-[1.72] flex-1" style={{ color: ds.textMuted }}>
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

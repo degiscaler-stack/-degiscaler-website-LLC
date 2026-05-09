@@ -1,45 +1,76 @@
-import { useTranslations } from 'next-intl';
+﻿import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
+import { contentMax, ds, sectionPad, sectionTitleClass, primaryBtnStrongClass, secondaryBtnClass, cardSurfaceBgImage, cardTopHighlight } from './homeTheme';
 
 export default function FinalCta() {
   const t = useTranslations('home.cta');
 
   return (
     <section
-      className="py-20 lg:py-24"
-      style={{ backgroundColor: '#0a0a0a', borderTop: '1px solid #1a1a1a' }}
+      className={`${sectionPad} relative`}
+      style={{
+        backgroundColor: ds.bgMain,
+        borderTop: `1px solid ${ds.borderStrong}`,
+        backgroundImage:
+          'linear-gradient(180deg, rgba(232,204,101,0.015) 0%, transparent 40%), linear-gradient(90deg, rgba(255,132,17,0.02) 0%, transparent 35%, transparent 65%, rgba(232,204,101,0.02) 100%)',
+      }}
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
         <div
-          className="w-12 h-1 rounded-full mx-auto mb-8"
-          style={{ backgroundColor: '#FF8411' }}
-        />
-
-        <h2
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
-          style={{ color: '#f5f5f5' }}
+          className="rounded-2xl md:rounded-[1.75rem] px-8 py-14 md:px-16 md:py-16 lg:px-20 lg:py-[4.5rem] text-center relative overflow-hidden border"
+          style={{
+            borderColor: ds.border,
+            backgroundImage: [
+              'linear-gradient(90deg, rgba(255,132,17,0.07) 0%, transparent 18%, transparent 82%, rgba(232,204,101,0.055) 100%)',
+              'linear-gradient(180deg, rgba(232,204,101,0.03) 0%, transparent 45%)',
+              cardSurfaceBgImage,
+            ].join(', '),
+            backgroundColor: ds.cardElevated,
+            boxShadow: `${cardTopHighlight}, 0 36px 88px rgba(0,0,0,0.52)`,
+          }}
         >
-          {t('headline')}
-        </h2>
-        <p className="text-base mb-10 max-w-xl mx-auto" style={{ color: '#71717a' }}>
-          {t('subheadline')}
-        </p>
+          <div className="relative max-w-[48rem] mx-auto z-[1]">
+            <div
+              className="w-20 h-[3px] rounded-full mx-auto mb-10 md:mb-12"
+              style={{
+                background:
+                  'linear-gradient(90deg, transparent, rgba(255,132,17,0.45), rgba(232,204,101,0.5), transparent)',
+              }}
+            />
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            href="/pricing"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors w-full sm:w-auto justify-center bg-[#FF8411] text-white hover:bg-[#e87510]"
-          >
-            {t('ctaPrimary')}
-            <ArrowRight size={16} />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors w-full sm:w-auto justify-center border border-[#2a2a2a] text-[#a1a1aa] hover:border-[#3f3f46] hover:text-zinc-100"
-          >
-            {t('ctaSecondary')}
-          </Link>
+            <h2 className={`${sectionTitleClass} mb-7 md:mb-8`} style={{ color: ds.text }}>
+              {t('headline')}
+            </h2>
+            <p
+              className="text-[1.05rem] md:text-[1.125rem] mb-11 md:mb-12 leading-[1.72] max-w-[40rem] mx-auto"
+              style={{ color: ds.textMuted }}
+            >
+              {t('subheadline')}
+            </p>
+
+            <div className="relative flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-4 md:gap-5 w-full max-w-md sm:max-w-none mx-auto">
+              <div className="relative flex w-full justify-center sm:w-auto">
+                <div
+                  className="final-cta-primary-glow absolute left-1/2 top-1/2 z-0 h-[140px] w-[min(380px,92vw)] -translate-x-1/2 -translate-y-[42%] opacity-90"
+                  aria-hidden
+                />
+                <Link
+                  href="/pricing"
+                  className={`${primaryBtnStrongClass} group relative z-[2] inline-flex w-full items-center justify-center gap-2.5 rounded-xl px-12 py-4 text-[16px] font-semibold md:px-14 md:py-[1.15rem] sm:w-auto`}
+                >
+                  {t('ctaPrimary')}
+                  <ArrowRight className="transition-transform group-hover:translate-x-0.5 rtl:rotate-180" size={20} aria-hidden />
+                </Link>
+              </div>
+              <Link
+                href="/contact"
+                className={`${secondaryBtnClass} relative z-[2] inline-flex w-full items-center justify-center gap-2.5 rounded-xl px-12 py-4 text-[16px] font-semibold md:px-14 md:py-[1.15rem] sm:w-auto`}
+              >
+                {t('ctaSecondary')}
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

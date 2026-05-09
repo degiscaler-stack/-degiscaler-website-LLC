@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-@theme {
-  --color-accent: #FF8411;
-  --color-accent-hover: #e87510;
-  --color-accent-muted: rgba(255, 132, 17, 0.1);
-  --color-accent-border: rgba(255, 132, 17, 0.25);
+:root {
+  --ds-bg-main: #050505;
+  --ds-accent: #d4af37;
+  --ds-accent-hover: #e6c65a;
+  --ds-border: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -12,24 +12,539 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
+  background-color: var(--ds-bg-main);
+  color: #f5f2e9;
+}
+
+/* —— Premium accent system: gradient text + logo + micro glyphs (#ff8411 · #d6a700 · #e8cc65) */
+
+.text-accent-gradient-eyebrow {
+  background-image: linear-gradient(
+    108deg,
+    #e8cc65 8%,
+    #d6a700 38%,
+    #ff8411 66%,
+    #d6a700 82%,
+    #e8cc65 98%
+  );
+  background-size: 118% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-accent-gradient-eyebrow {
+    color: #e8cc65;
+  }
+}
+
+/* Stronger readability on dark hero backgrounds — subtle halo, inherits eyebrow gradient */
+.hero-accent-eyebrow {
+  filter: drop-shadow(0 0 12px rgba(255, 132, 17, 0.16)) drop-shadow(0 0 22px rgba(232, 204, 101, 0.09));
+}
+
+.text-accent-gradient-stat {
+  background-image: linear-gradient(168deg, #e8cc65 14%, #d6a700 50%, #ff8411 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-accent-gradient-stat {
+    color: #e8cc65;
+  }
+}
+
+/* Softer gold for featured price (homepage pricing) — accent triad only */
+.text-price-muted-gold {
+  background-image: linear-gradient(162deg, #e8cc65 14%, #d6a700 52%, #ff8411 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-price-muted-gold {
+    color: #d9c892;
+  }
+}
+
+.logo-brand-word {
+  display: inline-block;
+  background-image: linear-gradient(102deg, #ff8411 0%, #d6a700 43%, #e8cc65 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 14px rgba(255, 132, 17, 0.12)) drop-shadow(0 0 22px rgba(232, 204, 101, 0.07));
+}
+
+.logo-brand-group:hover .logo-brand-word {
+  filter: drop-shadow(0 0 18px rgba(255, 132, 17, 0.16)) drop-shadow(0 0 28px rgba(232, 204, 101, 0.09));
+}
+
+.accent-dot-micro {
+  display: block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 32% 28%, #e8cc65 0%, #d6a700 52%, #ff8411 98%);
+  box-shadow: 0 0 14px rgba(255, 132, 17, 0.38);
 }
 
 ::selection {
-  background-color: rgba(255, 132, 17, 0.25);
+  background-color: rgba(212, 175, 55, 0.28);
 }
 
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #2a2a2e;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF8411;
+  background: #d4af37;
+}
+
+/* —— Homepage CTAs — refined amber gradient (#ff8411 · #d6a700 · #e8cc65 + muted bronze veil) */
+
+.btn-primary-premium {
+  border: 1px solid rgba(232, 204, 101, 0.26);
+  color: #1a1208;
+  font-weight: 600;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(156, 107, 22, 0.09) 100%),
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.11) 0%,
+      rgba(255, 255, 255, 0.02) 45%,
+      rgba(255, 255, 255, 0.09) 100%
+    ),
+    linear-gradient(135deg, #ff8411 0%, #d6a700 48%, #e8cc65 100%);
+  box-shadow:
+    0 10px 28px rgba(255, 132, 17, 0.18),
+    0 0 24px rgba(232, 204, 101, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.btn-primary-premium:hover {
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 0%, rgba(156, 107, 22, 0.07) 100%),
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.04) 45%,
+      rgba(255, 255, 255, 0.12) 100%
+    ),
+    linear-gradient(135deg, #ff8c1c 0%, #dbaf08 48%, #ebcf70 100%);
+  box-shadow:
+    0 12px 30px rgba(255, 132, 17, 0.2),
+    0 0 28px rgba(232, 204, 101, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+/* Slightly more presence for hero / final CTA primary — still restrained */
+.btn-primary-premium--strong {
+  box-shadow:
+    0 10px 28px rgba(255, 132, 17, 0.2),
+    0 0 26px rgba(232, 204, 101, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.btn-primary-premium--strong:hover {
+  box-shadow:
+    0 12px 32px rgba(255, 132, 17, 0.22),
+    0 0 30px rgba(232, 204, 101, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* Homepage pricing — tier cards: dark CTA with gradient edge (accent triad) */
+.btn-pricing-card-secondary {
+  background-color: #111214;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 132, 17, 0.06) 0%,
+    rgba(232, 204, 101, 0.03) 38%,
+    transparent 72%
+  );
+  color: #ede8dc;
+  font-weight: 600;
+  border: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(214, 167, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 24px rgba(232, 204, 101, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pricing-card-secondary:hover {
+  color: #f5f2e9;
+  background-image: linear-gradient(
+    180deg,
+    rgba(232, 204, 101, 0.1) 0%,
+    rgba(255, 132, 17, 0.05) 45%,
+    transparent 76%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgba(232, 204, 101, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 30px rgba(232, 204, 101, 0.14),
+    0 12px 32px rgba(255, 132, 17, 0.1);
+}
+
+/* Dark body; accent uses orange/gold only (no dark stops in overlays) */
+.btn-secondary-premium {
+  background-color: rgba(13, 13, 15, 0.96);
+  color: #b8b3a7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.btn-secondary-premium:hover {
+  color: #f5f2e9;
+  border-color: rgba(232, 204, 101, 0.32);
+  background-image: linear-gradient(
+    115deg,
+    rgba(255, 132, 17, 0.1) 0%,
+    rgba(214, 167, 0, 0.06) 48%,
+    rgba(232, 204, 101, 0.1) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 132, 17, 0.18),
+    0 0 20px rgba(255, 132, 17, 0.1),
+    0 0 28px rgba(232, 204, 101, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Icon wells: dark interior = flat background-color; rim = pigment gradient only */
+.icon-box-premium {
+  position: relative;
+  isolation: isolate;
+  flex-shrink: 0;
+  background-color: #111214;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0 18px rgba(255, 132, 17, 0.22),
+    0 0 26px rgba(232, 204, 101, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.icon-box-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #ff8411 0%, #d6a700 48%, #e8cc65 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.icon-box-premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+.icon-box-premium:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    0 0 26px rgba(255, 132, 17, 0.32),
+    0 0 40px rgba(232, 204, 101, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.icon-box-premium.icon-box-premium--sm::before {
+  padding: 1.5px;
+}
+
+.icon-box-premium.icon-box-premium--sm {
+  box-shadow:
+    0 0 12px rgba(255, 132, 17, 0.2),
+    0 0 20px rgba(232, 204, 101, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.icon-box-premium.icon-box-premium--sm:hover {
+  box-shadow:
+    0 0 18px rgba(255, 132, 17, 0.28),
+    0 0 28px rgba(232, 204, 101, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Footer contact icons — compact, same gradient rim, softer glow */
+.icon-box-premium.icon-footer-well:not(:hover) {
+  box-shadow:
+    0 0 5px rgba(255, 132, 17, 0.07),
+    0 0 9px rgba(232, 204, 101, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  filter: none;
+}
+
+.icon-box-premium.icon-box-premium--sm.icon-footer-well:not(:hover) {
+  box-shadow:
+    0 0 5px rgba(255, 132, 17, 0.07),
+    0 0 9px rgba(232, 204, 101, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  filter: none;
+}
+
+.icon-box-premium.icon-footer-well:hover,
+.icon-box-premium.icon-box-premium--sm.icon-footer-well:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow:
+    0 0 7px rgba(255, 132, 17, 0.09),
+    0 0 11px rgba(232, 204, 101, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+/* Compact gradient rim around small inline glyphs (lists, bullets) */
+.icon-box-premium.icon-box-premium--glyph::before {
+  padding: 1px;
+}
+
+.icon-box-premium.icon-box-premium--glyph:not(:hover) {
+  box-shadow:
+    0 0 10px rgba(255, 132, 17, 0.16),
+    0 0 16px rgba(232, 204, 101, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Pricing row — shared rim (accent triad only, matches main icon wells) */
+.icon-box-premium.icon-pricing-well::before {
+  background: linear-gradient(135deg, #ff8411 0%, #d6a700 48%, #e8cc65 100%);
+}
+
+.icon-box-premium.icon-pricing-well:not(:hover) {
+  box-shadow:
+    0 0 9px rgba(255, 132, 17, 0.12),
+    0 0 16px rgba(232, 204, 101, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  filter: none;
+}
+
+.icon-box-premium.icon-box-premium--sm.icon-pricing-well:not(:hover) {
+  box-shadow:
+    0 0 9px rgba(255, 132, 17, 0.12),
+    0 0 16px rgba(232, 204, 101, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  filter: none;
+}
+
+.icon-box-premium.icon-pricing-well:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 0 12px rgba(255, 132, 17, 0.14),
+    0 0 18px rgba(232, 204, 101, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.icon-box-premium.icon-box-premium--sm.icon-pricing-well:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 0 12px rgba(255, 132, 17, 0.14),
+    0 0 18px rgba(232, 204, 101, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Homepage pricing cards — balanced premium surfaces */
+.pricing-card-surface {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.056),
+    0 0 1px rgba(255, 132, 17, 0.12),
+    0 19px 46px rgba(0, 0, 0, 0.38),
+    0 0 34px rgba(232, 204, 101, 0.045);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pricing-card-surface--featured {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.056),
+    0 0 1px rgba(232, 204, 101, 0.22),
+    0 21px 52px rgba(0, 0, 0, 0.44),
+    0 0 42px rgba(232, 204, 101, 0.065);
+}
+
+.pricing-card-surface--standard:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.056),
+    0 0 1px rgba(255, 132, 17, 0.18),
+    0 22px 52px rgba(0, 0, 0, 0.42),
+    0 0 44px rgba(232, 204, 101, 0.08);
+}
+
+.pricing-card-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(232, 204, 101, 0.13) 24%,
+    rgba(255, 132, 17, 0.1) 50%,
+    rgba(232, 204, 101, 0.13) 76%,
+    transparent 100%
+  );
+}
+
+.lang-switcher-trigger {
+  background-color: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #b8b3a7;
+  transition:
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lang-switcher-trigger:hover {
+  color: #e8cc65;
+  border-color: rgba(232, 204, 101, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(255, 132, 17, 0.28),
+    0 0 18px rgba(255, 132, 17, 0.16),
+    0 0 28px rgba(232, 204, 101, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.lang-switcher-panel {
+  background-color: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 1px 0 0 rgba(255, 132, 17, 0.08),
+    inset -1px 0 0 rgba(232, 204, 101, 0.06);
+}
+
+.lang-switcher-option {
+  color: #b8b3a7;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lang-switcher-option:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #f5f2e9;
+  box-shadow:
+    inset 2px 0 0 rgba(255, 132, 17, 0.28),
+    inset -2px 0 0 rgba(232, 204, 101, 0.18);
+}
+
+.lang-switcher-option-active {
+  color: #e8cc65;
+  background-color: rgba(232, 204, 101, 0.08);
+}
+
+.nav-link-muted {
+  color: #b8b3a7;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-link-muted:hover {
+  color: #e8cc65;
+  text-shadow:
+    0 0 16px rgba(255, 132, 17, 0.35),
+    0 0 28px rgba(232, 204, 101, 0.22);
+}
+
+
+/* —— Homepage testimonials infinite marquee — */
+@keyframes home-testimonials-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.home-testimonials-marquee-track {
+  animation: home-testimonials-marquee 88s linear infinite;
+  will-change: transform;
+}
+
+.home-testimonials-marquee-track--paused {
+  animation-play-state: paused !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-testimonials-marquee-zone:hover .home-testimonials-marquee-track:not(.home-testimonials-marquee-track--paused) {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-testimonials-marquee-track {
+    animation-play-state: paused !important;
+  }
+}
+
+.final-cta-primary-glow {
+  background: radial-gradient(
+    ellipse 88% 78% at 50% 48%,
+    rgba(255, 132, 17, 0.22) 0%,
+    rgba(156, 107, 22, 0.12) 34%,
+    rgba(232, 204, 101, 0.1) 56%,
+    transparent 72%
+  );
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+/* —— Chat widget — typing dots (rule-based assistant) */
+@keyframes chat-typing-bounce {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.42;
+  }
+  35% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.chat-typing-dot {
+  animation: chat-typing-bounce 1.05s ease-in-out infinite;
+}
+
+/* Chat panel open / close motion (premium, no deps) */
+.chat-panel-motion {
+  transition:
+    opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chat-panel-motion--closed {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0) scale(0.965);
+  pointer-events: none;
+}
+
+.chat-panel-motion--open {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  pointer-events: auto;
 }

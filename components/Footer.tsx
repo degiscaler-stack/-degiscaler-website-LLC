@@ -1,69 +1,56 @@
-import { useTranslations } from 'next-intl';
+﻿import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail, Clock } from 'lucide-react';
+import BrandLogo from '@/components/BrandLogo';
+import { ds } from '@/components/home/homeTheme';
 
 export default function Footer() {
   const t = useTranslations('footer');
-  const year = new Date().getFullYear();
 
   return (
     <footer
       style={{
-        backgroundColor: '#080808',
-        borderTop: '1px solid #1a1a1a',
+        backgroundColor: ds.bgAlt,
+        borderTop: `1px solid ${ds.borderStrong}`,
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 py-[4.75rem] md:py-24 lg:py-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-14 lg:gap-16 xl:gap-20">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-1 mb-4">
-              <span className="text-lg font-bold" style={{ color: '#FF8411' }}>
-                Degi
-              </span>
-              <span className="text-lg font-bold text-white">Scaler</span>
-              <span className="text-xs ms-1" style={{ color: '#52525b' }}>
-                LLC
-              </span>
+            <div className="mb-7">
+              <BrandLogo />
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: '#71717a' }}>
+            <p className="text-[15.5px] md:text-[1.02rem] leading-[1.72] max-w-[24rem]" style={{ color: ds.textSecondary }}>
               {t('tagline')}
             </p>
           </div>
 
-          {/* Company links */}
           <div>
             <h3
-              className="text-xs font-semibold uppercase tracking-wider mb-4"
-              style={{ color: '#a1a1aa' }}
+              className="text-[11px] font-bold uppercase tracking-[0.22em] mb-7"
+              style={{ color: ds.textMuted }}
             >
               {t('company')}
             </h3>
-            <ul className="space-y-2.5">
-              {(['services', 'pricing', 'about', 'contact', 'faq'] as const).map(
-                (key) => (
-                  <li key={key}>
-                    <Link
-                      href={`/${key}`}
-                      className="text-sm transition-colors text-[#71717a] hover:text-zinc-100"
-                    >
-                      {t(`links.${key}`)}
-                    </Link>
-                  </li>
-                )
-              )}
+            <ul className="space-y-5">
+              {(['services', 'pricing', 'about', 'contact', 'faq'] as const).map((key) => (
+                <li key={key}>
+                  <Link href={`/${key}`} className="text-[15.5px] transition-colors hover:text-[#e8cc65]" style={{ color: ds.textSecondary }}>
+                    {t(`links.${key}`)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal links */}
           <div>
             <h3
-              className="text-xs font-semibold uppercase tracking-wider mb-4"
-              style={{ color: '#a1a1aa' }}
+              className="text-[11px] font-bold uppercase tracking-[0.22em] mb-7"
+              style={{ color: ds.textMuted }}
             >
               {t('legal')}
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-5">
               {(
                 [
                   ['privacy', '/privacy-policy'],
@@ -72,10 +59,7 @@ export default function Footer() {
                 ] as const
               ).map(([key, href]) => (
                 <li key={key}>
-                  <Link
-                    href={href}
-                    className="text-sm transition-colors text-[#71717a] hover:text-zinc-100"
-                  >
+                  <Link href={href} className="text-[15.5px] transition-colors hover:text-[#e8cc65]" style={{ color: ds.textSecondary }}>
                     {t(`links.${key}`)}
                   </Link>
                 </li>
@@ -83,27 +67,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3
-              className="text-xs font-semibold uppercase tracking-wider mb-4"
-              style={{ color: '#a1a1aa' }}
+              className="text-[11px] font-bold uppercase tracking-[0.22em] mb-7"
+              style={{ color: ds.textMuted }}
             >
               {t('contactTitle')}
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <Mail size={14} className="mt-0.5 shrink-0" style={{ color: '#FF8411' }} />
-                <a
-                  href="mailto:support@degiscaler.com"
-                  className="text-sm transition-colors text-[#71717a] hover:text-[#FF8411]"
-                >
-                  {t('supportEmail')}
-                </a>
+            <div className="space-y-6">
+              <div className="flex items-start gap-3.5">
+                <div className="icon-box-premium icon-box-premium--sm icon-box-premium--glyph icon-footer-well flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-0 sm:h-[32px] sm:w-[32px]">
+                  <Mail size={16} strokeWidth={1.85} style={{ color: ds.iconGold }} aria-hidden />
+                </div>
+                <div className="pt-1">
+                  <a
+                    href="mailto:support@degiscaler.com"
+                    className="text-[15.5px] transition-colors hover:text-[#e8cc65]"
+                    style={{ color: ds.textSecondary }}
+                  >
+                    {t('supportEmail')}
+                  </a>
+                </div>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock size={14} className="mt-0.5 shrink-0" style={{ color: '#71717a' }} />
-                <span className="text-sm" style={{ color: '#52525b' }}>
+              <div className="flex items-start gap-3.5">
+                <div className="icon-box-premium icon-box-premium--sm icon-box-premium--glyph icon-footer-well flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-0 sm:h-[32px] sm:w-[32px]">
+                  <Clock size={16} strokeWidth={1.85} style={{ color: ds.iconGold }} aria-hidden />
+                </div>
+                <span className="text-[15.5px] leading-relaxed pt-1 max-w-[16rem]" style={{ color: ds.textMuted }}>
                   {t('responseTime')}
                 </span>
               </div>
@@ -111,18 +101,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
         <div
-          className="mt-10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-          style={{ borderTop: '1px solid #1a1a1a' }}
+          className="mt-16 md:mt-20 pt-11 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10"
+          style={{ borderTop: `1px solid ${ds.border}` }}
         >
-          <p className="text-xs" style={{ color: '#52525b' }}>
-            &copy; {year} {t('copyright')}
+          <p className="text-[13.5px] leading-relaxed" style={{ color: ds.textMuted }} suppressHydrationWarning>
+            &copy; {new Date().getFullYear()} {t('copyright')}
           </p>
-          <p
-            className="text-xs max-w-lg leading-relaxed"
-            style={{ color: '#3f3f46' }}
-          >
+          <p className="text-[13px] md:text-[13.5px] max-w-2xl leading-[1.7]" style={{ color: ds.textMuted, opacity: 0.92 }}>
             {t('disclaimer')}
           </p>
         </div>
