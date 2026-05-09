@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useId, useRef, useState } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import {
   ds,
@@ -12,7 +11,6 @@ import {
   cardSurfaceBgImage,
   cardTopHighlight,
 } from './homeTheme';
-import { TESTIMONIAL_AVATAR_URLS } from './testimonialAvatars';
 
 type Testimonial = {
   name: string;
@@ -30,6 +28,57 @@ function starFillState(ratingStr: string, index: number): 'full' | 'soft' | 'dim
   if (index < f) return 'full';
   if (index === f && frac >= 0.25) return 'soft';
   return 'dim';
+}
+
+/** CSS-only “avatar”: initials in a metallic orb (no external images). */
+function testimonialAvatarInitials(name: string): string {
+  const n = name.trim();
+  if (!n) return '—';
+  const parts = n.split(/\s+/).filter(Boolean);
+  const firstGrapheme = (s: string) => [...s][0] ?? '';
+  if (parts.length >= 2) {
+    return `${firstGrapheme(parts[0])}${firstGrapheme(parts[1])}`;
+  }
+  return [...parts[0]].slice(0, 2).join('');
+}
+
+function avatarOrbAngle(name: string): number {
+  let h = 0;
+  for (let i = 0; i < name.length; i += 1) {
+    h = (h * 31 + name.charCodeAt(i)) | 0;
+  }
+  return Math.abs(h) % 72;
+}
+
+function TestimonialAvatarGlyph({ name }: { name: string }) {
+  const label = testimonialAvatarInitials(name);
+  const tilt = avatarOrbAngle(name);
+
+  return (
+    <div
+      className="relative size-[52px] shrink-0 overflow-hidden rounded-full ring-1 ring-[rgba(232,204,101,0.28)] shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_10px_24px_rgba(0,0,0,0.55)]"
+      aria-hidden
+      style={{
+        backgroundImage: [
+          `conic-gradient(from ${tilt}deg, rgba(232,204,101,0.42) 0%, rgba(255,132,17,0.18) 32%, rgba(21,22,26,1) 58%, rgba(214,167,0,0.22) 100%)`,
+          'radial-gradient(135% 120% at 28% 18%, rgba(255,255,255,0.16) 0%, transparent 48%)',
+        ].join(', '),
+        boxShadow:
+          'inset 0 1px 0 rgba(255,255,255,0.07), inset 0 -8px 18px rgba(0,0,0,0.42), 0 10px 24px rgba(0,0,0,0.55)',
+      }}
+    >
+      <span
+        className="flex size-full items-center justify-center text-[13.5px] font-bold uppercase leading-none tracking-[0.04em]"
+        style={{
+          textShadow:
+            '0 1px 0 rgba(0,0,0,0.55), 0 0 18px rgba(214,167,0,0.35)',
+          color: ds.text,
+        }}
+      >
+        {label}
+      </span>
+    </div>
+  );
 }
 
 function GradientStar({
@@ -67,12 +116,10 @@ function GradientStar({
 function TestimonialCard({
   item,
   ratingSuffix,
-  avatarSrc,
   starGradientId,
 }: {
   item: Testimonial;
   ratingSuffix: string;
-  avatarSrc: string;
   starGradientId: string;
 }) {
   return (
@@ -89,20 +136,7 @@ function TestimonialCard({
       }}
     >
       <div className="flex items-start gap-4">
-        <div
-          className="relative size-[52px] shrink-0 overflow-hidden rounded-full ring-1 ring-[rgba(232,204,101,0.28)] shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_10px_24px_rgba(0,0,0,0.55)]"
-          aria-hidden
-        >
-          <Image
-            src={avatarSrc}
-            alt=""
-            width={104}
-            height={104}
-            className="size-full object-cover object-center"
-            sizes="52px"
-            quality={85}
-          />
-        </div>
+        <TestimonialAvatarGlyph name={item.name} />
         <div className="min-w-0 flex-1 text-start">
           <p className="text-[15.5px] font-bold leading-snug tracking-tight" style={{ color: ds.text }}>
             {item.name}
@@ -179,7 +213,6 @@ export default function TestimonialsSection() {
     setTouchPaused(false);
   }, [clearTouchTimer]);
 
-  const unique = Math.max(items.length, 1);
   const doubled = [...items, ...items];
 
   return (
@@ -256,7 +289,6 @@ export default function TestimonialsSection() {
               item={item}
               ratingSuffix={ratingSuffix}
               starGradientId={starGradientId}
-              avatarSrc={TESTIMONIAL_AVATAR_URLS[idx % unique]}
             />
           ))}
         </div>

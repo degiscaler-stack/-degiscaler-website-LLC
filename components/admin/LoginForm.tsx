@@ -1,0 +1,59 @@
+'use client';
+
+import { useActionState } from 'react';
+import { Loader2 } from 'lucide-react';
+import { loginAdminAction, type LoginActionState } from '@/app/admin/login/actions';
+
+const initialState: LoginActionState = { error: null };
+
+export function LoginForm() {
+  const [state, formAction, isPending] = useActionState(loginAdminAction, initialState);
+
+  return (
+    <form action={formAction} className="space-y-5">
+      {state?.error ? (
+        <div
+          className="rounded-lg border border-red-500/30 bg-red-950/35 px-3 py-2 text-sm text-red-200"
+          role="alert"
+        >
+          {state.error}
+        </div>
+      ) : null}
+
+      <label className="block space-y-2">
+        <span className="text-xs uppercase tracking-[0.12em] text-neutral-400">Email</span>
+        <input
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          disabled={isPending}
+          className="w-full rounded-lg border border-[var(--ds-admin-border)] bg-[#111] px-3 py-2.5 text-sm text-white outline-none placeholder:text-neutral-600 focus:border-[color-mix(in_srgb,var(--ds-admin-accent)_45%,transparent)] disabled:opacity-60"
+          placeholder="admin@yourcompany.com"
+        />
+      </label>
+
+      <label className="block space-y-2">
+        <span className="text-xs uppercase tracking-[0.12em] text-neutral-400">Password</span>
+        <input
+          name="password"
+          type="password"
+          autoComplete="current-password"
+          required
+          disabled={isPending}
+          className="w-full rounded-lg border border-[var(--ds-admin-border)] bg-[#111] px-3 py-2.5 text-sm text-white outline-none placeholder:text-neutral-600 focus:border-[color-mix(in_srgb,var(--ds-admin-accent)_45%,transparent)] disabled:opacity-60"
+          placeholder="••••••••"
+        />
+      </label>
+
+      <button
+        type="submit"
+        disabled={isPending}
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#b8860b] via-[#d4af37] to-[#e8cc65] px-4 py-2.5 text-sm font-semibold text-neutral-950 shadow-[0_12px_40px_-12px_rgba(212,175,55,0.55)] hover:opacity-95 disabled:opacity-60"
+      >
+        {isPending ? <Loader2 className="size-4 animate-spin" aria-hidden /> : null}
+        Sign in
+      </button>
+    </form>
+  );
+}

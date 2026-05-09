@@ -3,17 +3,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
-      },
-    ],
-  },
-};
+/** No remote image domains — testimonials and other visuals use CSS / local assets only. */
+const nextConfig: NextConfig = {};
 
 export default withNextIntl(nextConfig);
-

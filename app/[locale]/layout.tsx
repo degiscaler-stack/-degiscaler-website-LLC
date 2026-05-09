@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Inter } from 'next/font/google';
+import { Inter, Cairo } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,6 +11,12 @@ import ChatWidget from '@/components/chat/ChatWidget';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'],
+  variable: '--font-cairo',
   display: 'swap',
 });
 
@@ -33,26 +39,20 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
   const isRtl = locale === 'ar';
+  const fontVars = [inter.variable, isRtl ? cairo.variable : ''].filter(Boolean).join(' ');
 
   return (
-    <html
-      lang={locale}
-      dir={isRtl ? 'rtl' : 'ltr'}
-      className={`${inter.variable}`}
-    >
-      <head>
-        {isRtl && (
-          <link
-            href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-          />
-        )}
-      </head>
-      <body
-        className="antialiased"
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(isRtl ? 'rtl' : 'ltr')};`,
+        }}
+      />
+      <div
+        className={`flex flex-col min-h-screen ${fontVars}`}
         style={{
           fontFamily: isRtl
-            ? "'Cairo', system-ui, sans-serif"
+            ? "var(--font-cairo), 'Cairo', system-ui, sans-serif"
             : "var(--font-inter, system-ui, sans-serif)",
           backgroundColor: '#050505',
           color: '#F5F2E9',
@@ -66,7 +66,7 @@ export default async function LocaleLayout({
           </div>
           <ChatWidget />
         </NextIntlClientProvider>
-      </body>
-    </html>
+      </div>
+    </>
   );
 }
