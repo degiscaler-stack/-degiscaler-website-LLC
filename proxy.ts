@@ -4,11 +4,21 @@ import type { NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 import { verifyAdminJwt } from '@/lib/auth/admin-jwt';
+import { applyPublicOriginToRedirect, buildPublicUrl } from '@/lib/public-url';
 
 const intlMiddleware = createMiddleware(routing);
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  if (
+    pathname.startsWith('/_next') ||
+    pathname === '/favicon.ico' ||
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml'
+  ) {
+    return NextResponse.next();
+  }
 
   if (pathname.startsWith('/api')) {
     return NextResponse.next();
@@ -26,21 +36,22 @@ export async function proxy(request: NextRequest) {
 
     if (isLoginPath) {
       if (valid) {
-        return NextResponse.redirect(new URL('/admin', request.url));
+        return NextResponse.redirect(buildPublicUrl('/admin'));
       }
       return NextResponse.next();
     }
 
     if (!valid) {
-      const loginUrl = new URL('/admin/login', request.url);
+      const loginUrl = new URL(buildPublicUrl('/admin/login'));
       loginUrl.searchParams.set('next', pathname);
-      return NextResponse.redirect(loginUrl);
+      return NextResponse.redirect(loginUrl.toString());
     }
 
     return NextResponse.next();
   }
 
-  return intlMiddleware(request);
+  const intlResponse = intlMiddleware(request);
+  return applyPublicOriginToRedirect(intlResponse);
 }
 
 export const config = {
