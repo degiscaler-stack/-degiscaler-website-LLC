@@ -1,0 +1,53 @@
+import type { Prisma } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
+
+export function isDatabaseConfigured(): boolean {
+  return typeof process.env.DATABASE_URL === 'string' && process.env.DATABASE_URL.trim().length > 0;
+}
+
+export async function safeCreateOrder(
+  data: Prisma.OrderUncheckedCreateInput,
+): Promise<{ ok: true } | { ok: false }> {
+  if (!isDatabaseConfigured()) {
+    console.error('[safeCreateOrder] DATABASE_URL is not configured');
+    return { ok: false };
+  }
+  try {
+    await prisma.order.create({ data });
+    return { ok: true };
+  } catch (err) {
+    console.error('[safeCreateOrder]', err);
+    return { ok: false };
+  }
+}
+
+export async function safeCreateContactMessage(
+  data: Prisma.ContactMessageUncheckedCreateInput,
+): Promise<{ ok: true } | { ok: false }> {
+  if (!isDatabaseConfigured()) {
+    console.error('[safeCreateContactMessage] DATABASE_URL is not configured');
+    return { ok: false };
+  }
+  try {
+    await prisma.contactMessage.create({ data });
+    return { ok: true };
+  } catch (err) {
+    console.error('[safeCreateContactMessage]', err);
+    return { ok: false };
+  }
+}
+
+/** Single-package lookup; never throws. */
+export async function safeFindPackageBySlug(slug: string) {
+  if (!isDatabaseConfigured()) return null;
+  const trimmed = slug.trim();
+  if (!trimmed) return null;
+  try {
+    return await prisma.package.findFirst({
+      where: { slug: trimmed, isActive: true },
+    });
+  } catch (err) {
+    console.error('[safeFindPackageBySlug]', err);
+    return null;
+  }
+}

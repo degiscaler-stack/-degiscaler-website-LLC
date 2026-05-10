@@ -1,9 +1,9 @@
 'use server';
 
 import { getTranslations } from 'next-intl/server';
-import { prisma } from '@/lib/prisma';
 import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
+import { safeCreateContactMessage } from '@/lib/db/public-safe';
 
 export type ContactActionState = { error: string | null; ok?: boolean; redirectTo?: string };
 
@@ -16,12 +16,24 @@ export async function submitContactAction(
     ? localeRaw
     : routing.defaultLocale;
 
-  const fullName = String(formData.get('fullName') ?? '').trim();
+  const fullName =
+    String(formData.get('fullName') ?? formData.get('name') ?? '').trim();
   const email = String(formData.get('email') ?? '').trim();
   const budgetOrPackage = String(formData.get('budgetOrPackage') ?? '').trim() || null;
   const message = String(formData.get('message') ?? '').trim();
 
-  const tErr = await getTranslations({ locale, namespace: 'contactPage.errors' });
+  const errFallback: Record<string, string> = {
+    required: 'Please fill in all required fields.',
+    email: 'Please enter a valid email address.',
+    server: 'Something went wrong. Please try again shortly.',
+  };
+  let tErr = (k: string) => errFallback[k] ?? k;
+  try {
+    const gt = await getTranslations({ locale, namespace: 'contactPage.errors' });
+    tErr = (k: string) => gt(k as never);
+  } catch (err) {
+    console.error('[submitContactAction] getTranslations', err);
+  }
 
   if (!fullName || !email || !message) {
     return { error: tErr('required') };
@@ -30,19 +42,16 @@ export async function submitContactAction(
     return { error: tErr('email') };
   }
 
-  try {
-    await prisma.contactMessage.create({
-      data: {
-        fullName,
-        email,
-        budgetOrPackage,
-        message,
-        status: 'NEW',
-        locale,
-      },
-    });
-  } catch (err) {
-    console.error('[submitContactAction]', err);
+  const result = await safeCreateContactMessage({
+    fullName,
+    email,
+    budgetOrPackage,
+    message,
+    status: 'NEW',
+    locale,
+  });
+
+  if (!result.ok) {
     return { error: tErr('server') };
   }
 

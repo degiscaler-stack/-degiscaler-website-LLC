@@ -799,6 +799,11 @@
     "title": "Complete your request",
     "subtitle": "Tell us how to reach you. We will confirm your package and next steps.",
     "summaryLabel": "Selected package",
+    "fallbackSummaryLabel": "Request summary",
+    "fallbackSummaryTitle": "Project request",
+    "fallbackSummaryDescription": "Tell us what you need. Our team will follow up with options and next steps.",
+    "fallbackPackageNotice": "Live package details could not be loaded right now. Your request will still be submitted safely.",
+    "genericRequestHint": "Browse Pricing for consultation tiers, or send a general project request below.",
     "unknownPackage": "This package link is not valid. Please choose a consultation package from Pricing.",
     "fields": {
       "fullName": "Full name",

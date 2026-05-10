@@ -10,8 +10,27 @@ import {
   secondaryBtnClass,
 } from '@/components/home/homeTheme';
 
+const CONTACT_FALLBACK = {
+  eyebrow: 'DegiScaler',
+  headline: 'Contact',
+  subheadline: 'Tell us about your project — we will reply as soon as we can.',
+  pricingFallbackCta: 'View pricing',
+};
+
 export default async function ContactPageView({ locale }: { locale: string }) {
-  const t = await getTranslations('contactPage');
+  let copy = { ...CONTACT_FALLBACK };
+
+  try {
+    const t = await getTranslations({ locale, namespace: 'contactPage' });
+    copy = {
+      eyebrow: t('eyebrow'),
+      headline: t('headline'),
+      subheadline: t('subheadline'),
+      pricingFallbackCta: t('pricingFallbackCta'),
+    };
+  } catch (err) {
+    console.error('[ContactPageView] getTranslations', err);
+  }
 
   return (
     <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
@@ -21,7 +40,7 @@ export default async function ContactPageView({ locale }: { locale: string }) {
           borderBottom: `1px solid ${ds.borderStrong}`,
         }}
       >
-        <PageHero eyebrow={t('eyebrow')} title={t('headline')} subtitle={t('subheadline')} />
+        <PageHero eyebrow={copy.eyebrow} title={copy.headline} subtitle={copy.subheadline} />
       </section>
 
       <section
@@ -45,7 +64,7 @@ export default async function ContactPageView({ locale }: { locale: string }) {
           href="/pricing"
           className={`${secondaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
         >
-          {t('pricingFallbackCta')}
+          {copy.pricingFallbackCta}
         </Link>
       </section>
     </div>

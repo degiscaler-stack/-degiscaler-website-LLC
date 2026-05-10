@@ -7,6 +7,10 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  try {
+    setRequestLocale(locale);
+  } catch (err) {
+    console.error('[ContactPage] setRequestLocale', err);
+  }
   return <ContactPageView locale={locale} />;
 }

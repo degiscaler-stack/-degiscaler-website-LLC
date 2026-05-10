@@ -1,6 +1,6 @@
 import type { Package as DbPackage } from '@prisma/client';
-import { prisma } from '@/lib/prisma';
 import { translationIdToSlug } from '@/lib/packages/map-slug';
+import { safeFindPackageBySlug } from '@/lib/db/public-safe';
 
 export type DisplayPackage = {
   slug: string;
@@ -68,6 +68,7 @@ function fromFallback(p: FallbackPkg): DisplayPackage {
 /** Prefer active packages from DB; on failure or empty, use translated fallback list. */
 export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Promise<DisplayPackage[]> {
   try {
+    const { prisma } = await import('@/lib/prisma');
     const rows = await prisma.package.findMany({
       where: { isActive: true },
       orderBy: [{ sortOrder: 'asc' }, { title: 'asc' }],
@@ -75,8 +76,8 @@ export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Prom
     if (rows.length > 0) {
       return rows.map(fromDbRow);
     }
-  } catch {
-    // DB unavailable — fallback below
+  } catch (err) {
+    console.error('[loadDisplayPackages]', err);
   }
   return fallbackPackages.map(fromFallback);
 }
@@ -93,13 +94,11 @@ export async function resolvePackageForOrder(
   description: string;
   features: string[];
 } | null> {
-  const trimmed = slug?.trim();
-  if (!trimmed) return null;
-
   try {
-    const row = await prisma.package.findFirst({
-      where: { slug: trimmed, isActive: true },
-    });
+    const trimmed = slug?.trim();
+    if (!trimmed) return null;
+
+    const row = await safeFindPackageBySlug(trimmed);
     if (row) {
       return {
         packageId: row.id,
@@ -111,20 +110,21 @@ export async function resolvePackageForOrder(
         features: parseFeaturesJson(row.features),
       };
     }
-  } catch {
-    // fall through to fallback
-  }
 
-  const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === trimmed);
-  if (!fb) return null;
-  const d = fromFallback(fb);
-  return {
-    packageId: null,
-    packageSlug: d.slug,
-    packageTitle: d.title,
-    packagePrice: d.price,
-    currency: d.currency,
-    description: d.description,
-    features: d.features,
-  };
+    const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === trimmed);
+    if (!fb) return null;
+    const d = fromFallback(fb);
+    return {
+      packageId: null,
+      packageSlug: d.slug,
+      packageTitle: d.title,
+      packagePrice: d.price,
+      currency: d.currency,
+      description: d.description,
+      features: d.features,
+    };
+  } catch (err) {
+    console.error('[resolvePackageForOrder]', err);
+    return null;
+  }
 }

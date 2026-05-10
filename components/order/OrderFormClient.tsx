@@ -17,23 +17,21 @@ import {
   cardTopHighlight,
 } from '@/components/home/homeTheme';
 
-type Resolved = {
-  packageSlug: string;
+export type OrderFormDisplay = {
+  packageSlug: string | null;
   packageTitle: string;
-  packagePrice: string;
-  currency: string;
+  packagePrice: string | null;
+  currency: string | null;
   description: string;
-  features: string[];
+  usesFallbackSummary: boolean;
 };
 
 export default function OrderFormClient({
   locale,
-  packageSlug,
-  resolved,
+  display,
 }: {
   locale: string;
-  packageSlug: string;
-  resolved: Resolved;
+  display: OrderFormDisplay;
 }) {
   const t = useTranslations('orderPage');
   const router = useRouter();
@@ -59,6 +57,8 @@ export default function OrderFormClient({
     boxShadow: `${cardTopHighlight}, inset 0 1px 0 rgba(255,255,255,0.04)`,
   };
 
+  const summaryEyebrow = display.usesFallbackSummary ? t('fallbackSummaryLabel') : t('summaryLabel');
+
   return (
     <form
       action={formAction}
@@ -72,7 +72,11 @@ export default function OrderFormClient({
       noValidate
     >
       <input type="hidden" name="locale" value={locale} />
-      <input type="hidden" name="packageSlug" value={packageSlug} />
+      <input type="hidden" name="packageSlug" value={display.packageSlug ?? ''} />
+      <input type="hidden" name="packageTitleSnapshot" value={display.packageTitle} />
+      <input type="hidden" name="packagePriceSnapshot" value={display.packagePrice ?? ''} />
+      <input type="hidden" name="packageCurrencySnapshot" value={display.currency ?? ''} />
+      <input type="hidden" name="packageDescriptionSnapshot" value={display.description} />
 
       <div
         className="rounded-xl p-5 space-y-3"
@@ -82,17 +86,21 @@ export default function OrderFormClient({
         }}
       >
         <span className={`text-[11px] font-bold uppercase tracking-[0.18em] ${accentEyebrowClass}`}>
-          {t('summaryLabel')}
+          {summaryEyebrow}
         </span>
         <p className="text-lg font-semibold" style={{ color: ds.text }}>
-          {resolved.packageTitle}
+          {display.packageTitle}
         </p>
-        <p className="text-[15px] font-medium tabular-nums" style={{ color: ds.textMuted }}>
-          {resolved.packagePrice}{' '}
-          <span className="text-[12px] font-normal">({resolved.currency})</span>
-        </p>
+        {display.packagePrice != null && display.packagePrice !== '' ? (
+          <p className="text-[15px] font-medium tabular-nums" style={{ color: ds.textMuted }}>
+            {display.packagePrice}{' '}
+            {display.currency ? (
+              <span className="text-[12px] font-normal">({display.currency})</span>
+            ) : null}
+          </p>
+        ) : null}
         <p className="text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
-          {resolved.description}
+          {display.description}
         </p>
       </div>
 

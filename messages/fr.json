@@ -806,6 +806,11 @@
     "title": "Finaliser votre demande",
     "subtitle": "Indiquez comment vous joindre. Nous confirmerons votre formule et la suite.",
     "summaryLabel": "Formule choisie",
+    "fallbackSummaryLabel": "Résumé de la demande",
+    "fallbackSummaryTitle": "Demande de projet",
+    "fallbackSummaryDescription": "Indiquez vos besoins. L équipe vous répondra avec des options et les prochaines étapes.",
+    "fallbackPackageNotice": "Les détails live du forfait sont indisponibles pour le moment. Votre demande sera tout de même transmise.",
+    "genericRequestHint": "Consultez les tarifs pour les paliers de consultation, ou envoyez une demande générale ci dessous.",
     "unknownPackage": "Ce lien de formule est invalide. Choisissez une consultation sur la page Tarifs.",
     "fields": {
       "fullName": "Nom complet",

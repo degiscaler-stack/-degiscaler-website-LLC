@@ -97,6 +97,7 @@ export function AdminShell({
                 return (
                   <li key={`${String(item.dictKey)}-${idx}`}>
                     <span
+                      title={dict.comingSoon}
                       className="flex cursor-default items-center gap-2 rounded-lg px-3 py-2 text-sm text-neutral-500 opacity-90 rtl:flex-row-reverse"
                       aria-disabled
                     >
