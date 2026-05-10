@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
 import { requireAdminSession } from '@/lib/auth/admin-session';
 
-const CONTACT_STATUSES = ['NEW', 'REPLIED', 'CLOSED'] as const;
+const CONTACT_STATUSES = ['NEW', 'READ', 'CLOSED'] as const;
 
 export async function updateContactStatusAction(formData: FormData) {
   await requireAdminSession();

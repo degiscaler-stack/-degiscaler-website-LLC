@@ -49,9 +49,9 @@ export default async function AdminOverviewPage() {
   ];
 
   return (
-    <div className="space-y-8 rtl:text-right">
+    <div className="space-y-8">
       <div>
-        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white rtl:flex-row-reverse">
+        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
           <LayoutDashboard className="size-7 text-[var(--ds-admin-accent)]" aria-hidden />
           {d.overviewTitle}
         </h1>
@@ -74,7 +74,7 @@ export default async function AdminOverviewPage() {
             href={href}
             className="rounded-xl border border-[var(--ds-admin-border)] bg-[#0a0a0a] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset] transition-colors hover:border-[color-mix(in_srgb,var(--ds-admin-accent)_35%,transparent)]"
           >
-            <div className="flex items-start justify-between gap-3 rtl:flex-row-reverse">
+            <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-medium text-neutral-200">{title}</p>
                 <p className="mt-3 text-3xl font-semibold tabular-nums text-[var(--ds-admin-accent)]">{value}</p>

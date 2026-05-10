@@ -17,9 +17,9 @@ export default async function AdminOrdersPage() {
   }
 
   return (
-    <div className="space-y-8 rtl:text-right">
+    <div className="space-y-8">
       <div>
-        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white rtl:flex-row-reverse">
+        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
           <ShoppingBag className="size-7 text-[var(--ds-admin-accent)]" aria-hidden />
           {d.ordersTitle}
         </h1>
@@ -46,7 +46,7 @@ export default async function AdminOrdersPage() {
               key={order.id}
               className="rounded-xl border border-[var(--ds-admin-border)] bg-[#0a0a0a] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]"
             >
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between rtl:flex-row-reverse">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div className="min-w-0 flex-1 space-y-2 text-sm">
                   <p className="font-medium text-neutral-100">{order.fullName}</p>
                   <p className="text-neutral-400">

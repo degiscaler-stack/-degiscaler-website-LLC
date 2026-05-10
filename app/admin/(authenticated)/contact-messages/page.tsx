@@ -17,9 +17,9 @@ export default async function ContactMessagesPage() {
   }
 
   return (
-    <div className="space-y-8 rtl:text-right">
+    <div className="space-y-8">
       <div>
-        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white rtl:flex-row-reverse">
+        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
           <Inbox className="size-7 text-[var(--ds-admin-accent)]" aria-hidden />
           {d.contactTitle}
         </h1>
@@ -46,7 +46,7 @@ export default async function ContactMessagesPage() {
               key={row.id}
               className="rounded-xl border border-[var(--ds-admin-border)] bg-[#0a0a0a] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]"
             >
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between rtl:flex-row-reverse">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div className="min-w-0 flex-1 space-y-2 text-sm">
                   <p className="font-medium text-neutral-100">{row.fullName}</p>
                   <p className="text-neutral-400">
@@ -91,7 +91,7 @@ export default async function ContactMessagesPage() {
                     className="rounded-lg border border-[var(--ds-admin-border)] bg-neutral-950 px-3 py-2 text-sm text-white"
                   >
                     <option value="NEW">{d.statusNew}</option>
-                    <option value="REPLIED">{d.statusReplied}</option>
+                    <option value="READ">{d.statusRead}</option>
                     <option value="CLOSED">{d.statusClosed}</option>
                   </select>
                   <button

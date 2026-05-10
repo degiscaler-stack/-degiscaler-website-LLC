@@ -52,6 +52,7 @@ async function seedAdmin() {
 
 async function seedSiteDefaults() {
   const defaults = [
+    { key: 'siteUrl', value: 'https://degiscaler.com', type: 'text' },
     { key: 'supportEmail', value: 'support@degiscaler.com', type: 'text' },
     { key: 'companyName', value: 'DegiScaler', type: 'text' },
     { key: 'defaultLocale', value: 'en', type: 'text' },

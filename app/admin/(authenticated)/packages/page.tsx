@@ -15,7 +15,14 @@ function featLines(features: unknown): string {
   return '';
 }
 
-export default async function AdminPackagesPage() {
+export default async function AdminPackagesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ deleteBlocked?: string }>;
+}) {
+  const q = await searchParams;
+  const deleteBlocked = q.deleteBlocked === '1';
+
   const d = await getAdminDictServer();
   let packages: DbPkgRow[] = [];
   let dbError = false;
@@ -31,13 +38,22 @@ export default async function AdminPackagesPage() {
     'w-full rounded-lg border border-[var(--ds-admin-border)] bg-neutral-950 px-3 py-2 text-sm text-white placeholder:text-neutral-600';
 
   return (
-    <div className="space-y-10 rtl:text-right">
+    <div className="space-y-10">
       <div>
-        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white rtl:flex-row-reverse">
+        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
           <Package className="size-7 text-[var(--ds-admin-accent)]" aria-hidden />
           {d.packagesTitle}
         </h1>
       </div>
+
+      {deleteBlocked ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.deleteBlocked}
+        </div>
+      ) : null}
 
       {dbError ? (
         <div
@@ -84,11 +100,11 @@ export default async function AdminPackagesPage() {
             <input name="sortOrder" type="number" defaultValue={0} className={inputClass} />
           </div>
           <div className="flex flex-col justify-end gap-3 sm:flex-row sm:items-center">
-            <label className="flex items-center gap-2 text-sm text-neutral-300 rtl:flex-row-reverse">
+            <label className="flex items-center gap-2 text-sm text-neutral-300">
               <input name="isPopular" type="checkbox" className="size-4 rounded border-neutral-600" />
               {d.popular}
             </label>
-            <label className="flex items-center gap-2 text-sm text-neutral-300 rtl:flex-row-reverse">
+            <label className="flex items-center gap-2 text-sm text-neutral-300">
               <input name="isActive" type="checkbox" defaultChecked className="size-4 rounded border-neutral-600" />
               {d.active}
             </label>
@@ -150,7 +166,7 @@ export default async function AdminPackagesPage() {
                   <input name="sortOrder" type="number" defaultValue={pkg.sortOrder} className={inputClass} />
                 </div>
                 <div className="flex flex-col justify-end gap-3 sm:flex-row sm:items-center">
-                  <label className="flex items-center gap-2 text-sm text-neutral-300 rtl:flex-row-reverse">
+                  <label className="flex items-center gap-2 text-sm text-neutral-300">
                     <input
                       name="isPopular"
                       type="checkbox"
@@ -159,7 +175,7 @@ export default async function AdminPackagesPage() {
                     />
                     {d.popular}
                   </label>
-                  <label className="flex items-center gap-2 text-sm text-neutral-300 rtl:flex-row-reverse">
+                  <label className="flex items-center gap-2 text-sm text-neutral-300">
                     <input
                       name="isActive"
                       type="checkbox"

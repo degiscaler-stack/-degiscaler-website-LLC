@@ -59,9 +59,9 @@ export default async function AdminChatSupportPage({
     s === 'WAITING' ? d.chatStatusWaiting : s === 'CLOSED' ? d.chatStatusClosed : d.chatStatusOpen;
 
   return (
-    <div className="space-y-8 rtl:text-right">
+    <div className="space-y-8">
       <div>
-        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white rtl:flex-row-reverse">
+        <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-white">
           <MessagesSquare className="size-7 text-[var(--ds-admin-accent)]" aria-hidden />
           {d.chatScreenTitle}
         </h1>
@@ -99,7 +99,7 @@ export default async function AdminChatSupportPage({
                           : 'border-[var(--ds-admin-border)] bg-[#0a0a0a] hover:border-[color-mix(in_srgb,var(--ds-admin-accent)_25%,transparent)]'
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-2 rtl:flex-row-reverse">
+                      <div className="flex items-start justify-between gap-2">
                         <span className="font-medium text-neutral-100">{c.fullName ?? '—'}</span>
                         <span className="shrink-0 text-[10px] uppercase tracking-wide text-neutral-500">
                           {statusLabel(c.status)}
@@ -134,7 +134,7 @@ export default async function AdminChatSupportPage({
             </div>
           ) : (
             <div className="space-y-6 rounded-xl border border-[var(--ds-admin-border)] bg-[#0a0a0a] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
-              <div className="flex flex-wrap gap-4 border-b border-[var(--ds-admin-border)] pb-4 text-sm rtl:flex-row-reverse">
+              <div className="flex flex-wrap gap-4 border-b border-[var(--ds-admin-border)] pb-4 text-sm">
                 <div>
                   <span className="text-neutral-500">{d.fullName}: </span>
                   <span className="text-neutral-200">{thread.fullName ?? '—'}</span>
@@ -153,7 +153,7 @@ export default async function AdminChatSupportPage({
                 </div>
               </div>
 
-              <form action={updateSupportConversationStatusAction} className="flex flex-wrap items-center gap-3 rtl:flex-row-reverse">
+              <form action={updateSupportConversationStatusAction} className="flex flex-wrap items-center gap-3">
                 <input type="hidden" name="conversationId" value={thread.id} />
                 <label className="text-xs text-neutral-400" htmlFor="sup-st">
                   {d.status}

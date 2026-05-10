@@ -20,7 +20,7 @@ export async function submitContactAction(
   const email = String(formData.get('email') ?? '').trim();
   const whatsapp = String(formData.get('whatsapp') ?? '').trim() || null;
   const budgetOrPackage = String(formData.get('budgetOrPackage') ?? '').trim() || null;
-  const message = String(formData.get('message') ?? '').trim() || null;
+  const message = String(formData.get('message') ?? '').trim();
 
   const errFallback: Record<string, string> = {
     required: 'Please fill in all required fields.',
@@ -35,7 +35,7 @@ export async function submitContactAction(
     console.error('[submitContactAction] getTranslations', err);
   }
 
-  if (!fullName || !email) {
+  if (!fullName || !email || !message) {
     return { error: tErr('required') };
   }
   if (!isValidEmail(email)) {

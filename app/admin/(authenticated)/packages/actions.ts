@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import type { Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { requireAdminSession } from '@/lib/auth/admin-session';
@@ -100,7 +101,9 @@ export async function deletePackageAction(formData: FormData) {
       OR: [{ packageId: id }, { packageSlug: pkg.slug }],
     },
   });
-  if (linked > 0) return;
+  if (linked > 0) {
+    redirect('/admin/packages?deleteBlocked=1');
+  }
 
   try {
     await prisma.package.delete({ where: { id } });

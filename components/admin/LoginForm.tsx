@@ -40,7 +40,7 @@ export function LoginForm() {
         </div>
       ) : null}
 
-      <label className="block space-y-2 rtl:text-right">
+      <label className="block space-y-2">
         <span className="text-xs uppercase tracking-[0.12em] text-neutral-400">{dict.email}</span>
         <input
           name="email"
@@ -53,7 +53,7 @@ export function LoginForm() {
         />
       </label>
 
-      <label className="block space-y-2 rtl:text-right">
+      <label className="block space-y-2">
         <span className="text-xs uppercase tracking-[0.12em] text-neutral-400">{dict.password}</span>
         <input
           name="password"

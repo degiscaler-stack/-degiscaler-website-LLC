@@ -34,7 +34,7 @@ export type AdminDict = {
   statusNew: string;
   statusContacted: string;
   statusClosed: string;
-  statusReplied: string;
+  statusRead: string;
   fullName: string;
   email: string;
   whatsapp: string;
@@ -112,9 +112,9 @@ const EN: AdminDict = {
   administrator: 'Administrator',
   overviewTitle: 'Overview',
   overviewSubtitle:
-    'Orders, contact messages, and live chat support are active. Content modules below remain phased.',
+    'Monitor orders, contact messages, and chat threads. Manage packages, site content, legal documents, and settings from the sidebar.',
   overviewFootnote:
-    'Services, FAQs, testimonials, pages builder, legal pages editor, and site settings stay Coming soon.',
+    'All sidebar sections are active. Public pages continue to use English, Arabic, and French independently of this admin UI.',
   packagesTitle: 'Packages',
   ordersTitle: 'Orders',
   contactTitle: 'Contact messages',
@@ -129,7 +129,7 @@ const EN: AdminDict = {
   statusNew: 'New',
   statusContacted: 'Contacted',
   statusClosed: 'Closed',
-  statusReplied: 'Replied',
+  statusRead: 'Read',
   fullName: 'Full name',
   email: 'Email',
   whatsapp: 'WhatsApp',
@@ -223,7 +223,7 @@ const AR: AdminDict = {
   statusNew: 'جديد',
   statusContacted: 'تم التواصل',
   statusClosed: 'مغلق',
-  statusReplied: 'تم الرد',
+  statusRead: 'مقروء',
   fullName: 'الاسم الكامل',
   email: 'البريد الإلكتروني',
   whatsapp: 'واتساب',
@@ -318,7 +318,7 @@ const FR: AdminDict = {
   statusNew: 'Nouveau',
   statusContacted: 'Contacté',
   statusClosed: 'Fermé',
-  statusReplied: 'Répondu',
+  statusRead: 'Lu',
   fullName: 'Nom complet',
   email: 'E-mail',
   whatsapp: 'WhatsApp',
