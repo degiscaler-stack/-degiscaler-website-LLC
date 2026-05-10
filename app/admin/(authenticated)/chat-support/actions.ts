@@ -17,6 +17,11 @@ export async function replySupportAction(formData: FormData) {
       body,
     },
   });
+  await prisma.supportConversation.update({
+    where: { id: conversationId },
+    data: { adminSeenAt: new Date() },
+  });
+  revalidatePath('/admin');
   revalidatePath('/admin/chat-support');
 }
 
@@ -28,7 +33,8 @@ export async function updateSupportConversationStatusAction(formData: FormData) 
 
   await prisma.supportConversation.update({
     where: { id: conversationId },
-    data: { status },
+    data: { status, adminSeenAt: new Date() },
   });
+  revalidatePath('/admin');
   revalidatePath('/admin/chat-support');
 }

@@ -1,6 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 import { verifyAdminJwt } from '@/lib/auth/admin-jwt';
@@ -10,6 +9,15 @@ const intlMiddleware = createMiddleware(routing);
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+
+  let req = request;
+  if (pathname.startsWith('/admin')) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-ds-admin-path', pathname);
+    const chatId = request.nextUrl.searchParams.get('c')?.trim();
+    if (chatId) requestHeaders.set('x-ds-admin-chat-id', chatId);
+    req = new NextRequest(request.url, { headers: requestHeaders });
+  }
 
   if (
     pathname.startsWith('/_next') ||
@@ -38,7 +46,7 @@ export async function proxy(request: NextRequest) {
       if (valid) {
         return NextResponse.redirect(buildPublicUrl('/admin'));
       }
-      return NextResponse.next();
+      return NextResponse.next({ request: { headers: req.headers } });
     }
 
     if (!valid) {
@@ -47,7 +55,7 @@ export async function proxy(request: NextRequest) {
       return NextResponse.redirect(loginUrl.toString());
     }
 
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: req.headers } });
   }
 
   const intlResponse = intlMiddleware(request);

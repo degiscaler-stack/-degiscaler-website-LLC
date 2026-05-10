@@ -61,6 +61,7 @@ model Order {
   message      String?   @db.Text
   status       String    @default("NEW")
   locale       String    @default("en")
+  adminSeenAt  DateTime?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 
@@ -83,17 +84,18 @@ model ContactMessage {
 }
 
 model SupportConversation {
-  id        String   @id @default(cuid())
-  sessionId String   @unique
-  fullName  String?
-  email     String?
-  whatsapp  String?
-  subject   String?
-  status    String   @default("OPEN")
-  locale    String   @default("en")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  messages  SupportMessage[]
+  id           String    @id @default(cuid())
+  sessionId    String    @unique
+  fullName     String?
+  email        String?
+  whatsapp     String?
+  subject      String?
+  status       String    @default("OPEN")
+  locale       String    @default("en")
+  adminSeenAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  messages     SupportMessage[]
 
   @@map("support_conversations")
 }

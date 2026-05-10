@@ -16,5 +16,6 @@ export async function updateOrderStatusAction(formData: FormData) {
     where: { id },
     data: { status },
   });
+  revalidatePath('/admin');
   revalidatePath('/admin/orders');
 }

@@ -20,6 +20,7 @@ import {
 import { LogoutButton } from '@/components/admin/LogoutButton';
 import { useAdminI18n } from '@/components/admin/AdminLocaleProvider';
 import type { AdminDict } from '@/lib/admin-i18n/dictionaries';
+import type { AdminSidebarCounts } from '@/lib/admin/notification-counts';
 
 type NavKey = keyof Pick<
   AdminDict,
@@ -36,7 +37,14 @@ type NavKey = keyof Pick<
   | 'navSettings'
 >;
 
-const NAV: { href: string; dictKey: NavKey; icon: LucideIcon }[] = [
+type NavItemConfig = {
+  href: string;
+  dictKey: NavKey;
+  icon: LucideIcon;
+  badgeKey?: keyof Pick<AdminSidebarCounts, 'unseenOrders' | 'unreadChatConversations'>;
+};
+
+const NAV: NavItemConfig[] = [
   { href: '/admin', dictKey: 'navOverview', icon: LayoutDashboard },
   { href: '/admin/packages', dictKey: 'navPackages', icon: Package },
   { href: '/admin/services', dictKey: 'navServices', icon: BriefcaseBusiness },
@@ -44,17 +52,41 @@ const NAV: { href: string; dictKey: NavKey; icon: LucideIcon }[] = [
   { href: '/admin/testimonials', dictKey: 'navTestimonials', icon: MessageSquareQuote },
   { href: '/admin/pages', dictKey: 'navPages', icon: FileText },
   { href: '/admin/legal-pages', dictKey: 'navLegal', icon: Scale },
-  { href: '/admin/orders', dictKey: 'navOrders', icon: ShoppingBag },
+  { href: '/admin/orders', dictKey: 'navOrders', icon: ShoppingBag, badgeKey: 'unseenOrders' },
   { href: '/admin/contact-messages', dictKey: 'navContact', icon: Inbox },
-  { href: '/admin/chat-support', dictKey: 'navChat', icon: MessagesSquare },
+  {
+    href: '/admin/chat-support',
+    dictKey: 'navChat',
+    icon: MessagesSquare,
+    badgeKey: 'unreadChatConversations',
+  },
   { href: '/admin/settings', dictKey: 'navSettings', icon: Settings },
 ];
 
+function formatBadgeCount(n: number): string {
+  if (n > 99) return '99+';
+  return String(n);
+}
+
+function NavUnreadBadge({ count }: { count: number }) {
+  if (count < 1) return null;
+  return (
+    <span
+      className="ml-auto inline-flex min-h-[1.125rem] min-w-[1.125rem] shrink-0 items-center justify-center rounded-full bg-[var(--ds-admin-accent)] px-[5px] text-[10px] font-bold tabular-nums leading-none text-[#0b0c0e] shadow-[0_0_0_1px_rgba(232,204,101,0.35)_inset]"
+      aria-label={`${count} unread`}
+    >
+      {formatBadgeCount(count)}
+    </span>
+  );
+}
+
 export function AdminShell({
   emailHint,
+  sidebarCounts,
   children,
 }: {
   emailHint?: string;
+  sidebarCounts?: AdminSidebarCounts;
   children: ReactNode;
 }) {
   const { dict } = useAdminI18n();
@@ -80,7 +112,10 @@ export function AdminShell({
                     className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-neutral-300 hover:bg-white/[0.04] hover:text-white"
                   >
                     <Icon className="size-4 shrink-0 text-[var(--ds-admin-accent)]" aria-hidden />
-                    <span className="truncate">{label}</span>
+                    <span className="min-w-0 flex-1 truncate">{label}</span>
+                    {item.badgeKey && sidebarCounts ? (
+                      <NavUnreadBadge count={sidebarCounts[item.badgeKey]} />
+                    ) : null}
                   </Link>
                 </li>
               );
