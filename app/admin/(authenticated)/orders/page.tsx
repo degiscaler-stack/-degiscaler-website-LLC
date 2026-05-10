@@ -1,3 +1,4 @@
+import type { Order as DbOrderRow } from '@prisma/client';
 import { ShoppingBag } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
 import { getAdminDictServer } from '@/lib/admin-i18n/server';
@@ -5,13 +6,14 @@ import { updateOrderStatusAction } from './actions';
 
 export default async function AdminOrdersPage() {
   const d = await getAdminDictServer();
-  let orders: Awaited<ReturnType<typeof prisma.order.findMany>> = [];
+  let orders: DbOrderRow[] = [];
+  let dbError = false;
   try {
     orders = await prisma.order.findMany({
       orderBy: { createdAt: 'desc' },
     });
   } catch {
-    /* list requires DB */
+    dbError = true;
   }
 
   return (
@@ -24,11 +26,20 @@ export default async function AdminOrdersPage() {
         <p className="mt-2 max-w-xl text-sm text-neutral-400">{d.orderDetails}</p>
       </div>
 
-      {orders.length === 0 ? (
+      {dbError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.adminDbUnavailable}
+        </div>
+      ) : null}
+
+      {!dbError && orders.length === 0 ? (
         <div className="rounded-xl border border-dashed border-[var(--ds-admin-border)] bg-[#0a0a0a]/70 p-12 text-center text-sm text-neutral-500">
           {d.noData}
         </div>
-      ) : (
+      ) : dbError ? null : (
         <ul className="space-y-4">
           {orders.map((order) => (
             <li

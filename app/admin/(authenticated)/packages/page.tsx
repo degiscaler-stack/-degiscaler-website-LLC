@@ -1,3 +1,4 @@
+import type { Package as DbPkgRow } from '@prisma/client';
 import { Package } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
 import { getAdminDictServer } from '@/lib/admin-i18n/server';
@@ -16,13 +17,14 @@ function featLines(features: unknown): string {
 
 export default async function AdminPackagesPage() {
   const d = await getAdminDictServer();
-  let packages: Awaited<ReturnType<typeof prisma.package.findMany>> = [];
+  let packages: DbPkgRow[] = [];
+  let dbError = false;
   try {
     packages = await prisma.package.findMany({
       orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }],
     });
   } catch {
-    /* list requires DB */
+    dbError = true;
   }
 
   const inputClass =
@@ -36,6 +38,15 @@ export default async function AdminPackagesPage() {
           {d.packagesTitle}
         </h1>
       </div>
+
+      {dbError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.adminDbUnavailable}
+        </div>
+      ) : null}
 
       <section className="rounded-xl border border-[var(--ds-admin-border)] bg-[#0a0a0a] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]">
         <h2 className="mb-4 text-lg font-medium text-neutral-100">{d.addPackage}</h2>
@@ -93,11 +104,11 @@ export default async function AdminPackagesPage() {
         </form>
       </section>
 
-      {packages.length === 0 ? (
+      {!dbError && packages.length === 0 ? (
         <div className="rounded-xl border border-dashed border-[var(--ds-admin-border)] bg-[#0a0a0a]/70 p-12 text-center text-sm text-neutral-500">
           {d.noData}
         </div>
-      ) : (
+      ) : dbError ? null : (
         <ul className="space-y-6">
           {packages.map((pkg) => (
             <li

@@ -1,6 +1,6 @@
 import type { Package as DbPackage } from '@prisma/client';
+import { safeFindPackageBySlug, safeFindPackages } from '@/lib/db/public-safe';
 import { translationIdToSlug } from '@/lib/packages/map-slug';
-import { safeFindPackageBySlug } from '@/lib/db/public-safe';
 
 export type DisplayPackage = {
   slug: string;
@@ -79,29 +79,14 @@ export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Prom
   const fb = fallbackResults(fallbackPackages);
 
   try {
-    let prismaMod: typeof import('@/lib/prisma');
-    try {
-      prismaMod = await import('@/lib/prisma');
-    } catch (err) {
-      console.error('[loadDisplayPackages]', err);
-      return fb;
-    }
-
-    try {
-      const rows = await prismaMod.prisma.package.findMany({
-        where: { isActive: true },
-        orderBy: [{ sortOrder: 'asc' }, { title: 'asc' }],
-      });
-      if (rows.length > 0) {
-        try {
-          return rows.map(fromDbRow);
-        } catch (mapErr) {
-          console.error('[loadDisplayPackages]', mapErr);
-          return fb;
-        }
+    const rows = await safeFindPackages();
+    if (rows.length > 0) {
+      try {
+        return rows.map(fromDbRow);
+      } catch (mapErr) {
+        console.error('[loadDisplayPackages]', mapErr);
+        return fb;
       }
-    } catch (err) {
-      console.error('[loadDisplayPackages]', err);
     }
     return fb;
   } catch (outer) {

@@ -1,8 +1,22 @@
-import type { Prisma } from '@prisma/client';
+import type { Package, Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 
 export function isDatabaseConfigured(): boolean {
   return typeof process.env.DATABASE_URL === 'string' && process.env.DATABASE_URL.trim().length > 0;
+}
+
+/** Active packages for public pricing/order UI; never throws. */
+export async function safeFindPackages(): Promise<Package[]> {
+  if (!isDatabaseConfigured()) return [];
+  try {
+    return await prisma.package.findMany({
+      where: { isActive: true },
+      orderBy: [{ sortOrder: 'asc' }, { title: 'asc' }],
+    });
+  } catch (err) {
+    console.error('[safeFindPackages]', err);
+    return [];
+  }
 }
 
 export async function safeCreateOrder(

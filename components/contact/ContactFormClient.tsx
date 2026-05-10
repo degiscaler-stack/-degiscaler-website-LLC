@@ -154,6 +154,23 @@ export default function ContactFormClient({ locale }: { locale: string }) {
           </div>
 
           <div>
+            <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-whatsapp">
+              {t('form.whatsapp')}
+            </label>
+            <input
+              id="contact-whatsapp"
+              name="whatsapp"
+              type="text"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder={t('form.whatsappPlaceholder')}
+              disabled={pending}
+              className={fieldClass}
+              style={surfaceStyle}
+            />
+          </div>
+
+          <div>
             <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-budget">
               {t('form.budgetPackage')}
             </label>
@@ -170,12 +187,11 @@ export default function ContactFormClient({ locale }: { locale: string }) {
 
           <div>
             <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-message">
-              {t('form.message')} *
+              {t('form.message')}
             </label>
             <textarea
               id="contact-message"
               name="message"
-              required
               rows={6}
               placeholder={t('form.messagePlaceholder')}
               disabled={pending}

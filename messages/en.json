@@ -571,6 +571,8 @@
       "fullNamePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "Optional — e.g. +1 … or international format",
       "businessProject": "Business or project type",
       "businessProjectPlaceholder": "Example: CPG e-commerce, SaaS landing page, local services site",
       "budgetPackage": "Budget or package interest",

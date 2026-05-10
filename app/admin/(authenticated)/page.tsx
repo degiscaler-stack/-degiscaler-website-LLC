@@ -9,6 +9,7 @@ export default async function AdminOverviewPage() {
   let orderCount = 0;
   let msgCount = 0;
   let chatCount = 0;
+  let dbError = false;
   try {
     [pkgCount, orderCount, msgCount, chatCount] = await Promise.all([
       prisma.package.count(),
@@ -17,7 +18,7 @@ export default async function AdminOverviewPage() {
       prisma.supportConversation.count(),
     ]);
   } catch {
-    /* dashboard requires DB */
+    dbError = true;
   }
 
   const tiles = [
@@ -56,6 +57,15 @@ export default async function AdminOverviewPage() {
         </h1>
         <p className="mt-2 max-w-xl text-sm text-neutral-400">{d.overviewSubtitle}</p>
       </div>
+
+      {dbError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.adminDbUnavailable}
+        </div>
+      ) : null}
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {tiles.map(({ href, title, value, icon: Icon }) => (

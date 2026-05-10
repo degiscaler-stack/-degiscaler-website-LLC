@@ -71,8 +71,9 @@ model ContactMessage {
   id              String   @id @default(cuid())
   fullName        String
   email           String
+  whatsapp        String?
   budgetOrPackage String?
-  message         String   @db.Text
+  message         String?  @db.Text
   status          String    @default("NEW")
   locale          String    @default("en")
   createdAt       DateTime @default(now())

@@ -51,6 +51,8 @@ export type AdminDict = {
   invalidCredentials: string;
   loginMissingFields: string;
   loginUnavailable: string;
+  /** Shown on authenticated admin pages when Prisma queries fail. */
+  adminDbUnavailable: string;
   loginConfigIssue: string;
   backToSite: string;
   slug: string;
@@ -144,6 +146,8 @@ const EN: AdminDict = {
   invalidCredentials: 'Invalid credentials',
   loginMissingFields: 'Enter your email and password.',
   loginUnavailable: 'Database temporarily unavailable.',
+  adminDbUnavailable:
+    'Could not reach the database. Counts and lists may be empty until it is available again.',
   loginConfigIssue: 'Server configuration error. Try again later.',
   backToSite: '← Back to site',
   slug: 'Slug',
@@ -236,6 +240,8 @@ const AR: AdminDict = {
   invalidCredentials: 'بيانات الدخول غير صحيحة',
   loginMissingFields: 'أدخل البريد وكلمة المرور.',
   loginUnavailable: 'قاعدة البيانات غير متاحة مؤقتاً.',
+  adminDbUnavailable:
+    'تعذّر الاتصال بقاعدة البيانات. قد تكون الأعداد والقوائم فارغة حتى يعود الاتصال.',
   loginConfigIssue: 'خطأ إعداد خادم. حاول لاحقاً.',
   backToSite: '← العودة إلى الموقع',
   slug: 'المعرّف النصي',
@@ -329,6 +335,8 @@ const FR: AdminDict = {
   invalidCredentials: 'Identifiants invalides',
   loginMissingFields: 'Indiquez votre e-mail et votre mot de passe.',
   loginUnavailable: 'Base de données temporairement indisponible.',
+  adminDbUnavailable:
+    'Impossible de joindre la base de données. Les totaux et listes peuvent être vides jusqu\'à rétablissement.',
   loginConfigIssue: 'Erreur de configuration serveur. Réessayez plus tard.',
   backToSite: '← Retour au site',
   slug: 'Identifiant',

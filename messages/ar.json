@@ -578,6 +578,8 @@
       "fullNamePlaceholder": "اسمك",
       "email": "البريد الإلكتروني",
       "emailPlaceholder": "أنت@الشركة.com",
+      "whatsapp": "واتساب",
+      "whatsappPlaceholder": "اختياري — مثل ‎+966 … أو رقم دولي",
       "businessProject": "نوع النشاط أو المشروع",
       "businessProjectPlaceholder": "مثال: متجر سلع استهلاكية، صفحة هبوط لبرمجية، موقع خدمات محلية",
       "budgetPackage": "الميزانية أو الباقة المهتم بها",

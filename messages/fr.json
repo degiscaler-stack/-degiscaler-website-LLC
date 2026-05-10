@@ -578,6 +578,8 @@
       "fullNamePlaceholder": "Votre nom",
       "email": "E-mail",
       "emailPlaceholder": "vous@entreprise.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "Facultatif — ex. +33 … ou format international",
       "businessProject": "Type d entreprise ou de projet",
       "businessProjectPlaceholder": "Exemple : commerce de détail, progiciel en nuage présenté sur une courte page publique, services à la personne locale",
       "budgetPackage": "Budget ou formule envisagée",

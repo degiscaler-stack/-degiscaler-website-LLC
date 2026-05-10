@@ -1,3 +1,4 @@
+import type { ContactMessage as DbContactRow } from '@prisma/client';
 import { Inbox } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
 import { getAdminDictServer } from '@/lib/admin-i18n/server';
@@ -5,13 +6,14 @@ import { updateContactStatusAction } from './actions';
 
 export default async function ContactMessagesPage() {
   const d = await getAdminDictServer();
-  let rows: Awaited<ReturnType<typeof prisma.contactMessage.findMany>> = [];
+  let rows: DbContactRow[] = [];
+  let dbError = false;
   try {
     rows = await prisma.contactMessage.findMany({
       orderBy: { createdAt: 'desc' },
     });
   } catch {
-    /* list requires DB */
+    dbError = true;
   }
 
   return (
@@ -24,11 +26,20 @@ export default async function ContactMessagesPage() {
         <p className="mt-2 max-w-xl text-sm text-neutral-400">{d.contactDetails}</p>
       </div>
 
-      {rows.length === 0 ? (
+      {dbError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.adminDbUnavailable}
+        </div>
+      ) : null}
+
+      {!dbError && rows.length === 0 ? (
         <div className="rounded-xl border border-dashed border-[var(--ds-admin-border)] bg-[#0a0a0a]/70 p-12 text-center text-sm text-neutral-500">
           {d.noData}
         </div>
-      ) : (
+      ) : dbError ? null : (
         <ul className="space-y-4">
           {rows.map((row) => (
             <li
@@ -44,13 +55,23 @@ export default async function ContactMessagesPage() {
                       {row.email}
                     </a>
                   </p>
+                  {row.whatsapp ? (
+                    <p className="text-neutral-400">
+                      <span className="text-neutral-500">{d.whatsapp}: </span>
+                      {row.whatsapp}
+                    </p>
+                  ) : null}
                   {row.budgetOrPackage ? (
                     <p className="text-neutral-400">
                       <span className="text-neutral-500">{d.budgetInterest}: </span>
                       {row.budgetOrPackage}
                     </p>
                   ) : null}
-                  <p className="whitespace-pre-wrap text-neutral-300">{row.message}</p>
+                  {row.message ? (
+                    <p className="whitespace-pre-wrap text-neutral-300">{row.message}</p>
+                  ) : (
+                    <p className="text-sm text-neutral-500">—</p>
+                  )}
                   <p className="text-xs text-neutral-500">
                     {d.dateLabel}:{' '}
                     {new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(

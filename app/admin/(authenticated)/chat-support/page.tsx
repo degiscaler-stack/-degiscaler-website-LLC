@@ -31,16 +31,18 @@ export default async function AdminChatSupportPage({
   const d = await getAdminDictServer();
 
   let conversations: ConversationListRow[] = [];
+  let listDbError = false;
   try {
     conversations = await prisma.supportConversation.findMany({
       orderBy: { updatedAt: 'desc' },
       include: listInclude,
     });
   } catch {
-    /* dashboard requires DB */
+    listDbError = true;
   }
 
   let thread: ConversationThread | null = null;
+  let threadDbError = false;
   if (selectedId) {
     try {
       thread = await prisma.supportConversation.findUnique({
@@ -48,6 +50,7 @@ export default async function AdminChatSupportPage({
         include: threadInclude,
       });
     } catch {
+      threadDbError = true;
       thread = null;
     }
   }
@@ -65,14 +68,23 @@ export default async function AdminChatSupportPage({
         <p className="mt-2 max-w-xl text-sm text-neutral-400">{d.chatOverviewSubtitle}</p>
       </div>
 
+      {listDbError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+        >
+          {d.adminDbUnavailable}
+        </div>
+      ) : null}
+
       <div className="grid gap-6 xl:grid-cols-[minmax(0,340px)_minmax(0,1fr)]">
         <div className="space-y-2">
           <h2 className="text-sm font-medium text-neutral-300">{d.chatConversations}</h2>
-          {conversations.length === 0 ? (
+          {(!listDbError && conversations.length === 0) ? (
             <div className="rounded-xl border border-dashed border-[var(--ds-admin-border)] bg-[#0a0a0a]/70 p-8 text-center text-sm text-neutral-500">
               {d.chatNoConversations}
             </div>
-          ) : (
+          ) : listDbError ? null : (
             <ul className="space-y-2">
               {conversations.map((c) => {
                 const last = c.messages[0];
@@ -109,7 +121,14 @@ export default async function AdminChatSupportPage({
         </div>
 
         <div className="min-w-0">
-          {!thread ? (
+          {threadDbError && selectedId ? (
+            <div
+              role="alert"
+              className="rounded-xl border border-amber-500/35 bg-amber-950/30 px-4 py-3 text-sm text-amber-100"
+            >
+              {d.adminDbUnavailable}
+            </div>
+          ) : !thread ? (
             <div className="rounded-xl border border-dashed border-[var(--ds-admin-border)] bg-[#0a0a0a]/70 p-10 text-center text-sm text-neutral-500">
               {selectedId ? d.chatConversationNotFound : d.chatSelectConversation}
             </div>
