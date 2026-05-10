@@ -274,6 +274,7 @@
       "valueFraming": "Sessions de conseil cadrées, livrables écrits explicites et recommandations concrètes — un format structuré, pas une offre passe-partout « bon marché ».",
       "viewAll": "Voir les 5 forfaits",
       "mostPopular": "Le plus populaire",
+      "premiumBadge": "Ideal pour le lancement",
       "getStarted": "Commencer"
     },
     "faq": {
@@ -569,6 +570,8 @@
     "form": {
       "name": "Nom",
       "namePlaceholder": "Votre nom",
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Votre nom",
       "email": "E-mail",
       "emailPlaceholder": "vous@entreprise.com",
       "businessProject": "Type d entreprise ou de projet",
@@ -578,12 +581,15 @@
       "message": "Message",
       "messagePlaceholder": "Quels objectifs, calendriers et contraintes devons-nous connaître ?",
       "submit": "Envoyer le formulaire",
-      "notConfiguredTitle": "Aucune API reliée au formulaire",
-      "notConfiguredText": "Le formulaire n est pas encore connecté à un serveur. Utilisez le bouton suivant pour ouvrir votre messagerie avec un brouillon, ou écrivez directement à support@degiscaler.com.",
-      "emailUsButton": "Ouvrir l e-mail prérempli",
+      "submitting": "Envoi en cours…",
       "mailtoSubject": "Demande via le site DegiScaler",
       "mailtoName": "Nom",
       "mailtoEmail": "E-mail"
+    },
+    "errors": {
+      "required": "Merci de remplir tous les champs obligatoires.",
+      "email": "Merci d indiquer une adresse e-mail valide.",
+      "server": "Une erreur est survenue. Réessayez dans un instant."
     },
     "expectationTitle": "La suite du processus",
     "expectationText": "Après votre message nous vérifions l adéquation avec nos prestations puis répondons avec les prochaines étapes. Tout périmètre élargi attend une confirmation écrite. Rien ne démarre sans alignement prix et contenus.",
@@ -791,5 +797,36 @@
         "content": "support@degiscaler.com"
       }
     ]
+  },
+  "orderPage": {
+    "title": "Finaliser votre demande",
+    "subtitle": "Indiquez comment vous joindre. Nous confirmerons votre formule et la suite.",
+    "summaryLabel": "Formule choisie",
+    "unknownPackage": "Ce lien de formule est invalide. Choisissez une consultation sur la page Tarifs.",
+    "fields": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Votre nom",
+      "email": "E-mail",
+      "emailPlaceholder": "vous@entreprise.com",
+      "whatsapp": "Numéro WhatsApp",
+      "whatsappPlaceholder": "Facultatif — indiquez l indicatif pays",
+      "message": "Message / notes",
+      "messagePlaceholder": "Facultatif — objectifs, délais ou contraintes"
+    },
+    "submit": "Envoyer la demande",
+    "errors": {
+      "required": "Merci de remplir tous les champs obligatoires.",
+      "email": "Merci d indiquer une adresse e-mail valide.",
+      "package": "La formule sélectionnée n est pas disponible.",
+      "server": "Une erreur est survenue. Réessayez dans un instant."
+    }
+  },
+  "thankYouPage": {
+    "orderTitle": "Merci",
+    "orderBody": "Votre demande a bien été reçue. Un membre du support vous contactera prochainement.",
+    "contactTitle": "Merci",
+    "contactBody": "Votre message a bien été reçu. Nous répondrons bientôt.",
+    "backHome": "Retour à l accueil",
+    "invalid": "Type de confirmation manquant. Retournez à l accueil et réessayez."
   }
 }

@@ -269,6 +269,7 @@
       "valueFraming": "Structured consultation sessions, clear written deliverables, and practical guidance—priced for access, not disguised as discount work.",
       "viewAll": "See All 5 Packages",
       "mostPopular": "Most Popular",
+      "premiumBadge": "Best for launch",
       "getStarted": "Get Started"
     },
     "faq": {
@@ -562,8 +563,8 @@
     "headline": "Tell us what you need to build next.",
     "subheadline": "Share context on your business or project. Our team reviews inquiries carefully and responds professionally within the timeframe below.",
     "form": {
-      "name": "Name",
-      "namePlaceholder": "Your name",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
       "businessProject": "Business or project type",
@@ -573,12 +574,15 @@
       "message": "Message",
       "messagePlaceholder": "What should we know about goals, timeline, and constraints?",
       "submit": "Send message",
-      "notConfiguredTitle": "Form backend not connected",
-      "notConfiguredText": "This form is not wired to a server yet. Use the button below to open your email client with your details pre-filled, or contact support@degiscaler.com directly.",
-      "emailUsButton": "Open email with details",
+      "submitting": "Sending…",
       "mailtoSubject": "Inquiry via DegiScaler website",
       "mailtoName": "Name",
       "mailtoEmail": "Email"
+    },
+    "errors": {
+      "required": "Please fill in all required fields.",
+      "email": "Please enter a valid email address.",
+      "server": "Something went wrong. Please try again shortly."
     },
     "expectationTitle": "What happens next",
     "expectationText": "After you reach out, we review your message against our services, confirm fit, and reply with next steps. If we need files or access, we will request them clearly. Nothing begins until scope and pricing expectations are aligned.",
@@ -786,5 +790,36 @@
         "content": "support@degiscaler.com"
       }
     ]
+  },
+  "orderPage": {
+    "title": "Complete your request",
+    "subtitle": "Tell us how to reach you. We will confirm your package and next steps.",
+    "summaryLabel": "Selected package",
+    "unknownPackage": "This package link is not valid. Please choose a consultation package from Pricing.",
+    "fields": {
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "whatsapp": "WhatsApp number",
+      "whatsappPlaceholder": "Optional — include country code",
+      "message": "Message / notes",
+      "messagePlaceholder": "Optional — goals, timeline, or constraints"
+    },
+    "submit": "Submit request",
+    "errors": {
+      "required": "Please fill in all required fields.",
+      "email": "Please enter a valid email address.",
+      "package": "Selected package is not available.",
+      "server": "Something went wrong. Please try again shortly."
+    }
+  },
+  "thankYouPage": {
+    "orderTitle": "Thank you",
+    "orderBody": "Your request has been received. A support team member will contact you soon.",
+    "contactTitle": "Thank you",
+    "contactBody": "Your message has been received. We will reply soon.",
+    "backHome": "Back to home",
+    "invalid": "Missing confirmation type. Return home and try again."
   }
 }

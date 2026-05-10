@@ -1,5 +1,30 @@
+import type { Prisma } from '@prisma/client';
 import { prisma } from '../lib/prisma';
 import { hashPassword } from '../lib/auth/password';
+
+const STARTER_FEATURES: Prisma.InputJsonValue = [
+  '30-minute digital consultation',
+  'Website credibility review',
+  '3 key improvement recommendations',
+  'Written summary delivered by email',
+  'Response within 48 business hours',
+];
+
+const GROWTH_FEATURES: Prisma.InputJsonValue = [
+  '45-minute digital consultation',
+  'Website and checkout review',
+  '5 improvement recommendations',
+  'Trust signal assessment',
+  'Written report delivered by email',
+];
+
+const PRO_FEATURES: Prisma.InputJsonValue = [
+  '60-minute digital consultation',
+  'Full website and UX review',
+  'Checkout clarity assessment',
+  'Payment-readiness review',
+  'Detailed written report with action plan',
+];
 
 async function seedAdmin() {
   const email = process.env.ADMIN_SEED_EMAIL?.trim()?.toLowerCase();
@@ -7,7 +32,7 @@ async function seedAdmin() {
 
   if (!email || !password) {
     console.warn(
-      '[seed] Skipping AdminUser: set ADMIN_SEED_EMAIL and ADMIN_SEED_PASSWORD (not printing values).'
+      '[seed] Skipping AdminUser: set ADMIN_SEED_EMAIL and ADMIN_SEED_PASSWORD (not printing values).',
     );
     return;
   }
@@ -43,9 +68,81 @@ async function seedSiteDefaults() {
   }
 }
 
+async function seedPackages() {
+  const packs: Array<{
+    slug: string;
+    title: string;
+    subtitle: string | null;
+    price: string;
+    currency: string;
+    description: string;
+    features: Prisma.InputJsonValue;
+    isPopular: boolean;
+    sortOrder: number;
+  }> = [
+    {
+      slug: 'starter-consultation',
+      title: 'Starter Consultation',
+      subtitle: null,
+      price: '$9.99',
+      currency: 'USD',
+      description:
+        'A focused entry-level consultation for founders who need a quick professional assessment of their online presence.',
+      features: STARTER_FEATURES,
+      isPopular: false,
+      sortOrder: 0,
+    },
+    {
+      slug: 'growth-consultation',
+      title: 'Growth Consultation',
+      subtitle: null,
+      price: '$19.99',
+      currency: 'USD',
+      description:
+        'A structured consultation for businesses looking to improve their online presence and customer journey.',
+      features: GROWTH_FEATURES,
+      isPopular: false,
+      sortOrder: 1,
+    },
+    {
+      slug: 'pro-consultation',
+      title: 'Pro Consultation',
+      subtitle: null,
+      price: '$29.99',
+      currency: 'USD',
+      description:
+        'A comprehensive consultation covering your full digital presence and payment-readiness.',
+      features: PRO_FEATURES,
+      isPopular: true,
+      sortOrder: 2,
+    },
+  ];
+
+  for (const p of packs) {
+    const exists = await prisma.package.findUnique({ where: { slug: p.slug } });
+    if (exists) continue;
+    await prisma.package.create({
+      data: {
+        slug: p.slug,
+        title: p.title,
+        subtitle: p.subtitle,
+        price: p.price,
+        currency: p.currency,
+        description: p.description,
+        features: p.features,
+        isPopular: p.isPopular,
+        isActive: true,
+        sortOrder: p.sortOrder,
+      },
+    });
+    console.warn(`[seed] Package '${p.slug}' created.`);
+  }
+}
+
 async function main() {
   await seedAdmin();
   await seedSiteDefaults();
+  await seedPackages();
 }
 
 main()

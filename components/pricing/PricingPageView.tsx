@@ -2,6 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import PageHero from '@/components/layout/PageHero';
+import type { DisplayPackage } from '@/lib/packages/public-packages';
+import { isOrderableConsultationSlug } from '@/lib/packages/map-slug';
 import {
   contentMax,
   ds,
@@ -19,33 +21,34 @@ import {
   secondaryBtnClass,
 } from '@/components/home/homeTheme';
 
-type Package = {
-  id: string;
-  name: string;
-  price: string;
-  description: string;
-  features: string[];
-};
-
 const PRICING_ICON_COLOR = '#e8cc65';
 const iconWrapClass = `${iconWellSmGlyphClass} ${iconPricingWellClass} mt-0.5 flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg border-0`;
+
+function packageCtaHref(slug: string): string {
+  return isOrderableConsultationSlug(slug)
+    ? `/order?package=${encodeURIComponent(slug)}`
+    : '/contact';
+}
 
 function PricingTierCard({
   pkg,
   t,
 }: {
-  pkg: Package;
+  pkg: DisplayPackage;
   t: Awaited<ReturnType<typeof getTranslations>>;
 }) {
-  const isPro = pkg.id === 'pro';
-  const isElite = pkg.id === 'elite';
+  const featuredVisual = pkg.variant !== 'standard';
+
   const rimGradient =
-    isPro || isElite ? ds.featuredRimGradient : ds.pricingTierRimGradient;
+    pkg.variant === 'premium' || pkg.variant === 'featured'
+      ? ds.featuredRimGradient
+      : ds.pricingTierRimGradient;
   const surfaceClass =
-    isPro || isElite
+    pkg.variant === 'premium' || pkg.variant === 'featured'
       ? 'pricing-card-surface pricing-card-surface--featured'
       : 'pricing-card-surface pricing-card-surface--standard';
-  const headerBoost = isElite ? 0.078 : isPro ? 0.072 : 0.058;
+  const headerBoost =
+    pkg.variant === 'premium' ? 0.078 : pkg.variant === 'featured' ? 0.072 : 0.058;
 
   return (
     <div
@@ -64,14 +67,14 @@ function PricingTierCard({
           borderColor: 'rgba(255,255,255,0.10)',
           backgroundImage: [
             `linear-gradient(90deg, rgba(255,132,17,${headerBoost}) 0%, transparent 44%)`,
-            `linear-gradient(270deg, rgba(232,204,101,${isElite ? 0.06 : isPro ? 0.056 : 0.044}) 0%, transparent 42%)`,
+            `linear-gradient(270deg, rgba(232,204,101,${pkg.variant === 'premium' ? 0.06 : pkg.variant === 'featured' ? 0.056 : 0.044}) 0%, transparent 42%)`,
             'linear-gradient(180deg, #15161A 0%, rgba(17,18,20,0.94) 100%)',
           ].join(', '),
           boxShadow: 'inset 0 -1px 0 rgba(255,255,255,0.05)',
         }}
       >
         <div className="mb-5 flex min-h-[42px] items-center">
-          {isPro ? (
+          {pkg.variant === 'featured' ? (
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
               style={{
@@ -89,7 +92,7 @@ function PricingTierCard({
                 {t('mostPopular')}
               </span>
             </div>
-          ) : isElite ? (
+          ) : pkg.variant === 'premium' ? (
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
               style={{
@@ -111,15 +114,15 @@ function PricingTierCard({
         </div>
 
         <p className="font-semibold text-[1.05rem] md:text-[1.125rem] mb-4 tracking-tight" style={{ color: ds.text }}>
-          {pkg.name}
+          {pkg.title}
         </p>
         <div className="flex flex-wrap items-baseline gap-1 gap-y-1">
           <span
             className={`text-[2.5rem] md:text-[2.75rem] font-bold tracking-tight tabular-nums leading-none ${
-              isPro || isElite ? priceFeaturedClass : 'text-[#F5F2E9]'
+              featuredVisual ? priceFeaturedClass : 'text-[#F5F2E9]'
             }`}
             style={
-              isPro || isElite ? undefined : { textShadow: '0 0 36px rgba(232,204,101,0.08)' }
+              featuredVisual ? undefined : { textShadow: '0 0 36px rgba(232,204,101,0.08)' }
             }
           >
             {pkg.price}
@@ -151,9 +154,9 @@ function PricingTierCard({
         </ul>
 
         <Link
-          href="/contact"
+          href={packageCtaHref(pkg.slug)}
           className={`${
-            isPro || isElite ? primaryBtnClass : pricingCardSecondaryBtnClass
+            featuredVisual ? primaryBtnClass : pricingCardSecondaryBtnClass
           } block w-full text-center py-4 rounded-xl text-[15px] font-semibold mt-auto`}
         >
           {t('getStarted')}
@@ -163,9 +166,8 @@ function PricingTierCard({
   );
 }
 
-export default async function PricingPageView() {
+export default async function PricingPageView({ packages }: { packages: DisplayPackage[] }) {
   const t = await getTranslations('pricingPage');
-  const packages = t.raw('packages') as Package[];
   const included: string[] = (t.raw('includedItems') as string[]) ?? [];
   const howSteps: { title: string; detail: string }[] =
     (t.raw('howSteps') as { title: string; detail: string }[]) ?? [];
@@ -199,12 +201,12 @@ export default async function PricingPageView() {
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-9 items-stretch mb-10 lg:mb-14">
             {row1.map((pkg) => (
-              <PricingTierCard key={pkg.id} pkg={pkg} t={t} />
+              <PricingTierCard key={pkg.slug} pkg={pkg} t={t} />
             ))}
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-9 max-w-[820px] mx-auto items-stretch">
             {row2.map((pkg) => (
-              <PricingTierCard key={pkg.id} pkg={pkg} t={t} />
+              <PricingTierCard key={pkg.slug} pkg={pkg} t={t} />
             ))}
           </div>
 

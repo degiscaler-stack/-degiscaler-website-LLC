@@ -10,7 +10,7 @@ import {
   secondaryBtnClass,
 } from '@/components/home/homeTheme';
 
-export default async function ContactPageView() {
+export default async function ContactPageView({ locale }: { locale: string }) {
   const t = await getTranslations('contactPage');
 
   return (
@@ -33,7 +33,7 @@ export default async function ContactPageView() {
         }}
       >
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
-          <ContactFormClient />
+          <ContactFormClient locale={locale} />
         </div>
       </section>
 

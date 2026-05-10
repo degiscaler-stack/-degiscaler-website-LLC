@@ -7,11 +7,15 @@ import { verifyPassword } from '@/lib/auth/password';
 import { signAdminJwt } from '@/lib/auth/admin-jwt';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 
-export type LoginActionState = { error: string | null };
+export type LoginCode = 'MISSING' | 'BAD_CREDENTIALS' | 'DOWN' | 'CONFIG';
+
+export type LoginActionState = { code: LoginCode | null };
+
+export const loginInitialState: LoginActionState = { code: null };
 
 export async function loginAdminAction(
   _prevState: LoginActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<LoginActionState> {
   const email = String(formData.get('email') ?? '')
     .trim()
@@ -19,7 +23,7 @@ export async function loginAdminAction(
   const password = String(formData.get('password') ?? '');
 
   if (!email || !password) {
-    return { error: 'Please enter your email and password.' };
+    return { code: 'MISSING' };
   }
 
   let user: { id: string; email: string; passwordHash: string; role: string } | null;
@@ -29,20 +33,20 @@ export async function loginAdminAction(
       select: { id: true, email: true, passwordHash: true, role: true },
     });
   } catch {
-    return { error: 'Unable to sign in right now.' };
+    return { code: 'DOWN' };
   }
 
   if (!user) {
-    return { error: 'Invalid email or password.' };
+    return { code: 'BAD_CREDENTIALS' };
   }
 
   try {
     const ok = await verifyPassword(password, user.passwordHash);
     if (!ok) {
-      return { error: 'Invalid email or password.' };
+      return { code: 'BAD_CREDENTIALS' };
     }
   } catch {
-    return { error: 'Unable to sign in right now.' };
+    return { code: 'DOWN' };
   }
 
   const jwt = await signAdminJwt({
@@ -53,7 +57,7 @@ export async function loginAdminAction(
 
   if (!jwt) {
     console.error('[admin login] Missing JWT_SECRET or signing failed.');
-    return { error: 'Server configuration error. Try again later.' };
+    return { code: 'CONFIG' };
   }
 
   const jar = await cookies();

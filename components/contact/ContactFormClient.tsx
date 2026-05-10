@@ -1,8 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useActionState } from 'react';
+import { Loader2, Mail, Clock, Briefcase } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Mail, Clock, Briefcase, AlertCircle } from 'lucide-react';
+import {
+  submitContactAction,
+  contactInitialActionState,
+  type ContactActionState,
+} from '@/app/actions/contact';
 import {
   ds,
   accentEyebrowClass,
@@ -12,42 +17,12 @@ import {
   iconWellGlyphClass,
 } from '@/components/home/homeTheme';
 
-/**
- * Form submission: connect to your API route, email provider (e.g. Resend, SendGrid),
- * or server action. Until then, submit shows a notice and offers a mailto fallback (no fake “sent” state).
- */
-export default function ContactFormClient() {
+export default function ContactFormClient({ locale }: { locale: string }) {
   const t = useTranslations('contactPage');
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    businessProject: '',
-    budgetPackage: '',
-    message: '',
-  });
-  const [showNotice, setShowNotice] = useState(false);
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setShowNotice(true);
-  }
-
-  const mailtoBody = [
-    `${t('form.mailtoName')}: ${form.name}`,
-    `${t('form.mailtoEmail')}: ${form.email}`,
-    `${t('form.businessProject')}: ${form.businessProject}`,
-    `${t('form.budgetPackage')}: ${form.budgetPackage}`,
-    '',
-    form.message,
-  ].join('\n');
-
-  const mailtoHref = `mailto:support@degiscaler.com?subject=${encodeURIComponent(
-    t('form.mailtoSubject')
-  )}&body=${encodeURIComponent(mailtoBody)}`;
+  const [state, formAction, pending] = useActionState<ContactActionState, FormData>(
+    submitContactAction,
+    contactInitialActionState,
+  );
 
   const fieldClass =
     'w-full rounded-xl px-4 py-3 text-[15px] outline-none transition-[box-shadow] focus:ring-2 focus:ring-[rgba(255,132,17,0.35)]';
@@ -123,7 +98,7 @@ export default function ContactFormClient() {
 
       <div className="lg:col-span-2 space-y-6">
         <form
-          onSubmit={handleSubmit}
+          action={formAction}
           className="rounded-2xl md:rounded-[1.4rem] p-6 md:p-9 space-y-6"
           style={{
             border: `1px solid ${ds.borderStrong}`,
@@ -133,27 +108,28 @@ export default function ContactFormClient() {
           }}
           noValidate
         >
+          <input type="hidden" name="locale" value={locale} />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-name">
-                {t('form.name')}
+              <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-fullName">
+                {t('form.fullName')} *
               </label>
               <input
-                id="contact-name"
-                name="name"
+                id="contact-fullName"
+                name="fullName"
                 type="text"
                 required
                 autoComplete="name"
-                placeholder={t('form.namePlaceholder')}
-                value={form.name}
-                onChange={handleChange}
+                placeholder={t('form.fullNamePlaceholder')}
+                disabled={pending}
                 className={fieldClass}
                 style={surfaceStyle}
               />
             </div>
             <div>
               <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-email">
-                {t('form.email')}
+                {t('form.email')} *
               </label>
               <input
                 id="contact-email"
@@ -162,29 +138,11 @@ export default function ContactFormClient() {
                 required
                 autoComplete="email"
                 placeholder={t('form.emailPlaceholder')}
-                value={form.email}
-                onChange={handleChange}
+                disabled={pending}
                 className={fieldClass}
                 style={surfaceStyle}
               />
             </div>
-          </div>
-
-          <div>
-            <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-business">
-              {t('form.businessProject')}
-            </label>
-            <input
-              id="contact-business"
-              name="businessProject"
-              type="text"
-              required
-              placeholder={t('form.businessProjectPlaceholder')}
-              value={form.businessProject}
-              onChange={handleChange}
-              className={fieldClass}
-              style={surfaceStyle}
-            />
           </div>
 
           <div>
@@ -193,12 +151,10 @@ export default function ContactFormClient() {
             </label>
             <input
               id="contact-budget"
-              name="budgetPackage"
+              name="budgetOrPackage"
               type="text"
-              required
               placeholder={t('form.budgetPackagePlaceholder')}
-              value={form.budgetPackage}
-              onChange={handleChange}
+              disabled={pending}
               className={fieldClass}
               style={surfaceStyle}
             />
@@ -206,7 +162,7 @@ export default function ContactFormClient() {
 
           <div>
             <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="contact-message">
-              {t('form.message')}
+              {t('form.message')} *
             </label>
             <textarea
               id="contact-message"
@@ -214,44 +170,28 @@ export default function ContactFormClient() {
               required
               rows={6}
               placeholder={t('form.messagePlaceholder')}
-              value={form.message}
-              onChange={handleChange}
+              disabled={pending}
               className={fieldClass}
               style={{ ...surfaceStyle, resize: 'vertical', minHeight: '9rem' }}
             />
           </div>
 
-          {showNotice && (
+          {state?.error ? (
             <div
-              className="rounded-xl p-5 flex flex-col gap-3"
-              style={{
-                border: `1px solid ${ds.warmIconBorder}`,
-                backgroundColor: 'rgba(255,132,17,0.06)',
-              }}
-              role="status"
+              className="rounded-lg border border-red-500/35 bg-red-950/30 px-4 py-3 text-sm text-red-100"
+              role="alert"
             >
-              <div className="flex items-start gap-3">
-                <AlertCircle className="shrink-0 mt-0.5" size={20} style={{ color: ds.iconGold }} aria-hidden />
-                <div>
-                  <p className="text-[15px] font-semibold mb-1" style={{ color: ds.text }}>
-                    {t('form.notConfiguredTitle')}
-                  </p>
-                  <p className="text-[14px] leading-[1.65]" style={{ color: ds.textMuted }}>
-                    {t('form.notConfiguredText')}
-                  </p>
-                </div>
-              </div>
-              <a
-                href={mailtoHref}
-                className={`${primaryBtnClass} inline-flex justify-center px-6 py-3 rounded-xl text-[14px] font-semibold w-full sm:w-auto`}
-              >
-                {t('form.emailUsButton')}
-              </a>
+              {state.error}
             </div>
-          )}
+          ) : null}
 
-          <button type="submit" className={`${primaryBtnClass} w-full sm:w-auto px-10 py-3.5 rounded-xl text-[15px] font-semibold`}>
-            {t('form.submit')}
+          <button
+            type="submit"
+            disabled={pending}
+            className={`${primaryBtnClass} inline-flex w-full sm:w-auto items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold disabled:opacity-60`}
+          >
+            {pending ? <Loader2 className="size-4 animate-spin" aria-hidden /> : null}
+            {pending ? t('form.submitting') : t('form.submit')}
           </button>
         </form>
 

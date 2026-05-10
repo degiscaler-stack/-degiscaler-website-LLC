@@ -28,3 +28,55 @@ model SiteSetting {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Package {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String?
+  price       String
+  currency    String   @default("USD")
+  description String   @db.Text
+  features    Json
+  isPopular   Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orders      Order[]
+
+  @@map("packages")
+}
+
+model Order {
+  id           String    @id @default(cuid())
+  packageId    String?
+  package      Package?  @relation(fields: [packageId], references: [id], onDelete: SetNull)
+  packageSlug  String
+  packageTitle String
+  packagePrice String
+  fullName     String
+  email        String
+  whatsapp     String?
+  message      String?   @db.Text
+  status       String    @default("NEW")
+  locale       String    @default("en")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("orders")
+}
+
+model ContactMessage {
+  id              String   @id @default(cuid())
+  fullName        String
+  email           String
+  budgetOrPackage String?
+  message         String   @db.Text
+  status          String    @default("NEW")
+  locale          String    @default("en")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("contact_messages")
+}

@@ -1,4 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
+import { loadDisplayPackages } from '@/lib/packages/public-packages';
 import Hero from '@/components/home/Hero';
 import TrustBar from '@/components/home/TrustBar';
 import ProblemSolution from '@/components/home/ProblemSolution';
@@ -18,6 +20,17 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const tPricing = await getTranslations({ locale, namespace: 'pricingPage' });
+  const fallbackPackages = tPricing.raw('packages') as Array<{
+    id: string;
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+  }>;
+  const allPkgs = await loadDisplayPackages(fallbackPackages);
+  const homePreview = allPkgs.slice(0, 3);
+
   return (
     <>
       <Hero />
@@ -26,7 +39,7 @@ export default async function HomePage({
       <ServicesSection />
       <WhyUs />
       <ProcessSection />
-      <HomePricing />
+      <HomePricing packages={homePreview} />
       <HomeFaq />
       <TestimonialsSection />
       <FinalCta />
