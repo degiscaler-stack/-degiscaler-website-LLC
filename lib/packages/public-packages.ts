@@ -65,21 +65,49 @@ function fromFallback(p: FallbackPkg): DisplayPackage {
   };
 }
 
-/** Prefer active packages from DB; on failure or empty, use translated fallback list. */
-export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Promise<DisplayPackage[]> {
+function fallbackResults(packages: FallbackPkg[]): DisplayPackage[] {
   try {
-    const { prisma } = await import('@/lib/prisma');
-    const rows = await prisma.package.findMany({
-      where: { isActive: true },
-      orderBy: [{ sortOrder: 'asc' }, { title: 'asc' }],
-    });
-    if (rows.length > 0) {
-      return rows.map(fromDbRow);
-    }
+    return packages.map(fromFallback);
   } catch (err) {
-    console.error('[loadDisplayPackages]', err);
+    console.error('[loadDisplayPackages] fallback map failed', err);
+    return [];
   }
-  return fallbackPackages.map(fromFallback);
+}
+
+/** Prefer active packages from DB; on failure or empty, use translated fallback list. Never throws. */
+export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Promise<DisplayPackage[]> {
+  const fb = fallbackResults(fallbackPackages);
+
+  try {
+    let prismaMod: typeof import('@/lib/prisma');
+    try {
+      prismaMod = await import('@/lib/prisma');
+    } catch (err) {
+      console.error('[loadDisplayPackages]', err);
+      return fb;
+    }
+
+    try {
+      const rows = await prismaMod.prisma.package.findMany({
+        where: { isActive: true },
+        orderBy: [{ sortOrder: 'asc' }, { title: 'asc' }],
+      });
+      if (rows.length > 0) {
+        try {
+          return rows.map(fromDbRow);
+        } catch (mapErr) {
+          console.error('[loadDisplayPackages]', mapErr);
+          return fb;
+        }
+      }
+    } catch (err) {
+      console.error('[loadDisplayPackages]', err);
+    }
+    return fb;
+  } catch (outer) {
+    console.error('[loadDisplayPackages]', outer);
+    return fb;
+  }
 }
 
 export async function resolvePackageForOrder(

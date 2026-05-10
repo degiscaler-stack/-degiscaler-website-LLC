@@ -1,6 +1,7 @@
 'use server';
 
 import { getTranslations } from 'next-intl/server';
+import type { OrderActionState } from '@/lib/actions/public-form-state';
 import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
@@ -13,8 +14,6 @@ function sanitizeOrderSlug(raw: string): string {
   if (/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(t)) return t;
   return FALLBACK_ORDER_SLUG;
 }
-
-export type OrderActionState = { error: string | null; ok?: boolean; redirectTo?: string };
 
 function safePricingFallbackPackages(
   tPricing: { raw: (key: string) => unknown },
@@ -168,4 +167,3 @@ export async function submitOrderAction(
   };
 }
 
-export const orderInitialActionState: OrderActionState = { error: null };

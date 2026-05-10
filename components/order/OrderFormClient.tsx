@@ -4,11 +4,11 @@ import { useActionState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Loader2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { submitOrderAction } from '@/app/actions/order';
 import {
-  submitOrderAction,
   orderInitialActionState,
   type OrderActionState,
-} from '@/app/actions/order';
+} from '@/lib/actions/public-form-state';
 import {
   ds,
   accentEyebrowClass,

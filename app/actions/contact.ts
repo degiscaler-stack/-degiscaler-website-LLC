@@ -1,11 +1,10 @@
 'use server';
 
 import { getTranslations } from 'next-intl/server';
+import type { ContactActionState } from '@/lib/actions/public-form-state';
 import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
 import { safeCreateContactMessage } from '@/lib/db/public-safe';
-
-export type ContactActionState = { error: string | null; ok?: boolean; redirectTo?: string };
 
 export async function submitContactAction(
   _prev: ContactActionState,
@@ -62,4 +61,3 @@ export async function submitContactAction(
   };
 }
 
-export const contactInitialActionState: ContactActionState = { error: null };

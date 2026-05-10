@@ -4,11 +4,11 @@ import { useActionState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Loader2, Mail, Clock, Briefcase } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { submitContactAction } from '@/app/actions/contact';
 import {
-  submitContactAction,
   contactInitialActionState,
   type ContactActionState,
-} from '@/app/actions/contact';
+} from '@/lib/actions/public-form-state';
 import {
   ds,
   accentEyebrowClass,

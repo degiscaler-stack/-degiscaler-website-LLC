@@ -2,11 +2,11 @@
 
 import { useActionState } from 'react';
 import { Loader2 } from 'lucide-react';
+import { loginAdminAction } from '@/app/admin/login/actions';
 import {
-  loginAdminAction,
   loginInitialState,
   type LoginActionState,
-} from '@/app/admin/login/actions';
+} from '@/lib/admin/login-action-state';
 import { useAdminI18n } from '@/components/admin/AdminLocaleProvider';
 
 function loginMessage(state: LoginActionState, dict: ReturnType<typeof useAdminI18n>['dict']): string | null {

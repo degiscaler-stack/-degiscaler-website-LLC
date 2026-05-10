@@ -2,16 +2,11 @@
 
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import type { LoginActionState } from '@/lib/admin/login-action-state';
 import { prisma } from '@/lib/prisma';
 import { verifyPassword } from '@/lib/auth/password';
 import { signAdminJwt } from '@/lib/auth/admin-jwt';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
-
-export type LoginCode = 'MISSING' | 'BAD_CREDENTIALS' | 'DOWN' | 'CONFIG';
-
-export type LoginActionState = { code: LoginCode | null };
-
-export const loginInitialState: LoginActionState = { code: null };
 
 export async function loginAdminAction(
   _prevState: LoginActionState,
