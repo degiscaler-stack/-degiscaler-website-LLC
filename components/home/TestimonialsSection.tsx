@@ -31,7 +31,7 @@ function testimonialAvatarSrc(item: Testimonial): string {
   for (let i = 0; i < n.length; i += 1) {
     h = (h * 31 + n.charCodeAt(i)) >>> 0;
   }
-  return `/testimonials/avatar-${(h % 5) + 1}.svg`;
+  return `/testimonials/woman-${(h % 2) + 1}.webp`;
 }
 
 function starFillState(ratingStr: string, index: number): 'full' | 'soft' | 'dim' {

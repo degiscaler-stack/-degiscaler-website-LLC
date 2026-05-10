@@ -4,9 +4,9 @@
  * DegiScaler rule-based chat (client). FAQ answers + live support handoff via /api/support/*.
  */
 
-import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { Send } from 'lucide-react';
+import { Send, ImagePlus } from 'lucide-react';
 import { matchIntent, normalizeUserMessage, shouldStartSupportFlow } from '@/lib/chat/ruleMatcher';
 import type { BotIntent } from '@/lib/chat/knowledge';
 import ChatLauncher from '@/components/chat/ChatLauncher';
@@ -14,11 +14,15 @@ import ChatPanel from '@/components/chat/ChatPanel';
 import ChatMessage from '@/components/chat/ChatMessage';
 import TypingIndicator from '@/components/chat/TypingIndicator';
 import { SUPPORT_SESSION_STORAGE_KEY } from '@/lib/support/public-api';
+import { assignSupportAgent } from '@/lib/support/assign-agent';
+import { SUPPORT_ATTACHMENT_MAX_BYTES } from '@/lib/support/attachment-limits';
 
 type ChatBubble = {
   id: string;
   role: 'user' | 'bot' | 'agent';
   text: string;
+  attachmentUrl?: string | null;
+  attachmentName?: string | null;
 };
 
 type SupportPhase =
@@ -28,7 +32,15 @@ type SupportPhase =
   | 'awaiting_whatsapp'
   | 'awaiting_message';
 
-type ApiMsg = { id: string; sender: string; body: string; createdAt?: string };
+type ApiMsg = {
+  id: string;
+  sender: string;
+  body: string;
+  createdAt?: string;
+  attachmentUrl?: string;
+  attachmentName?: string;
+  attachmentType?: string;
+};
 
 const LS_PREFIX = 'degiscaler-chat-v1';
 
@@ -94,6 +106,25 @@ function isSkipWhatsapp(raw: string): boolean {
   );
 }
 
+function isAllowedVisitorImageMime(mime: string): boolean {
+  const m = mime.toLowerCase();
+  return m === 'image/jpeg' || m === 'image/png' || m === 'image/webp';
+}
+
+function readFileAsDataURL(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.onerror = () => reject(new Error('read_failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+/** Quick client check before POST — mirrors server prefix whitelist */
+function isLikelySafeImageDataUrl(url: string): boolean {
+  return /^data:image\/(jpeg|jpg|png|webp);base64,/i.test(url);
+}
+
 export default function ChatWidget() {
   const t = useTranslations('chat');
   const locale = useLocale();
@@ -122,14 +153,45 @@ export default function ChatWidget() {
   }>({});
   const [supportSessionId, setSupportSessionId] = useState<string | null>(null);
   const [supportActive, setSupportActive] = useState(false);
+  const [pendingPick, setPendingPick] = useState<{ file: File; previewUrl: string } | null>(null);
+  const [attachError, setAttachError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const assignedAgent = useMemo(
+    () => (supportSessionId ? assignSupportAgent(supportSessionId) : null),
+    [supportSessionId],
+  );
+
+  const supportIdentity = useMemo(() => {
+    if (!supportActive || !assignedAgent) return null;
+    return {
+      agentName: assignedAgent.name,
+      agentImageSrc: assignedAgent.imageSrc,
+      teamLabel: t('support.teamLabel'),
+      onlineLabel: t('support.onlineLabel'),
+      note: t('support.handoffNote'),
+    };
+  }, [supportActive, assignedAgent, t]);
 
   const mapRemoteRow = useCallback(
     (m: ApiMsg): ChatBubble => {
       if (m.sender === 'ADMIN') {
-        return { id: m.id, role: 'agent', text: `${t('support.agentPrefix')}${m.body}` };
+        return {
+          id: m.id,
+          role: 'agent',
+          text: `${t('support.agentPrefix')}${m.body}`,
+          attachmentUrl: m.attachmentUrl ?? null,
+          attachmentName: m.attachmentName ?? null,
+        };
       }
       if (m.sender === 'VISITOR') {
-        return { id: m.id, role: 'user', text: m.body };
+        return {
+          id: m.id,
+          role: 'user',
+          text: m.body,
+          attachmentUrl: m.attachmentUrl ?? null,
+          attachmentName: m.attachmentName ?? null,
+        };
       }
       return { id: m.id, role: 'bot', text: m.body };
     },
@@ -144,9 +206,11 @@ export default function ChatWidget() {
           if (next.some((m) => m.id === r.id)) continue;
           const bubble = mapRemoteRow(r);
           if (bubble.role === 'user') {
-            const idx = next.findLastIndex(
-              (m) => m.role === 'user' && m.text === bubble.text && m.id.startsWith('u-'),
-            );
+            const idx = next.findLastIndex((m) => {
+              if (!(m.role === 'user' && m.id.startsWith('u-'))) return false;
+              if (m.text !== bubble.text) return false;
+              return Boolean(m.attachmentUrl) === Boolean(bubble.attachmentUrl);
+            });
             if (idx !== -1) {
               next = [...next.slice(0, idx), bubble, ...next.slice(idx + 1)];
               continue;
@@ -163,7 +227,11 @@ export default function ChatWidget() {
   const persist = useCallback(() => {
     if (typeof window === 'undefined' || !storeReady) return;
     try {
-      window.localStorage.setItem(storageKey(locale), JSON.stringify({ v: 2, messages, hasWelcomed }));
+      const slim = messages.map(({ attachmentUrl: _a, attachmentName: _n, ...rest }) => rest);
+      window.localStorage.setItem(
+        storageKey(locale),
+        JSON.stringify({ v: 2, messages: slim, hasWelcomed }),
+      );
     } catch {
       /* ignore */
     }
@@ -262,9 +330,28 @@ export default function ChatWidget() {
     setMessages((prev) => [...prev, { id, role: 'bot', text }]);
   }, []);
 
-  const pushUser = useCallback((text: string) => {
-    const id = `u-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    setMessages((prev) => [...prev, { id, role: 'user', text }]);
+  const pushUser = useCallback(
+    (text: string, opts?: { attachmentUrl?: string | null; attachmentName?: string | null }) => {
+      const id = `u-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id,
+          role: 'user',
+          text,
+          attachmentUrl: opts?.attachmentUrl ?? null,
+          attachmentName: opts?.attachmentName ?? null,
+        },
+      ]);
+    },
+    [],
+  );
+
+  const revokePendingPreview = useCallback(() => {
+    setPendingPick((prev) => {
+      if (prev?.previewUrl.startsWith('blob:')) URL.revokeObjectURL(prev.previewUrl);
+      return null;
+    });
   }, []);
 
   const runBotReply = useCallback(
@@ -299,7 +386,9 @@ export default function ChatWidget() {
   const handleClose = useCallback(() => {
     setOpen(false);
     exitGatheringFields();
-  }, [exitGatheringFields]);
+    setAttachError(null);
+    revokePendingPreview();
+  }, [exitGatheringFields, revokePendingPreview]);
 
   useEffect(() => {
     if (!open) return;
@@ -310,25 +399,77 @@ export default function ChatWidget() {
     return () => window.removeEventListener('keydown', onKey);
   }, [open, handleClose]);
 
+  const buildAttachmentPayloadFromFile = useCallback(
+    async (file: File) => {
+      if (!isAllowedVisitorImageMime(file.type)) {
+        setAttachError(t('support.imageInvalidType'));
+        return null;
+      }
+      if (file.size > SUPPORT_ATTACHMENT_MAX_BYTES) {
+        setAttachError(t('support.imageTooLarge'));
+        return null;
+      }
+      try {
+        const dataUrl = await readFileAsDataURL(file);
+        if (!isLikelySafeImageDataUrl(dataUrl)) {
+          setAttachError(t('support.imageInvalidType'));
+          return null;
+        }
+        return {
+          attachmentUrl: dataUrl,
+          attachmentName: file.name,
+          attachmentType: file.type,
+        };
+      } catch {
+        setAttachError(t('support.submitError'));
+        return null;
+      }
+    },
+    [t],
+  );
+
   const submitVisitorFollowUp = useCallback(
-    async (trimmed: string) => {
+    async (trimmed: string, pick: { file: File; previewUrl: string } | null) => {
       if (!supportSessionId) return false;
+      let attachBody:
+        | { attachmentUrl: string; attachmentName: string; attachmentType: string }
+        | undefined;
+
+      if (pick?.file) {
+        const built = await buildAttachmentPayloadFromFile(pick.file);
+        if (!built) return false;
+        attachBody = built;
+      }
+
+      if (!trimmed && !attachBody) return false;
+
       setTyping(true);
+      setAttachError(null);
       try {
         const res = await fetch('/api/support/message', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sessionId: supportSessionId, message: trimmed }),
+          body: JSON.stringify({
+            sessionId: supportSessionId,
+            message: trimmed,
+            ...(attachBody ? attachBody : {}),
+          }),
         });
         const data = (await res.json().catch(() => null)) as {
           ok?: boolean;
+          error?: string;
           message?: ApiMsg;
         } | null;
         setTyping(false);
         if (!res.ok || !data?.ok) {
-          await runBotReply(t('support.submitError'), 'support');
+          const errKey = data?.error;
+          if (errKey === 'attachment_too_large') await runBotReply(t('support.imageTooLarge'), 'support');
+          else if (errKey === 'attachment_invalid') await runBotReply(t('support.imageInvalidType'), 'support');
+          else await runBotReply(t('support.submitError'), 'support');
           return true;
         }
+        if (pick?.previewUrl.startsWith('blob:')) URL.revokeObjectURL(pick.previewUrl);
+        setPendingPick(null);
         if (data.message) mergeRemoteMessages([data.message]);
         return true;
       } catch {
@@ -337,11 +478,11 @@ export default function ChatWidget() {
         return true;
       }
     },
-    [supportSessionId, runBotReply, t, mergeRemoteMessages],
+    [supportSessionId, runBotReply, t, mergeRemoteMessages, buildAttachmentPayloadFromFile],
   );
 
   const handleSupportPath = useCallback(
-    async (trimmed: string) => {
+    async (trimmed: string, pick: { file: File; previewUrl: string } | null) => {
       if (supportPhase === 'awaiting_name') {
         if (!trimmed) {
           await runBotReply(t('support.emptyName'), 'support');
@@ -370,16 +511,30 @@ export default function ChatWidget() {
         return;
       }
       if (supportPhase === 'awaiting_message') {
-        if (!trimmed) {
+        if (!trimmed && !pick) {
           await runBotReply(t('support.emptyMessage'), 'support');
           return;
         }
-        pushUser(trimmed);
+
+        let attachBody:
+          | { attachmentUrl: string; attachmentName: string; attachmentType: string }
+          | undefined;
+        if (pick?.file) {
+          const built = await buildAttachmentPayloadFromFile(pick.file);
+          if (!built) return;
+          attachBody = built;
+        }
+
+        pushUser(trimmed, {
+          attachmentUrl: pick?.previewUrl,
+          attachmentName: pick?.file.name ?? null,
+        });
         const name = supportDraft.name ?? '';
         const email = supportDraft.email ?? '';
         const whatsapp = supportDraft.whatsapp ?? null;
 
         setTyping(true);
+        setAttachError(null);
         try {
           const res = await fetch('/api/support/conversation', {
             method: 'POST',
@@ -391,10 +546,12 @@ export default function ChatWidget() {
               whatsapp,
               message: trimmed,
               locale,
+              ...(attachBody ? attachBody : {}),
             }),
           });
           const data = (await res.json().catch(() => null)) as {
             ok?: boolean;
+            error?: string;
             sessionId?: string;
             messages?: ApiMsg[];
           } | null;
@@ -402,7 +559,10 @@ export default function ChatWidget() {
           setTyping(false);
 
           if (!res.ok || !data?.ok || !data.sessionId) {
-            await runBotReply(t('support.submitError'), 'support');
+            const errKey = data?.error;
+            if (errKey === 'attachment_too_large') await runBotReply(t('support.imageTooLarge'), 'support');
+            else if (errKey === 'attachment_invalid') await runBotReply(t('support.imageInvalidType'), 'support');
+            else await runBotReply(t('support.submitError'), 'support');
             exitGatheringFields();
             return;
           }
@@ -412,6 +572,8 @@ export default function ChatWidget() {
           } catch {
             /* ignore */
           }
+          if (pick?.previewUrl.startsWith('blob:')) URL.revokeObjectURL(pick.previewUrl);
+          setPendingPick(null);
           setSupportSessionId(data.sessionId);
           setSupportActive(true);
           if (Array.isArray(data.messages)) mergeRemoteMessages(data.messages);
@@ -434,17 +596,58 @@ export default function ChatWidget() {
       exitGatheringFields,
       mergeRemoteMessages,
       pushUser,
+      buildAttachmentPayloadFromFile,
     ],
+  );
+
+  const attachmentEligible =
+    supportPhase === 'awaiting_message' || (supportActive && supportPhase === 'idle');
+
+  const sendDisabled =
+    typing || (attachmentEligible ? !input.trim() && !pendingPick : !input.trim());
+
+  const onFileInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      e.target.value = '';
+      if (!file) return;
+      setAttachError(null);
+      if (!isAllowedVisitorImageMime(file.type)) {
+        setAttachError(t('support.imageInvalidType'));
+        return;
+      }
+      if (file.size > SUPPORT_ATTACHMENT_MAX_BYTES) {
+        setAttachError(t('support.imageTooLarge'));
+        return;
+      }
+      setPendingPick((prev) => {
+        if (prev?.previewUrl.startsWith('blob:')) URL.revokeObjectURL(prev.previewUrl);
+        return { file, previewUrl: URL.createObjectURL(file) };
+      });
+    },
+    [t],
   );
 
   const onSubmit = useCallback(async () => {
     const trimmed = input.trim();
-    if (!trimmed || typing) return;
+    const snapPick = pendingPick;
+
+    if (typing) return;
+    if (attachmentEligible) {
+      if (!trimmed && !snapPick) return;
+    } else if (!trimmed) {
+      return;
+    }
+
     setInput('');
+    setAttachError(null);
 
     if (supportActive && supportPhase === 'idle') {
-      pushUser(trimmed);
-      await submitVisitorFollowUp(trimmed);
+      pushUser(trimmed, {
+        attachmentUrl: snapPick?.previewUrl,
+        attachmentName: snapPick?.file.name ?? null,
+      });
+      await submitVisitorFollowUp(trimmed, snapPick);
       requestAnimationFrame(() => textareaRef.current?.focus());
       return;
     }
@@ -453,7 +656,7 @@ export default function ChatWidget() {
       if (supportPhase !== 'awaiting_message') {
         pushUser(trimmed);
       }
-      await handleSupportPath(trimmed);
+      await handleSupportPath(trimmed, supportPhase === 'awaiting_message' ? snapPick : null);
       requestAnimationFrame(() => textareaRef.current?.focus());
       return;
     }
@@ -477,6 +680,7 @@ export default function ChatWidget() {
     requestAnimationFrame(() => textareaRef.current?.focus());
   }, [
     input,
+    pendingPick,
     typing,
     supportActive,
     supportPhase,
@@ -486,6 +690,7 @@ export default function ChatWidget() {
     runBotReply,
     t,
     submitVisitorFollowUp,
+    attachmentEligible,
   ]);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -510,41 +715,98 @@ export default function ChatWidget() {
           presentationOpen={open && panelReveal}
           headerGradientId={headerGradientId}
           title={t('title')}
+          supportIdentity={supportIdentity}
           onClose={handleClose}
           closeAria={t('closeAria')}
           messagesRef={messagesRef}
           footer={
-            <div className="flex items-end gap-2.5">
-              <textarea
-                ref={textareaRef}
-                rows={2}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={onKeyDown}
-                placeholder={t('inputPlaceholder')}
-                className="min-h-[3rem] flex-1 resize-none rounded-[0.95rem] border border-[rgba(255,255,255,0.1)] bg-[rgba(7,8,11,0.94)] px-3 py-2.5 text-[13.5px] leading-relaxed text-[#F5F2E9] placeholder:text-[#6f6b63] focus:border-[rgba(232,204,101,0.38)] focus:outline-none focus:ring-[1px] focus:ring-[rgba(255,132,17,0.22)]"
-              />
-              <button
-                type="button"
-                onClick={() => void onSubmit()}
-                disabled={typing || !input.trim()}
-                className="flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-[0.85rem] border border-[rgba(232,204,101,0.42)] transition enabled:hover:-translate-y-px enabled:hover:shadow-[0_10px_28px_rgba(255,132,17,0.22)] disabled:opacity-[0.4]"
-                style={{
-                  background:
-                    'linear-gradient(148deg, rgba(255,132,17,0.42), rgba(214,167,0,0.26), rgba(232,204,101,0.28))',
-                  boxShadow:
-                    'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.35)',
-                }}
-                aria-label={t('sendAria')}
-              >
-                <Send className="size-[1.15rem] text-[#0b0c0e]" strokeWidth={2.35} aria-hidden />
-              </button>
+            <div className="flex flex-col gap-2">
+              {attachError ? (
+                <p className="text-[11.5px] leading-snug text-[#ffb4a8]" role="alert">
+                  {attachError}
+                </p>
+              ) : null}
+              {pendingPick && attachmentEligible ? (
+                <div className="flex items-center gap-2 rounded-[0.85rem] border border-[rgba(255,132,17,0.22)] bg-[rgba(7,8,11,0.85)] px-2 py-1.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={pendingPick.previewUrl}
+                    alt=""
+                    className="size-11 shrink-0 rounded-lg object-cover"
+                  />
+                  <span className="min-w-0 flex-1 truncate text-[11.5px] text-[#b8b3a7]">
+                    {pendingPick.file.name}
+                  </span>
+                  <button
+                    type="button"
+                    className="shrink-0 rounded-lg px-2 py-1 text-[11px] font-semibold text-[#e8cc65]"
+                    onClick={() => {
+                      setAttachError(null);
+                      revokePendingPreview();
+                    }}
+                    aria-label={t('support.imageRemoveAria')}
+                  >
+                    ✕
+                  </button>
+                </div>
+              ) : null}
+              <div className="flex items-end gap-2">
+                {attachmentEligible ? (
+                  <>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp"
+                      className="hidden"
+                      onChange={onFileInputChange}
+                    />
+                    <button
+                      type="button"
+                      className="flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-[0.85rem] border border-[rgba(255,255,255,0.1)] bg-[rgba(7,8,11,0.94)] text-[#e8cc65] transition hover:border-[rgba(232,204,101,0.35)] disabled:opacity-[0.4]"
+                      disabled={typing}
+                      aria-label={t('support.imagePickAria')}
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <ImagePlus className="size-[1.1rem]" strokeWidth={2.25} aria-hidden />
+                    </button>
+                  </>
+                ) : null}
+                <textarea
+                  ref={textareaRef}
+                  rows={2}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  placeholder={t('inputPlaceholder')}
+                  className="min-h-[3rem] flex-1 resize-none rounded-[0.95rem] border border-[rgba(255,255,255,0.1)] bg-[rgba(7,8,11,0.94)] px-3 py-2.5 text-[13.5px] leading-relaxed text-[#F5F2E9] placeholder:text-[#6f6b63] focus:border-[rgba(232,204,101,0.38)] focus:outline-none focus:ring-[1px] focus:ring-[rgba(255,132,17,0.22)]"
+                />
+                <button
+                  type="button"
+                  onClick={() => void onSubmit()}
+                  disabled={sendDisabled}
+                  className="flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-[0.85rem] border border-[rgba(232,204,101,0.42)] transition enabled:hover:-translate-y-px enabled:hover:shadow-[0_10px_28px_rgba(255,132,17,0.22)] disabled:opacity-[0.4]"
+                  style={{
+                    background:
+                      'linear-gradient(148deg, rgba(255,132,17,0.42), rgba(214,167,0,0.26), rgba(232,204,101,0.28))',
+                    boxShadow:
+                      'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.35)',
+                  }}
+                  aria-label={t('sendAria')}
+                >
+                  <Send className="size-[1.15rem] text-[#0b0c0e]" strokeWidth={2.35} aria-hidden />
+                </button>
+              </div>
             </div>
           }
         >
           <div className="flex flex-col gap-3.5 md:gap-4">
             {messages.map((m) => (
-              <ChatMessage key={m.id} role={m.role}>
+              <ChatMessage
+                key={m.id}
+                role={m.role}
+                attachmentUrl={m.attachmentUrl ?? undefined}
+                agentAvatarSrc={m.role === 'agent' && assignedAgent ? assignedAgent.imageSrc : null}
+              >
                 {m.text}
               </ChatMessage>
             ))}

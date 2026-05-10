@@ -4,6 +4,16 @@ import { validateVisitorMessageBody } from '@/lib/support/public-api';
 
 export const runtime = 'nodejs';
 
+const msgSelect = {
+  id: true,
+  sender: true,
+  body: true,
+  attachmentUrl: true,
+  attachmentName: true,
+  attachmentType: true,
+  createdAt: true,
+} as const;
+
 export async function POST(request: Request) {
   try {
     let json: unknown;
@@ -17,6 +27,9 @@ export async function POST(request: Request) {
     const parsed = validateVisitorMessageBody({
       sessionId: body.sessionId,
       message: body.message,
+      attachmentUrl: body.attachmentUrl,
+      attachmentName: body.attachmentName,
+      attachmentType: body.attachmentType,
     });
 
     if (!parsed.ok) {
@@ -32,13 +45,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, error: 'not_found' }, { status: 404 });
     }
 
+    const att = parsed.attachment;
+
     const msg = await prisma.supportMessage.create({
       data: {
         conversationId: conv.id,
         sender: 'VISITOR',
         body: parsed.message,
+        ...(att
+          ? {
+              attachmentUrl: att.attachmentUrl,
+              attachmentName: att.attachmentName,
+              attachmentType: att.attachmentType,
+            }
+          : {}),
       },
-      select: { id: true, sender: true, body: true, createdAt: true },
+      select: msgSelect,
     });
 
     return NextResponse.json({
@@ -47,6 +69,9 @@ export async function POST(request: Request) {
         id: msg.id,
         sender: msg.sender,
         body: msg.body,
+        attachmentUrl: msg.attachmentUrl ?? undefined,
+        attachmentName: msg.attachmentName ?? undefined,
+        attachmentType: msg.attachmentType ?? undefined,
         createdAt: msg.createdAt.toISOString(),
       },
     });

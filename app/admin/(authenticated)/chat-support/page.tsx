@@ -9,7 +9,7 @@ const listInclude = {
   messages: {
     orderBy: { createdAt: 'desc' as const },
     take: 1,
-    select: { body: true, createdAt: true, sender: true },
+    select: { body: true, createdAt: true, sender: true, attachmentUrl: true },
   },
 } satisfies Prisma.SupportConversationInclude;
 
@@ -109,7 +109,11 @@ export default async function AdminChatSupportPage({
                       {last ? (
                         <p className="mt-2 line-clamp-2 text-xs text-neutral-400">
                           <span className="text-neutral-600">{d.chatLastMessage}: </span>
-                          {last.body}
+                          {last.body?.trim()
+                            ? last.body
+                            : last.attachmentUrl
+                              ? '[Image attachment]'
+                              : '—'}
                         </p>
                       ) : null}
                     </Link>
@@ -189,6 +193,17 @@ export default async function AdminChatSupportPage({
                     <div className="mb-1 text-[10px] uppercase tracking-wide text-neutral-500">
                       {m.sender === 'ADMIN' ? d.chatAdmin : m.sender === 'VISITOR' ? d.chatVisitor : m.sender}
                     </div>
+                    {m.attachmentUrl ? (
+                      <div className="mb-2">
+                        <p className="text-[10px] uppercase tracking-wide text-neutral-500">Attachment</p>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={m.attachmentUrl}
+                          alt=""
+                          className="mt-1 max-h-52 max-w-full rounded-lg border border-[var(--ds-admin-border)] object-contain"
+                        />
+                      </div>
+                    ) : null}
                     <p className="whitespace-pre-wrap text-neutral-200">{m.body}</p>
                     <p className="mt-1 text-[10px] text-neutral-600">
                       {new Intl.DateTimeFormat(undefined, { dateStyle: 'short', timeStyle: 'short' }).format(

@@ -74,14 +74,21 @@
       "askName": "Quel est votre nom complet ?",
       "askEmail": "Merci — quelle adresse e‑mail devons-nous utiliser ?",
       "askWhatsapp": "Numéro WhatsApp (facultatif). Écrivez « skip » si vous préférez ne pas le partager.",
-      "askMessage": "Décrivez brièvement le sujet ou le projet (court paragraphe).",
-      "agentPrefix": "Équipe · ",
+      "askMessage": "Décrivez brièvement le sujet ou le projet (court paragraphe). Vous pouvez joindre une capture avec le bouton image.",
+      "agentPrefix": "",
+      "teamLabel": "Équipe support",
+      "onlineLabel": "En ligne",
+      "handoffNote": "Un membre de l'équipe support vous répondra ici.",
       "emptyName": "Merci de donner votre nom pour personnaliser la demande.",
       "invalidEmail": "Adresse peu lisible ; merci une forme classique : vous@votredomaine.com",
-      "emptyMessage": "Ajoutez un court message précis pour l’équipe support.",
-      "requestReceived": "Votre demande de support a été reçue. Un membre de l'équipe vous répondra ici dans ce chat.",
+      "emptyMessage": "Ajoutez un court message précis ou joignez une image pour que le support puisse aider.",
+      "requestReceived": "Votre demande de support a été reçue.",
       "submitError": "Impossible d’envoyer pour le moment. Réessayez dans un instant.",
-      "confirmation": "Votre demande de support a été reçue. Un membre de l'équipe vous répondra ici dans ce chat.",
+      "confirmation": "Votre demande de support a été reçue.",
+      "imageTooLarge": "L’image est trop volumineuse (max 5 Mo). Essayez un JPEG, PNG ou WebP plus petit.",
+      "imageInvalidType": "Veuillez choisir une image JPEG, PNG ou WebP (SVG non pris en charge).",
+      "imagePickAria": "Joindre une image",
+      "imageRemoveAria": "Retirer l’image sélectionnée",
       "copyBlock": "",
       "mailSubject": "",
       "mailBody": "",
@@ -319,6 +326,7 @@
           "role": "Fondatrice",
           "meta": "Édition logicielle · Lyon, FR",
           "rating": "5.0",
+          "avatar": "/testimonials/woman-1.webp",
           "quote": "La consultation a mis en lumière des points de confiance sur la page d'accueil et des ambiguïtés au moment du paiement que nous tournions en rond depuis des semaines. Les notes étaient directes et utiles—nous savions enfin quoi traiter en premier."
         },
         {
@@ -326,6 +334,7 @@
           "role": "Commerçant indépendant",
           "meta": "Mode · Bruxelles, BE",
           "rating": "4.9",
+          "avatar": "/testimonials/man-1.webp",
           "quote": "L'audit a signalé des signaux de confiance faibles—politiques mal mises en avant, incohérences sur les moyens de contact. Une liste priorisée, sans effet spectacle, alignée sur la façon dont les clients parcourent vraiment le site."
         },
         {
@@ -333,6 +342,7 @@
           "role": "Vendeuse en ligne",
           "meta": "Articles de consommation · SE",
           "rating": "4.8",
+          "avatar": "/testimonials/woman-2.webp",
           "quote": "Pas de promesses creuses. Les recommandations ont resserré les fiches produits et le parcours de paiement pour donner l'impression d'une boutique sérieuse, pas d'un projet improvisé."
         },
         {
@@ -340,6 +350,7 @@
           "role": "Dirigeant de PME de services",
           "meta": "Services B2B · Copenhague, DK",
           "rating": "4.7",
+          "avatar": "/testimonials/man-2.webp",
           "quote": "Le retour structuré était clair : quoi raccourcir, où renforcer la crédibilité, comment alléger les formulaires. Nous avons appliqué la majorité en interne sans deviner les priorités."
         },
         {
@@ -347,6 +358,7 @@
           "role": "Fondatrice de start-up",
           "meta": "Phase amorçage · Marseille, FR",
           "rating": "4.6",
+          "avatar": "/testimonials/woman-1.webp",
           "quote": "Cadre précis au départ, synthèse rapide, aucune gymnastique commerciale. Pour notre niveau de formule le rapport qualité prix était sérieux—inutile de décider au feeling seul pour le site."
         }
       ]

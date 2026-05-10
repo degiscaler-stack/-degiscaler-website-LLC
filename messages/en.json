@@ -74,14 +74,21 @@
       "askName": "What's your full name?",
       "askEmail": "Thanks — what email should we use to reach you?",
       "askWhatsapp": "WhatsApp number (optional). Type \"skip\" if you prefer not to share.",
-      "askMessage": "Briefly describe your project or question (one short paragraph).",
-      "agentPrefix": "Team · ",
+      "askMessage": "Briefly describe your project or question (one short paragraph). You can attach a screenshot using the image button.",
+      "agentPrefix": "",
+      "teamLabel": "Support Team",
+      "onlineLabel": "Online",
+      "handoffNote": "A support team member will reply here.",
       "emptyName": "Please share your name so we can personalize the request.",
       "invalidEmail": "That email doesn't look complete — please paste a typical address like you@yourdomain.com.",
-      "emptyMessage": "Please include a brief message describing what you'd like support to address.",
-      "requestReceived": "Your support request has been received. A team member will reply here in this chat.",
+      "emptyMessage": "Please include a brief message or attach an image so support can help.",
+      "requestReceived": "Your support request has been received.",
       "submitError": "We couldn't send that just now. Please try again in a moment.",
-      "confirmation": "Your support request has been received. A team member will reply here in this chat.",
+      "confirmation": "Your support request has been received.",
+      "imageTooLarge": "That image is too large (max 5 MB). Try a smaller JPEG, PNG, or WebP.",
+      "imageInvalidType": "Please choose a JPEG, PNG, or WebP image (SVG is not supported).",
+      "imagePickAria": "Attach image",
+      "imageRemoveAria": "Remove selected image",
       "copyBlock": "",
       "mailSubject": "",
       "mailBody": "",
@@ -314,6 +321,7 @@
           "role": "Founder",
           "meta": "SaaS · Austin, TX",
           "rating": "5.0",
+          "avatar": "/testimonials/man-1.webp",
           "quote": "The consultation surfaced trust issues around our homepage and checkout copy we had been debating for weeks. The notes were blunt in a helpful way—we finally knew what to fix first."
         },
         {
@@ -321,6 +329,7 @@
           "role": "Small business owner",
           "meta": "Retail · Valencia, ES",
           "rating": "4.9",
+          "avatar": "/testimonials/woman-1.webp",
           "quote": "The audit flagged weak trust signals we had overlooked—policy links buried, inconsistent contact cues. Nothing flashy, just a prioritized list that matched how customers actually browse."
         },
         {
@@ -328,6 +337,7 @@
           "role": "E‑commerce seller",
           "meta": "Consumer goods · UK",
           "rating": "4.8",
+          "avatar": "/testimonials/man-2.webp",
           "quote": "We did not need a pitch deck of promises. Their recommendations tightened product pages and the checkout path so the store finally feels like a serious operation, not a side project."
         },
         {
@@ -335,6 +345,7 @@
           "role": "Service company owner",
           "meta": "Professional services · SE",
           "rating": "4.7",
+          "avatar": "/testimonials/woman-2.webp",
           "quote": "The structured feedback landed in plain language—what to shorten, where to reinforce credibility, how to tighten lead forms. We implemented most of it in-house without guessing."
         },
         {
@@ -342,6 +353,7 @@
           "role": "Startup founder",
           "meta": "Early‑stage · CA",
           "rating": "4.6",
+          "avatar": "/testimonials/man-3.webp",
           "quote": "Clear scope up front, quick turnaround on the summary, no upsell gymnastics. For the tier we picked, it was genuinely worth it to stop debating our site on instinct alone."
         }
       ]

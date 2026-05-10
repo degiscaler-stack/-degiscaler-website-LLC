@@ -5,6 +5,16 @@ import { validateSupportCreateBody } from '@/lib/support/public-api';
 
 export const runtime = 'nodejs';
 
+const msgSelect = {
+  id: true,
+  sender: true,
+  body: true,
+  attachmentUrl: true,
+  attachmentName: true,
+  attachmentType: true,
+  createdAt: true,
+} as const;
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -23,12 +33,7 @@ export async function GET(request: Request) {
         messages: {
           orderBy: { createdAt: 'asc' },
           where: { sender: { in: ['VISITOR', 'ADMIN'] } },
-          select: {
-            id: true,
-            sender: true,
-            body: true,
-            createdAt: true,
-          },
+          select: msgSelect,
         },
       },
     });
@@ -38,11 +43,14 @@ export async function GET(request: Request) {
     }
 
     const messages = conv.messages.map((m) => ({
-        id: m.id,
-        sender: m.sender,
-        body: m.body,
-        createdAt: m.createdAt.toISOString(),
-      }));
+      id: m.id,
+      sender: m.sender,
+      body: m.body,
+      attachmentUrl: m.attachmentUrl ?? undefined,
+      attachmentName: m.attachmentName ?? undefined,
+      attachmentType: m.attachmentType ?? undefined,
+      createdAt: m.createdAt.toISOString(),
+    }));
 
     return NextResponse.json({
       ok: true,
@@ -75,6 +83,9 @@ export async function POST(request: Request) {
       whatsapp: body.whatsapp,
       message: body.message,
       locale: body.locale,
+      attachmentUrl: body.attachmentUrl,
+      attachmentName: body.attachmentName,
+      attachmentType: body.attachmentType,
     });
 
     if (!parsed.ok) {
@@ -82,6 +93,19 @@ export async function POST(request: Request) {
     }
 
     const sid = parsed.sessionId ?? randomUUID();
+    const att = parsed.attachment;
+
+    const msgData = {
+      sender: 'VISITOR' as const,
+      body: parsed.message,
+      ...(att
+        ? {
+            attachmentUrl: att.attachmentUrl,
+            attachmentName: att.attachmentName,
+            attachmentType: att.attachmentType,
+          }
+        : {}),
+    };
 
     const existing = await prisma.supportConversation.findUnique({
       where: { sessionId: sid },
@@ -101,14 +125,13 @@ export async function POST(request: Request) {
       await prisma.supportMessage.create({
         data: {
           conversationId: existing.id,
-          sender: 'VISITOR',
-          body: parsed.message,
+          ...msgData,
         },
       });
       const messages = await prisma.supportMessage.findMany({
         where: { conversationId: existing.id },
         orderBy: { createdAt: 'asc' },
-        select: { id: true, sender: true, body: true, createdAt: true },
+        select: msgSelect,
       });
 
       return NextResponse.json({
@@ -119,6 +142,9 @@ export async function POST(request: Request) {
           id: m.id,
           sender: m.sender,
           body: m.body,
+          attachmentUrl: m.attachmentUrl ?? undefined,
+          attachmentName: m.attachmentName ?? undefined,
+          attachmentType: m.attachmentType ?? undefined,
           createdAt: m.createdAt.toISOString(),
         })),
       });
@@ -138,15 +164,14 @@ export async function POST(request: Request) {
     await prisma.supportMessage.create({
       data: {
         conversationId: conv.id,
-        sender: 'VISITOR',
-        body: parsed.message,
+        ...msgData,
       },
     });
 
     const messages = await prisma.supportMessage.findMany({
       where: { conversationId: conv.id },
       orderBy: { createdAt: 'asc' },
-      select: { id: true, sender: true, body: true, createdAt: true },
+      select: msgSelect,
     });
 
     return NextResponse.json({
@@ -157,6 +182,9 @@ export async function POST(request: Request) {
         id: m.id,
         sender: m.sender,
         body: m.body,
+        attachmentUrl: m.attachmentUrl ?? undefined,
+        attachmentName: m.attachmentName ?? undefined,
+        attachmentType: m.attachmentType ?? undefined,
         createdAt: m.createdAt.toISOString(),
       })),
     });

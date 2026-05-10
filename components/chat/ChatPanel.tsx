@@ -1,7 +1,16 @@
 'use client';
 
+import Image from 'next/image';
 import type { ReactNode, RefObject } from 'react';
 import { Bot, X } from 'lucide-react';
+
+export type ChatSupportIdentity = {
+  agentName: string;
+  agentImageSrc: string;
+  teamLabel: string;
+  onlineLabel: string;
+  note: string;
+};
 
 export default function ChatPanel({
   presentationOpen,
@@ -12,6 +21,7 @@ export default function ChatPanel({
   footer,
   messagesRef,
   headerGradientId,
+  supportIdentity,
 }: {
   presentationOpen: boolean;
   title: string;
@@ -21,7 +31,10 @@ export default function ChatPanel({
   footer: ReactNode;
   messagesRef: RefObject<HTMLDivElement | null>;
   headerGradientId: string;
+  supportIdentity?: ChatSupportIdentity | null;
 }) {
+  const sid = supportIdentity;
+
   return (
     <section
       role="dialog"
@@ -51,17 +64,51 @@ export default function ChatPanel({
 
       <header className="flex shrink-0 items-center gap-3 border-b border-[rgba(255,255,255,0.07)] px-3.5 py-3 md:px-4 md:py-3.5">
         <div
-          className="relative flex size-9 shrink-0 items-center justify-center rounded-[0.65rem] md:size-10 md:rounded-xl"
+          className="relative flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-[0.65rem] md:size-10 md:rounded-xl"
           style={{
             border: '1px solid rgba(232,204,101,0.32)',
-            background: 'linear-gradient(140deg, rgba(255,132,17,0.18), rgba(9,9,12,0.96))',
+            background: sid
+              ? undefined
+              : 'linear-gradient(140deg, rgba(255,132,17,0.18), rgba(9,9,12,0.96))',
             boxShadow: '0 0 18px rgba(255,132,17,0.14), inset 0 1px 0 rgba(255,255,255,0.06)',
           }}
         >
-          <Bot className="h-[1.15rem] w-[1.15rem] md:h-5 md:w-5" stroke={`url(#${headerGradientId})`} strokeWidth={2} fill="none" aria-hidden />
+          {sid ? (
+            <Image
+              src={sid.agentImageSrc}
+              alt=""
+              width={40}
+              height={40}
+              className="size-full object-cover"
+            />
+          ) : (
+            <Bot className="h-[1.15rem] w-[1.15rem] md:h-5 md:w-5" stroke={`url(#${headerGradientId})`} strokeWidth={2} fill="none" aria-hidden />
+          )}
         </div>
         <div className="min-w-0 flex-1">
-          <h2 className="truncate text-[14.5px] font-bold tracking-tight text-[#F5F2E9] md:text-[15px]">{title}</h2>
+          <h2 className="truncate text-[14.5px] font-bold tracking-tight text-[#F5F2E9] md:text-[15px]">
+            {sid ? sid.agentName : title}
+          </h2>
+          {sid ? (
+            <div className="mt-1 space-y-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[11.5px] font-semibold uppercase tracking-[0.08em] text-[#b8b3a7]">
+                  {sid.teamLabel}
+                </span>
+                <span
+                  className="rounded-full px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide"
+                  style={{
+                    border: '1px solid rgba(76,217,100,0.38)',
+                    background: 'rgba(76,217,100,0.1)',
+                    color: '#b9f3c5',
+                  }}
+                >
+                  {sid.onlineLabel}
+                </span>
+              </div>
+              <p className="text-[11.5px] leading-snug text-[#8f8a80]">{sid.note}</p>
+            </div>
+          ) : null}
         </div>
         <button
           type="button"
