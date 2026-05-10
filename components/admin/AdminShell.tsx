@@ -62,7 +62,7 @@ const NAV: NavDef[] = [
   { soon: true, dictKey: 'navLegal', icon: Scale },
   { href: '/admin/orders', dictKey: 'navOrders', icon: ShoppingBag },
   { href: '/admin/contact-messages', dictKey: 'navContact', icon: Inbox },
-  { soon: true, dictKey: 'navChat', icon: MessagesSquare },
+  { href: '/admin/chat-support', dictKey: 'navChat', icon: MessagesSquare },
   { soon: true, dictKey: 'navSettings', icon: Settings },
 ];
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LayoutDashboard, Package, ShoppingBag, Inbox } from 'lucide-react';
+import { LayoutDashboard, Package, ShoppingBag, Inbox, MessagesSquare } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
 import { getAdminDictServer } from '@/lib/admin-i18n/server';
 
@@ -8,11 +8,13 @@ export default async function AdminOverviewPage() {
   let pkgCount = 0;
   let orderCount = 0;
   let msgCount = 0;
+  let chatCount = 0;
   try {
-    [pkgCount, orderCount, msgCount] = await Promise.all([
+    [pkgCount, orderCount, msgCount, chatCount] = await Promise.all([
       prisma.package.count(),
       prisma.order.count(),
       prisma.contactMessage.count(),
+      prisma.supportConversation.count(),
     ]);
   } catch {
     /* dashboard requires DB */
@@ -37,6 +39,12 @@ export default async function AdminOverviewPage() {
       value: msgCount,
       icon: Inbox,
     },
+    {
+      href: '/admin/chat-support',
+      title: d.chatScreenTitle,
+      value: chatCount,
+      icon: MessagesSquare,
+    },
   ];
 
   return (
@@ -49,7 +57,7 @@ export default async function AdminOverviewPage() {
         <p className="mt-2 max-w-xl text-sm text-neutral-400">{d.overviewSubtitle}</p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {tiles.map(({ href, title, value, icon: Icon }) => (
           <Link
             key={href}

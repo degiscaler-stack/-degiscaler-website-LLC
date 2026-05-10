@@ -72,6 +72,23 @@ export type AdminDict = {
   updateStatus: string;
   packageSlugInvalid: string;
   requiredField: string;
+  chatScreenTitle: string;
+  chatOverviewSubtitle: string;
+  chatConversations: string;
+  chatVisitor: string;
+  chatAdmin: string;
+  chatReply: string;
+  chatReplyPlaceholder: string;
+  chatSendReply: string;
+  chatStatusOpen: string;
+  chatStatusWaiting: string;
+  chatStatusClosed: string;
+  chatLastMessage: string;
+  chatNoConversations: string;
+  chatSelectConversation: string;
+  chatConversationNotFound: string;
+  chatTicketReceived: string;
+  chatBackToList: string;
 };
 
 const EN: AdminDict = {
@@ -93,9 +110,9 @@ const EN: AdminDict = {
   administrator: 'Administrator',
   overviewTitle: 'Overview',
   overviewSubtitle:
-    'Orders and contact messages are live. Content modules below remain phased.',
+    'Orders, contact messages, and live chat support are active. Content modules below remain phased.',
   overviewFootnote:
-    'CMS builders, FAQs editor, testimonials, legal pages editor, chat inbox, and site settings stay marked Coming soon.',
+    'Services, FAQs, testimonials, pages builder, legal pages editor, and site settings stay Coming soon.',
   packagesTitle: 'Packages',
   ordersTitle: 'Orders',
   contactTitle: 'Contact messages',
@@ -148,6 +165,23 @@ const EN: AdminDict = {
   updateStatus: 'Update status',
   packageSlugInvalid: 'Slug must use lowercase letters, numbers, and hyphens.',
   requiredField: 'Required fields missing.',
+  chatScreenTitle: 'Chat support',
+  chatOverviewSubtitle: 'Visitor threads from the website chat widget.',
+  chatConversations: 'Conversations',
+  chatVisitor: 'Visitor',
+  chatAdmin: 'Admin',
+  chatReply: 'Reply',
+  chatReplyPlaceholder: 'Write your reply…',
+  chatSendReply: 'Send reply',
+  chatStatusOpen: 'Open',
+  chatStatusWaiting: 'Waiting',
+  chatStatusClosed: 'Closed',
+  chatLastMessage: 'Last message',
+  chatNoConversations: 'No conversations found',
+  chatSelectConversation: 'Select a conversation from the list.',
+  chatConversationNotFound: 'This conversation could not be loaded.',
+  chatTicketReceived: 'Support request received',
+  chatBackToList: '← All conversations',
 };
 
 const AR: AdminDict = {
@@ -160,7 +194,7 @@ const AR: AdminDict = {
   navLegal: 'الصفحات القانونية',
   navOrders: 'الطلبات',
   navContact: 'رسائل التواصل',
-  navChat: 'دعم المحادثة',
+  navChat: 'دعم الدردشة',
   navSettings: 'الإعدادات',
   comingSoon: 'قريباً',
   adminPanel: 'لوحة الإدارة',
@@ -168,9 +202,9 @@ const AR: AdminDict = {
   mobileNavHint: 'تنقّل الجوال محدود · يُفضّل سطح المكتب',
   administrator: 'مسؤول',
   overviewTitle: 'نظرة عامة',
-  overviewSubtitle: 'الطلبات ورسائل التواصل مفعّلة. وحدات المحتوى التالية ضمن مراحل لاحقة.',
+  overviewSubtitle: 'الطلبات ورسائل التواصل ودعم الدردشة المباشرة مفعّلة. وحدات المحتوى التالية ضمن مراحل لاحقة.',
   overviewFootnote:
-    'منشئ المحتوى ومحرر الأسئلة والشهادات والصفحات القانونية وصندوق المحادثة وإعدادات الموقع ما زالت مؤجلة.',
+    'الخدمات والأسئلة الشائعة والشهادات ومنشئ الصفحات ومحرر الصفحات القانونية وإعدادات الموقع ما زالت قريباً.',
   packagesTitle: 'الباقات',
   ordersTitle: 'الطلبات',
   contactTitle: 'رسائل التواصل',
@@ -223,6 +257,23 @@ const AR: AdminDict = {
   updateStatus: 'تحديث الحالة',
   packageSlugInvalid: 'المعرّف يجب أن يستخدم أحرفاً صغيرة وأرقاماً وشرطات.',
   requiredField: 'حقول مطلوبة ناقصة.',
+  chatScreenTitle: 'دعم الدردشة',
+  chatOverviewSubtitle: 'محادثات الزوار من أداة الدردشة في الموقع.',
+  chatConversations: 'المحادثات',
+  chatVisitor: 'الزائر',
+  chatAdmin: 'المدير',
+  chatReply: 'الرد',
+  chatReplyPlaceholder: 'اكتب ردك…',
+  chatSendReply: 'إرسال الرد',
+  chatStatusOpen: 'مفتوح',
+  chatStatusWaiting: 'في الانتظار',
+  chatStatusClosed: 'مغلق',
+  chatLastMessage: 'آخر رسالة',
+  chatNoConversations: 'لا توجد محادثات',
+  chatSelectConversation: 'اختر محادثة من القائمة.',
+  chatConversationNotFound: 'تعذّر تحميل هذه المحادثة.',
+  chatTicketReceived: 'تم استلام طلب الدعم',
+  chatBackToList: '← كل المحادثات',
 };
 
 const FR: AdminDict = {
@@ -244,9 +295,9 @@ const FR: AdminDict = {
   administrator: 'Administrateur',
   overviewTitle: 'Vue d ensemble',
   overviewSubtitle:
-    'Commandes et messages sont actifs. Les modules ci dessous restent en phases ultérieures.',
+    'Commandes, messages contact et support chat en direct sont actifs. Les modules ci dessous restent en phases ultérieures.',
   overviewFootnote:
-    'CMS, FAQ, témoignages, pages légales, messagerie chat et réglages site restent « Bientôt ».',
+    'Services, FAQ, témoignages, pages, pages légales et réglages site restent « Bientôt ».',
   packagesTitle: 'Forfaits',
   ordersTitle: 'Commandes',
   contactTitle: 'Messages',
@@ -300,6 +351,23 @@ const FR: AdminDict = {
   packageSlugInvalid:
     'L identifiant doit contenir minuscules, chiffres et traits d union.',
   requiredField: 'Champs obligatoires manquants.',
+  chatScreenTitle: 'Support chat',
+  chatOverviewSubtitle: 'Fils visiteurs depuis le widget de chat du site.',
+  chatConversations: 'Conversations',
+  chatVisitor: 'Visiteur',
+  chatAdmin: 'Admin',
+  chatReply: 'Réponse',
+  chatReplyPlaceholder: 'Écrivez votre réponse…',
+  chatSendReply: 'Envoyer la réponse',
+  chatStatusOpen: 'Ouvert',
+  chatStatusWaiting: 'En attente',
+  chatStatusClosed: 'Fermé',
+  chatLastMessage: 'Dernier message',
+  chatNoConversations: 'Aucune conversation trouvée',
+  chatSelectConversation: 'Choisissez une conversation dans la liste.',
+  chatConversationNotFound: 'Impossible de charger cette conversation.',
+  chatTicketReceived: 'Demande de support reçue',
+  chatBackToList: '← Toutes les conversations',
 };
 
 const MAP: Record<AdminLocale, AdminDict> = {

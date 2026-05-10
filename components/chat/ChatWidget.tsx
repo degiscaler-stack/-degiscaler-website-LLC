@@ -1,32 +1,34 @@
 'use client';
 
 /**
- * DegiScaler rule-based chat (client-only). Future integration points:
- * TODO: persist support requests to database when backend is ready
- * TODO: connect prepared requests to internal support dashboard
- * TODO: allow human agent replies inside the same thread (real-time/channel)
+ * DegiScaler rule-based chat (client). FAQ answers + live support handoff via /api/support/*.
  */
 
-import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Send } from 'lucide-react';
-import { matchIntent, shouldStartSupportFlow } from '@/lib/chat/ruleMatcher';
+import { matchIntent, normalizeUserMessage, shouldStartSupportFlow } from '@/lib/chat/ruleMatcher';
 import type { BotIntent } from '@/lib/chat/knowledge';
 import ChatLauncher from '@/components/chat/ChatLauncher';
 import ChatPanel from '@/components/chat/ChatPanel';
 import ChatMessage from '@/components/chat/ChatMessage';
 import TypingIndicator from '@/components/chat/TypingIndicator';
+import { SUPPORT_SESSION_STORAGE_KEY } from '@/lib/support/public-api';
 
 type ChatBubble = {
   id: string;
-  role: 'user' | 'bot';
+  role: 'user' | 'bot' | 'agent';
   text: string;
 };
 
-type SupportPhase = 'idle' | 'awaiting_name' | 'awaiting_email' | 'awaiting_message';
+type SupportPhase =
+  | 'idle'
+  | 'awaiting_name'
+  | 'awaiting_email'
+  | 'awaiting_whatsapp'
+  | 'awaiting_message';
 
-/** High-level UX mode for future dashboard wiring — not persisted to DB yet. */
-type AssistStatus = 'bot' | 'collecting_support_details' | 'support_request_prepared';
+type ApiMsg = { id: string; sender: string; body: string; createdAt?: string };
 
 const LS_PREFIX = 'degiscaler-chat-v1';
 
@@ -53,7 +55,10 @@ function loadPersisted(locale: string): { messages: ChatBubble[]; hasWelcomed: b
     const data = JSON.parse(raw) as { messages?: ChatBubble[]; hasWelcomed?: boolean };
     const messages = Array.isArray(data.messages)
       ? data.messages.filter(
-          (m) => m && (m.role === 'user' || m.role === 'bot') && typeof m.text === 'string'
+          (m) =>
+            m &&
+            (m.role === 'user' || m.role === 'bot' || m.role === 'agent') &&
+            typeof m.text === 'string',
         )
       : [];
     return {
@@ -65,29 +70,27 @@ function loadPersisted(locale: string): { messages: ChatBubble[]; hasWelcomed: b
   }
 }
 
-function fillTemplate(template: string, vars: Record<string, string>) {
-  return template.replace(/\{(\w+)\}/g, (_, key: string) => vars[key] ?? '');
-}
-
 function isPlausibleEmail(s: string) {
   const t = s.trim();
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t);
 }
 
-function linkifyMailto(text: string): ReactNode {
-  const parts = text.split(/(mailto:[^\s\r\n<]+)/gi);
-  return parts.map((part, i) =>
-    part.toLowerCase().startsWith('mailto:') ? (
-      <a
-        key={`mailto-${i}`}
-        href={part}
-        className="break-all font-semibold text-[#e8cc65] underline underline-offset-[3px] decoration-[rgba(232,204,101,0.45)] hover:text-[#f5ebb4]"
-      >
-        {part}
-      </a>
-    ) : (
-      <span key={`txt-${i}`}>{part}</span>
-    )
+function isSkipWhatsapp(raw: string): boolean {
+  const t = normalizeUserMessage(raw);
+  return (
+    t === 'skip' ||
+    t === 'none' ||
+    t === 'no' ||
+    t === '-' ||
+    t === 'n/a' ||
+    t === 'na' ||
+    t === 'pas' ||
+    t === 'لا' ||
+    t.includes('تخطي') ||
+    t.includes('لا واتساب') ||
+    t.includes('بدون واتساب') ||
+    t.includes('no whatsapp') ||
+    t.includes('sans whatsapp')
   );
 }
 
@@ -105,7 +108,6 @@ export default function ChatWidget() {
 
   const [storeReady, setStoreReady] = useState(false);
   const [panelMounted, setPanelMounted] = useState(false);
-  /** Drives CSS enter animation on first paint after mount (no extra deps). */
   const [panelReveal, setPanelReveal] = useState(false);
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -113,13 +115,55 @@ export default function ChatWidget() {
   const [hasWelcomed, setHasWelcomed] = useState(false);
   const [typing, setTyping] = useState(false);
   const [supportPhase, setSupportPhase] = useState<SupportPhase>('idle');
-  const [supportDraft, setSupportDraft] = useState<{ name?: string; email?: string }>({});
-  const [assistStatus, setAssistStatus] = useState<AssistStatus>('bot');
+  const [supportDraft, setSupportDraft] = useState<{
+    name?: string;
+    email?: string;
+    whatsapp?: string | null;
+  }>({});
+  const [supportSessionId, setSupportSessionId] = useState<string | null>(null);
+  const [supportActive, setSupportActive] = useState(false);
+
+  const mapRemoteRow = useCallback(
+    (m: ApiMsg): ChatBubble => {
+      if (m.sender === 'ADMIN') {
+        return { id: m.id, role: 'agent', text: `${t('support.agentPrefix')}${m.body}` };
+      }
+      if (m.sender === 'VISITOR') {
+        return { id: m.id, role: 'user', text: m.body };
+      }
+      return { id: m.id, role: 'bot', text: m.body };
+    },
+    [t],
+  );
+
+  const mergeRemoteMessages = useCallback(
+    (rows: ApiMsg[]) => {
+      setMessages((prev) => {
+        let next = [...prev];
+        for (const r of rows) {
+          if (next.some((m) => m.id === r.id)) continue;
+          const bubble = mapRemoteRow(r);
+          if (bubble.role === 'user') {
+            const idx = next.findLastIndex(
+              (m) => m.role === 'user' && m.text === bubble.text && m.id.startsWith('u-'),
+            );
+            if (idx !== -1) {
+              next = [...next.slice(0, idx), bubble, ...next.slice(idx + 1)];
+              continue;
+            }
+          }
+          next = [...next, bubble];
+        }
+        return next;
+      });
+    },
+    [mapRemoteRow],
+  );
 
   const persist = useCallback(() => {
     if (typeof window === 'undefined' || !storeReady) return;
     try {
-      window.localStorage.setItem(storageKey(locale), JSON.stringify({ v: 1, messages, hasWelcomed }));
+      window.localStorage.setItem(storageKey(locale), JSON.stringify({ v: 2, messages, hasWelcomed }));
     } catch {
       /* ignore */
     }
@@ -131,13 +175,60 @@ export default function ChatWidget() {
     setMessages(m);
     setHasWelcomed(w);
     setStoreReady(true);
+    try {
+      const sid = window.localStorage.getItem(SUPPORT_SESSION_STORAGE_KEY);
+      if (sid) {
+        setSupportSessionId(sid);
+        setSupportActive(true);
+      }
+    } catch {
+      /* ignore */
+    }
   }, [locale]);
+
+  useEffect(() => {
+    if (!supportSessionId || !storeReady) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch(
+          `/api/support/conversation?sessionId=${encodeURIComponent(supportSessionId)}`,
+        );
+        if (!res.ok || cancelled) return;
+        const data = (await res.json()) as { ok?: boolean; messages?: ApiMsg[] };
+        if (!data.ok || !Array.isArray(data.messages)) return;
+        mergeRemoteMessages(data.messages);
+      } catch {
+        /* ignore */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [supportSessionId, storeReady, mergeRemoteMessages]);
 
   useEffect(() => {
     if (!storeReady) return;
     const tmr = window.setTimeout(persist, 320);
     return () => window.clearTimeout(tmr);
   }, [messages, hasWelcomed, persist, storeReady]);
+
+  useEffect(() => {
+    if (!open || !supportSessionId) return;
+    const poll = window.setInterval(async () => {
+      try {
+        const res = await fetch(
+          `/api/support/conversation?sessionId=${encodeURIComponent(supportSessionId)}`,
+        );
+        if (!res.ok) return;
+        const data = (await res.json()) as { ok?: boolean; messages?: ApiMsg[] };
+        if (data.ok && Array.isArray(data.messages)) mergeRemoteMessages(data.messages);
+      } catch {
+        /* ignore */
+      }
+    }, 8000);
+    return () => clearInterval(poll);
+  }, [open, supportSessionId, mergeRemoteMessages]);
 
   useEffect(() => {
     if (!open) {
@@ -183,7 +274,7 @@ export default function ChatWidget() {
       setTyping(false);
       pushBot(text);
     },
-    [pushBot]
+    [pushBot],
   );
 
   useEffect(() => {
@@ -208,7 +299,6 @@ export default function ChatWidget() {
   const handleClose = useCallback(() => {
     setOpen(false);
     exitGatheringFields();
-    setAssistStatus('bot');
   }, [exitGatheringFields]);
 
   useEffect(() => {
@@ -219,6 +309,36 @@ export default function ChatWidget() {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [open, handleClose]);
+
+  const submitVisitorFollowUp = useCallback(
+    async (trimmed: string) => {
+      if (!supportSessionId) return false;
+      setTyping(true);
+      try {
+        const res = await fetch('/api/support/message', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: supportSessionId, message: trimmed }),
+        });
+        const data = (await res.json().catch(() => null)) as {
+          ok?: boolean;
+          message?: ApiMsg;
+        } | null;
+        setTyping(false);
+        if (!res.ok || !data?.ok) {
+          await runBotReply(t('support.submitError'), 'support');
+          return true;
+        }
+        if (data.message) mergeRemoteMessages([data.message]);
+        return true;
+      } catch {
+        setTyping(false);
+        await runBotReply(t('support.submitError'), 'support');
+        return true;
+      }
+    },
+    [supportSessionId, runBotReply, t, mergeRemoteMessages],
+  );
 
   const handleSupportPath = useCallback(
     async (trimmed: string) => {
@@ -238,6 +358,13 @@ export default function ChatWidget() {
           return;
         }
         setSupportDraft((d) => ({ ...d, email: trimmed.trim() }));
+        setSupportPhase('awaiting_whatsapp');
+        await runBotReply(t('support.askWhatsapp'), 'support');
+        return;
+      }
+      if (supportPhase === 'awaiting_whatsapp') {
+        const wa = isSkipWhatsapp(trimmed) ? null : trimmed.trim();
+        setSupportDraft((d) => ({ ...d, whatsapp: wa }));
         setSupportPhase('awaiting_message');
         await runBotReply(t('support.askMessage'), 'support');
         return;
@@ -247,18 +374,67 @@ export default function ChatWidget() {
           await runBotReply(t('support.emptyMessage'), 'support');
           return;
         }
+        pushUser(trimmed);
         const name = supportDraft.name ?? '';
         const email = supportDraft.email ?? '';
-        const subject = fillTemplate(t('support.mailSubject'), { name, email });
-        const body = fillTemplate(t('support.mailBody'), { name, email, message: trimmed });
-        const mailto = `mailto:support@degiscaler.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        const combined = `${t('support.confirmation')}\n\n${t('support.copyBlock', { name, email, message: trimmed })}\n\n${t('support.mailtoLine', { mailto })}`;
-        await runBotReply(combined, 'support');
-        exitGatheringFields();
-        setAssistStatus('support_request_prepared');
+        const whatsapp = supportDraft.whatsapp ?? null;
+
+        setTyping(true);
+        try {
+          const res = await fetch('/api/support/conversation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              sessionId: supportSessionId ?? undefined,
+              fullName: name,
+              email,
+              whatsapp,
+              message: trimmed,
+              locale,
+            }),
+          });
+          const data = (await res.json().catch(() => null)) as {
+            ok?: boolean;
+            sessionId?: string;
+            messages?: ApiMsg[];
+          } | null;
+
+          setTyping(false);
+
+          if (!res.ok || !data?.ok || !data.sessionId) {
+            await runBotReply(t('support.submitError'), 'support');
+            exitGatheringFields();
+            return;
+          }
+
+          try {
+            window.localStorage.setItem(SUPPORT_SESSION_STORAGE_KEY, data.sessionId);
+          } catch {
+            /* ignore */
+          }
+          setSupportSessionId(data.sessionId);
+          setSupportActive(true);
+          if (Array.isArray(data.messages)) mergeRemoteMessages(data.messages);
+          exitGatheringFields();
+          await runBotReply(t('support.requestReceived'), 'support');
+        } catch {
+          setTyping(false);
+          await runBotReply(t('support.submitError'), 'support');
+          exitGatheringFields();
+        }
       }
     },
-    [supportPhase, supportDraft, runBotReply, t, exitGatheringFields]
+    [
+      supportPhase,
+      supportDraft,
+      supportSessionId,
+      locale,
+      runBotReply,
+      t,
+      exitGatheringFields,
+      mergeRemoteMessages,
+      pushUser,
+    ],
   );
 
   const onSubmit = useCallback(async () => {
@@ -266,21 +442,26 @@ export default function ChatWidget() {
     if (!trimmed || typing) return;
     setInput('');
 
-    if (assistStatus === 'support_request_prepared') {
-      setAssistStatus('bot');
+    if (supportActive && supportPhase === 'idle') {
+      pushUser(trimmed);
+      await submitVisitorFollowUp(trimmed);
+      requestAnimationFrame(() => textareaRef.current?.focus());
+      return;
     }
 
-    pushUser(trimmed);
-
     if (supportPhase !== 'idle') {
+      if (supportPhase !== 'awaiting_message') {
+        pushUser(trimmed);
+      }
       await handleSupportPath(trimmed);
       requestAnimationFrame(() => textareaRef.current?.focus());
       return;
     }
 
+    pushUser(trimmed);
+
     if (shouldStartSupportFlow(trimmed, locale)) {
       setSupportPhase('awaiting_name');
-      setAssistStatus('collecting_support_details');
       await runBotReply(t('support.introPrepare'), 'support');
       await runBotReply(t('support.askName'), 'support');
       requestAnimationFrame(() => textareaRef.current?.focus());
@@ -291,19 +472,20 @@ export default function ChatWidget() {
     if (intent) {
       await runBotReply((t as (key: string) => string)(`answers.${intent}`), 'default');
     } else {
-      await runBotReply(t('fallback'), 'support');
+      await runBotReply(t('fallback'), 'default');
     }
     requestAnimationFrame(() => textareaRef.current?.focus());
   }, [
     input,
     typing,
-    assistStatus,
-    pushUser,
+    supportActive,
     supportPhase,
+    pushUser,
     handleSupportPath,
     locale,
     runBotReply,
     t,
+    submitVisitorFollowUp,
   ]);
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -363,7 +545,7 @@ export default function ChatWidget() {
           <div className="flex flex-col gap-3.5 md:gap-4">
             {messages.map((m) => (
               <ChatMessage key={m.id} role={m.role}>
-                {m.role === 'bot' ? linkifyMailto(m.text) : m.text}
+                {m.text}
               </ChatMessage>
             ))}
             {typing ? (

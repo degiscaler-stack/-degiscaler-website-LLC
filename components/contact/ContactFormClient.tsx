@@ -1,6 +1,7 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Loader2, Mail, Clock, Briefcase } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import {
@@ -19,10 +20,17 @@ import {
 
 export default function ContactFormClient({ locale }: { locale: string }) {
   const t = useTranslations('contactPage');
+  const router = useRouter();
   const [state, formAction, pending] = useActionState<ContactActionState, FormData>(
     submitContactAction,
     contactInitialActionState,
   );
+
+  useEffect(() => {
+    if (state?.ok && state.redirectTo) {
+      router.replace(state.redirectTo);
+    }
+  }, [state?.ok, state?.redirectTo, router]);
 
   const fieldClass =
     'w-full rounded-xl px-4 py-3 text-[15px] outline-none transition-[box-shadow] focus:ring-2 focus:ring-[rgba(255,132,17,0.35)]';

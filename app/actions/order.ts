@@ -1,6 +1,5 @@
 'use server';
 
-import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { prisma } from '@/lib/prisma';
 import { routing } from '@/i18n/routing';
@@ -8,7 +7,7 @@ import { isValidEmail } from '@/lib/validation/email';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
 import { isOrderableConsultationSlug } from '@/lib/packages/map-slug';
 
-export type OrderActionState = { error: string | null };
+export type OrderActionState = { error: string | null; ok?: boolean; redirectTo?: string };
 
 export async function submitOrderAction(
   _prev: OrderActionState,
@@ -54,7 +53,7 @@ export async function submitOrderAction(
   try {
     await prisma.order.create({
       data: {
-        packageId: resolved.packageId,
+        ...(resolved.packageId ? { packageId: resolved.packageId } : {}),
         packageSlug: resolved.packageSlug,
         packageTitle: resolved.packageTitle,
         packagePrice: resolved.packagePrice,
@@ -66,11 +65,16 @@ export async function submitOrderAction(
         locale,
       },
     });
-  } catch {
+  } catch (err) {
+    console.error('[submitOrderAction]', err);
     return { error: tErr('server') };
   }
 
-  redirect(`/${locale}/thank-you?type=order`);
+  return {
+    error: null,
+    ok: true,
+    redirectTo: `/${locale}/thank-you?type=order`,
+  };
 }
 
 export const orderInitialActionState: OrderActionState = { error: null };

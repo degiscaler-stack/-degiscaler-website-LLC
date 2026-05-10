@@ -50,7 +50,7 @@
     "sendAria": "Send message",
     "inputPlaceholder": "Type your question…",
     "welcome": "Hi, I'm the DegiScaler assistant. I can help with services, pricing, consultations, website audits, and payment-readiness questions.",
-    "fallback": "I'm not fully sure about that yet. Reply with \"support\" (or describe that you want help) and I’ll prepare a short support request here in chat — nothing is submitted automatically yet. You can always email support@degiscaler.com too; we usually reply within 24–48 business hours.",
+    "fallback": "I'm not fully sure about that yet. Type \"support\" if you want to reach our team — we'll continue the conversation right here in chat.",
     "answers": {
       "company": "DegiScaler is a digital services and business consultation company focused on credible online presence — especially for founders and small businesses.",
       "services": "We offer structured help across: Website Design, E‑commerce Development, Landing Page Design, Website Audit, UI/UX Review, and Digital Business Consultation. Ask about any one topic for more detail.",
@@ -62,7 +62,7 @@
       "uiux": "UI/UX Review focuses on hesitation points across critical journeys — navigation, forms, and flows around checkout/sign‑up.",
       "consultation": "Digital Business Consultation is a structured conversation that turns ambiguity into prioritized next steps, plus written outputs depending on tier.",
       "process": "We generally work in phases: Discover, Diagnose, Build, Deliver. The depth depends on the package — consultations emphasize Discover/Diagnose; launch packages include execution.",
-      "contact": "You can reach us at support@degiscaler.com — we usually reply within 24–48 business hours. If you're unsure what to ask next, type \"support\" and I'll help you prepare a structured request right here in chat.",
+      "contact": "If you'd like help from our team, type \"support\" in this chat and we'll collect a few details here — you can keep everything on this page.",
       "languages": "We support English, Arabic, and French — switch languages from the header. DegiScaler keeps the spelling of the brand unchanged.",
       "payment_readiness": "We help improve clarity, trust signals, documentation, navigation, and storefront structure so processors and reviewers can evaluate you more cleanly. Preparation is realistic; approvals are decided by platforms.",
       "payment_no_guarantee": "DegiScaler does NOT guarantee Stripe approval, PayPal approval, bank approvals, or any payment‑processor outcome. Third parties make final decisions based on risk, onboarding, policies, your business profile, and their current rules.",
@@ -70,18 +70,22 @@
       "timeline": "We generally respond within 24–48 business hours on support requests. Scheduling and delivery timelines for paid work vary by tier and responsiveness — every package outlines expected turnaround cues."
     },
     "support": {
-      "introPrepare": "I can prepare a structured support request with you right inside this chat. Nothing is submitted automatically yet — I'll ask for a few details next.",
+      "introPrepare": "I'll connect you with our team. Please answer a few quick questions — your request is saved securely once you send the last step.",
       "askName": "What's your full name?",
-      "askEmail": "Thanks — what email should support reply to?",
-      "askMessage": "Briefly describe your project or topic (one short paragraph).",
+      "askEmail": "Thanks — what email should we use to reach you?",
+      "askWhatsapp": "WhatsApp number (optional). Type \"skip\" if you prefer not to share.",
+      "askMessage": "Briefly describe your project or question (one short paragraph).",
+      "agentPrefix": "Team · ",
       "emptyName": "Please share your name so we can personalize the request.",
       "invalidEmail": "That email doesn't look complete — please paste a typical address like you@yourdomain.com.",
       "emptyMessage": "Please include a brief message describing what you'd like support to address.",
-      "confirmation": "Thanks. Your support request has been prepared. The support dashboard will be connected soon, but for now you can also reach us at support@degiscaler.com. We usually reply within 24–48 business hours.",
-      "copyBlock": "Name:\n{name}\n\nEmail:\n{email}\n\nMessage:\n{message}",
-      "mailSubject": "Support request — {name}",
-      "mailBody": "Name: {name}\nEmail: {email}\n\nMessage:\n{message}",
-      "mailtoLine": "Tap to compose your prefilled draft in your email client: {mailto}"
+      "requestReceived": "Your support request has been received. A team member will reply here in this chat.",
+      "submitError": "We couldn't send that just now. Please try again in a moment.",
+      "confirmation": "Your support request has been received. A team member will reply here in this chat.",
+      "copyBlock": "",
+      "mailSubject": "",
+      "mailBody": "",
+      "mailtoLine": ""
     }
   },
   "home": {
@@ -816,9 +820,9 @@
   },
   "thankYouPage": {
     "orderTitle": "Thank you",
-    "orderBody": "Your request has been received. A support team member will contact you soon.",
+    "orderBody": "Thank you. Your request has been received. A team member will contact you soon.",
     "contactTitle": "Thank you",
-    "contactBody": "Your message has been received. We will reply soon.",
+    "contactBody": "Thank you. Your message has been received.",
     "backHome": "Back to home",
     "invalid": "Missing confirmation type. Return home and try again."
   }

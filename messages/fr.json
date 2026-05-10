@@ -50,7 +50,7 @@
     "sendAria": "Envoyer le message",
     "inputPlaceholder": "Écrivez votre question…",
     "welcome": "Bonjour, je suis l’assistant DegiScaler. Je peux vous aider avec les services, les tarifs, les consultations, les audits de site et les questions de préparation au paiement.",
-    "fallback": "Je ne suis pas totalement sûr de la réponse. Écrivez « support » (ou indiquez que vous avez besoin d’aide) et je préparerai une demande courte ici même — rien n’est envoyé automatiquement pour le moment. Vous pouvez aussi écrire à support@degiscaler.com ; nous répondons généralement sous 24 à 48 heures ouvrées.",
+    "fallback": "Je ne suis pas totalement sûr de la réponse. Écrivez « support » pour joindre l’équipe — nous continuons la conversation ici dans ce chat.",
     "answers": {
       "company": "DegiScaler est une société de services numériques et de conseil business qui aide surtout les fondateurs et les petites structures à gagner une présence crédible en ligne.",
       "services": "Nous travaillons sur : conception web, développement e‑commerce, page d’accroche, audit de site, revue UI/UX, et conseil numérique business. Demandez un sujet pour plus de précision.",
@@ -62,7 +62,7 @@
       "uiux": "La revue UI/UX étudie les parcours critiques — navigation, formulaires et périmètres adjacents au paiement — pour repérer les hésitations bloquantes.",
       "consultation": "Les consultations donnent un cadre structuré et des livrables écrits adaptés au forfait choisi.",
       "process": "Nous suivons en général quatre axes : découverte, diagnostic, construction, livraison. La profondeur dépend du forfait : les modules conseil poussent le diagnostic alors que les launches intègrent davantage de production lorsque pertinent.",
-      "contact": "Support par e‑mail : support@degiscaler.com — délai habituel : 24–48 heures ouvrées. Tapez « support » si vous voulez préparer ensemble une demande structurée directement dans ce chat.",
+      "contact": "Pour l’aide de l’équipe, tapez « support » dans ce chat — nous recueillons quelques informations ici sans quitter la page.",
       "languages": "Le site existe en français, anglais et arabe via le sélecteur d’entête ; le nom DegiScaler ne se traduit pas.",
       "payment_readiness": "Nous améliorons clarté, signaux de confiance et structure pour mieux passer la lecture tiers — sans promettre aucune validation.",
       "payment_no_guarantee": "DegiScaler ne garantit aucune validation Stripe/PayPal/banque : ces décisions externes dépendent de leurs risques, politiques et du profil dossier.",
@@ -70,18 +70,22 @@
       "timeline": "Réponse aux demandes généralement sous 24–48 h ouvrées. Les chantiers rémunérés varient suivant palier et réactivité des échanges prévus dans chaque fiche-forfait."
     },
     "support": {
-      "introPrepare": "Je peux préparer avec vous une demande de support structurée dans ce même chat — rien n’est transmis automatiquement pour le moment ; quelques questions seulement ensuite.",
+      "introPrepare": "Je vous mets en lien avec l’équipe. Répondez à quelques questions courtes — la demande est enregistrée en toute sécurité à la dernière étape.",
       "askName": "Quel est votre nom complet ?",
-      "askEmail": "Merci — quelle adresse e‑mail doit recevoir la réponse ?",
+      "askEmail": "Merci — quelle adresse e‑mail devons-nous utiliser ?",
+      "askWhatsapp": "Numéro WhatsApp (facultatif). Écrivez « skip » si vous préférez ne pas le partager.",
       "askMessage": "Décrivez brièvement le sujet ou le projet (court paragraphe).",
+      "agentPrefix": "Équipe · ",
       "emptyName": "Merci de donner votre nom pour personnaliser la demande.",
       "invalidEmail": "Adresse peu lisible ; merci une forme classique : vous@votredomaine.com",
       "emptyMessage": "Ajoutez un court message précis pour l’équipe support.",
-      "confirmation": "Merci. Votre demande de support a été préparée. Le tableau de bord support sera connecté prochainement. Pour le moment, vous pouvez aussi nous contacter à support@degiscaler.com. Nous répondons généralement sous 24 à 48 heures ouvrées.",
-      "copyBlock": "Nom :\n{name}\n\nE‑mail :\n{email}\n\nMessage :\n{message}",
-      "mailSubject": "Demande assistance — {name}",
-      "mailBody": "Nom : {name}\nEmail : {email}\n\nMessage :\n{message}",
-      "mailtoLine": "Lien prérempli (ouvrir le client mail) : {mailto}"
+      "requestReceived": "Votre demande de support a été reçue. Un membre de l'équipe vous répondra ici dans ce chat.",
+      "submitError": "Impossible d’envoyer pour le moment. Réessayez dans un instant.",
+      "confirmation": "Votre demande de support a été reçue. Un membre de l'équipe vous répondra ici dans ce chat.",
+      "copyBlock": "",
+      "mailSubject": "",
+      "mailBody": "",
+      "mailtoLine": ""
     }
   },
   "home": {
@@ -823,9 +827,9 @@
   },
   "thankYouPage": {
     "orderTitle": "Merci",
-    "orderBody": "Votre demande a bien été reçue. Un membre du support vous contactera prochainement.",
+    "orderBody": "Merci. Votre demande a été reçue. Un membre de l'équipe vous contactera bientôt.",
     "contactTitle": "Merci",
-    "contactBody": "Votre message a bien été reçu. Nous répondrons bientôt.",
+    "contactBody": "Merci. Votre message a été reçu.",
     "backHome": "Retour à l accueil",
     "invalid": "Type de confirmation manquant. Retournez à l accueil et réessayez."
   }

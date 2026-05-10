@@ -1,12 +1,11 @@
 'use server';
 
-import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { prisma } from '@/lib/prisma';
 import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
 
-export type ContactActionState = { error: string | null };
+export type ContactActionState = { error: string | null; ok?: boolean; redirectTo?: string };
 
 export async function submitContactAction(
   _prev: ContactActionState,
@@ -42,11 +41,16 @@ export async function submitContactAction(
         locale,
       },
     });
-  } catch {
+  } catch (err) {
+    console.error('[submitContactAction]', err);
     return { error: tErr('server') };
   }
 
-  redirect(`/${locale}/thank-you?type=contact`);
+  return {
+    error: null,
+    ok: true,
+    redirectTo: `/${locale}/thank-you?type=contact`,
+  };
 }
 
 export const contactInitialActionState: ContactActionState = { error: null };
