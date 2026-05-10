@@ -71,6 +71,12 @@ body {
   }
 }
 
+/* Lock brand word order in RTL locales (Arabic) — prevents “ScalerDegi” reversal */
+.logo-brand-isolate {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 .logo-brand-word {
   display: inline-block;
   background-image: linear-gradient(102deg, #ff8411 0%, #d6a700 43%, #e8cc65 90%);

@@ -15,7 +15,7 @@ export type DisplayPackage = {
   variant: 'standard' | 'featured' | 'premium';
 };
 
-type FallbackPkg = {
+export type FallbackPkg = {
   id: string;
   name: string;
   price: string;
@@ -74,6 +74,62 @@ function fallbackResults(packages: FallbackPkg[]): DisplayPackage[] {
   }
 }
 
+/** Map slug → translated fallback row (pricing messages). */
+function fallbackBySlug(fallbacks: FallbackPkg[]): Map<string, FallbackPkg> {
+  const m = new Map<string, FallbackPkg>();
+  for (const fb of fallbacks) {
+    try {
+      m.set(translationIdToSlug(fb.id), fb);
+    } catch {
+      /* skip malformed id */
+    }
+  }
+  return m;
+}
+
+/**
+ * When packages come from the DB they are often English-only. Overlay titles, prices,
+ * descriptions, and features from locale message fallbacks matched by slug so AR/FR stay consistent.
+ * Missing fallback keeps DB values; empty fallback fields never wipe DB content.
+ */
+export function applyTranslatedPackageCopy(display: DisplayPackage[], fallbacks: FallbackPkg[]): DisplayPackage[] {
+  if (!fallbacks.length) return display;
+  const bySlug = fallbackBySlug(fallbacks);
+  return display.map((pkg) => {
+    const fb = bySlug.get(pkg.slug);
+    if (!fb) return pkg;
+    return {
+      ...pkg,
+      title: fb.name?.trim() ? fb.name : pkg.title,
+      price: fb.price?.trim() ? fb.price : pkg.price,
+      description: fb.description?.trim() ? fb.description : pkg.description,
+      features:
+        Array.isArray(fb.features) && fb.features.length > 0 ? fb.features.map(String) : pkg.features,
+    };
+  });
+}
+
+function overlayResolvedFromFallback<
+  T extends {
+    packageSlug: string;
+    packageTitle: string;
+    packagePrice: string;
+    description: string;
+    features: string[];
+  },
+>(resolved: T, fallbackPackages: FallbackPkg[]): T {
+  const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === resolved.packageSlug);
+  if (!fb) return resolved;
+  return {
+    ...resolved,
+    packageTitle: fb.name?.trim() ? fb.name : resolved.packageTitle,
+    packagePrice: fb.price?.trim() ? fb.price : resolved.packagePrice,
+    description: fb.description?.trim() ? fb.description : resolved.description,
+    features:
+      Array.isArray(fb.features) && fb.features.length > 0 ? fb.features.map(String) : resolved.features,
+  };
+}
+
 /** Prefer active packages from DB; on failure or empty, use translated fallback list. Never throws. */
 export async function loadDisplayPackages(fallbackPackages: FallbackPkg[]): Promise<DisplayPackage[]> {
   const fb = fallbackResults(fallbackPackages);
@@ -113,15 +169,18 @@ export async function resolvePackageForOrder(
 
     const row = await safeFindPackageBySlug(trimmed);
     if (row) {
-      return {
-        packageId: row.id,
-        packageSlug: row.slug,
-        packageTitle: row.title,
-        packagePrice: row.price,
-        currency: row.currency,
-        description: row.description,
-        features: parseFeaturesJson(row.features),
-      };
+      return overlayResolvedFromFallback(
+        {
+          packageId: row.id,
+          packageSlug: row.slug,
+          packageTitle: row.title,
+          packagePrice: row.price,
+          currency: row.currency,
+          description: row.description,
+          features: parseFeaturesJson(row.features),
+        },
+        fallbackPackages,
+      );
     }
 
     const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === trimmed);

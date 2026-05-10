@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import PricingPageView from '@/components/pricing/PricingPageView';
-import { loadDisplayPackages } from '@/lib/packages/public-packages';
+import { loadDisplayPackages, applyTranslatedPackageCopy } from '@/lib/packages/public-packages';
 
 export default async function PricingPage({
   params,
@@ -18,6 +18,6 @@ export default async function PricingPage({
     description: string;
     features: string[];
   }>;
-  const packages = await loadDisplayPackages(fallbackPackages);
+  const packages = applyTranslatedPackageCopy(await loadDisplayPackages(fallbackPackages), fallbackPackages);
   return <PricingPageView packages={packages} />;
 }

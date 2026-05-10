@@ -7,7 +7,7 @@ import {
 } from '@/components/home/homeTheme';
 
 type PageHeroProps = {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: string;
   subtitle: string;
   children?: ReactNode;
@@ -18,9 +18,9 @@ export default function PageHero({ eyebrow, title, subtitle, children }: PageHer
     <div className={`${contentMax} px-4 sm:px-6 lg:px-10 py-12 md:py-14 lg:py-16`}>
       <div className="max-w-[52rem] mx-auto text-center">
         {eyebrow ? (
-          <p className={`text-[12px] font-bold uppercase tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>
+          <div className={`text-[12px] font-bold tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>
             {eyebrow}
-          </p>
+          </div>
         ) : null}
         <h1 className={`${sectionTitleClass} mb-5 md:mb-6 text-balance`} style={{ color: ds.text }}>
           {title}

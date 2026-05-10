@@ -38,7 +38,15 @@ export default async function ThankYouPage({
           borderBottom: `1px solid ${ds.borderStrong}`,
         }}
       >
-        <PageHero eyebrow="DegiScaler" title={title} subtitle={body} />
+        <PageHero
+          eyebrow={
+            <span className="logo-brand-isolate inline-block normal-case tracking-normal" lang="en">
+              DegiScaler
+            </span>
+          }
+          title={title}
+          subtitle={body}
+        />
       </section>
 
       <section className={sectionPad} style={{ backgroundColor: ds.bgAlt }}>

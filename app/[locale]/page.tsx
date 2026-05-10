@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { loadDisplayPackages } from '@/lib/packages/public-packages';
+import { loadDisplayPackages, applyTranslatedPackageCopy } from '@/lib/packages/public-packages';
 import Hero from '@/components/home/Hero';
 import TrustBar from '@/components/home/TrustBar';
 import ProblemSolution from '@/components/home/ProblemSolution';
@@ -28,7 +28,7 @@ export default async function HomePage({
     description: string;
     features: string[];
   }>;
-  const allPkgs = await loadDisplayPackages(fallbackPackages);
+  const allPkgs = applyTranslatedPackageCopy(await loadDisplayPackages(fallbackPackages), fallbackPackages);
   const homePreview = allPkgs.slice(0, 3);
 
   return (

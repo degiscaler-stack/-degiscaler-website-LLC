@@ -133,7 +133,15 @@ export default async function OrderPage({
           borderBottom: `1px solid ${ds.borderStrong}`,
         }}
       >
-        <PageHero eyebrow="DegiScaler" title={orderCopy.title} subtitle={orderCopy.subtitle} />
+        <PageHero
+          eyebrow={
+            <span className="logo-brand-isolate inline-block normal-case tracking-normal" lang="en">
+              DegiScaler
+            </span>
+          }
+          title={orderCopy.title}
+          subtitle={orderCopy.subtitle}
+        />
       </section>
 
       <section

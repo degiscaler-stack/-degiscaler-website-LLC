@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useCallback, useId, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import {
@@ -18,7 +19,20 @@ type Testimonial = {
   meta: string;
   rating: string;
   quote: string;
+  /** Optional `/public` path e.g. `/testimonials/avatar-1.svg` */
+  avatar?: string;
 };
+
+function testimonialAvatarSrc(item: Testimonial): string {
+  const direct = item.avatar?.trim();
+  if (direct) return direct;
+  let h = 0;
+  const n = item.name;
+  for (let i = 0; i < n.length; i += 1) {
+    h = (h * 31 + n.charCodeAt(i)) >>> 0;
+  }
+  return `/testimonials/avatar-${(h % 5) + 1}.svg`;
+}
 
 function starFillState(ratingStr: string, index: number): 'full' | 'soft' | 'dim' {
   const n = Number.parseFloat(ratingStr);
@@ -48,6 +62,21 @@ function avatarOrbAngle(name: string): number {
     h = (h * 31 + name.charCodeAt(i)) | 0;
   }
   return Math.abs(h) % 72;
+}
+
+function TestimonialAvatarImage({ name, src }: { name: string; src: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <TestimonialAvatarGlyph name={name} />;
+  return (
+    <Image
+      src={src}
+      alt=""
+      width={56}
+      height={56}
+      className="size-14 shrink-0 rounded-full object-cover ring-1 ring-[rgba(232,204,101,0.28)] shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_10px_24px_rgba(0,0,0,0.55)]"
+      onError={() => setFailed(true)}
+    />
+  );
 }
 
 function TestimonialAvatarGlyph({ name }: { name: string }) {
@@ -115,10 +144,12 @@ function GradientStar({
 
 function TestimonialCard({
   item,
+  avatarSrc,
   ratingSuffix,
   starGradientId,
 }: {
   item: Testimonial;
+  avatarSrc: string;
   ratingSuffix: string;
   starGradientId: string;
 }) {
@@ -136,7 +167,7 @@ function TestimonialCard({
       }}
     >
       <div className="flex items-start gap-4">
-        <TestimonialAvatarGlyph name={item.name} />
+        <TestimonialAvatarImage name={item.name} src={avatarSrc} />
         <div className="min-w-0 flex-1 text-start">
           <p className="text-[15.5px] font-bold leading-snug tracking-tight" style={{ color: ds.text }}>
             {item.name}
@@ -287,6 +318,7 @@ export default function TestimonialsSection() {
             <TestimonialCard
               key={`${item.name}-${idx}`}
               item={item}
+              avatarSrc={testimonialAvatarSrc(item)}
               ratingSuffix={ratingSuffix}
               starGradientId={starGradientId}
             />
