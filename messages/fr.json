@@ -54,7 +54,7 @@
     "answers": {
       "company": "DegiScaler est une société de services numériques et de conseil business qui aide surtout les fondateurs et les petites structures à gagner une présence crédible en ligne.",
       "services": "Nous travaillons sur : conception web, développement e‑commerce, page d’accroche, audit de site, revue UI/UX, et conseil numérique business. Demandez un sujet pour plus de précision.",
-      "pricing": "Forfaits en USD : Starter Consultation — 9.99 $ ; Growth Consultation — 19.99 $ ; Pro Consultation — 29.99 $ ; Advanced Consultation — 49.99 $ ; Elite Launch Package — 149.99 $. Le détail des livrables varie avec le niveau — voir la page Tarifs.",
+      "pricing": "Forfaits de consultation publiés en USD : Consultation Starter — 9.99 $ ; Consultation Growth — 19.99 $ ; Consultation Pro — 29.99 $ ; Consultation Scale — 49.99 $ . Chaque niveau comprend un appel en direct et un récapitulatif écrit par email après l’appel — voir Tarifs pour les détails.",
       "website_design": "La conception web vise lisibilité, hiérarchie visuelle sérieuse et chemins plus clairs vers l’objectif sans aspect « projet improvisé ».",
       "ecommerce": "Le e‑commerce clarifie l’architecture boutique, les pages produits, le périmètre paiement/tunnel et le placement prudent des éléments de confiance.",
       "landing_page": "La landing page réduit les distractions pour pousser un seul objectif avec un appel à l’action clair.",
@@ -281,9 +281,9 @@
     "pricing": {
       "sectionLabel": "Tarifs",
       "headline": "Tarifs clairs. Zero surprise.",
-      "subheadline": "Trois forfaits ci-dessous. Tous incluent un examen structure et un rapport ecrit. Voir les cinq options sur la page tarifs.",
-      "valueFraming": "Sessions de conseil cadrées, livrables écrits explicites et recommandations concrètes — un format structuré, pas une offre passe-partout « bon marché ».",
-      "viewAll": "Voir les 5 forfaits",
+      "subheadline": "Quatre formules de consultation ci-dessous. La durée de l’appel en direct varie selon le niveau, et chaque formule précise les informations de planification affichées sur la carte.",
+      "valueFraming": "Consultations en direct avec un récapitulatif écrit par email après l’appel — une offre structurée, pas un travail « bon marché » déguisé.",
+      "viewAll": "Voir le détail des tarifs",
       "mostPopular": "Le plus populaire",
       "premiumBadge": "Ideal pour le lancement",
       "getStarted": "Commencer"
@@ -292,6 +292,18 @@
       "sectionLabel": "Questions fréquentes",
       "headline": "Les questions auxquelles vous pensez déjà",
       "items": [
+        {
+          "question": "Comment la consultation est-elle livrée ?",
+          "answer": "La consultation est livrée via un appel en direct. Après l’appel, DigiScaler envoie un récapitulatif écrit par email avec les principaux points discutés."
+        },
+        {
+          "question": "Garantissez-vous des ventes ou des résultats précis ?",
+          "answer": "Non. DigiScaler fournit uniquement une consultation professionnelle, une analyse et des recommandations. Nous ne garantissons pas les ventes, les revenus, le classement, les taux de conversion ou des résultats commerciaux précis."
+        },
+        {
+          "question": "Quand ma consultation sera-t-elle planifiée ?",
+          "answer": "La planification dépend du forfait choisi et commence après confirmation du paiement et réception des détails nécessaires du projet."
+        },
         {
           "question": "Que contient réellement une consultation numérique ?",
           "answer": "Un examen structuré de votre présence en ligne : site, tunnel de paiement, signaux de confiance et configuration générale. Vous recevez un rapport écrit avec des recommandations claires que vous pouvez appliquer."
@@ -423,77 +435,68 @@
   "pricingPage": {
     "title": "Tarifs",
     "headline": "Des formules transparentes. Sans surprises.",
-    "subheadline": "Chaque formule associe un entretien structuré et des recommandations écrites. Choisissez la profondeur correspondant à votre stade actuel.",
+    "subheadline": "Consultations numériques en direct avec récapitulatif écrit par email après l’appel. Choisissez la profondeur correspondant à votre stade actuel.",
     "mostPopular": "Le plus populaire",
     "getStarted": "Commencer",
     "perPackage": "par forfait",
-    "disclaimer": "Les montants sont indiqués en dollars américains (USD). Il s agit de prestations numériques. DegiScaler LLC ne garantit pas l autorisation donnée par un établissement financier ou une plateforme de paiement, ni aucun résultat commercial spécifique. Les délais dépendent du périmètre et de vos délais de réponse.",
+    "disclaimer": "Les montants sont indiqués en dollars américains (USD). Il s agit de consultations numériques payantes en direct ; chaque formule inclut un récapitulatif écrit par email après l appel, comme décrit pour le forfait. DegiScaler LLC ne garantit pas les ventes, les revenus, le classement, les taux de conversion ni des résultats business ou d approbation par des plateformes précises. Les délais de planification et du parcours démarrent après confirmation du paiement et après réception des détails de votre projet ; ils dépendent aussi de la coordination pour fixer l appel.",
     "ctaHeadline": "Des questions sur la formule qui suit votre feuille de route ?",
     "ctaButton": "Nous contacter",
     "packages": [
       {
         "id": "starter",
-        "name": "Consultation de démarrage",
+        "name": "Consultation Starter",
         "price": "$9.99",
-        "description": "Une consultation d'entrée de gamme ciblée pour les fondateurs qui ont besoin d'une évaluation professionnelle rapide de leur présence en ligne.",
+        "description": "Une consultation en direct ciblée pour les fondateurs qui ont besoin d’un avis rapide sur leur site et leur présence en ligne.",
         "features": [
-          "Consultation numérique de 30 minutes",
-          "Revue de crédibilité du site",
-          "3 recommandations d'amélioration clés",
-          "Résumé écrit livré par e-mail",
-          "Réponse sous 48 heures ouvrables"
+          "Appel de consultation en direct de 30 minutes",
+          "Analyse de la crédibilité du site",
+          "Vérification de la clarté de la présence en ligne",
+          "3 recommandations clés d’amélioration",
+          "Récapitulatif par email après l’appel",
+          "Planification sous 48 heures ouvrables"
         ]
       },
       {
         "id": "growth",
-        "name": "Consultation Croissance",
+        "name": "Consultation Growth",
         "price": "$19.99",
-        "description": "Une consultation structurée pour les entreprises souhaitant améliorer leur présence en ligne et leur parcours client.",
+        "description": "Une consultation en direct structurée pour améliorer la clarté du site, le paiement, la confiance et le parcours client.",
         "features": [
-          "Consultation numérique de 45 minutes",
-          "Revue du site et du processus de paiement",
-          "5 recommandations d'amélioration",
+          "Appel de consultation en direct de 45 minutes",
+          "Analyse du site et du paiement",
+          "Vérification du parcours client",
+          "5 recommandations d’amélioration",
           "Évaluation des signaux de confiance",
-          "Rapport écrit livré par e-mail"
+          "Planification sous 2-3 jours ouvrables"
         ]
       },
       {
         "id": "pro",
         "name": "Consultation Pro",
         "price": "$29.99",
-        "description": "Une consultation complète couvrant votre présence numérique totale et la préparation aux paiements.",
+        "description": "Une consultation complète en direct couvrant l’UX du site, la clarté du paiement, la confiance et la préparation au paiement.",
         "features": [
-          "Consultation numérique de 60 minutes",
-          "Revue complète du site et de son expérience utilisateur",
+          "Appel de consultation en direct de 60 minutes",
+          "Analyse complète du site et de l’UX",
           "Évaluation de la clarté du paiement",
-          "Revue de la préparation aux paiements",
-          "Rapport écrit détaillé avec plan d'action"
+          "Revue de la préparation au paiement",
+          "Plan d’action discuté pendant l’appel",
+          "Récapitulatif détaillé par email après l’appel"
         ]
       },
       {
-        "id": "advanced",
-        "name": "Consultation Avancée",
+        "id": "scale",
+        "name": "Consultation Scale",
         "price": "$49.99",
-        "description": "Une consultation approfondie avec une analyse détaillée et une feuille de route complète d'amélioration pour votre activité.",
+        "description": "Une consultation stratégique premium pour une analyse plus approfondie de votre présence digitale, tunnel, confiance et priorités.",
         "features": [
-          "Consultation numérique de 90 minutes",
-          "Audit complet du site et de l expérience utilisateur",
-          "Analyse du commerce en ligne et du parcours de paiement",
-          "Évaluation de la préparation aux paiements",
-          "Support prioritaire 7 jours après livraison"
-        ]
-      },
-      {
-        "id": "elite",
-        "name": "Forfait lancement premium",
-        "price": "$149.99",
-        "description": "Notre forfait complet pour les fondateurs prêts à lancer une activité en ligne professionnelle et crédible de A à Z.",
-        "features": [
-          "Conception et développement complet du site",
-          "Configuration de boutique en ligne ou page d entrée courte",
-          "Revue complète de l interface, de l expérience et des signaux de confiance",
-          "Préparation à l'examen des paiements",
-          "Support prioritaire 30 jours après livraison"
+          "Appel stratégique en direct de 90 minutes",
+          "Analyse complète du site et du tunnel",
+          "Analyse de la confiance et de la clarté de conversion",
+          "Revue du parcours de paiement",
+          "Plan de priorités discuté pendant l’appel",
+          "Récapitulatif détaillé par email après l’appel"
         ]
       }
     ],
@@ -501,15 +504,16 @@
     "premiumBadge": "Idéal pour un lancement",
     "includedTitle": "Ce que recouvrent les formules",
     "includedItems": [
-      "Un résumé ou rapport écrit envoyé via le canal indiqué pour la formule",
-      "Un temps de conseil conforme à la fiche produit — questionnement, analyse, prochaines étapes",
-      "Une lecture honnête des risques, écarts et priorités réalistes sans faire-valoir trompeur",
+      "Consultation délivrée lors d un appel planifié",
+      "Récapitulatif écrit par email après l appel avec les principaux points discutés",
+      "Durée d échange et priorités d analyse conformes à la fiche du niveau",
+      "Lecture honnête des risques, écarts et séquencement réaliste sans promesse creuse",
       "Des frontières de périmètre lisibles avant le début réel des travaux"
     ],
     "howSteps": [
       {
         "title": "Réservation et contexte",
-        "detail": "Après paiement, vous recevez les consignes pour partager votre URL, boutique ou concept ainsi que vos objectifs et contraintes."
+        "detail": "Après confirmation du paiement et réception des détails de votre projet, nous indiquons comment vous préparer et quoi envoyer avant la consultation en direct."
       },
       {
         "title": "Revue vivante et diagnostic",
@@ -517,7 +521,7 @@
       },
       {
         "title": "Supports écrits et suivis",
-        "detail": "Vous recevez des notes priorisées ou un dossier plus dense selon la version, avec une vision réaliste de la mise en œuvre."
+        "detail": "Après l appel en direct, vous recevez un récapitulatif écrit par email avec les principaux points discutés, selon la profondeur du forfait."
       }
     ],
     "stepLabel": "Étape {n}",
@@ -629,6 +633,18 @@
     "listIntro": "Ce que les clients demandent avant de commencer",
     "items": [
       {
+        "question": "Comment la consultation est-elle livrée ?",
+        "answer": "La consultation est livrée via un appel en direct. Après l’appel, DigiScaler envoie un récapitulatif écrit par email avec les principaux points discutés."
+      },
+      {
+        "question": "Garantissez-vous des ventes ou des résultats précis ?",
+        "answer": "Non. DigiScaler fournit uniquement une consultation professionnelle, une analyse et des recommandations. Nous ne garantissons pas les ventes, les revenus, le classement, les taux de conversion ou des résultats commerciaux précis."
+      },
+      {
+        "question": "Quand ma consultation sera-t-elle planifiée ?",
+        "answer": "La planification dépend du forfait choisi et commence après confirmation du paiement et réception des détails nécessaires du projet."
+      },
+      {
         "question": "Que contient une consultation numérique ?",
         "answer": "Une session cadrée qui examine votre présence en ligne — site, parcours sensibles, signaux de confiance, contraintes — suivie de notes ou d un rapport selon la formule. Vous obtenez des actions priorisées et réalistes."
       },
@@ -738,7 +754,7 @@
       },
       {
         "title": "Services et consultations",
-        "content": "Conception de sites, commerce en ligne, pages de capture, audits, revue de l interface et du parcours, conseil. Les livrables suivent la fiche produit sauf périmètre écrit distinct."
+        "content": "DegiScaler LLC fournit des consultations numériques en direct et des services professionnels connexes (y compris, le cas échéant, conception web, e commerce, landing pages, audits et revues UI/UX publiées). Les forfaits de consultation décrits sont livrés par un appel en direct ; chaque consultation inclut un récapitulatif écrit par email après l appel comme indiqué sur la fiche. La planification et les délais associés commencent généralement après confirmation du paiement et réception des informations projet requises. DegiScaler ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats business spécifiques. Les livrables suivent le forfait acheté sauf périmètre écrit distinct."
       },
       {
         "title": "Aucune garantie d approbation paiement",
@@ -762,7 +778,7 @@
       },
       {
         "title": "Prestations numériques",
-        "content": "Les sessions et rapports sont réputés livrés au moment convenu, conformément à la politique de remboursement."
+        "content": "Les conseils sous formule consultation sont dispensés lors d un appel planifié, puis suivis d un récapitulatif écrit par email après l appel comme décrit pour votre niveau. D autres livrables numériques (audits ou rapports, le cas échéant) sont réputés fournis lorsqu ils sont délivrés comme décrit. Tout remboursement applicable est traité selon la politique de remboursement."
       },
       {
         "title": "Limitation de responsabilité",
@@ -787,12 +803,12 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de remboursement",
-    "intro": "DegiScaler LLC propose des prestations numériques et des conseils. Ce texte fixe des attentes équitables sur les remboursements.",
+    "intro": "DegiScaler LLC vend des consultations numériques en direct professionnelles et des services connexes. Ce texte fixe des attentes équitables sur les remboursements ; tout remboursement est traité selon cette politique et la loi applicable.",
     "legalDisclaimer": "Information générale, pas un avis juridique.",
     "sections": [
       {
         "title": "Consultations numériques",
-        "content": "Après session ou livraison du rapport, les honoraires sont généralement acquis non remboursables sauf disposition légale impérative."
+        "content": "Les consultations sont des prestations dispensées lors d un appel en direct, suivies d un récapitulatif écrit par email après l appel comme décrit pour votre formule. Une fois la session accomplie ou le récapitulatif pertinent fourni, les honoraires sont généralement dus et non remboursables sauf disposition légale impérative. DegiScaler ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats business précis."
       },
       {
         "title": "Avant tout démarrage",
@@ -800,7 +816,7 @@
       },
       {
         "title": "Production sur mesure",
-        "content": "Dès que des livrables personnalisés démarrent (par exemple le forfait de création complète), les coûts engagés rendent le remboursement improbable."
+        "content": "Les missions de conception ou de développement sur mesure impliquent une exécution personnalisée. Après début réel du travail personnalisé, un remboursement devient généralement impossible car les coûts sont engagés. L admissibilité avant démarrage est examinée selon cette politique."
       },
       {
         "title": "Décisions des plateformes de paiement",
@@ -819,6 +835,7 @@
   "orderPage": {
     "title": "Finaliser votre demande",
     "subtitle": "Indiquez comment vous joindre. Nous confirmerons votre formule et la suite.",
+    "deliveryNote": "Le délai commence après confirmation du paiement et réception des détails de votre projet.",
     "summaryLabel": "Formule choisie",
     "fallbackSummaryLabel": "Résumé de la demande",
     "fallbackSummaryTitle": "Demande de projet",

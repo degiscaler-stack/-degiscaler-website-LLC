@@ -3,27 +3,39 @@ import { prisma } from '../lib/prisma';
 import { hashPassword } from '../lib/auth/password';
 
 const STARTER_FEATURES: Prisma.InputJsonValue = [
-  '30-minute digital consultation',
+  '30-minute live consultation call',
   'Website credibility review',
+  'Online presence clarity check',
   '3 key improvement recommendations',
-  'Written summary delivered by email',
-  'Response within 48 business hours',
+  'Email recap after the call',
+  'Scheduled within 48 business hours',
 ];
 
 const GROWTH_FEATURES: Prisma.InputJsonValue = [
-  '45-minute digital consultation',
+  '45-minute live consultation call',
   'Website and checkout review',
+  'Customer journey clarity check',
   '5 improvement recommendations',
   'Trust signal assessment',
-  'Written report delivered by email',
+  'Scheduled within 2-3 business days',
 ];
 
 const PRO_FEATURES: Prisma.InputJsonValue = [
-  '60-minute digital consultation',
+  '60-minute live consultation call',
   'Full website and UX review',
   'Checkout clarity assessment',
   'Payment-readiness review',
-  'Detailed written report with action plan',
+  'Action plan discussed on call',
+  'Detailed email recap after the call',
+];
+
+const SCALE_FEATURES: Prisma.InputJsonValue = [
+  '90-minute live strategy call',
+  'Full website and funnel review',
+  'Trust and conversion clarity review',
+  'Checkout and payment flow review',
+  'Priority action plan discussed on call',
+  'Detailed email recap after the call',
 ];
 
 async function seedAdmin() {
@@ -88,7 +100,7 @@ async function seedPackages() {
       price: '$9.99',
       currency: 'USD',
       description:
-        'A focused entry-level consultation for founders who need a quick professional assessment of their online presence.',
+        'A focused live consultation for founders who need a quick review of their website and online presence.',
       features: STARTER_FEATURES,
       isPopular: false,
       sortOrder: 0,
@@ -100,7 +112,7 @@ async function seedPackages() {
       price: '$19.99',
       currency: 'USD',
       description:
-        'A structured consultation for businesses looking to improve their online presence and customer journey.',
+        'A structured live consultation to improve website clarity, checkout flow, trust signals, and customer journey.',
       features: GROWTH_FEATURES,
       isPopular: false,
       sortOrder: 1,
@@ -112,18 +124,29 @@ async function seedPackages() {
       price: '$29.99',
       currency: 'USD',
       description:
-        'A comprehensive consultation covering your full digital presence and payment-readiness.',
+        'A complete live consultation covering website UX, checkout clarity, trust signals, and payment readiness.',
       features: PRO_FEATURES,
       isPopular: true,
       sortOrder: 2,
     },
+    {
+      slug: 'scale-consultation',
+      title: 'Scale Consultation',
+      subtitle: null,
+      price: '$49.99',
+      currency: 'USD',
+      description:
+        'A premium strategy consultation for deeper review of your digital presence, funnel, trust, and priorities.',
+      features: SCALE_FEATURES,
+      isPopular: false,
+      sortOrder: 3,
+    },
   ];
 
   for (const p of packs) {
-    const exists = await prisma.package.findUnique({ where: { slug: p.slug } });
-    if (exists) continue;
-    await prisma.package.create({
-      data: {
+    await prisma.package.upsert({
+      where: { slug: p.slug },
+      create: {
         slug: p.slug,
         title: p.title,
         subtitle: p.subtitle,
@@ -135,8 +158,29 @@ async function seedPackages() {
         isActive: true,
         sortOrder: p.sortOrder,
       },
+      update: {
+        title: p.title,
+        subtitle: p.subtitle,
+        price: p.price,
+        currency: p.currency,
+        description: p.description,
+        features: p.features,
+        isPopular: p.isPopular,
+        isActive: true,
+        sortOrder: p.sortOrder,
+      },
     });
-    console.warn(`[seed] Package '${p.slug}' created.`);
+    console.warn(`[seed] Package '${p.slug}' upserted.`);
+  }
+
+  const legacy = await prisma.package.updateMany({
+    where: {
+      slug: { in: ['advanced-consultation', 'elite-launch-package'] },
+    },
+    data: { isActive: false, isPopular: false },
+  });
+  if (legacy.count > 0) {
+    console.warn(`[seed] Deactivated ${legacy.count} legacy package row(s).`);
   }
 }
 

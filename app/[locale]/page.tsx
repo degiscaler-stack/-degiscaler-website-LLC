@@ -29,7 +29,7 @@ export default async function HomePage({
     features: string[];
   }>;
   const allPkgs = applyTranslatedPackageCopy(await loadDisplayPackages(fallbackPackages), fallbackPackages);
-  const homePreview = allPkgs.slice(0, 3);
+  const homePreview = allPkgs.slice(0, 4);
 
   return (
     <>

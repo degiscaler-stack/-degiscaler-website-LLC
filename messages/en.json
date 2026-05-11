@@ -54,7 +54,7 @@
     "answers": {
       "company": "DegiScaler is a digital services and business consultation company focused on credible online presence — especially for founders and small businesses.",
       "services": "We offer structured help across: Website Design, E‑commerce Development, Landing Page Design, Website Audit, UI/UX Review, and Digital Business Consultation. Ask about any one topic for more detail.",
-      "pricing": "Published USD packages: Starter Consultation — $9.99; Growth Consultation — $19.99; Pro Consultation — $29.99; Advanced Consultation — $49.99; Elite Launch Package — $149.99. Exact deliverables vary by tier — see Pricing for specifics.",
+      "pricing": "Published USD consultation packages: Starter Consultation — $9.99; Growth Consultation — $19.99; Pro Consultation — $29.99; Scale Consultation — $49.99. Each tier includes live call time plus a written email recap — see Pricing for specifics.",
       "website_design": "Website Design focuses on credible layout, typography, readability, and clear conversion paths so your brand reads professional at first glance.",
       "ecommerce": "E‑commerce Development focuses on storefront structure, clearer product/checkout flows, trust placement, and a more deliberate purchase journey.",
       "landing_page": "Landing Page Design is a compact, credibility-led page centered on one objective and a direct call‑to‑action.",
@@ -276,9 +276,9 @@
     "pricing": {
       "sectionLabel": "Pricing",
       "headline": "Straightforward pricing. Zero surprises.",
-      "subheadline": "Three packages shown below. All include a structured review and written report. See all five options on the pricing page.",
-      "valueFraming": "Structured consultation sessions, clear written deliverables, and practical guidance—priced for access, not disguised as discount work.",
-      "viewAll": "See All 5 Packages",
+      "subheadline": "Four consultation packages below. Live call time varies by tier, and every package includes scheduling guidance shown on each card.",
+      "valueFraming": "Live consultation calls with a written email recap afterward—priced for clarity, not disguised as discount work.",
+      "viewAll": "See pricing details",
       "mostPopular": "Most Popular",
       "premiumBadge": "Best for launch",
       "getStarted": "Get Started"
@@ -287,6 +287,18 @@
       "sectionLabel": "FAQ",
       "headline": "Questions you probably already have",
       "items": [
+        {
+          "question": "How is the consultation delivered?",
+          "answer": "The consultation is delivered through a live call. After the call, DigiScaler sends a written email recap summarizing the main points discussed."
+        },
+        {
+          "question": "Do you guarantee sales or specific results?",
+          "answer": "No. DigiScaler provides professional consultation, review, and recommendations only. We do not guarantee sales, revenue, rankings, conversion rates, or specific business results."
+        },
+        {
+          "question": "When will my consultation be scheduled?",
+          "answer": "Scheduling depends on the selected package and starts after payment confirmation and after we receive the required project details."
+        },
         {
           "question": "What does a digital consultation actually include?",
           "answer": "A structured review of your online business — website, checkout, trust signals, and overall digital setup. You receive a written report with clear, specific recommendations you can act on immediately."
@@ -419,23 +431,24 @@
     "title": "Pricing",
     "eyebrow": "Transparent pricing",
     "headline": "Transparent packages. No surprises.",
-    "subheadline": "Every package pairs structured consultation with written recommendations. Choose the depth that matches where you are today.",
+    "subheadline": "Live digital consultations with a written email recap after your call. Choose the depth that matches where you are today.",
     "mostPopular": "Most Popular",
     "premiumBadge": "Best for launch",
     "getStarted": "Get Started",
     "perPackage": "per package",
-    "disclaimer": "All prices are in USD. These are digital services. DegiScaler LLC does not guarantee Stripe approval, PayPal approval, bank approval, or any specific business or payment outcome. Timelines depend on scope and responsiveness.",
+    "disclaimer": "All prices are in USD. These are paid live digital consultations; each tier includes written email recap after your call as described on the package. DegiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business or payment-platform outcome. Scheduling and delivery timing start after payment confirmation and after we receive your project details. Timelines also depend on responsiveness when coordinating the call.",
     "includedTitle": "What is included",
     "includedItems": [
-      "Written summary or report delivered through the channel listed in your package details",
-      "Consultation time as described for each tier — structured questions, review, and next steps",
+      "Live consultation delivered on a scheduled call",
+      "Written email recap after the call summarizing the main points discussed",
+      "Structured review time and focus areas as described for each tier",
       "Honest assessment of risks, gaps, and realistic sequencing (no fabricated guarantees)",
       "Clear scope boundaries so you know what is in or out before work begins"
     ],
     "howSteps": [
       {
         "title": "Book and share context",
-        "detail": "After purchase, you receive instructions to share your site, store, or concept along with goals and constraints."
+        "detail": "After payment confirmation and once we receive your project details, we share how to prepare and what to send before your live consultation."
       },
       {
         "title": "Live review and diagnosis",
@@ -443,7 +456,7 @@
       },
       {
         "title": "Written deliverables and follow-ups",
-        "detail": "You receive prioritized notes or a fuller report depending on tier, plus realistic guidance on implementation order."
+        "detail": "After the live call, you receive a written email recap summarizing the main points discussed, with depth matching your package tier."
       }
     ],
     "stepLabel": "Step {n}",
@@ -459,65 +472,56 @@
         "id": "starter",
         "name": "Starter Consultation",
         "price": "$9.99",
-        "description": "A focused entry-level consultation for founders who need a quick professional assessment of their online presence.",
+        "description": "A focused live consultation for founders who need a quick review of their website and online presence.",
         "features": [
-          "30-minute digital consultation",
+          "30-minute live consultation call",
           "Website credibility review",
+          "Online presence clarity check",
           "3 key improvement recommendations",
-          "Written summary delivered by email",
-          "Response within 48 business hours"
+          "Email recap after the call",
+          "Scheduled within 48 business hours"
         ]
       },
       {
         "id": "growth",
         "name": "Growth Consultation",
         "price": "$19.99",
-        "description": "A structured consultation for businesses looking to improve their online presence and customer journey.",
+        "description": "A structured live consultation to improve website clarity, checkout flow, trust signals, and customer journey.",
         "features": [
-          "45-minute digital consultation",
+          "45-minute live consultation call",
           "Website and checkout review",
+          "Customer journey clarity check",
           "5 improvement recommendations",
           "Trust signal assessment",
-          "Written report delivered by email"
+          "Scheduled within 2–3 business days"
         ]
       },
       {
         "id": "pro",
         "name": "Pro Consultation",
         "price": "$29.99",
-        "description": "A comprehensive consultation covering your full digital presence and payment-readiness.",
+        "description": "A complete live consultation covering website UX, checkout clarity, trust signals, and payment readiness.",
         "features": [
-          "60-minute digital consultation",
+          "60-minute live consultation call",
           "Full website and UX review",
           "Checkout clarity assessment",
           "Payment-readiness review",
-          "Detailed written report with action plan"
+          "Action plan discussed on call",
+          "Detailed email recap after the call"
         ]
       },
       {
-        "id": "advanced",
-        "name": "Advanced Consultation",
+        "id": "scale",
+        "name": "Scale Consultation",
         "price": "$49.99",
-        "description": "An in-depth consultation with detailed analysis and a complete improvement roadmap for your business.",
+        "description": "A premium strategy consultation for deeper review of your digital presence, funnel, trust, and priorities.",
         "features": [
-          "90-minute digital consultation",
-          "Full website audit and UX review",
-          "E-commerce and checkout analysis",
-          "Payment-readiness assessment",
-          "Priority support for 7 days after delivery"
-        ]
-      },
-      {
-        "id": "elite",
-        "name": "Elite Launch Package",
-        "price": "$149.99",
-        "description": "Our complete package for founders ready to launch a professional, credible online business from the ground up.",
-        "features": [
-          "Complete website design and build",
-          "E-commerce or landing page setup",
-          "Full UI/UX and trust signal review",
-          "Payment-readiness preparation",
-          "Priority support for 30 days after delivery"
+          "90-minute live strategy call",
+          "Full website and funnel review",
+          "Trust and conversion clarity review",
+          "Checkout and payment flow review",
+          "Priority action plan discussed on call",
+          "Detailed email recap after the call"
         ]
       }
     ]
@@ -621,6 +625,18 @@
     "subheadline": "Clear answers about consultation deliverables, timelines, refunds, multilingual work, and what third-party payment platforms decide on their own.",
     "listIntro": "What clients ask before starting",
     "items": [
+      {
+        "question": "How is the consultation delivered?",
+        "answer": "The consultation is delivered through a live call. After the call, DigiScaler sends a written email recap summarizing the main points discussed."
+      },
+      {
+        "question": "Do you guarantee sales or specific results?",
+        "answer": "No. DigiScaler provides professional consultation, review, and recommendations only. We do not guarantee sales, revenue, rankings, conversion rates, or specific business results."
+      },
+      {
+        "question": "When will my consultation be scheduled?",
+        "answer": "Scheduling depends on the selected package and starts after payment confirmation and after we receive the required project details."
+      },
       {
         "question": "What does a digital consultation include?",
         "answer": "A structured working session that reviews your online presence—site, key flows, trust signals, and constraints—plus written notes or a deeper report depending on the package. You leave with prioritized recommendations and realistic sequencing, not generic advice."
@@ -731,7 +747,7 @@
       },
       {
         "title": "Services & consultations",
-        "content": "DegiScaler LLC provides digital services and business consultation including website design, e-commerce builds, landing pages, audits, UI/UX reviews, and consultations. Deliverables match the purchased package unless a separate written scope is signed."
+        "content": "DegiScaler LLC provides live digital consultation services and related professional services (including, where offered, website design, e-commerce builds, landing pages, audits, and UI/UX reviews). Published consultation packages are delivered through a live call; each consultation includes a written email recap after the call as described for the purchased package. Scheduling and related timing generally start after payment confirmation and after we receive the required project details. DegiScaler does not guarantee sales, revenue, rankings, conversion rates, or specific business outcomes. Deliverables otherwise match the purchased package unless a separate written scope is signed."
       },
       {
         "title": "No guaranteed payment-processor approval",
@@ -755,7 +771,7 @@
       },
       {
         "title": "Digital delivery",
-        "content": "Consultations, audits, and reports are digital services considered delivered when the session occurs or the written materials are supplied, subject to the Refund Policy."
+        "content": "Consultation services are delivered live on a scheduled call, followed by a written email recap after the call as described in your package. Other digital deliverables (such as audits or written reports, where applicable) are considered delivered when supplied as described. Refunds, where applicable, are handled according to the Refund Policy."
       },
       {
         "title": "Limitation of liability",
@@ -780,12 +796,12 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Refund policy",
-    "intro": "DegiScaler LLC sells professional digital consultations and related services. This policy explains refund expectations in everyday language.",
+    "intro": "DegiScaler LLC sells professional live digital consultations and related services. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
         "title": "Digital consultations",
-        "content": "Consultations are professional services delivered remotely. Once a session is completed or a written report is delivered, fees for that milestone are typically earned and not refundable except where applicable law requires otherwise."
+        "content": "Consultations are professional services delivered through a live call, with a written email recap after the call as described in your package. Once a session is completed or applicable written recap/deliverables are provided, fees for that milestone are typically earned and not refundable except where applicable law requires otherwise. DegiScaler does not guarantee sales, revenue, rankings, conversion rates, or specific business outcomes."
       },
       {
         "title": "Eligibility before work starts",
@@ -793,7 +809,7 @@
       },
       {
         "title": "Custom build work",
-        "content": "Elite Launch and similar scopes involve tailored design or development. After tangible work begins, refunds are generally unavailable because labor and tooling costs are incurred."
+        "content": "Custom design or development scopes involve tailored execution. After tangible customized work begins, refunds are generally unavailable because labor and tooling costs are incurred. Eligibility before work starts is assessed in line with this policy."
       },
       {
         "title": "No refunds for processor decisions",
@@ -812,6 +828,7 @@
   "orderPage": {
     "title": "Complete your request",
     "subtitle": "Tell us how to reach you. We will confirm your package and next steps.",
+    "deliveryNote": "Delivery time starts after payment confirmation and after we receive your project details.",
     "summaryLabel": "Selected package",
     "fallbackSummaryLabel": "Request summary",
     "fallbackSummaryTitle": "Project request",

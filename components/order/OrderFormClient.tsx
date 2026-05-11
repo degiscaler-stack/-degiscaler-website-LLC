@@ -104,6 +104,10 @@ export default function OrderFormClient({
         </p>
       </div>
 
+      <p className="text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
+        {t('deliveryNote')}
+      </p>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="sm:col-span-2">
           <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-fullName">

@@ -1,6 +1,6 @@
 import type { Package as DbPackage } from '@prisma/client';
 import { safeFindPackageBySlug, safeFindPackages } from '@/lib/db/public-safe';
-import { translationIdToSlug } from '@/lib/packages/map-slug';
+import { canonicalConsultationSlug, translationIdToSlug } from '@/lib/packages/map-slug';
 
 export type DisplayPackage = {
   slug: string;
@@ -31,7 +31,7 @@ function parseFeaturesJson(features: DbPackage['features']): string[] {
 }
 
 function variantFor(slug: string, isPopular: boolean): DisplayPackage['variant'] {
-  if (slug.includes('elite')) return 'premium';
+  if (slug === 'scale-consultation') return 'premium';
   if (isPopular) return 'featured';
   return 'standard';
 }
@@ -61,7 +61,8 @@ function fromFallback(p: FallbackPkg): DisplayPackage {
     description: p.description,
     features: p.features,
     isPopular: p.id === 'pro',
-    variant: p.id === 'elite' ? 'premium' : p.id === 'pro' ? 'featured' : 'standard',
+    variant:
+      slug === 'scale-consultation' ? 'premium' : p.id === 'pro' ? 'featured' : 'standard',
   };
 }
 
@@ -166,8 +167,9 @@ export async function resolvePackageForOrder(
   try {
     const trimmed = slug?.trim();
     if (!trimmed) return null;
+    const canonical = canonicalConsultationSlug(trimmed);
 
-    const row = await safeFindPackageBySlug(trimmed);
+    const row = await safeFindPackageBySlug(canonical);
     if (row) {
       return overlayResolvedFromFallback(
         {
@@ -183,7 +185,7 @@ export async function resolvePackageForOrder(
       );
     }
 
-    const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === trimmed);
+    const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === canonical);
     if (!fb) return null;
     const d = fromFallback(fb);
     return {

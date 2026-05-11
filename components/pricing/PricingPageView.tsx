@@ -50,6 +50,8 @@ function PricingTierCard({
   const headerBoost =
     pkg.variant === 'premium' ? 0.078 : pkg.variant === 'featured' ? 0.072 : 0.058;
 
+  const showBadgeRow = pkg.variant === 'featured';
+
   return (
     <div
       className={`rounded-2xl md:rounded-[1.4rem] flex flex-col overflow-hidden h-full ${surfaceClass}`}
@@ -62,7 +64,7 @@ function PricingTierCard({
       }}
     >
       <div
-        className="px-8 md:px-10 pt-9 pb-8 border-b"
+        className="px-6 md:px-8 pt-6 md:pt-7 pb-6 md:pb-7 border-b"
         style={{
           borderColor: 'rgba(255,255,255,0.10)',
           backgroundImage: [
@@ -73,8 +75,8 @@ function PricingTierCard({
           boxShadow: 'inset 0 -1px 0 rgba(255,255,255,0.05)',
         }}
       >
-        <div className="mb-5 flex min-h-[42px] items-center">
-          {pkg.variant === 'featured' ? (
+        {showBadgeRow ? (
+          <div className="mb-3 flex min-h-0 items-center">
             <div
               className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
               style={{
@@ -92,28 +94,10 @@ function PricingTierCard({
                 {t('mostPopular')}
               </span>
             </div>
-          ) : pkg.variant === 'premium' ? (
-            <div
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
-              style={{
-                border: '1px solid rgba(232,204,101,0.28)',
-                backgroundColor: 'rgba(232,204,101,0.06)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05)',
-              }}
-            >
-              <span
-                className={`${iconWellSmGlyphClass} ${iconPricingWellClass} inline-flex size-[30px] shrink-0 items-center justify-center rounded-lg border-0`}
-              >
-                <Star size={15} strokeWidth={2} style={{ color: PRICING_ICON_COLOR }} aria-hidden />
-              </span>
-              <span className={`text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] ${accentEyebrowClass}`}>
-                {t('premiumBadge')}
-              </span>
-            </div>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
 
-        <p className="font-semibold text-[1.05rem] md:text-[1.125rem] mb-4 tracking-tight" style={{ color: ds.text }}>
+        <p className="font-semibold text-[1.05rem] md:text-[1.125rem] mb-3 tracking-tight" style={{ color: ds.text }}>
           {pkg.title}
         </p>
         <div className="flex flex-wrap items-baseline gap-1 gap-y-1">
@@ -133,14 +117,14 @@ function PricingTierCard({
         </div>
       </div>
 
-      <div className="p-8 md:p-10 flex flex-col flex-1 min-h-0">
-        <p className="text-[15.5px] mb-8 leading-[1.68] flex-1" style={{ color: ds.textMuted }}>
+      <div className="p-6 md:p-8 flex flex-col flex-1 min-h-0">
+        <p className="text-[15.5px] mb-6 leading-[1.65]" style={{ color: ds.textMuted }}>
           {pkg.description}
         </p>
 
-        <div className={`mb-8 ${pricingCardDividerClass}`} role="separator" />
+        <div className={`mb-6 ${pricingCardDividerClass}`} role="separator" />
 
-        <ul className="space-y-[1.05rem] flex-1 mb-10" role="list">
+        <ul className="space-y-[0.95rem] flex-1 mb-8" role="list">
           {pkg.features.map((feat) => (
             <li key={feat} className="flex items-start gap-3.5">
               <div className={iconWrapClass}>
@@ -172,9 +156,6 @@ export default async function PricingPageView({ packages }: { packages: DisplayP
   const howSteps: { title: string; detail: string }[] =
     (t.raw('howSteps') as { title: string; detail: string }[]) ?? [];
 
-  const row1 = packages.slice(0, 3);
-  const row2 = packages.slice(3);
-
   return (
     <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
       <section
@@ -198,14 +179,9 @@ export default async function PricingPageView({ packages }: { packages: DisplayP
             'linear-gradient(180deg, rgba(255,132,17,0.02) 0%, transparent 36%), linear-gradient(90deg, rgba(255,132,17,0.015) 0%, transparent 30%, transparent 70%, rgba(232,204,101,0.012) 100%)',
         }}
       >
-        <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-9 items-stretch mb-10 lg:mb-14">
-            {row1.map((pkg) => (
-              <PricingTierCard key={pkg.slug} pkg={pkg} t={t} />
-            ))}
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-9 max-w-[820px] mx-auto items-stretch">
-            {row2.map((pkg) => (
+        <div className="px-4 sm:px-6 lg:px-10 max-w-[1380px] xl:max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 xl:gap-8 items-stretch mb-10 lg:mb-14">
+            {packages.map((pkg) => (
               <PricingTierCard key={pkg.slug} pkg={pkg} t={t} />
             ))}
           </div>

@@ -7,7 +7,7 @@ import { Link } from '@/i18n/navigation';
 import PageHero from '@/components/layout/PageHero';
 import OrderFormClient from '@/components/order/OrderFormClient';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
-import { isOrderableConsultationSlug } from '@/lib/packages/map-slug';
+import { canonicalConsultationSlug, isOrderableConsultationSlug } from '@/lib/packages/map-slug';
 import {
   contentMax,
   ds,
@@ -94,6 +94,8 @@ export default async function OrderPage({
     console.error('[OrderPage] getTranslations', err);
   }
 
+  const pkgCanon = pkgParam ? canonicalConsultationSlug(pkgParam) : '';
+
   let resolved: Awaited<ReturnType<typeof resolvePackageForOrder>> = null;
   try {
     if (pkgParam && isOrderableConsultationSlug(pkgParam)) {
@@ -105,11 +107,13 @@ export default async function OrderPage({
   }
 
   const slugCandidate =
-    pkgParam && isOrderableConsultationSlug(pkgParam) ? harmlessSlugCandidate(pkgParam) : null;
+    pkgCanon && isOrderableConsultationSlug(pkgCanon)
+      ? harmlessSlugCandidate(pkgCanon)
+      : null;
 
   const display = resolved
     ? {
-        packageSlug: resolved.packageSlug as string | null,
+        packageSlug: resolved.packageSlug,
         packageTitle: resolved.packageTitle,
         packagePrice: resolved.packagePrice as string | null,
         currency: resolved.currency as string | null,
