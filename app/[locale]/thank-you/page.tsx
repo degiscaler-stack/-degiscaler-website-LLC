@@ -10,13 +10,13 @@ import {
   isOrderablePackageSlug,
 } from '@/lib/packages/map-slug';
 import {
-  accentEyebrowClass,
   cardSurfaceBgImage,
   cardTopHighlight,
   contentMax,
   ds,
   pageMainTopClass,
   primaryBtnClass,
+  secondaryBtnClass,
   sectionPad,
 } from '@/components/home/homeTheme';
 
@@ -59,13 +59,14 @@ export default async function ThankYouPage({
     console.error('[ThankYouPage] pricing translations', err);
   }
 
-  const isOrder = type === 'order';
   const isContact = type === 'contact';
+  const isOrder = type === 'order';
+  const hasValidPkg = Boolean(pkgRaw && isOrderablePackageSlug(pkgRaw));
 
   let productTitle: string | null = null;
   let zipHref: string | null = null;
 
-  if (isOrder && pkgRaw && isOrderablePackageSlug(pkgRaw)) {
+  if (hasValidPkg) {
     try {
       const resolved = await resolvePackageForOrder(pkgRaw, fallbackPackages);
       productTitle = resolved?.packageTitle ?? null;
@@ -76,12 +77,16 @@ export default async function ThankYouPage({
     }
   }
 
-  const title = isOrder ? t('orderTitle') : isContact ? t('contactTitle') : t('orderTitle');
-  const subtitle = isOrder
-    ? t('orderConfirmationSubtitle')
-    : isContact
-      ? t('contactBody')
-      : t('invalid');
+  const showAwaitingConfirmation = !isContact && (!isOrder || !hasValidPkg);
+  const showOrderKitAccess = isOrder && hasValidPkg;
+  const showDownloadButton = showOrderKitAccess && Boolean(zipHref);
+
+  const heroTitle = isContact ? t('contactTitle') : t('orderTitle');
+  const heroSubtitle = isContact
+    ? t('contactBody')
+    : showAwaitingConfirmation
+      ? t('awaitingCheckoutBody')
+      : t('orderConfirmationSubtitle');
 
   return (
     <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
@@ -97,78 +102,105 @@ export default async function ThankYouPage({
               DigiScaler
             </span>
           }
-          title={title}
-          subtitle={subtitle}
+          title={heroTitle}
+          subtitle={heroSubtitle}
         />
       </section>
 
       <section className={sectionPad} style={{ backgroundColor: ds.bgAlt }}>
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax} space-y-8`}>
-          {isOrder ? (
-            <>
-              <p className="text-[14px] md:text-[15px] leading-[1.75] max-w-[40rem]" style={{ color: ds.textMuted }}>
-                {t('orderRecordedLead')}
-              </p>
-
-              <div
-                className="rounded-2xl md:rounded-[1.4rem] p-8 md:p-10 max-w-[40rem]"
-                style={{
-                  border: `1px solid ${ds.borderStrong}`,
-                  backgroundImage: cardSurfaceBgImage,
-                  backgroundColor: ds.cardElevated,
-                  boxShadow: `${cardTopHighlight}, 0 20px 52px rgba(0,0,0,0.38)`,
-                }}
+          {showAwaitingConfirmation ? (
+            <div className="flex max-w-[40rem] flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/pricing"
+                className={`${primaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
               >
-                <span className={`text-[11px] font-bold uppercase tracking-[0.18em] ${accentEyebrowClass}`}>
-                  {t('downloadSectionTitle')}
-                </span>
-                {productTitle ? (
-                  <p className="text-[1.125rem] md:text-[1.2rem] font-bold mt-4 tracking-tight" style={{ color: ds.text }}>
-                    {productTitle}
-                  </p>
-                ) : null}
-                <p className="text-[14px] md:text-[15px] leading-[1.75] mt-5" style={{ color: ds.textSecondary }}>
-                  {t('saveFilesSecurely')}
-                </p>
-                <p className="text-[13px] md:text-[14px] leading-relaxed mt-4" style={{ color: ds.textMuted }}>
-                  {t('digitalFulfillmentNote')}
-                </p>
-
-                {zipHref ? (
-                  <a
-                    href={zipHref}
-                    download
-                    className={`${primaryBtnClass} mt-8 inline-flex items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold no-underline`}
-                  >
-                    <Download size={18} strokeWidth={2} aria-hidden />
-                    {t('downloadKitZip')}
-                  </a>
-                ) : (
-                  <p className="mt-8 text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
-                    {t('downloadUnavailable')}
-                  </p>
-                )}
-
-                <p className="text-[14px] md:text-[15px] leading-relaxed mt-10 pt-8 border-t" style={{ borderColor: ds.border, color: ds.textMuted }}>
-                  {t('supportIntro')}{' '}
-                  <a
-                    href="mailto:support@degiscaler.com"
-                    className="font-semibold underline underline-offset-4 hover:opacity-90"
-                    style={{ color: '#e8cc65' }}
-                  >
-                    support@degiscaler.com
-                  </a>
-                </p>
-              </div>
-            </>
+                {t('backToPricing')}
+              </Link>
+              <Link
+                href="/"
+                className={`${secondaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
+              >
+                {t('backHome')}
+              </Link>
+            </div>
           ) : null}
 
-          <Link
-            href="/"
-            className={`${primaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
-          >
-            {t('backHome')}
-          </Link>
+          {isContact ? (
+            <Link
+              href="/"
+              className={`${primaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
+            >
+              {t('backHome')}
+            </Link>
+          ) : null}
+
+          {showOrderKitAccess ? (
+            <div
+              className="rounded-2xl md:rounded-[1.4rem] p-8 md:p-10 max-w-[40rem]"
+              style={{
+                border: `1px solid ${ds.borderStrong}`,
+                backgroundImage: cardSurfaceBgImage,
+                backgroundColor: ds.cardElevated,
+                boxShadow: `${cardTopHighlight}, 0 20px 52px rgba(0,0,0,0.38)`,
+              }}
+            >
+              {productTitle ? (
+                <p className="text-[1.125rem] md:text-[1.2rem] font-bold tracking-tight" style={{ color: ds.text }}>
+                  {productTitle}
+                </p>
+              ) : null}
+              <p className="text-[14px] md:text-[15px] leading-[1.75] mt-5" style={{ color: ds.textSecondary }}>
+                {t('filesAvailableBelow')}
+              </p>
+
+              {showDownloadButton ? (
+                <a
+                  href={zipHref!}
+                  download
+                  className={`${primaryBtnClass} mt-6 inline-flex items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold no-underline`}
+                >
+                  <Download size={18} strokeWidth={2} aria-hidden />
+                  {t('downloadKitZip')}
+                </a>
+              ) : (
+                <p className="mt-6 text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
+                  {t('fulfillmentFollowUp')}
+                </p>
+              )}
+
+              <p className="text-[14px] md:text-[15px] leading-[1.75] mt-6" style={{ color: ds.textSecondary }}>
+                {t('saveSecurelyShort')}
+              </p>
+
+              <p className="text-[12px] md:text-[13px] leading-relaxed mt-4" style={{ color: ds.textMuted }}>
+                {t('digitalFulfillmentShort')}
+              </p>
+
+              <p
+                className="text-[14px] md:text-[15px] leading-relaxed mt-8 pt-8 border-t"
+                style={{ borderColor: ds.border, color: ds.textMuted }}
+              >
+                {t('supportIntro')}{' '}
+                <a
+                  href="mailto:support@degiscaler.com"
+                  className="font-semibold underline underline-offset-4 hover:opacity-90"
+                  style={{ color: '#e8cc65' }}
+                >
+                  support@degiscaler.com
+                </a>
+              </p>
+            </div>
+          ) : null}
+
+          {showOrderKitAccess ? (
+            <Link
+              href="/"
+              className={`${secondaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
+            >
+              {t('backHome')}
+            </Link>
+          ) : null}
         </div>
       </section>
     </div>

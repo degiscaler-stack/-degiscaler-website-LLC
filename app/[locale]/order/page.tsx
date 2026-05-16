@@ -17,7 +17,7 @@ import {
   ds,
   pageMainTopClass,
   sectionPad,
-  primaryBtnClass,
+  secondaryBtnClass,
 } from '@/components/home/homeTheme';
 
 function safePricingPackages(tPricing: { raw: (key: string) => unknown }): Array<{
@@ -43,15 +43,14 @@ function harmlessSlugCandidate(raw: string): string | null {
 }
 
 const ORDER_COPY_FALLBACK = {
-  title: 'Checkout',
+  title: 'Secure checkout',
   subtitle:
-    'Review your kit, billing details, and digital delivery terms. Download links are shown only on the confirmation page after checkout completes.',
+    'Review your selected digital kit and complete your order securely. Download access is shown only after checkout is completed.',
   fallbackSummaryTitle: 'Purchase assistance',
   fallbackSummaryDescription:
     'Tell us which kit you wanted. Our team will follow up with access instructions.',
-  fallbackPackageNotice:
-    'Kit details could not be loaded right now. Your request will still be submitted safely.',
-  genericRequestHint: 'Browse Pricing for digital kits, or describe what you need below.',
+  genericRequestHint: 'Choose a kit from Pricing to see your order summary here.',
+  backToPricing: 'Back to pricing',
 };
 
 export default async function OrderPage({
@@ -72,7 +71,6 @@ export default async function OrderPage({
   }
 
   let orderCopy = { ...ORDER_COPY_FALLBACK };
-  let pricingTitle = 'Pricing';
   let fallbackPackages: Array<{
     id: string;
     name: string;
@@ -89,10 +87,9 @@ export default async function OrderPage({
       subtitle: tOrd('subtitle'),
       fallbackSummaryTitle: tOrd('fallbackSummaryTitle'),
       fallbackSummaryDescription: tOrd('fallbackSummaryDescription'),
-      fallbackPackageNotice: tOrd('fallbackPackageNotice'),
       genericRequestHint: tOrd('genericRequestHint'),
+      backToPricing: tOrd('backToPricing'),
     };
-    pricingTitle = tPrice('title');
     fallbackPackages = safePricingPackages(tPrice);
   } catch (err) {
     console.error('[OrderPage] getTranslations', err);
@@ -161,12 +158,7 @@ export default async function OrderPage({
       >
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
           <div className="max-w-[640px] space-y-6">
-            {display.usesFallbackSummary && pkgParam && isOrderablePackageSlug(pkgParam) ? (
-              <p className="text-[13px] leading-relaxed text-amber-100/90">
-                {orderCopy.fallbackPackageNotice}
-              </p>
-            ) : null}
-            {display.usesFallbackSummary && (!pkgParam || !isOrderablePackageSlug(pkgParam)) ? (
+            {display.usesFallbackSummary ? (
               <p className="text-[13px] leading-relaxed" style={{ color: ds.textMuted }}>
                 {orderCopy.genericRequestHint}
               </p>
@@ -176,9 +168,9 @@ export default async function OrderPage({
 
             <Link
               href="/pricing"
-              className={`${primaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
+              className={`${secondaryBtnClass} inline-flex justify-center px-10 py-3.5 rounded-xl text-[15px] font-semibold`}
             >
-              {pricingTitle}
+              {orderCopy.backToPricing}
             </Link>
           </div>
         </div>

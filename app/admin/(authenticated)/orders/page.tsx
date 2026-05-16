@@ -55,6 +55,12 @@ export default async function AdminOrdersPage() {
                       {order.email}
                     </a>
                   </p>
+                  {order.country ? (
+                    <p className="text-neutral-400">
+                      <span className="text-neutral-500">{d.country}: </span>
+                      {order.country}
+                    </p>
+                  ) : null}
                   {order.whatsapp ? (
                     <p className="text-neutral-400">
                       <span className="text-neutral-500">{d.whatsapp}: </span>

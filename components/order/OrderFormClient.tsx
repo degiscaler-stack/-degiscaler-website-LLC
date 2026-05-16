@@ -44,7 +44,7 @@ export default function OrderFormClient({
     if (state?.ok && state.redirectTo) {
       router.replace(state.redirectTo);
     }
-  }, [state?.ok, state?.redirectTo, router]);
+  }, [state?.ok, state.redirectTo, router]);
 
   const fieldClass =
     'w-full rounded-xl px-4 py-3 text-[15px] outline-none transition-[box-shadow] focus:ring-2 focus:ring-[rgba(255,132,17,0.35)]';
@@ -59,10 +59,19 @@ export default function OrderFormClient({
 
   const summaryEyebrow = display.usesFallbackSummary ? t('fallbackSummaryLabel') : t('orderSummaryTitle');
 
+  const infoPanelClass =
+    'rounded-xl p-4 md:p-5 space-y-2 border border-solid';
+  const infoPanelStyle: React.CSSProperties = {
+    borderColor: ds.borderStrong,
+    backgroundImage: cardSurfaceBgImage,
+    backgroundColor: ds.card,
+    boxShadow: `${cardTopHighlight}, inset 0 1px 0 rgba(255,255,255,0.04)`,
+  };
+
   return (
     <form
       action={formAction}
-      className="rounded-2xl md:rounded-[1.4rem] p-6 md:p-9 space-y-6 max-w-[640px]"
+      className="rounded-2xl md:rounded-[1.4rem] p-6 md:p-8 space-y-5 max-w-[640px]"
       style={{
         border: `1px solid ${ds.borderStrong}`,
         backgroundImage: cardSurfaceBgImage,
@@ -79,20 +88,23 @@ export default function OrderFormClient({
       <input type="hidden" name="packageDescriptionSnapshot" value={display.description} />
 
       <div
-        className="rounded-xl p-5 space-y-4"
+        className="rounded-xl p-5 space-y-3 border border-solid"
         style={{
-          border: `1px solid rgba(232,204,101,0.18)`,
+          borderColor: 'rgba(232,204,101,0.2)',
           backgroundColor: 'rgba(232,204,101,0.04)',
         }}
       >
         <span className={`text-[11px] font-bold uppercase tracking-[0.18em] ${accentEyebrowClass}`}>
           {summaryEyebrow}
         </span>
-        <p className="text-lg font-semibold" style={{ color: ds.text }}>
+        <p className="text-lg font-semibold leading-snug" style={{ color: ds.text }}>
           {display.packageTitle}
         </p>
         {display.packagePrice != null && display.packagePrice !== '' ? (
-          <div className="flex flex-wrap items-baseline justify-between gap-3 pt-1 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+          <div
+            className="flex flex-wrap items-baseline justify-between gap-3 pt-2 border-t"
+            style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+          >
             <span className="text-[13px] font-semibold uppercase tracking-wider" style={{ color: ds.textMuted }}>
               {t('totalLabel')}
             </span>
@@ -104,35 +116,24 @@ export default function OrderFormClient({
             </p>
           </div>
         ) : null}
-        <p className="text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
+        <p className="text-[13px] md:text-[14px] leading-relaxed line-clamp-4" style={{ color: ds.textMuted }}>
           {display.description}
         </p>
+        <p className="text-[12px] md:text-[13px] leading-relaxed pt-1 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)', color: ds.textSecondary }}>
+          {t('orderSummaryDeliveryNotice')}
+        </p>
       </div>
 
-      <div
-        className="rounded-xl p-4 md:p-5 space-y-2"
-        style={{
-          border: '1px solid rgba(255,132,17,0.22)',
-          backgroundColor: 'rgba(255,132,17,0.05)',
-        }}
-      >
+      <div className={`${infoPanelClass}`} style={infoPanelStyle}>
         <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
-          {t('paymentsPausedTitle')}
+          {t('digitalDeliveryTitle')}
         </p>
-        <p className="text-[14px] md:text-[15px] leading-relaxed" style={{ color: ds.textSecondary }}>
-          {t('paymentsPausedBody')}
+        <p className="text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
+          {t('digitalDeliveryBody')}
         </p>
       </div>
 
-      <div
-        className="rounded-xl p-4 md:p-5 space-y-2"
-        style={{
-          border: `1px solid ${ds.borderStrong}`,
-          backgroundImage: cardSurfaceBgImage,
-          backgroundColor: ds.card,
-          boxShadow: `${cardTopHighlight}, inset 0 1px 0 rgba(255,255,255,0.04)`,
-        }}
-      >
+      <div className={`${infoPanelClass}`} style={infoPanelStyle}>
         <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
           {t('secureCheckoutTitle')}
         </p>
@@ -141,102 +142,60 @@ export default function OrderFormClient({
         </p>
       </div>
 
-      <p className="text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
-        {t('deliveryNote')}
-      </p>
-
-      <div
-        className="rounded-xl p-4 space-y-2"
-        style={{
-          border: '1px solid rgba(232,204,101,0.2)',
-          backgroundColor: 'rgba(232,204,101,0.04)',
-        }}
-      >
-        <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
-          {t('deliveryComplianceTitle')}
-        </p>
-        <ul className="space-y-1.5">
-          {((t.raw('deliveryComplianceLines') as string[]) ?? []).map((line) => (
-            <li
-              key={line}
-              className="text-[13px] md:text-[14px] leading-relaxed pl-3 border-s-2"
-              style={{ borderColor: 'rgba(232,204,101,0.35)', color: ds.textMuted }}
-            >
-              {line}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <div>
         <p className={`text-[12px] font-bold uppercase tracking-wider mb-4 ${accentEyebrowClass}`}>
           {t('billingSectionTitle')}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="sm:col-span-2">
-          <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-fullName">
-            {t('fields.fullName')} *
-          </label>
-          <input
-            id="order-fullName"
-            name="fullName"
-            type="text"
-            required
-            autoComplete="name"
-            placeholder={t('fields.fullNamePlaceholder')}
-            disabled={pending}
-            className={fieldClass}
-            style={surfaceStyle}
-          />
+        <div className="grid grid-cols-1 gap-5">
+          <div>
+            <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-fullName">
+              {t('fields.fullName')} *
+            </label>
+            <input
+              id="order-fullName"
+              name="fullName"
+              type="text"
+              required
+              autoComplete="name"
+              placeholder={t('fields.fullNamePlaceholder')}
+              disabled={pending}
+              className={fieldClass}
+              style={surfaceStyle}
+            />
+          </div>
+          <div>
+            <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-email">
+              {t('fields.email')} *
+            </label>
+            <input
+              id="order-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder={t('fields.emailPlaceholder')}
+              disabled={pending}
+              className={fieldClass}
+              style={surfaceStyle}
+            />
+          </div>
+          <div>
+            <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-country">
+              {t('fields.country')} *
+            </label>
+            <input
+              id="order-country"
+              name="country"
+              type="text"
+              required
+              autoComplete="country-name"
+              placeholder={t('fields.countryPlaceholder')}
+              disabled={pending}
+              className={fieldClass}
+              style={surfaceStyle}
+            />
+          </div>
         </div>
-        <div className="sm:col-span-2">
-          <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-email">
-            {t('fields.email')} *
-          </label>
-          <input
-            id="order-email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder={t('fields.emailPlaceholder')}
-            disabled={pending}
-            className={fieldClass}
-            style={surfaceStyle}
-          />
-        </div>
-        </div>
-      </div>
-
-      <div>
-        <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-whatsapp">
-          {t('fields.whatsapp')}
-        </label>
-        <input
-          id="order-whatsapp"
-          name="whatsapp"
-          type="text"
-          autoComplete="tel"
-          placeholder={t('fields.whatsappPlaceholder')}
-          disabled={pending}
-          className={fieldClass}
-          style={surfaceStyle}
-        />
-      </div>
-
-      <div>
-        <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-message">
-          {t('fields.message')}
-        </label>
-        <textarea
-          id="order-message"
-          name="message"
-          rows={5}
-          placeholder={t('fields.messagePlaceholder')}
-          disabled={pending}
-          className={fieldClass}
-          style={{ ...surfaceStyle, resize: 'vertical', minHeight: '7rem' }}
-        />
       </div>
 
       {state?.error ? (
@@ -248,17 +207,13 @@ export default function OrderFormClient({
         </div>
       ) : null}
 
-      <p className="text-[12px] md:text-[13px] leading-relaxed" style={{ color: ds.textMuted }}>
-        {t('demoCheckoutHint')}
-      </p>
-
       <button
         type="submit"
         disabled={pending}
-        className={`${primaryBtnClass} inline-flex w-full sm:w-auto items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold disabled:opacity-60`}
+        className={`${primaryBtnClass} inline-flex w-full items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold disabled:opacity-60`}
       >
         {pending ? <Loader2 className="size-4 animate-spin" aria-hidden /> : null}
-        {t('completePurchaseDemo')}
+        {t('continueSecureCheckout')}
       </button>
     </form>
   );

@@ -463,7 +463,7 @@
       },
       {
         "title": "Complete checkout",
-        "detail": "Confirm billing details on the checkout page. Live payment capture will activate once checkout setup is finalized."
+        "detail": "Confirm billing details and complete checkout. Confirmation appears on the following screen."
       },
       {
         "title": "Download and start",
@@ -473,7 +473,7 @@
     "stepLabel": "Step {n}",
     "paymentNoteTitle": "Digital delivery",
     "paymentNote": "All products are digital downloads. No physical shipping is provided. Access is delivered electronically after purchase.",
-    "downloadDemo": "Download demo ZIP",
+    "downloadDemo": "Download sample ZIP",
     "cardComplianceLines": [
       "File access is shown only after checkout completes",
       "Digital product only — no physical shipping",
@@ -812,40 +812,30 @@
     ]
   },
   "orderPage": {
-    "title": "Checkout",
-    "subtitle": "Review your kit, billing details, and digital delivery terms. Download links are shown only on the confirmation page after checkout completes.",
-    "deliveryNote": "Digital goods are fulfilled electronically. Access instructions appear on the thank-you page once checkout completes.",
-    "deliveryComplianceTitle": "Digital product notice",
-    "deliveryComplianceLines": [
-      "Digital files unlock on the thank-you page after checkout completes",
-      "No physical shipping — digital goods only",
-      "Delivered electronically through secure links or email"
-    ],
+    "title": "Secure checkout",
+    "subtitle": "Review your selected digital kit and complete your order securely. Download access is shown only after checkout is completed.",
     "orderSummaryTitle": "Order summary",
+    "orderSummaryDeliveryNotice": "Digital product — delivered electronically after checkout. No physical shipping.",
     "totalLabel": "Total",
-    "paymentsPausedTitle": "Payments paused",
-    "paymentsPausedBody": "Payments are temporarily unavailable while checkout setup is being finalized.",
+    "digitalDeliveryTitle": "Digital delivery",
+    "digitalDeliveryBody": "After checkout, your digital files are delivered electronically through the confirmation page and email access when applicable.",
     "secureCheckoutTitle": "Secure checkout",
-    "secureCheckoutBody": "Secure digital checkout and automated delivery. Card processing will connect here when payments go live.",
+    "secureCheckoutBody": "Payments are processed securely through an approved payment provider. Your order details are used only to complete your purchase and deliver your digital files.",
     "billingSectionTitle": "Billing details",
-    "demoCheckoutHint": "This checkout records your details for review and routes you to download access without charging a card.",
-    "completePurchaseDemo": "Complete purchase (demo checkout)",
-    "summaryLabel": "Selected kit",
+    "continueSecureCheckout": "Continue to secure checkout",
+    "backToPricing": "Back to pricing",
     "fallbackSummaryLabel": "Request summary",
     "fallbackSummaryTitle": "Purchase assistance",
     "fallbackSummaryDescription": "Tell us which kit you wanted. Our team will follow up with access instructions.",
-    "fallbackPackageNotice": "Kit details could not be loaded right now. Your request will still be submitted safely.",
-    "genericRequestHint": "Browse Pricing for digital kits, or describe what you need below.",
+    "genericRequestHint": "Choose a kit from Pricing to see your order summary here.",
     "unknownPackage": "This product link is not valid. Please choose a kit from Pricing.",
     "fields": {
       "fullName": "Full name",
       "fullNamePlaceholder": "Your name",
-      "email": "Email",
+      "email": "Email address",
       "emailPlaceholder": "you@company.com",
-      "whatsapp": "Phone / WhatsApp (optional)",
-      "whatsappPlaceholder": "Optional — include country code",
-      "message": "Notes (optional)",
-      "messagePlaceholder": "Optional — billing email mismatch, access issues, etc."
+      "country": "Country",
+      "countryPlaceholder": "Country or region"
     },
     "submit": "Submit request",
     "errors": {
@@ -857,17 +847,17 @@
   },
   "thankYouPage": {
     "orderTitle": "Thank you",
-    "orderConfirmationSubtitle": "Your checkout step is complete.",
-    "orderRecordedLead": "Purchase confirmation recorded for compliance review.",
-    "digitalFulfillmentNote": "Instant digital download / access. Digital product only — no physical shipping. Delivered electronically.",
-    "downloadSectionTitle": "Download access",
-    "saveFilesSecurely": "Your digital files are available below. Please save them securely.",
+    "orderConfirmationSubtitle": "Your order is confirmed.",
+    "awaitingCheckoutBody": "Your order confirmation will appear here after checkout is completed.",
+    "filesAvailableBelow": "Your digital files are available below.",
+    "saveSecurelyShort": "Please save your files securely.",
+    "digitalFulfillmentShort": "Digital product — no physical shipping.",
+    "fulfillmentFollowUp": "If your download does not start, email support with your order email.",
     "downloadKitZip": "Download kit (ZIP)",
-    "downloadUnavailable": "We could not attach a kit file to this confirmation. Email support with your details and kit name.",
     "supportIntro": "Need help with access?",
     "contactTitle": "Thank you",
     "contactBody": "Thank you. Your message has been received.",
     "backHome": "Back to home",
-    "invalid": "Missing confirmation type. Return home and try again."
+    "backToPricing": "Back to pricing"
   }
 }

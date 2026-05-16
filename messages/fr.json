@@ -468,7 +468,7 @@
       },
       {
         "title": "Finaliser le paiement",
-        "detail": "Confirmez vos informations de facturation sur la page de paiement. L encaissement en ligne s activera lorsque la configuration du tunnel sera finalisée."
+        "detail": "Confirmez vos informations de facturation et terminez le paiement. La confirmation s affiche à l écran suivant."
       },
       {
         "title": "Télécharger et appliquer",
@@ -478,7 +478,7 @@
     "stepLabel": "Étape {n}",
     "paymentNoteTitle": "Livraison numérique",
     "paymentNote": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n’est fourni. L’accès est livré électroniquement après l’achat.",
-    "downloadDemo": "Télécharger la démo ZIP",
+    "downloadDemo": "Télécharger l’extrait ZIP",
     "cardComplianceLines": [
       "L accès aux fichiers apparaît après la fin du tunnel sur la page de confirmation",
       "Produit numérique uniquement — pas d’envoi physique",
@@ -807,7 +807,7 @@
         "content": "Ouvrir un litige de paiement sans nous avoir contactés au préalable peut limiter notre capacité à résoudre un problème de livraison ou d accès."
       },
       {
-        "title": "Demander un examen",
+        "title": "Demande de remboursement",
         "content": "Envoyez les informations de commande et une brève explication à support@degiscaler.com. Nous visons à accuser réception de la plupart des demandes sous trois à cinq jours ouvrés aux États-Unis."
       },
       {
@@ -817,40 +817,30 @@
     ]
   },
   "orderPage": {
-    "title": "Paiement",
-    "subtitle": "Vérifiez votre kit, vos informations de facturation et les conditions de livraison numérique. Les liens de téléchargement n apparaissent que sur la page de confirmation après la fin du tunnel.",
-    "deliveryNote": "Les produits sont livrés numériquement. Les instructions d accès figurent sur la page de remerciement une fois le tunnel terminé.",
-    "deliveryComplianceTitle": "Information produit numérique",
-    "deliveryComplianceLines": [
-      "Les fichiers se débloquent sur la page de confirmation après le paiement",
-      "Aucun envoi physique — biens numériques uniquement",
-      "Livraison électronique via liens sécurisés ou email"
-    ],
+    "title": "Paiement sécurisé",
+    "subtitle": "Vérifiez le kit numérique sélectionné et finalisez votre commande en toute sécurité. L accès aux téléchargements n apparaît qu après la fin du paiement.",
     "orderSummaryTitle": "Récapitulatif de commande",
+    "orderSummaryDeliveryNotice": "Produit numérique — livré électroniquement après le paiement. Aucun envoi physique.",
     "totalLabel": "Total",
-    "paymentsPausedTitle": "Paiements suspendus",
-    "paymentsPausedBody": "Les paiements sont temporairement indisponibles pendant la finalisation du tunnel de paiement.",
+    "digitalDeliveryTitle": "Livraison numérique",
+    "digitalDeliveryBody": "Après le paiement, vos fichiers numériques sont livrés électroniquement via la page de confirmation et, le cas échéant, par email.",
     "secureCheckoutTitle": "Paiement sécurisé",
-    "secureCheckoutBody": "Paiement numérique sécurisé et livraison automatisée. La capture par carte sera connectée lorsque les paiements seront activés.",
+    "secureCheckoutBody": "Les paiements sont traités en toute sécurité via un prestataire de paiement agréé. Vos informations servent uniquement à finaliser l achat et à livrer vos fichiers numériques.",
     "billingSectionTitle": "Informations de facturation",
-    "demoCheckoutHint": "Ce flux enregistre vos informations pour contrôle conformité et vous redirige vers l accès aux fichiers sans encaissement par carte.",
-    "completePurchaseDemo": "Finaliser l achat (paiement démo)",
-    "summaryLabel": "Kit sélectionné",
+    "continueSecureCheckout": "Continuer vers un paiement sécurisé",
+    "backToPricing": "Retour aux tarifs",
     "fallbackSummaryLabel": "Résumé de la demande",
     "fallbackSummaryTitle": "Aide à l achat",
     "fallbackSummaryDescription": "Indiquez quel kit vous souhaitiez. Notre équipe vous enverra les instructions d accès.",
-    "fallbackPackageNotice": "Les détails du kit ne peuvent pas être chargés pour le moment. Votre demande sera tout de même transmise en toute sécurité.",
-    "genericRequestHint": "Consultez les Tarifs pour les kits numériques, ou décrivez votre besoin ci-dessous.",
+    "genericRequestHint": "Choisissez un kit sur la page Tarifs pour voir le récapitulatif ici.",
     "unknownPackage": "Ce lien produit n est pas valide. Choisissez un kit sur la page Tarifs.",
     "fields": {
       "fullName": "Nom complet",
       "fullNamePlaceholder": "Votre nom",
-      "email": "E-mail",
+      "email": "Adresse e-mail",
       "emailPlaceholder": "vous@entreprise.com",
-      "whatsapp": "Téléphone / WhatsApp (facultatif)",
-      "whatsappPlaceholder": "Facultatif — inclure l indicatif pays",
-      "message": "Notes (facultatif)",
-      "messagePlaceholder": "Facultatif — incohérence de facturation, problème d accès, etc."
+      "country": "Pays",
+      "countryPlaceholder": "Pays ou région"
     },
     "submit": "Envoyer la demande",
     "errors": {
@@ -862,17 +852,17 @@
   },
   "thankYouPage": {
     "orderTitle": "Merci",
-    "orderConfirmationSubtitle": "Étape de paiement terminée.",
-    "orderRecordedLead": "Confirmation de commande enregistrée pour contrôle conformité.",
-    "digitalFulfillmentNote": "Téléchargement ou accès numérique instantané. Produit numérique uniquement — pas d’envoi physique. Livraison électronique.",
-    "downloadSectionTitle": "Accès téléchargement",
-    "saveFilesSecurely": "Vos fichiers numériques sont disponibles ci-dessous. Enregistrez-les en lieu sûr.",
+    "orderConfirmationSubtitle": "Votre commande est confirmée.",
+    "awaitingCheckoutBody": "Votre confirmation de commande apparaîtra ici une fois le paiement terminé.",
+    "filesAvailableBelow": "Vos fichiers numériques sont disponibles ci-dessous.",
+    "saveSecurelyShort": "Veuillez enregistrer vos fichiers en lieu sûr.",
+    "digitalFulfillmentShort": "Produit numérique — aucun envoi physique.",
+    "fulfillmentFollowUp": "Si le téléchargement ne démarre pas, écrivez au support avec l email utilisé pour la commande.",
     "downloadKitZip": "Télécharger le kit (ZIP)",
-    "downloadUnavailable": "Nous n avons pas pu joindre le fichier du kit à cette confirmation. Écrivez au support avec vos informations et le nom du kit.",
     "supportIntro": "Besoin d’aide pour accéder aux fichiers ?",
     "contactTitle": "Merci",
     "contactBody": "Merci. Votre message a été reçu.",
     "backHome": "Retour à l accueil",
-    "invalid": "Type de confirmation manquant. Retournez à l accueil et réessayez."
+    "backToPricing": "Retour aux tarifs"
   }
 }

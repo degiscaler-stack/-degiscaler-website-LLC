@@ -37,6 +37,7 @@ export type AdminDict = {
   statusRead: string;
   fullName: string;
   email: string;
+  country: string;
   whatsapp: string;
   message: string;
   budgetInterest: string;
@@ -132,6 +133,7 @@ const EN: AdminDict = {
   statusRead: 'Read',
   fullName: 'Full name',
   email: 'Email',
+  country: 'Country',
   whatsapp: 'Order number (optional)',
   message: 'Message',
   budgetInterest: 'Product name',
@@ -145,7 +147,7 @@ const EN: AdminDict = {
   password: 'Password',
   invalidCredentials: 'Invalid credentials',
   loginMissingFields: 'Enter your email and password.',
-  loginUnavailable: 'Database temporarily unavailable.',
+  loginUnavailable: 'Could not reach the database. Try again.',
   adminDbUnavailable:
     'Could not reach the database. Counts and lists may be empty until it is available again.',
   loginConfigIssue: 'Server configuration error. Try again later.',
@@ -226,6 +228,7 @@ const AR: AdminDict = {
   statusRead: 'مقروء',
   fullName: 'الاسم الكامل',
   email: 'البريد الإلكتروني',
+  country: 'البلد',
   whatsapp: 'رقم الطلب (اختياري)',
   message: 'الرسالة',
   budgetInterest: 'اسم المنتج',
@@ -321,6 +324,7 @@ const FR: AdminDict = {
   statusRead: 'Lu',
   fullName: 'Nom complet',
   email: 'E-mail',
+  country: 'Pays',
   whatsapp: 'Numéro de commande (facultatif)',
   message: 'Message',
   budgetInterest: 'Nom du produit',

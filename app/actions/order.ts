@@ -44,8 +44,7 @@ export async function submitOrderAction(
   const pkgSlugRaw = String(formData.get('packageSlug') ?? '').trim();
   const fullName = String(formData.get('fullName') ?? '').trim();
   const email = String(formData.get('email') ?? '').trim();
-  const whatsapp = String(formData.get('whatsapp') ?? '').trim() || null;
-  const message = String(formData.get('message') ?? '').trim() || null;
+  const country = String(formData.get('country') ?? '').trim();
 
   const snapTitle = String(formData.get('packageTitleSnapshot') ?? '').trim().slice(0, 200);
   const snapPrice = String(formData.get('packagePriceSnapshot') ?? '').trim().slice(0, 80);
@@ -66,7 +65,7 @@ export async function submitOrderAction(
     console.error('[submitOrderAction] getTranslations errors', err);
   }
 
-  if (!fullName || !email) {
+  if (!fullName || !email || !country) {
     return { error: tErr('required') };
   }
   if (!isValidEmail(email)) {
@@ -149,8 +148,9 @@ export async function submitOrderAction(
     packagePrice: packagePrice || '—',
     fullName,
     email,
-    whatsapp,
-    message,
+    country,
+    whatsapp: null,
+    message: null,
     status: 'NEW' as const,
     locale,
   };

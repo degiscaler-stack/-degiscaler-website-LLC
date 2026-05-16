@@ -57,6 +57,7 @@ model Order {
   packagePrice String
   fullName     String
   email        String
+  country      String?   @db.VarChar(128)
   whatsapp     String?
   message      String?   @db.Text
   status       String    @default("NEW")
