@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * DegiScaler rule-based chat (client). FAQ answers + live support handoff via /api/support/*.
+ * DigiScaler rule-based chat (client). FAQ answers and product support handoff via /api/support/*.
  */
 
 import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';

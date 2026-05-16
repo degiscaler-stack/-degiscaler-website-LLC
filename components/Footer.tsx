@@ -23,6 +23,12 @@ export default function Footer() {
             <p className="text-[15.5px] md:text-[1.02rem] leading-[1.72] max-w-[24rem]" style={{ color: ds.textSecondary }}>
               {t('tagline')}
             </p>
+            <p className="mt-4 text-[13.5px] md:text-[14px] leading-[1.72] max-w-[26rem]" style={{ color: ds.textMuted }}>
+              {t('digitalDelivery')}
+            </p>
+            <p className="mt-3 text-[13px] md:text-[13.5px] leading-[1.72] max-w-[26rem] font-medium" style={{ color: ds.textSecondary }}>
+              {t('trustCheckout')}
+            </p>
           </div>
 
           <div>

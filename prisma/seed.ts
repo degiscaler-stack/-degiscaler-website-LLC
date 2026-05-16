@@ -3,39 +3,39 @@ import { prisma } from '../lib/prisma';
 import { hashPassword } from '../lib/auth/password';
 
 const STARTER_FEATURES: Prisma.InputJsonValue = [
-  '30-minute live consultation call',
-  'Website credibility review',
-  'Online presence clarity check',
-  '3 key improvement recommendations',
-  'Email recap after the call',
-  'Scheduled within 48 business hours',
+  'Website Trust Checklist PDF',
+  'Homepage Clarity Guide',
+  'Basic Checkout Readiness Checklist',
+  'Instant Digital Download',
+  'PDF Resources Included',
+  'Email Delivery Included',
 ];
 
 const GROWTH_FEATURES: Prisma.InputJsonValue = [
-  '45-minute live consultation call',
-  'Website and checkout review',
-  'Customer journey clarity check',
-  '5 improvement recommendations',
-  'Trust signal assessment',
-  'Scheduled within 2-3 business days',
+  'Everything in Starter',
+  'Conversion Optimization Checklist',
+  'Product Page Improvement Guide',
+  'Customer Journey Checklist',
+  'SEO Basics Resource Pack',
+  'Downloadable ZIP Bundle',
 ];
 
 const PRO_FEATURES: Prisma.InputJsonValue = [
-  '60-minute live consultation call',
-  'Full website and UX review',
-  'Checkout clarity assessment',
-  'Payment-readiness review',
-  'Action plan discussed on call',
-  'Detailed email recap after the call',
+  'Everything in Growth',
+  'Business Audit Templates',
+  'Email Template Collection',
+  'Notion Workflow Resources',
+  'Google Sheets Audit Tracker',
+  'Premium Optimization Documents',
 ];
 
 const SCALE_FEATURES: Prisma.InputJsonValue = [
-  '90-minute live strategy call',
-  'Full website and funnel review',
-  'Trust and conversion clarity review',
-  'Checkout and payment flow review',
-  'Priority action plan discussed on call',
-  'Detailed email recap after the call',
+  'Everything in Pro',
+  'Full Website Optimization Playbook',
+  '90-Day Growth Action Plan',
+  'Automation Planning Checklist',
+  'Premium Business Templates',
+  'Advanced Digital Resource Library',
 ];
 
 async function seedAdmin() {
@@ -66,7 +66,7 @@ async function seedSiteDefaults() {
   const defaults = [
     { key: 'siteUrl', value: 'https://degiscaler.com', type: 'text' },
     { key: 'supportEmail', value: 'support@degiscaler.com', type: 'text' },
-    { key: 'companyName', value: 'DegiScaler', type: 'text' },
+    { key: 'companyName', value: 'DigiScaler', type: 'text' },
     { key: 'defaultLocale', value: 'en', type: 'text' },
     { key: 'chatbotEnabled', value: 'true', type: 'boolean' },
   ] as const;
@@ -94,49 +94,49 @@ async function seedPackages() {
     sortOrder: number;
   }> = [
     {
-      slug: 'starter-consultation',
-      title: 'Starter Consultation',
+      slug: 'starter-website-kit',
+      title: 'Starter Website Kit',
       subtitle: null,
       price: '$9.99',
       currency: 'USD',
       description:
-        'A focused live consultation for founders who need a quick review of their website and online presence.',
+        'A compact digital resource pack for improving the basic trust, clarity, and readiness of your website.',
       features: STARTER_FEATURES,
       isPopular: false,
       sortOrder: 0,
     },
     {
-      slug: 'growth-consultation',
-      title: 'Growth Consultation',
+      slug: 'growth-optimization-kit',
+      title: 'Growth Optimization Kit',
       subtitle: null,
       price: '$19.99',
       currency: 'USD',
       description:
-        'A structured live consultation to improve website clarity, checkout flow, trust signals, and customer journey.',
+        'A practical digital toolkit for improving website structure, customer journey clarity, and conversion signals.',
       features: GROWTH_FEATURES,
       isPopular: false,
       sortOrder: 1,
     },
     {
-      slug: 'pro-consultation',
-      title: 'Pro Consultation',
+      slug: 'pro-conversion-toolkit',
+      title: 'Pro Conversion Toolkit',
       subtitle: null,
       price: '$29.99',
       currency: 'USD',
       description:
-        'A complete live consultation covering website UX, checkout clarity, trust signals, and payment readiness.',
+        'A premium bundle of templates and resources for improving website trust, checkout readiness, and customer flow.',
       features: PRO_FEATURES,
       isPopular: true,
       sortOrder: 2,
     },
     {
-      slug: 'scale-consultation',
-      title: 'Scale Consultation',
+      slug: 'scale-business-bundle',
+      title: 'Scale Business Bundle',
       subtitle: null,
       price: '$49.99',
       currency: 'USD',
       description:
-        'A premium strategy consultation for deeper review of your digital presence, funnel, trust, and priorities.',
+        'A complete digital resource library for online businesses that want a structured optimization system.',
       features: SCALE_FEATURES,
       isPopular: false,
       sortOrder: 3,

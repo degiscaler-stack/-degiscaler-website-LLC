@@ -30,11 +30,11 @@ const serviceIcons = {
   landingPage: Zap,
   audit: Search,
   uiux: Eye,
-  consultation: MessageSquare,
+  growthPlanning: MessageSquare,
 } as const;
 
 const primaryKeys = ['websiteDesign', 'ecommerce', 'landingPage'] as const;
-const secondaryKeys = ['audit', 'uiux', 'consultation'] as const;
+const secondaryKeys = ['audit', 'uiux', 'growthPlanning'] as const;
 
 type ServiceEntry = {
   title: string;
@@ -132,6 +132,22 @@ export default async function ServicesPageView() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-11">
             {secondaryKeys.map((key) => renderCard(key, false))}
           </div>
+
+          <div className="max-w-[46rem] mx-auto text-center mt-14 md:mt-16 mb-4 md:mb-6">
+            <span className={`inline-block text-[12px] font-bold uppercase tracking-[0.18em] mb-4 ${accentEyebrowClass}`}>
+              {t('includedTitle')}
+            </span>
+          </div>
+          <ul className="max-w-[40rem] mx-auto space-y-4 mb-4">
+            {((t.raw('includedItems') as string[]) ?? []).map((line) => (
+              <li key={line} className="flex items-start gap-3 text-start">
+                <span className={`${accentDotMicroClass} mt-2 shrink-0`} aria-hidden />
+                <span className="text-[15px] leading-[1.7]" style={{ color: ds.textSecondary }}>
+                  {line}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

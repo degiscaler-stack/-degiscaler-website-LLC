@@ -1,36 +1,44 @@
 {
   "common": {
-    "viewServices": "View Services",
+    "viewServices": "Browse Digital Resources",
     "seePricing": "See Pricing",
-    "getStarted": "Get Started",
-    "contactUs": "Contact Us",
+    "getStarted": "Browse Kits",
+    "contactUs": "Product Support",
     "learnMore": "Learn More",
     "backToHome": "Back to Home",
     "readMore": "Read More",
-    "companyName": "DegiScaler LLC"
+    "companyName": "DigiScaler LLC"
+  },
+  "metadata": {
+    "title": "DigiScaler — Premium Digital Kits & Templates",
+    "description": "Downloadable website optimization kits, business templates, conversion checklists, and ZIP bundles for online businesses. Digital products only — instant access after checkout.",
+    "ogTitle": "DigiScaler — Digital Business Kits",
+    "ogDescription": "Digital downloads and automated delivery: templates, PDF guides, and optimization kits for online operators."
   },
   "nav": {
     "home": "Home",
-    "services": "Services",
+    "services": "Resources",
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
     "faq": "FAQ",
-    "getStarted": "Get Started",
+    "getStarted": "Browse Kits",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "languageSwitcher": "Switch language",
     "chooseLanguage": "Choose language"
   },
   "footer": {
-    "tagline": "Professional digital services and business consultation for founders and growing businesses.",
+    "tagline": "Premium downloadable digital resources for online businesses.",
+    "digitalDelivery": "All products are digital downloads. No physical shipping is provided. Access is delivered electronically after purchase.",
+    "trustCheckout": "Secure digital checkout and automated delivery.",
     "company": "Company",
     "legal": "Legal",
     "contactTitle": "Contact",
     "supportEmail": "support@degiscaler.com",
     "responseTime": "Response within 24–48 business hours",
     "links": {
-      "services": "Services",
+      "services": "Resources",
       "pricing": "Pricing",
       "about": "About",
       "contact": "Contact",
@@ -39,42 +47,42 @@
       "terms": "Terms of Service",
       "refund": "Refund Policy"
     },
-    "copyright": "DegiScaler LLC. All rights reserved.",
-    "disclaimer": "DegiScaler LLC is a U.S.-registered digital services and consultation company. We do not guarantee payment processor approvals, Stripe approvals, PayPal approvals, or specific business outcomes."
+    "copyright": "DigiScaler LLC. All rights reserved.",
+    "disclaimer": "DigiScaler LLC is a U.S.-registered seller of digital products. Resources are educational and practical tools; we do not guarantee business outcomes, rankings, or revenue."
   },
   "chat": {
-    "launcherAriaOpen": "Open DegiScaler assistant chat",
-    "launcherAriaClose": "Close DegiScaler assistant chat",
-    "title": "DegiScaler Assistant",
+    "launcherAriaOpen": "Open DigiScaler assistant chat",
+    "launcherAriaClose": "Close DigiScaler assistant chat",
+    "title": "DigiScaler Assistant",
     "closeAria": "Close chat",
     "sendAria": "Send message",
     "inputPlaceholder": "Type your question…",
-    "welcome": "Hi, I'm the DegiScaler assistant. I can help with services, pricing, consultations, website audits, and payment-readiness questions.",
+    "welcome": "Hi, I'm the DigiScaler assistant. I can help with digital kits, pricing, downloads, templates, and product support.",
     "fallback": "I'm not fully sure about that yet. Type \"support\" if you want to reach our team — we'll continue the conversation right here in chat.",
     "answers": {
-      "company": "DegiScaler is a digital services and business consultation company focused on credible online presence — especially for founders and small businesses.",
-      "services": "We offer structured help across: Website Design, E‑commerce Development, Landing Page Design, Website Audit, UI/UX Review, and Digital Business Consultation. Ask about any one topic for more detail.",
-      "pricing": "Published USD consultation packages: Starter Consultation — $9.99; Growth Consultation — $19.99; Pro Consultation — $29.99; Scale Consultation — $49.99. Each tier includes live call time plus a written email recap — see Pricing for specifics.",
-      "website_design": "Website Design focuses on credible layout, typography, readability, and clear conversion paths so your brand reads professional at first glance.",
-      "ecommerce": "E‑commerce Development focuses on storefront structure, clearer product/checkout flows, trust placement, and a more deliberate purchase journey.",
-      "landing_page": "Landing Page Design is a compact, credibility-led page centered on one objective and a direct call‑to‑action.",
-      "audit": "Website Audit is a structured review of credibility signals, UX friction risks, clarity gaps, and realistic priorities.",
-      "uiux": "UI/UX Review focuses on hesitation points across critical journeys — navigation, forms, and flows around checkout/sign‑up.",
-      "consultation": "Digital Business Consultation is a structured conversation that turns ambiguity into prioritized next steps, plus written outputs depending on tier.",
-      "process": "We generally work in phases: Discover, Diagnose, Build, Deliver. The depth depends on the package — consultations emphasize Discover/Diagnose; launch packages include execution.",
-      "contact": "If you'd like help from our team, type \"support\" in this chat and we'll collect a few details here — you can keep everything on this page.",
-      "languages": "We support English, Arabic, and French — switch languages from the header. DegiScaler keeps the spelling of the brand unchanged.",
-      "payment_readiness": "We help improve clarity, trust signals, documentation, navigation, and storefront structure so processors and reviewers can evaluate you more cleanly. Preparation is realistic; approvals are decided by platforms.",
-      "payment_no_guarantee": "DegiScaler does NOT guarantee Stripe approval, PayPal approval, bank approvals, or any payment‑processor outcome. Third parties make final decisions based on risk, onboarding, policies, your business profile, and their current rules.",
-      "refund": "Consultations are digital services. Refunds typically depend on whether work has begun or written deliverables were provided. Completed consultations usually are not refundable because time and expertise were delivered — mistaken/duplicate payments can be reviewed. See Refund Policy for details.",
-      "timeline": "We generally respond within 24–48 business hours on support requests. Scheduling and delivery timelines for paid work vary by tier and responsiveness — every package outlines expected turnaround cues."
+      "company": "DigiScaler is a premium digital products brand that provides downloadable website optimization kits, business templates, conversion checklists, and growth resources for online businesses.",
+      "services": "DigiScaler sells downloadable resources such as website optimization kits, checkout readiness checklists, landing page templates, business audit templates, UX clarity resources, and growth planning documents — see Resources for the full list.",
+      "pricing": "Published USD kits: Starter Website Kit — $9.99; Growth Optimization Kit — $19.99; Pro Conversion Toolkit — $29.99; Scale Business Bundle — $49.99. Each tier stacks more templates and bundles — see Pricing for details.",
+      "website_design": "Our kits include practical guides and templates focused on clear layout, readability, and credible structure you can apply to your own site.",
+      "ecommerce": "Growth-tier-and-up materials cover product pages, checkout clarity checklists, and customer-journey prompts — all as downloadable resources.",
+      "landing_page": "Landing Page Templates are included among the resource types described on the Resources page.",
+      "audit": "Business audit templates and website audit documents are part of the downloadable kits — worksheets you complete yourself, not a human-delivered review.",
+      "uiux": "UX clarity resources in the bundles highlight friction points and improvements you can implement yourself.",
+      "digital_products": "Every purchase is a digital download or bundle (PDFs, sheets, Notion files, ZIP packs) with automated delivery and secure digital access after checkout.",
+      "process": "Typical flow: choose a kit on Pricing, complete checkout, then download files from secure links or email. Everything is self-service.",
+      "contact": "For product support, type \"support\" here or use the Product Support form on the Contact page.",
+      "languages": "We support English, Arabic, and French — switch languages from the header. The DigiScaler brand name stays in Roman characters.",
+      "checkout_resources": "Checkout readiness checklists and trust-focused PDFs are included in the kits so you can improve clarity on your own site.",
+      "payment_no_guarantee": "DigiScaler does not guarantee sales, revenue, rankings, or specific business results. Resources are educational tools; outcomes depend on how you use them.",
+      "refund": "Digital products follow the Refund Policy. Eligibility may depend on download/access status — mistaken or duplicate payments may be reviewed case by case.",
+      "timeline": "Support replies within about 24–48 business hours. Digital access is delivered right after successful purchase unless email providers delay messages."
     },
     "support": {
       "introPrepare": "I'll connect you with our team. Please answer a few quick questions — your request is saved securely once you send the last step.",
       "askName": "What's your full name?",
       "askEmail": "Thanks — what email should we use to reach you?",
       "askWhatsapp": "WhatsApp number (optional). Type \"skip\" if you prefer not to share.",
-      "askMessage": "Briefly describe your project or question (one short paragraph). You can attach a screenshot using the image button.",
+      "askMessage": "Describe your issue (access, download, billing). You can attach a screenshot using the image button.",
       "agentPrefix": "",
       "teamLabel": "Support Team",
       "onlineLabel": "Online",
@@ -97,15 +105,15 @@
   },
   "home": {
     "hero": {
-      "headline": "Build a premium website that earns trust before the first click.",
-      "subheadline": "DegiScaler LLC helps founders and small businesses build credible websites, improve checkout clarity, and prepare their online presence for real customer and payment-platform review.",
-      "ctaPrimary": "See Our Services",
+      "headline": "Download Premium Digital Resources For Online Businesses",
+      "subheadline": "Ready-to-use website optimization kits, business templates, conversion checklists, and digital resources designed to help online brands improve clarity, trust, and performance.",
+      "ctaPrimary": "Browse Digital Kits",
       "ctaSecondary": "View Pricing",
       "badge": "U.S.-Registered LLC",
       "trust1": "U.S.-registered LLC",
-      "trust2": "Fixed-price packages",
-      "trust3": "Websites & e-commerce",
-      "trust4": "No payment approval guarantees",
+      "trust2": "Published USD pricing",
+      "trust3": "Digital downloads",
+      "trust4": "No outcome guarantees",
       "dashboardAria": "Example Website Readiness Report interface",
       "quickFindings": {
         "title": "Quick findings",
@@ -120,7 +128,7 @@
           },
           {
             "label": "Policy pages",
-            "detail": "Linked — keep wording aligned with processors."
+            "detail": "Linked — keep wording consistent with your storefront policies."
           }
         ]
       },
@@ -153,10 +161,10 @@
     },
     "trustBar": {
       "item1": "U.S.-Registered LLC",
-      "item2": "Fixed Pricing",
-      "item3": "Website & E-Commerce",
-      "item4": "Digital Consultation",
-      "item5": "Transparent Process"
+      "item2": "Transparent Pricing",
+      "item3": "Digital Toolkits",
+      "item4": "Instant Access",
+      "item5": "Secure Delivery"
     },
     "problemSolution": {
       "problemLabel": "The Problem",
@@ -165,167 +173,159 @@
       "problems": [
         "Visitors lose confidence before they read a single word",
         "Unclear checkout flows cause customers to abandon before paying",
-        "Missing trust signals raise concerns for customers and payment platforms",
+        "Missing trust signals make shoppers hesitate—or bounce entirely",
         "An unprofessional website undermines your entire business credibility"
       ],
       "solutionLabel": "Our Solution",
-      "solutionHeadline": "We build the credibility your business needs to convert and grow",
+      "solutionHeadline": "DigiScaler gives you structured kits to strengthen trust, clarity, and conversion readiness",
       "solutions": [
-        "Professional design that signals trust from the first impression",
-        "Clear checkout flows built to guide customers — not confuse them",
-        "Trust signals placed where customers actually need to see them",
-        "Audit reports that give you an exact fix-list, not a vague summary"
+        "Downloadable guides and templates you can apply without guesswork",
+        "Checkout readiness and trust checklists focused on real shopper doubts",
+        "Optimization playbooks that sequence fixes realistically",
+        "Bundles that stack from essentials to a full digital resource library"
       ]
     },
     "services": {
-      "sectionLabel": "What We Do",
-      "headline": "Six services. One outcome: a credible online business.",
-      "subheadline": "Every service we deliver is focused on one thing — making your business look professional, perform clearly, and convert real customers.",
-      "coreServicesLabel": "Core services",
-      "additionalServicesLabel": "Also available",
+      "sectionLabel": "Digital Resources",
+      "headline": "Website optimization kits, templates, and checklists—built for online operators",
+      "subheadline": "DigiScaler is a premium digital resources platform: practical PDFs, Notion and Sheets templates, and ZIP bundles you implement on your own timeline.",
+      "coreServicesLabel": "Featured resource categories",
+      "additionalServicesLabel": "Also inside the bundles",
       "items": {
         "websiteDesign": {
-          "title": "Website Design",
-          "description": "Trust-focused layouts, fast performance, and a look that signals a serious business from the first screen.",
-          "outcome": "A site that earns trust before the customer reads a word"
+          "title": "Website Optimization Kits",
+          "description": "Playbooks, trust checklists, and clarity guides packaged so you can tighten hero messaging, policies, and structure.",
+          "outcome": "A clearer site narrative without rebuilding from scratch"
         },
         "ecommerce": {
-          "title": "E-Commerce Development",
-          "description": "Full store setup—catalog, checkout, and payments—structured for clarity, real sales, and review readiness.",
-          "outcome": "A store ready for real customers and payment review"
+          "title": "Checkout Readiness Checklists",
+          "description": "Step-by-step PDF prompts covering cart friction, payment-page clarity, and reassurance cues shoppers expect.",
+          "outcome": "Fewer “why should I pay here?” moments"
         },
         "landingPage": {
-          "title": "Landing Page Design",
-          "description": "One page, one goal: focused design that turns visitor attention into action—no clutter, no distractions.",
-          "outcome": "Focused design that drives conversions"
+          "title": "Landing Page Templates",
+          "description": "Structured outlines and copy prompts for focused offers—ideal when you need one decisive action per visit.",
+          "outcome": "Sharper landing pages without hiring a team"
         },
         "audit": {
-          "title": "Website Audit",
-          "description": "Expert review of what may cost you customers or raise flags with payment platforms—with clear priorities.",
-          "outcome": "A clear report of what to fix and exactly why"
+          "title": "Business Audit Templates",
+          "description": "Worksheet-style audits you fill in—covering trust signals, funnel leaks, and prioritised fixes.",
+          "outcome": "An actionable backlog instead of vague opinions"
         },
         "uiux": {
-          "title": "UI/UX Review",
-          "description": "We use your site like a real customer—surfacing friction, confusion, and missed conversion opportunities.",
-          "outcome": "Friction removed. Customer journey improved."
+          "title": "UX Clarity Resources",
+          "description": "Frameworks for spotting hesitation points across navigation, forms, and checkout-adjacent screens.",
+          "outcome": "Friction you can remove with confidence"
         },
-        "consultation": {
-          "title": "Digital Business Consultation",
-          "description": "Structured session on your business and site: clear findings, concrete recommendations, and a written plan.",
-          "outcome": "Specific next steps, written and delivered"
+        "growthPlanning": {
+          "title": "Growth Planning Documents",
+          "description": "Higher tiers bundle 90-day planners, automation prep sheets, and advanced optimization docs.",
+          "outcome": "A repeatable growth rhythm grounded in the kits"
         }
       },
-      "viewAll": "View All Services"
+      "viewAll": "Browse All Resources"
     },
     "whyUs": {
-      "sectionLabel": "Why DegiScaler",
-      "headline": "Why founders choose DegiScaler",
+      "sectionLabel": "Why DigiScaler",
+      "headline": "Why operators choose DigiScaler kits",
       "items": [
         {
           "title": "Registered U.S. LLC",
-          "description": "You work with a real, accountable U.S. registered company — not a freelancer with no address. Documentation, accountability, and a professional business behind every project."
+          "description": "Purchase from an accountable U.S. registered company with clear policies—not an anonymous seller."
         },
         {
-          "title": "Defined Deliverables",
-          "description": "Every package specifies exactly what you receive. No scope creep, no vague outcomes, no surprises when the project is done."
+          "title": "Defined file bundles",
+          "description": "Every tier lists exactly which PDFs, templates, trackers, and ZIP packs you receive before you buy."
         },
         {
-          "title": "Payment-Ready by Design",
-          "description": "We build with payment platform requirements in mind — professional design, complete trust signals, policy pages, and checkout clarity built in from the start."
+          "title": "Focused on trust & clarity",
+          "description": "Materials emphasize homepage clarity, checkout reassurance, and credible policies—topics online brands actually fight over."
         },
         {
-          "title": "Direct Team Access",
-          "description": "You communicate directly with the team doing your work. No account managers, no intermediaries. Clear answers, fast."
+          "title": "Self-service by design",
+          "description": "Download, apply, and iterate on your schedule. Product support is available if access or files need help."
         },
         {
-          "title": "Fixed, Published Pricing",
-          "description": "All prices are fixed and listed before you commit. No discovery calls required just to get a quote."
+          "title": "Transparent USD pricing",
+          "description": "Published prices—no hidden quotes or upsells buried in a funnel."
         },
         {
-          "title": "Honest About Outcomes",
-          "description": "We do not promise payment processor approvals. We deliver professional work and give you the strongest possible foundation — what happens next is up to the platforms."
+          "title": "Honest about outcomes",
+          "description": "These are educational and practical tools. We do not promise revenue, rankings, or guaranteed conversion lifts."
         }
       ]
     },
     "process": {
       "sectionLabel": "How It Works",
-      "headline": "From first conversation to final delivery",
+      "headline": "Purchase once. Download instantly. Implement at your pace.",
       "steps": [
         {
           "number": "01",
-          "title": "Discover",
-          "description": "We start by understanding your business model, current website situation, and what success looks like for you."
+          "title": "Browse",
+          "description": "Review Resources to see the kits, templates, and checklists that match your goals."
         },
         {
           "number": "02",
-          "title": "Diagnose",
-          "description": "We audit your existing setup — design, UX, trust signals, checkout flow — and identify exactly what needs to change."
+          "title": "Choose a tier",
+          "description": "Pick Starter, Growth, Pro, or Scale on Pricing—each level stacks additional downloads."
         },
         {
           "number": "03",
-          "title": "Build",
-          "description": "We design, develop, and implement. A new website, targeted improvements, or a full audit report — depending on your package."
+          "title": "Checkout",
+          "description": "Complete payment securely. Automated delivery sends access instructions by email when applicable."
         },
         {
           "number": "04",
-          "title": "Deliver",
-          "description": "We hand over the finished work with a walkthrough, clear documentation, and specific guidance for your next steps."
+          "title": "Download & apply",
+          "description": "Open your PDFs, Notion files, Sheets trackers, or ZIP bundles and work through them on your timeline."
         }
       ]
     },
     "pricing": {
       "sectionLabel": "Pricing",
       "headline": "Straightforward pricing. Zero surprises.",
-      "subheadline": "Four consultation packages below. Live call time varies by tier, and every package includes scheduling guidance shown on each card.",
-      "valueFraming": "Live consultation calls with a written email recap afterward—priced for clarity, not disguised as discount work.",
+      "subheadline": "Four downloadable kits below—each adds more templates, PDFs, and bundles for trust, clarity, and conversion readiness.",
+      "valueFraming": "Premium digital downloads with instant access—priced clearly, delivered automatically after checkout.",
       "viewAll": "See pricing details",
       "mostPopular": "Most Popular",
       "premiumBadge": "Best for launch",
-      "getStarted": "Get Started"
+      "getStarted": "Buy Digital Kit"
     },
     "faq": {
       "sectionLabel": "FAQ",
       "headline": "Questions you probably already have",
       "items": [
         {
-          "question": "How is the consultation delivered?",
-          "answer": "The consultation is delivered through a live call. After the call, DigiScaler sends a written email recap summarizing the main points discussed."
+          "question": "What do I receive after purchase?",
+          "answer": "You receive downloadable digital resources such as PDF guides, templates, checklists, and resource bundles depending on the product purchased."
         },
         {
-          "question": "Do you guarantee sales or specific results?",
-          "answer": "No. DigiScaler provides professional consultation, review, and recommendations only. We do not guarantee sales, revenue, rankings, conversion rates, or specific business results."
+          "question": "Are these physical products?",
+          "answer": "No. All products are digital and delivered online."
         },
         {
-          "question": "When will my consultation be scheduled?",
-          "answer": "Scheduling depends on the selected package and starts after payment confirmation and after we receive the required project details."
+          "question": "How are the files delivered?",
+          "answer": "Files are delivered through secure digital access and/or email after purchase."
         },
         {
-          "question": "What does a digital consultation actually include?",
-          "answer": "A structured review of your online business — website, checkout, trust signals, and overall digital setup. You receive a written report with clear, specific recommendations you can act on immediately."
+          "question": "Do I need to work directly with your team to use the products?",
+          "answer": "No. DigiScaler products are self-service digital resources designed to be used independently."
         },
         {
-          "question": "Do you guarantee Stripe or PayPal approval?",
-          "answer": "No. We do not guarantee approval from Stripe, PayPal, or any payment processor. We improve your website's professionalism and trust signals — which supports payment review — but all approval decisions are made independently by the payment processors."
+          "question": "Can I request a refund?",
+          "answer": "Refunds are handled according to the Refund Policy. Because products are digital, access and download status may affect refund eligibility."
         },
         {
-          "question": "How long does it take?",
-          "answer": "Consultation packages range from 30 to 90 minutes, with written reports delivered within 24 to 48 business hours. The Elite Launch Package (full website build) typically takes 5 to 10 business days."
-        },
-        {
-          "question": "Can you build my website from scratch?",
-          "answer": "Yes. The Elite Launch Package includes a complete website design and build. Other packages provide consultation and a written action plan you can implement yourself or hire us to execute."
-        },
-        {
-          "question": "Do you offer refunds?",
-          "answer": "Consultation services are non-refundable once the session has been conducted or the report delivered. Cancellations requested within 24 hours of purchase are reviewed on a case-by-case basis. See our Refund Policy for full details."
+          "question": "Do you guarantee results?",
+          "answer": "No. The resources are educational and practical tools. Results depend on implementation, business model, website quality, traffic, and other factors."
         }
       ],
       "viewAll": "View All FAQs"
     },
     "testimonials": {
       "sectionLabel": "CLIENT FEEDBACK",
-      "headline": "What clients say about working with DegiScaler",
-      "intro": "Real feedback from founders and small business owners who wanted a more credible, professional online presence.",
+      "headline": "What buyers say about DigiScaler kits",
+      "intro": "Feedback from founders and operators who used the downloadable templates and checklists.",
       "ratingOutOf": "/5",
       "items": [
         {
@@ -334,7 +334,7 @@
           "meta": "SaaS · Austin, TX",
           "rating": "5.0",
           "avatar": "/testimonials/man-1.webp",
-          "quote": "The consultation surfaced trust issues around our homepage and checkout copy we had been debating for weeks. The notes were blunt in a helpful way—we finally knew what to fix first."
+          "quote": "The trust checklist PDF forced us to fix hero copy and policy links we kept postponing—finally a prioritized list instead of debates."
         },
         {
           "name": "Rosa Delgado",
@@ -342,7 +342,7 @@
           "meta": "Retail · Valencia, ES",
           "rating": "4.9",
           "avatar": "/testimonials/woman-1.webp",
-          "quote": "The audit flagged weak trust signals we had overlooked—policy links buried, inconsistent contact cues. Nothing flashy, just a prioritized list that matched how customers actually browse."
+          "quote": "The audit templates highlighted buried policies and inconsistent contact cues—practical, not flashy."
         },
         {
           "name": "David Okonkwo",
@@ -350,7 +350,7 @@
           "meta": "Consumer goods · UK",
           "rating": "4.8",
           "avatar": "/testimonials/man-2.webp",
-          "quote": "We did not need a pitch deck of promises. Their recommendations tightened product pages and the checkout path so the store finally feels like a serious operation, not a side project."
+          "quote": "The product-page guide and checkout prompts tightened our storefront copy without hiring an outside team."
         },
         {
           "name": "Anita Bergström",
@@ -358,7 +358,7 @@
           "meta": "Professional services · SE",
           "rating": "4.7",
           "avatar": "/testimonials/woman-2.webp",
-          "quote": "The structured feedback landed in plain language—what to shorten, where to reinforce credibility, how to tighten lead forms. We implemented most of it in-house without guessing."
+          "quote": "Plain-language worksheets—what to shorten, where to reinforce credibility, how to simplify forms. We executed most of it internally."
         },
         {
           "name": "Marcus Nguyen",
@@ -366,238 +366,256 @@
           "meta": "Early‑stage · CA",
           "rating": "4.6",
           "avatar": "/testimonials/man-3.webp",
-          "quote": "Clear scope up front, quick turnaround on the summary, no upsell gymnastics. For the tier we picked, it was genuinely worth it to stop debating our site on instinct alone."
+          "quote": "Clear bundle scope, instant download, no upsell circus—worth it to stop guessing our site fixes."
         }
       ]
     },
     "cta": {
-      "headline": "Ready to build a website customers can trust?",
-      "subheadline": "Get a structured assessment and a clear plan to strengthen credibility, checkout clarity, and trust signals. Start with a consultation.",
-      "ctaPrimary": "See Pricing",
-      "ctaSecondary": "Get in Touch"
+      "headline": "Ready to upgrade your site with downloadable kits?",
+      "subheadline": "Browse optimization bundles, templates, and checklists designed for independent implementation.",
+      "ctaPrimary": "View Pricing",
+      "ctaSecondary": "Product Support"
     }
   },
   "servicesPage": {
-    "title": "Services",
-    "eyebrow": "Credibility-led delivery",
-    "headline": "Services built to make your business look credible online",
-    "subheadline": "DegiScaler helps founders and small businesses create professional websites, e-commerce experiences, landing pages, audits, UI/UX reviews, and digital consultation — with clear outcomes and practical scope.",
-    "gridLabel": "What we deliver",
+    "title": "Resources",
+    "eyebrow": "Digital downloads",
+    "headline": "Digital Resources Built For Online Business Growth",
+    "subheadline": "Download practical templates, checklists, guides, and toolkits designed to improve website trust, checkout clarity, and conversion readiness.",
+    "gridLabel": "Resource categories",
+    "includedTitle": "What You Receive After Purchase",
+    "includedItems": [
+      "Downloadable PDF guides",
+      "Business checklists",
+      "Notion workspace templates",
+      "Google Sheets trackers",
+      "Website audit documents",
+      "Conversion improvement resources",
+      "Email delivery and instant access"
+    ],
     "services": {
       "websiteDesign": {
-        "title": "Website Design",
-        "description": "Trust-led layout, refined typography, readable structure, and conversion paths that signal a serious operator — not a rushed template.",
-        "outcome": "A presentation that reads credible at first glance and carries that tone through key pages.",
-        "note": "Available as a standalone build or as prioritized guidance within consultation."
+        "title": "Website Optimization Kits",
+        "description": "Bundled PDF guides and checklists that walk through homepage clarity, trust placement, and structured fixes you can apply yourself.",
+        "outcome": "A disciplined roadmap for tightening credibility without outsourcing execution.",
+        "note": "Included across Starter and higher bundles."
       },
       "ecommerce": {
-        "title": "E-commerce Development",
-        "description": "Store architecture, product detail clarity, cart and checkout flow, and trust placement so customers understand what they are buying — and reviewers see an intentional business.",
-        "outcome": "A structured storefront experience with cleaner paths to purchase and clearer policy alignment.",
-        "note": "Scopes align to your catalog size; larger builds may start with a roadmap consult."
+        "title": "Checkout Readiness Checklists",
+        "description": "Downloadable prompts covering reassurance copy, fee transparency, policy alignment, and shopper hesitation points.",
+        "outcome": "Clearer checkout messaging that matches how people actually buy online.",
+        "note": "Featured inside Growth Optimization Kit and above."
       },
       "landingPage": {
-        "title": "Landing Page Design",
-        "description": "One page, one objective: sharp hierarchy, proof where it matters, and a direct call-to-action without noise that dilutes intent.",
-        "outcome": "A focused page that moves a defined visitor action with minimal distraction.",
-        "note": "Often paired with measurement notes you can track after launch."
+        "title": "Landing Page Templates",
+        "description": "Section-by-section outlines plus copy prompts so focused campaigns stay concise and credible.",
+        "outcome": "Landing pages you can ship faster with less rework.",
+        "note": "Pairs well with conversion checklists in Growth/Pro tiers."
       },
       "audit": {
-        "title": "Website Audit",
-        "description": "Structured review of credibility signals, performance risks, content clarity, and friction that may cost conversions or slow review conversations.",
-        "outcome": "A prioritized written list of what to fix, why it matters, and what to tackle first.",
-        "note": "Delivered as a documented report you can hand to your team or contractor."
+        "title": "Business Audit Templates",
+        "description": "Fill-in worksheets for documenting gaps in trust, funnel steps, and prioritised fixes.",
+        "outcome": "Evidence-backed priorities instead of guesswork.",
+        "note": "Ships inside Pro Conversion Toolkit and Scale bundle."
       },
       "uiux": {
-        "title": "UI/UX Review",
-        "description": "We walk critical journeys as real users would — navigation, forms, checkout-adjacent flows, and hesitation points that quietly kill completion.",
-        "outcome": "Actionable UI/UX fixes that reduce friction and improve clarity step by step.",
-        "note": "Ideal when the site works but feels clumsy, slow to understand, or inconsistent."
+        "title": "UX Clarity Resources",
+        "description": "Frameworks for reviewing navigation, forms, and checkout-adjacent friction using the included worksheets.",
+        "outcome": "Noticeable UX wins you can implement with your existing stack.",
+        "note": "Spread across Growth and Pro downloadable packs."
       },
-      "consultation": {
-        "title": "Digital Business Consultation",
-        "description": "A structured session on your online posture: positioning, funnel clarity, trust placement, readiness gaps, and a written plan tied to budgets you can execute.",
-        "outcome": "Plain-language conclusions and sequenced recommendations you can approve or delegate.",
-        "note": "Many clients begin here before committing to broader design or development work."
+      "growthPlanning": {
+        "title": "Growth Planning Documents",
+        "description": "Higher tiers add multi-week planners, automation prep sheets, and advanced optimization libraries.",
+        "outcome": "A repeatable rhythm for iterating after the first download.",
+        "note": "See Scale Business Bundle for the full library stack."
       }
     },
-    "processCtaHeadline": "Start with clarity before committing to full build scope",
-    "processCtaSub": "Begin with consultation if you want a sequenced roadmap, budget alignment, and written recommendations before broader design or development spend.",
-    "processCtaButton": "Explore pricing",
+    "processCtaHeadline": "Pick the kit that matches your stage",
+    "processCtaSub": "Every tier lists exact files—upgrade when you need deeper templates, trackers, and playbooks.",
+    "processCtaButton": "View pricing",
     "finalCtaPrimary": "View pricing",
-    "finalCtaSecondary": "Contact us"
+    "finalCtaSecondary": "Product Support"
   },
   "pricingPage": {
     "title": "Pricing",
     "eyebrow": "Transparent pricing",
     "headline": "Transparent packages. No surprises.",
-    "subheadline": "Live digital consultations with a written email recap after your call. Choose the depth that matches where you are today.",
+    "subheadline": "Downloadable digital kits with instant access after purchase. Pick the bundle that matches how deep you want to go.",
     "mostPopular": "Most Popular",
     "premiumBadge": "Best for launch",
-    "getStarted": "Get Started",
+    "getStarted": "Buy Digital Kit",
+    "continueToCheckout": "Continue to checkout",
     "perPackage": "per package",
-    "disclaimer": "All prices are in USD. These are paid live digital consultations; each tier includes written email recap after your call as described on the package. DegiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business or payment-platform outcome. Scheduling and delivery timing start after payment confirmation and after we receive your project details. Timelines also depend on responsiveness when coordinating the call.",
+    "disclaimer": "All prices are in USD. Products are digital downloads with automated delivery—typically via secure digital access and/or email after checkout completes. DigiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. Access timing can depend on payment confirmation and email deliverability.",
     "includedTitle": "What is included",
     "includedItems": [
-      "Live consultation delivered on a scheduled call",
-      "Written email recap after the call summarizing the main points discussed",
-      "Structured review time and focus areas as described for each tier",
-      "Honest assessment of risks, gaps, and realistic sequencing (no fabricated guarantees)",
-      "Clear scope boundaries so you know what is in or out before work begins"
+      "Instant digital access after successful checkout",
+      "Downloadable files (PDFs, templates, bundles) as described for each kit",
+      "Email delivery when applicable for your purchase",
+      "Self-service resources designed for independent use",
+      "Clear product scope so you know exactly what each tier contains"
     ],
     "howSteps": [
       {
-        "title": "Book and share context",
-        "detail": "After payment confirmation and once we receive your project details, we share how to prepare and what to send before your live consultation."
+        "title": "Choose your kit",
+        "detail": "Pick the Starter, Growth, Pro, or Scale bundle on Pricing—each lists the exact files and templates included."
       },
       {
-        "title": "Live review and diagnosis",
-        "detail": "We walk the experience with you — credibility, UX, checkout clarity, policies, and anything relevant to your case."
+        "title": "Complete checkout",
+        "detail": "Confirm billing details on the checkout page. Live payment capture will activate once checkout setup is finalized."
       },
       {
-        "title": "Written deliverables and follow-ups",
-        "detail": "After the live call, you receive a written email recap summarizing the main points discussed, with depth matching your package tier."
+        "title": "Download and start",
+        "detail": "Use secure digital access and/or email links to download your PDFs, ZIP bundles, Notion resources, and trackers."
       }
     ],
     "stepLabel": "Step {n}",
-    "paymentNoteTitle": "Payment processors & bank decisions",
-    "paymentNote": "We help improve clarity, trust signals, documentation, and readiness. Final approval decisions are made by third-party platforms and financial institutions—including Stripe, PayPal, or your bank—and are outside DegiScaler’s control.",
+    "paymentNoteTitle": "Digital delivery",
+    "paymentNote": "All products are digital downloads. No physical shipping is provided. Access is delivered electronically after purchase.",
+    "downloadDemo": "Download demo ZIP",
+    "cardComplianceLines": [
+      "File access is shown only after checkout completes",
+      "Digital product only — no physical shipping",
+      "Delivered electronically (secure access and/or email)",
+      "Self-service files — use on your own timeline"
+    ],
+    "trustCheckoutTitle": "Secure checkout",
+    "trustCheckoutBody": "Secure digital checkout and automated delivery.",
     "faqPreviewText": "Still weighing options?",
     "faqPreviewLink": "Browse the FAQ",
-    "ctaHeadline": "Have questions about which package fits your roadmap?",
-    "ctaButton": "Contact us",
-    "ctaSecondary": "Review services",
+    "ctaHeadline": "Need help choosing a kit or accessing files?",
+    "ctaButton": "Product Support",
+    "ctaSecondary": "Browse Resources",
     "packages": [
       {
         "id": "starter",
-        "name": "Starter Consultation",
+        "name": "Starter Website Kit",
         "price": "$9.99",
-        "description": "A focused live consultation for founders who need a quick review of their website and online presence.",
+        "description": "A compact digital resource pack for improving the basic trust, clarity, and readiness of your website.",
         "features": [
-          "30-minute live consultation call",
-          "Website credibility review",
-          "Online presence clarity check",
-          "3 key improvement recommendations",
-          "Email recap after the call",
-          "Scheduled within 48 business hours"
+          "Website Trust Checklist PDF",
+          "Homepage Clarity Guide",
+          "Basic Checkout Readiness Checklist",
+          "Instant Digital Download",
+          "PDF Resources Included",
+          "Email Delivery Included"
         ]
       },
       {
         "id": "growth",
-        "name": "Growth Consultation",
+        "name": "Growth Optimization Kit",
         "price": "$19.99",
-        "description": "A structured live consultation to improve website clarity, checkout flow, trust signals, and customer journey.",
+        "description": "A practical digital toolkit for improving website structure, customer journey clarity, and conversion signals.",
         "features": [
-          "45-minute live consultation call",
-          "Website and checkout review",
-          "Customer journey clarity check",
-          "5 improvement recommendations",
-          "Trust signal assessment",
-          "Scheduled within 2–3 business days"
+          "Everything in Starter",
+          "Conversion Optimization Checklist",
+          "Product Page Improvement Guide",
+          "Customer Journey Checklist",
+          "SEO Basics Resource Pack",
+          "Downloadable ZIP Bundle"
         ]
       },
       {
         "id": "pro",
-        "name": "Pro Consultation",
+        "name": "Pro Conversion Toolkit",
         "price": "$29.99",
-        "description": "A complete live consultation covering website UX, checkout clarity, trust signals, and payment readiness.",
+        "description": "A premium bundle of templates and resources for improving website trust, checkout readiness, and customer flow.",
         "features": [
-          "60-minute live consultation call",
-          "Full website and UX review",
-          "Checkout clarity assessment",
-          "Payment-readiness review",
-          "Action plan discussed on call",
-          "Detailed email recap after the call"
+          "Everything in Growth",
+          "Business Audit Templates",
+          "Email Template Collection",
+          "Notion Workflow Resources",
+          "Google Sheets Audit Tracker",
+          "Premium Optimization Documents"
         ]
       },
       {
         "id": "scale",
-        "name": "Scale Consultation",
+        "name": "Scale Business Bundle",
         "price": "$49.99",
-        "description": "A premium strategy consultation for deeper review of your digital presence, funnel, trust, and priorities.",
+        "description": "A complete digital resource library for online businesses that want a structured optimization system.",
         "features": [
-          "90-minute live strategy call",
-          "Full website and funnel review",
-          "Trust and conversion clarity review",
-          "Checkout and payment flow review",
-          "Priority action plan discussed on call",
-          "Detailed email recap after the call"
+          "Everything in Pro",
+          "Full Website Optimization Playbook",
+          "90-Day Growth Action Plan",
+          "Automation Planning Checklist",
+          "Premium Business Templates",
+          "Advanced Digital Resource Library"
         ]
       }
     ]
   },
   "aboutPage": {
     "title": "About",
-    "eyebrow": "About DegiScaler LLC",
-    "headline": "A U.S.-registered digital services and business consulting company",
-    "subheadline": "DegiScaler LLC operates as an accountable United States LLC focused on credible web experiences, structured consultation, and honest digital outcomes.",
+    "eyebrow": "About DigiScaler LLC",
+    "headline": "A U.S.-registered digital products brand for online business resources",
+    "subheadline": "DigiScaler LLC creates downloadable digital resources for founders, creators, online stores, and small businesses that want clearer websites, stronger trust signals, and better customer journeys.",
     "missionLabel": "Mission",
-    "missionText": "Build credible websites and clearer online business experiences—so founders can earn trust quickly, explain what they sell with confidence, and reduce friction at the moments that matter.",
+    "missionText": "Package practical optimization knowledge into premium downloads—so teams can improve clarity, trust, and shopper confidence without opaque engagements.",
     "whoWeHelpLabel": "Who we help",
-    "whoWeHelpText": "Founders, small businesses, e-commerce owners, and service businesses that need a professional digital presence, cleaner customer journeys, and pragmatic guidance without hype.",
+    "whoWeHelpText": "Independent founders, ecommerce operators, creators, and small teams that prefer self-service templates over open-ended projects.",
     "howWeWorkLabel": "How we work",
-    "howWeWorkIntro": "We keep engagements straightforward: fixed pricing where published, written deliverables, and scope you can understand before work begins.",
+    "howWeWorkIntro": "Every listing spells out file types, stacking tiers, and delivery method before you pay.",
     "howWeWorkBullets": [
-      "Clarity first — we surface constraints, tradeoffs, and realistic sequencing",
-      "Fixed pricing on listed packages with defined consultation time and outputs",
-      "Structured deliverables such as summaries, audit notes, or implementation guidance",
-      "Honest outcomes — we improve readiness and trust signals, but we do not fabricate guarantees from third-party platforms"
+      "Transparent stacking tiers—from essentials to a full digital library",
+      "Automated digital delivery whenever checkout completes successfully",
+      "Product support for access, billing, or download issues",
+      "No promises about revenue or rankings—only structured tools you control"
     ],
     "trustLabel": "Trust principles",
-    "trustIntro": "Our standards are simple: transparent communication, no fake guarantees, clear written scope, and deliverables you can verify.",
+    "trustIntro": "Straightforward listings, honest limitations, and documented licenses inside each bundle.",
     "trustItems": [
       {
         "title": "Transparency",
-        "description": "We explain what we reviewed, what we recommend, and what remains your responsibility—before and after delivery."
+        "description": "Product pages describe exactly which PDFs, templates, trackers, or ZIP packs ship with each tier."
       },
       {
-        "title": "No fake guarantees",
-        "description": "We do not promise payment-processor approvals or fixed revenue outcomes. We deliver professional analysis and build work with defined scope."
+        "title": "No fabricated guarantees",
+        "description": "We do not promise financial outcomes or platform-specific approvals—the kits are educational resources."
       },
       {
-        "title": "Clear scope & revisions",
-        "description": "Packages describe what is included. If something falls outside the scope, we say so early and quote changes separately when needed."
+        "title": "Digital-only scope",
+        "description": "Purchases grant downloadable assets and secure access—not custom execution or bespoke development."
       },
       {
-        "title": "Written deliverables",
-        "description": "Consultation and audit work is documented so your team, agency, or contractor can execute without guesswork."
+        "title": "Support where it matters",
+        "description": "Contact Product Support if links fail, files will not open, or billing needs clarification."
       }
     ],
     "pricingCta": "View pricing",
-    "contactCta": "Start with a consultation",
+    "contactCta": "Browse Digital Resources",
     "companyDetails": {
       "label": "Company details",
       "nameLabel": "Company",
       "typeLabel": "Type",
       "focusLabel": "Focus",
       "emailLabel": "Email",
-      "name": "DegiScaler LLC",
+      "name": "DigiScaler LLC",
       "type": "U.S. Limited Liability Company",
-      "focus": "Digital Services & Business Consultation",
+      "focus": "Digital Products & Downloadable Business Resources",
       "email": "support@degiscaler.com"
     }
   },
   "contactPage": {
     "title": "Contact",
-    "eyebrow": "Let's plan your next step",
-    "headline": "Tell us what you need to build next.",
-    "subheadline": "Share context on your business or project. Our team reviews inquiries carefully and responds professionally within the timeframe below.",
+    "eyebrow": "Product support",
+    "headline": "Need help with a digital product?",
+    "subheadline": "For product access, download issues, billing questions, or general support, contact us below.",
     "form": {
       "fullName": "Full name",
       "fullNamePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
-      "whatsapp": "WhatsApp",
-      "whatsappPlaceholder": "Optional — e.g. +1 … or international format",
-      "businessProject": "Business or project type",
-      "businessProjectPlaceholder": "Example: CPG e-commerce, SaaS landing page, local services site",
-      "budgetPackage": "Budget or package interest",
-      "budgetPackagePlaceholder": "Example: Pro Consultation, Elite Launch, or a budget range",
+      "orderNumber": "Order number (optional)",
+      "orderNumberPlaceholder": "If you have one from your receipt",
+      "productName": "Product name",
+      "productNamePlaceholder": "Example: Growth Optimization Kit",
       "message": "Message",
-      "messagePlaceholder": "What should we know about goals, timeline, and constraints?",
+      "messagePlaceholder": "Describe your question or issue.",
       "submit": "Send message",
       "submitting": "Sending…",
-      "mailtoSubject": "Inquiry via DegiScaler website",
+      "mailtoSubject": "Product support via DigiScaler website",
       "mailtoName": "Name",
       "mailtoEmail": "Email"
     },
@@ -607,75 +625,47 @@
       "server": "Something went wrong. Please try again shortly."
     },
     "expectationTitle": "What happens next",
-    "expectationText": "After you reach out, we review your message against our services, confirm fit, and reply with next steps. If we need files or access, we will request them clearly. Nothing begins until scope and pricing expectations are aligned.",
-    "pricingFallbackCta": "View pricing if you are still deciding",
+    "expectationText": "Our team reviews product support requests in order and replies within the typical response window. Please include your product name and order number when available so we can help faster.",
+    "pricingFallbackCta": "View pricing",
     "info": {
       "emailLabel": "Support email",
       "email": "support@degiscaler.com",
       "responseLabel": "Typical response time",
       "response": "Within 24–48 business hours",
-      "scopeLine": "Digital consultations, website design deliverables, audits, and readiness reviews.",
-      "trustNote": "DegiScaler LLC is a U.S.-registered company. We do not guarantee payment-processor decisions; we focus on professional delivery and clear documentation."
+      "scopeLine": "Product access, downloads, billing questions, and general digital product support.",
+      "trustNote": "DigiScaler LLC sells downloadable digital resources. This form is for product support—not legal, tax, or financial advice."
     }
   },
   "faqPage": {
     "title": "FAQ",
     "eyebrow": "Help center",
     "headline": "Frequently asked questions",
-    "subheadline": "Clear answers about consultation deliverables, timelines, refunds, multilingual work, and what third-party payment platforms decide on their own.",
-    "listIntro": "What clients ask before starting",
+    "subheadline": "Answers about digital downloads, delivery, refunds, and how to use the kits.",
+    "listIntro": "Common questions",
     "items": [
       {
-        "question": "How is the consultation delivered?",
-        "answer": "The consultation is delivered through a live call. After the call, DigiScaler sends a written email recap summarizing the main points discussed."
+        "question": "What do I receive after purchase?",
+        "answer": "You receive downloadable digital resources such as PDF guides, templates, checklists, and resource bundles depending on the product purchased."
       },
       {
-        "question": "Do you guarantee sales or specific results?",
-        "answer": "No. DigiScaler provides professional consultation, review, and recommendations only. We do not guarantee sales, revenue, rankings, conversion rates, or specific business results."
+        "question": "Are these physical products?",
+        "answer": "No. All products are digital and delivered online."
       },
       {
-        "question": "When will my consultation be scheduled?",
-        "answer": "Scheduling depends on the selected package and starts after payment confirmation and after we receive the required project details."
+        "question": "How are the files delivered?",
+        "answer": "Files are delivered through secure digital access and/or email after purchase."
       },
       {
-        "question": "What does a digital consultation include?",
-        "answer": "A structured working session that reviews your online presence—site, key flows, trust signals, and constraints—plus written notes or a deeper report depending on the package. You leave with prioritized recommendations and realistic sequencing, not generic advice."
+        "question": "Do I need to work directly with your team to use the products?",
+        "answer": "No. DigiScaler products are self-service digital resources designed to be used independently."
       },
       {
-        "question": "Do you guarantee Stripe or PayPal approval?",
-        "answer": "No. DegiScaler does not guarantee approval from Stripe, PayPal, banks, or any processor. We help with clarity, documentation readiness, and trust signals, but final decisions belong to those third parties."
+        "question": "Can I request a refund?",
+        "answer": "Refunds are handled according to the Refund Policy. Because products are digital, access and download status may affect refund eligibility."
       },
       {
-        "question": "How long does it take?",
-        "answer": "Consultation packages range from 30 to 90 minutes of live time as listed. Written deliverables follow based on package depth. The Elite Launch Package typically spans several business days of design/build work depending on responsiveness and asset availability—expect a range rather than an instant turnaround."
-      },
-      {
-        "question": "Can you build my website from scratch?",
-        "answer": "Yes when you select the Elite Launch Package, which covers end-to-end design and build scope described in pricing. Other tiers focus on consultation, audits, and planning—you can implement internally or discuss custom build scope separately."
-      },
-      {
-        "question": "Do you offer refunds?",
-        "answer": "Digital consultations behave like professional services: eligibility depends on whether work has begun or written deliverables were provided. Completed sessions or delivered reports generally are not refundable. See the Refund Policy for the fair, written standard we follow."
-      },
-      {
-        "question": "What happens after I buy a package?",
-        "answer": "You receive onboarding instructions—what to send, scheduling links where applicable, and how deliverables arrive. Nothing hidden starts billing beyond the stated package; broader build work waits until scope is confirmed."
-      },
-      {
-        "question": "Do you work with e-commerce businesses?",
-        "answer": "Yes. We regularly review storefront clarity, checkout flow, policies, catalog presentation, and trust placement for product-led businesses."
-      },
-      {
-        "question": "Can I request Arabic, French, or English websites?",
-        "answer": "Yes. We can deliver interfaces and content structures in the language you need, including full Arabic RTL layouts or French copy alignment, as long as scope and assets are agreed in writing. Only the DegiScaler brand name stays fixed in Roman characters."
-      },
-      {
-        "question": "What do I need before starting?",
-        "answer": "At minimum: a clear business description, primary goal (lead gen, sales, validation), any existing brand assets, access or URLs we can review, and realistic timeline notes. Payment happens through our published checkout flow before active work begins."
-      },
-      {
-        "question": "Can you audit an existing website?",
-        "answer": "Yes. Audits and UI/UX reviews examine what you already have, highlight friction, list prioritized fixes, and explain why each item matters for credibility or conversion."
+        "question": "Do you guarantee results?",
+        "answer": "No. The resources are educational and practical tools. Results depend on implementation, business model, website quality, traffic, and other factors."
       }
     ]
   },
@@ -684,16 +674,16 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Privacy Policy",
-    "intro": "DegiScaler LLC (\"we\", \"our\", or \"us\") describes—at a general level—how information may be handled when you use this website or engage our services. This summary is not legal advice.",
+    "intro": "DigiScaler LLC (\"we\", \"our\", or \"us\") describes—at a general level—how information may be handled when you use this website or purchase digital products. This summary is not legal advice.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice. Consult qualified counsel for your situation.",
     "sections": [
       {
         "title": "Information we may collect",
-        "content": "We may collect details you voluntarily provide, such as name, email, business description, project notes, and similar fields submitted through contact flows or service purchases. Technical data like IP address, device type, or browser may be collected automatically by hosting or infrastructure providers."
+        "content": "We may collect details you voluntarily provide, such as name, email, order references, product notes, and similar fields submitted through contact flows or purchases. Technical data like IP address, device type, or browser may be collected automatically by hosting or infrastructure providers."
       },
       {
         "title": "Contact form data",
-        "content": "If you use a website form, the fields you submit are used only to respond to your request or to route you to the right service. Until a secure backend is connected, avoid sharing highly sensitive information inside form fields and prefer email for confidential documents if your counsel advises it."
+        "content": "If you use a website form, the fields you submit are used only to respond to product support or related requests. Avoid sharing highly sensitive information inside form fields unless necessary."
       },
       {
         "title": "Payments handled by third parties",
@@ -705,7 +695,7 @@
       },
       {
         "title": "How we use information",
-        "content": "We use information to respond to inquiries, deliver purchased services, improve site reliability, protect against abuse, and communicate about active engagements. We do not sell personal data for unrelated marketing."
+        "content": "We use information to respond to inquiries, deliver purchased digital products, improve site reliability, protect against abuse, and communicate about orders or support tickets. We do not sell personal data for unrelated marketing."
       },
       {
         "title": "How data may be shared",
@@ -713,11 +703,11 @@
       },
       {
         "title": "Data retention",
-        "content": "We retain business records and client communications only as long as needed to deliver services, meet legal obligations, or resolve disputes. Exact periods can depend on the type of record and applicable requirements."
+        "content": "We retain business records and customer communications only as long as needed to fulfill orders, meet legal obligations, or resolve disputes."
       },
       {
         "title": "Security",
-        "content": "We apply reasonable safeguards appropriate to a small services business, but no online system is perfectly secure. You share information at your own considered risk."
+        "content": "We apply reasonable safeguards appropriate to a digital products business, but no online system is perfectly secure. You share information at your own considered risk."
       },
       {
         "title": "Your rights & requests",
@@ -738,44 +728,44 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Terms of Service",
-    "intro": "These Terms of Service govern use of the DegiScaler LLC website and the professional services described on our pricing pages. By purchasing or using our services, you agree to this general framework.",
+    "intro": "These Terms of Service govern use of the DigiScaler LLC website and the digital products described on our pricing pages. By purchasing, you agree to this general framework.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
         "title": "Use of website",
-        "content": "You agree to use this site lawfully and without attempting to disrupt its operation. Content is provided for information about DegiScaler LLC; copying or scraping without permission is not allowed."
+        "content": "You agree to use this site lawfully and without attempting to disrupt its operation. Content is provided for information about DigiScaler LLC; copying or scraping without permission is not allowed."
       },
       {
-        "title": "Services & consultations",
-        "content": "DegiScaler LLC provides live digital consultation services and related professional services (including, where offered, website design, e-commerce builds, landing pages, audits, and UI/UX reviews). Published consultation packages are delivered through a live call; each consultation includes a written email recap after the call as described for the purchased package. Scheduling and related timing generally start after payment confirmation and after we receive the required project details. DegiScaler does not guarantee sales, revenue, rankings, conversion rates, or specific business outcomes. Deliverables otherwise match the purchased package unless a separate written scope is signed."
+        "title": "Digital products",
+        "content": "DigiScaler LLC sells downloadable digital products (such as PDF guides, templates, checklists, Notion resources, spreadsheets, and ZIP bundles) as described on each product page. Delivery is electronic—typically via secure digital access and/or email—after checkout completes. Products are self-service resources; they are not individualized professional services and do not constitute legal, tax, or financial advice. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, traffic, or other business outcomes."
       },
       {
-        "title": "No guaranteed payment-processor approval",
-        "content": "We do not guarantee approval from Stripe, PayPal, banks, or any payment platform. We may help with clarity, trust signals, and readiness materials, but final decisions rest solely with those third parties."
+        "title": "No outcome guarantees",
+        "content": "Resources are educational and practical tools. Your results depend on implementation, market conditions, product-market fit, website quality, and many factors outside our control."
       },
       {
         "title": "Payment & pricing",
-        "content": "Published prices are in USD unless stated otherwise. Payment is generally required before active work outside of scheduled consultation windows. Third-party processors handle card data; their terms also apply."
+        "content": "Published prices are in USD unless stated otherwise. Payment is required before digital delivery. Third-party payment providers handle card data; their terms also apply."
       },
       {
-        "title": "Client responsibilities",
-        "content": "Clients must supply accurate information, timely feedback, legal rights to provided assets, and access needed to perform the work. Material misrepresentation may pause or end an engagement."
+        "title": "Customer responsibilities",
+        "content": "You must provide accurate contact details, safeguard download links, and use purchased materials lawfully. Misuse, redistribution contrary to license terms, or fraudulent purchases may lead to suspended access."
       },
       {
-        "title": "Revisions & scope",
-        "content": "Each package lists what is included. Reasonable revision rounds may apply where noted in writing. Work outside the agreed scope may require an additional quote."
+        "title": "Product scope",
+        "content": "Each listing describes included files and tiers. Higher tiers stack additional downloads as stated. Unless expressly stated, purchases do not include custom work."
       },
       {
         "title": "Intellectual property",
-        "content": "Materials we create remain licensed or transferred as described in your agreement and after payment. Stock or third-party components may carry their own licenses that you must honor."
+        "content": "Digital products are licensed for your internal business use as described at purchase. Redistribution, resale, or public republishing may be restricted—follow the usage terms included with each bundle."
       },
       {
         "title": "Digital delivery",
-        "content": "Consultation services are delivered live on a scheduled call, followed by a written email recap after the call as described in your package. Other digital deliverables (such as audits or written reports, where applicable) are considered delivered when supplied as described. Refunds, where applicable, are handled according to the Refund Policy."
+        "content": "Products are deemed delivered when downloadable files or access links are made available as described. Refunds, where applicable, follow the Refund Policy."
       },
       {
         "title": "Limitation of liability",
-        "content": "To the maximum extent permitted by law, DegiScaler LLC is not liable for indirect or consequential damages. Aggregate liability for a given engagement is limited to fees paid for that specific service unless a law requires otherwise."
+        "content": "To the maximum extent permitted by law, DigiScaler LLC is not liable for indirect or consequential damages. Aggregate liability relating to a given purchase is limited to fees paid for that product unless a law requires otherwise."
       },
       {
         "title": "Governing law",
@@ -783,7 +773,7 @@
       },
       {
         "title": "Changes",
-        "content": "We may update these terms; continued use of services after notice means you accept the revised version for new purchases."
+        "content": "We may update these terms; continued purchases after updates means you accept the revised version for new orders."
       },
       {
         "title": "Contact",
@@ -796,28 +786,24 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Refund policy",
-    "intro": "DegiScaler LLC sells professional live digital consultations and related services. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
+    "intro": "DigiScaler LLC sells downloadable digital products. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
-        "title": "Digital consultations",
-        "content": "Consultations are professional services delivered through a live call, with a written email recap after the call as described in your package. Once a session is completed or applicable written recap/deliverables are provided, fees for that milestone are typically earned and not refundable except where applicable law requires otherwise. DegiScaler does not guarantee sales, revenue, rankings, conversion rates, or specific business outcomes."
+        "title": "Digital downloads",
+        "content": "Because products are intangible digital goods, refund eligibility may depend on whether files were accessed or downloaded and what the law requires in your jurisdiction. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, or other business outcomes."
       },
       {
-        "title": "Eligibility before work starts",
-        "content": "If no session has occurred and no deliverable was shared, email support@degiscaler.com promptly with your purchase details. We review good-faith requests individually; approval is never guaranteed beyond what the law mandates."
+        "title": "Before access is used",
+        "content": "If you believe you purchased in error before meaningful use of the files, email support@degiscaler.com promptly with order details. Good-faith requests are reviewed individually; approval is never guaranteed beyond legal requirements."
       },
       {
-        "title": "Custom build work",
-        "content": "Custom design or development scopes involve tailored execution. After tangible customized work begins, refunds are generally unavailable because labor and tooling costs are incurred. Eligibility before work starts is assessed in line with this policy."
-      },
-      {
-        "title": "No refunds for processor decisions",
-        "content": "Disagreement with a payment company's decision—even after our readiness help—is not treated as defective delivery of DegiScaler services."
+        "title": "Chargebacks & disputes",
+        "content": "Opening a payment dispute without contacting support first may limit our ability to troubleshoot delivery or access issues."
       },
       {
         "title": "How to request review",
-        "content": "Send order information and a concise explanation to support@degiscaler.com. We acknowledge most requests within 3–5 U.S. business days with a substantive reply."
+        "content": "Send order information and a concise explanation to support@degiscaler.com. We aim to acknowledge most requests within 3–5 U.S. business days."
       },
       {
         "title": "Contact",
@@ -826,25 +812,40 @@
     ]
   },
   "orderPage": {
-    "title": "Complete your request",
-    "subtitle": "Tell us how to reach you. We will confirm your package and next steps.",
-    "deliveryNote": "Delivery time starts after payment confirmation and after we receive your project details.",
-    "summaryLabel": "Selected package",
+    "title": "Checkout",
+    "subtitle": "Review your kit, billing details, and digital delivery terms. Download links are shown only on the confirmation page after checkout completes.",
+    "deliveryNote": "Digital goods are fulfilled electronically. Access instructions appear on the thank-you page once checkout completes.",
+    "deliveryComplianceTitle": "Digital product notice",
+    "deliveryComplianceLines": [
+      "Digital files unlock on the thank-you page after checkout completes",
+      "No physical shipping — digital goods only",
+      "Delivered electronically through secure links or email"
+    ],
+    "orderSummaryTitle": "Order summary",
+    "totalLabel": "Total",
+    "paymentsPausedTitle": "Payments paused",
+    "paymentsPausedBody": "Payments are temporarily unavailable while checkout setup is being finalized.",
+    "secureCheckoutTitle": "Secure checkout",
+    "secureCheckoutBody": "Secure digital checkout and automated delivery. Card processing will connect here when payments go live.",
+    "billingSectionTitle": "Billing details",
+    "demoCheckoutHint": "This checkout records your details for review and routes you to download access without charging a card.",
+    "completePurchaseDemo": "Complete purchase (demo checkout)",
+    "summaryLabel": "Selected kit",
     "fallbackSummaryLabel": "Request summary",
-    "fallbackSummaryTitle": "Project request",
-    "fallbackSummaryDescription": "Tell us what you need. Our team will follow up with options and next steps.",
-    "fallbackPackageNotice": "Live package details could not be loaded right now. Your request will still be submitted safely.",
-    "genericRequestHint": "Browse Pricing for consultation tiers, or send a general project request below.",
-    "unknownPackage": "This package link is not valid. Please choose a consultation package from Pricing.",
+    "fallbackSummaryTitle": "Purchase assistance",
+    "fallbackSummaryDescription": "Tell us which kit you wanted. Our team will follow up with access instructions.",
+    "fallbackPackageNotice": "Kit details could not be loaded right now. Your request will still be submitted safely.",
+    "genericRequestHint": "Browse Pricing for digital kits, or describe what you need below.",
+    "unknownPackage": "This product link is not valid. Please choose a kit from Pricing.",
     "fields": {
       "fullName": "Full name",
       "fullNamePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
-      "whatsapp": "WhatsApp number",
+      "whatsapp": "Phone / WhatsApp (optional)",
       "whatsappPlaceholder": "Optional — include country code",
-      "message": "Message / notes",
-      "messagePlaceholder": "Optional — goals, timeline, or constraints"
+      "message": "Notes (optional)",
+      "messagePlaceholder": "Optional — billing email mismatch, access issues, etc."
     },
     "submit": "Submit request",
     "errors": {
@@ -856,7 +857,14 @@
   },
   "thankYouPage": {
     "orderTitle": "Thank you",
-    "orderBody": "Thank you. Your request has been received. A team member will contact you soon.",
+    "orderConfirmationSubtitle": "Your checkout step is complete.",
+    "orderRecordedLead": "Purchase confirmation recorded for compliance review.",
+    "digitalFulfillmentNote": "Instant digital download / access. Digital product only — no physical shipping. Delivered electronically.",
+    "downloadSectionTitle": "Download access",
+    "saveFilesSecurely": "Your digital files are available below. Please save them securely.",
+    "downloadKitZip": "Download kit (ZIP)",
+    "downloadUnavailable": "We could not attach a kit file to this confirmation. Email support with your details and kit name.",
+    "supportIntro": "Need help with access?",
     "contactTitle": "Thank you",
     "contactBody": "Thank you. Your message has been received.",
     "backHome": "Back to home",

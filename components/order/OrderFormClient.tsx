@@ -57,7 +57,7 @@ export default function OrderFormClient({
     boxShadow: `${cardTopHighlight}, inset 0 1px 0 rgba(255,255,255,0.04)`,
   };
 
-  const summaryEyebrow = display.usesFallbackSummary ? t('fallbackSummaryLabel') : t('summaryLabel');
+  const summaryEyebrow = display.usesFallbackSummary ? t('fallbackSummaryLabel') : t('orderSummaryTitle');
 
   return (
     <form
@@ -79,7 +79,7 @@ export default function OrderFormClient({
       <input type="hidden" name="packageDescriptionSnapshot" value={display.description} />
 
       <div
-        className="rounded-xl p-5 space-y-3"
+        className="rounded-xl p-5 space-y-4"
         style={{
           border: `1px solid rgba(232,204,101,0.18)`,
           backgroundColor: 'rgba(232,204,101,0.04)',
@@ -92,15 +92,52 @@ export default function OrderFormClient({
           {display.packageTitle}
         </p>
         {display.packagePrice != null && display.packagePrice !== '' ? (
-          <p className="text-[15px] font-medium tabular-nums" style={{ color: ds.textMuted }}>
-            {display.packagePrice}{' '}
-            {display.currency ? (
-              <span className="text-[12px] font-normal">({display.currency})</span>
-            ) : null}
-          </p>
+          <div className="flex flex-wrap items-baseline justify-between gap-3 pt-1 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            <span className="text-[13px] font-semibold uppercase tracking-wider" style={{ color: ds.textMuted }}>
+              {t('totalLabel')}
+            </span>
+            <p className="text-[17px] font-bold tabular-nums" style={{ color: ds.text }}>
+              {display.packagePrice}{' '}
+              {display.currency ? (
+                <span className="text-[12px] font-semibold">({display.currency})</span>
+              ) : null}
+            </p>
+          </div>
         ) : null}
         <p className="text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
           {display.description}
+        </p>
+      </div>
+
+      <div
+        className="rounded-xl p-4 md:p-5 space-y-2"
+        style={{
+          border: '1px solid rgba(255,132,17,0.22)',
+          backgroundColor: 'rgba(255,132,17,0.05)',
+        }}
+      >
+        <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
+          {t('paymentsPausedTitle')}
+        </p>
+        <p className="text-[14px] md:text-[15px] leading-relaxed" style={{ color: ds.textSecondary }}>
+          {t('paymentsPausedBody')}
+        </p>
+      </div>
+
+      <div
+        className="rounded-xl p-4 md:p-5 space-y-2"
+        style={{
+          border: `1px solid ${ds.borderStrong}`,
+          backgroundImage: cardSurfaceBgImage,
+          backgroundColor: ds.card,
+          boxShadow: `${cardTopHighlight}, inset 0 1px 0 rgba(255,255,255,0.04)`,
+        }}
+      >
+        <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
+          {t('secureCheckoutTitle')}
+        </p>
+        <p className="text-[13px] md:text-[14px] leading-relaxed" style={{ color: ds.textMuted }}>
+          {t('secureCheckoutBody')}
         </p>
       </div>
 
@@ -108,7 +145,34 @@ export default function OrderFormClient({
         {t('deliveryNote')}
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div
+        className="rounded-xl p-4 space-y-2"
+        style={{
+          border: '1px solid rgba(232,204,101,0.2)',
+          backgroundColor: 'rgba(232,204,101,0.04)',
+        }}
+      >
+        <p className={`text-[12px] font-bold uppercase tracking-wider ${accentEyebrowClass}`}>
+          {t('deliveryComplianceTitle')}
+        </p>
+        <ul className="space-y-1.5">
+          {((t.raw('deliveryComplianceLines') as string[]) ?? []).map((line) => (
+            <li
+              key={line}
+              className="text-[13px] md:text-[14px] leading-relaxed pl-3 border-s-2"
+              style={{ borderColor: 'rgba(232,204,101,0.35)', color: ds.textMuted }}
+            >
+              {line}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p className={`text-[12px] font-bold uppercase tracking-wider mb-4 ${accentEyebrowClass}`}>
+          {t('billingSectionTitle')}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="sm:col-span-2">
           <label className={labelClass} style={{ color: ds.textMuted }} htmlFor="order-fullName">
             {t('fields.fullName')} *
@@ -140,6 +204,7 @@ export default function OrderFormClient({
             className={fieldClass}
             style={surfaceStyle}
           />
+        </div>
         </div>
       </div>
 
@@ -183,13 +248,17 @@ export default function OrderFormClient({
         </div>
       ) : null}
 
+      <p className="text-[12px] md:text-[13px] leading-relaxed" style={{ color: ds.textMuted }}>
+        {t('demoCheckoutHint')}
+      </p>
+
       <button
         type="submit"
         disabled={pending}
         className={`${primaryBtnClass} inline-flex w-full sm:w-auto items-center justify-center gap-2 px-10 py-3.5 rounded-xl text-[15px] font-semibold disabled:opacity-60`}
       >
         {pending ? <Loader2 className="size-4 animate-spin" aria-hidden /> : null}
-        {t('submit')}
+        {t('completePurchaseDemo')}
       </button>
     </form>
   );

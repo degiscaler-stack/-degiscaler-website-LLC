@@ -7,7 +7,11 @@ import { Link } from '@/i18n/navigation';
 import PageHero from '@/components/layout/PageHero';
 import OrderFormClient from '@/components/order/OrderFormClient';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
-import { canonicalConsultationSlug, isOrderableConsultationSlug } from '@/lib/packages/map-slug';
+import {
+  canonicalPackageSlug,
+  isOrderablePackageSlug,
+  publicPackageSlug,
+} from '@/lib/packages/map-slug';
 import {
   contentMax,
   ds,
@@ -39,15 +43,15 @@ function harmlessSlugCandidate(raw: string): string | null {
 }
 
 const ORDER_COPY_FALLBACK = {
-  title: 'Complete your request',
-  subtitle: 'Tell us how to reach you. We will confirm your package and next steps.',
-  fallbackSummaryTitle: 'Project request',
+  title: 'Checkout',
+  subtitle:
+    'Review your kit, billing details, and digital delivery terms. Download links are shown only on the confirmation page after checkout completes.',
+  fallbackSummaryTitle: 'Purchase assistance',
   fallbackSummaryDescription:
-    'Tell us what you need. Our team will follow up with options and next steps.',
+    'Tell us which kit you wanted. Our team will follow up with access instructions.',
   fallbackPackageNotice:
-    'Live package details could not be loaded right now. Your request will still be submitted safely.',
-  genericRequestHint:
-    'Browse Pricing for consultation tiers, or send a general project request below.',
+    'Kit details could not be loaded right now. Your request will still be submitted safely.',
+  genericRequestHint: 'Browse Pricing for digital kits, or describe what you need below.',
 };
 
 export default async function OrderPage({
@@ -94,11 +98,11 @@ export default async function OrderPage({
     console.error('[OrderPage] getTranslations', err);
   }
 
-  const pkgCanon = pkgParam ? canonicalConsultationSlug(pkgParam) : '';
+  const pkgCanon = pkgParam ? canonicalPackageSlug(pkgParam) : '';
 
   let resolved: Awaited<ReturnType<typeof resolvePackageForOrder>> = null;
   try {
-    if (pkgParam && isOrderableConsultationSlug(pkgParam)) {
+    if (pkgParam && isOrderablePackageSlug(pkgParam)) {
       resolved = await resolvePackageForOrder(pkgParam, fallbackPackages);
     }
   } catch (err) {
@@ -107,8 +111,8 @@ export default async function OrderPage({
   }
 
   const slugCandidate =
-    pkgCanon && isOrderableConsultationSlug(pkgCanon)
-      ? harmlessSlugCandidate(pkgCanon)
+    pkgCanon && isOrderablePackageSlug(pkgCanon)
+      ? harmlessSlugCandidate(publicPackageSlug(pkgCanon))
       : null;
 
   const display = resolved
@@ -140,7 +144,7 @@ export default async function OrderPage({
         <PageHero
           eyebrow={
             <span className="logo-brand-isolate inline-block normal-case tracking-normal" lang="en">
-              DegiScaler
+              DigiScaler
             </span>
           }
           title={orderCopy.title}
@@ -157,12 +161,12 @@ export default async function OrderPage({
       >
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
           <div className="max-w-[640px] space-y-6">
-            {display.usesFallbackSummary && pkgParam && isOrderableConsultationSlug(pkgParam) ? (
+            {display.usesFallbackSummary && pkgParam && isOrderablePackageSlug(pkgParam) ? (
               <p className="text-[13px] leading-relaxed text-amber-100/90">
                 {orderCopy.fallbackPackageNotice}
               </p>
             ) : null}
-            {display.usesFallbackSummary && (!pkgParam || !isOrderableConsultationSlug(pkgParam)) ? (
+            {display.usesFallbackSummary && (!pkgParam || !isOrderablePackageSlug(pkgParam)) ? (
               <p className="text-[13px] leading-relaxed" style={{ color: ds.textMuted }}>
                 {orderCopy.genericRequestHint}
               </p>

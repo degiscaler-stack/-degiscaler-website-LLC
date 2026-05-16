@@ -18,8 +18,10 @@ export async function submitContactAction(
   const fullName =
     String(formData.get('fullName') ?? formData.get('name') ?? '').trim();
   const email = String(formData.get('email') ?? '').trim();
-  const whatsapp = String(formData.get('whatsapp') ?? '').trim() || null;
-  const budgetOrPackage = String(formData.get('budgetOrPackage') ?? '').trim() || null;
+  /** Stored in legacy `whatsapp` column — order reference for product support. */
+  const orderNumber = String(formData.get('orderNumber') ?? '').trim() || null;
+  /** Stored in legacy `budgetOrPackage` column — purchased kit name. */
+  const productName = String(formData.get('productName') ?? '').trim() || null;
   const message = String(formData.get('message') ?? '').trim();
 
   const errFallback: Record<string, string> = {
@@ -35,7 +37,7 @@ export async function submitContactAction(
     console.error('[submitContactAction] getTranslations', err);
   }
 
-  if (!fullName || !email || !message) {
+  if (!fullName || !email || !productName || !message) {
     return { error: tErr('required') };
   }
   if (!isValidEmail(email)) {
@@ -45,8 +47,8 @@ export async function submitContactAction(
   const result = await safeCreateContactMessage({
     fullName,
     email,
-    whatsapp,
-    budgetOrPackage,
+    whatsapp: orderNumber,
+    budgetOrPackage: productName,
     message,
     status: 'NEW',
     locale,

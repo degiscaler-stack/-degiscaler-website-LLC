@@ -11,9 +11,9 @@ import {
 } from '@/components/home/homeTheme';
 
 const CONTACT_FALLBACK = {
-  eyebrow: 'DegiScaler',
+  eyebrow: 'DigiScaler',
   headline: 'Contact',
-  subheadline: 'Tell us about your project — we will reply as soon as we can.',
+  subheadline: 'Product support — we will reply as soon as we can.',
   pricingFallbackCta: 'View pricing',
 };
 

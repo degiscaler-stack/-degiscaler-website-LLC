@@ -8,11 +8,11 @@ export type BotIntent =
   | 'landing_page'
   | 'audit'
   | 'uiux'
-  | 'consultation'
+  | 'digital_products'
   | 'process'
   | 'contact'
   | 'languages'
-  | 'payment_readiness'
+  | 'checkout_resources'
   | 'payment_no_guarantee'
   | 'refund'
   | 'timeline';
@@ -23,14 +23,14 @@ export const INTENT_PRIORITY: BotIntent[] = [
   'refund',
   'pricing',
   'services',
-  'consultation',
+  'digital_products',
   'audit',
   'uiux',
   'ecommerce',
   'website_design',
   'landing_page',
   'process',
-  'payment_readiness',
+  'checkout_resources',
   'contact',
   'languages',
   'timeline',

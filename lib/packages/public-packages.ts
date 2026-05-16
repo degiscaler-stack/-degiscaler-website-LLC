@@ -1,6 +1,10 @@
 import type { Package as DbPackage } from '@prisma/client';
 import { safeFindPackageBySlug, safeFindPackages } from '@/lib/db/public-safe';
-import { canonicalConsultationSlug, translationIdToSlug } from '@/lib/packages/map-slug';
+import {
+  canonicalPackageSlug,
+  publicPackageSlug,
+  translationIdToSlug,
+} from '@/lib/packages/map-slug';
 
 export type DisplayPackage = {
   slug: string;
@@ -31,14 +35,14 @@ function parseFeaturesJson(features: DbPackage['features']): string[] {
 }
 
 function variantFor(slug: string, isPopular: boolean): DisplayPackage['variant'] {
-  if (slug === 'scale-consultation') return 'premium';
+  if (slug === 'scale-business-bundle') return 'premium';
   if (isPopular) return 'featured';
   return 'standard';
 }
 
 function fromDbRow(p: DbPackage): DisplayPackage {
   return {
-    slug: p.slug,
+    slug: publicPackageSlug(p.slug),
     title: p.title,
     subtitle: p.subtitle ?? null,
     price: p.price,
@@ -62,7 +66,11 @@ function fromFallback(p: FallbackPkg): DisplayPackage {
     features: p.features,
     isPopular: p.id === 'pro',
     variant:
-      slug === 'scale-consultation' ? 'premium' : p.id === 'pro' ? 'featured' : 'standard',
+      translationIdToSlug(p.id) === 'scale-business-bundle'
+        ? 'premium'
+        : p.id === 'pro'
+          ? 'featured'
+          : 'standard',
   };
 }
 
@@ -119,7 +127,10 @@ function overlayResolvedFromFallback<
     features: string[];
   },
 >(resolved: T, fallbackPackages: FallbackPkg[]): T {
-  const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === resolved.packageSlug);
+  const dbSlug = canonicalPackageSlug(resolved.packageSlug);
+  const fb = fallbackPackages.find(
+    (p) => canonicalPackageSlug(translationIdToSlug(p.id)) === dbSlug,
+  );
   if (!fb) return resolved;
   return {
     ...resolved,
@@ -167,11 +178,11 @@ export async function resolvePackageForOrder(
   try {
     const trimmed = slug?.trim();
     if (!trimmed) return null;
-    const canonical = canonicalConsultationSlug(trimmed);
+    const canonical = canonicalPackageSlug(trimmed);
 
     const row = await safeFindPackageBySlug(canonical);
     if (row) {
-      return overlayResolvedFromFallback(
+      const overlaid = overlayResolvedFromFallback(
         {
           packageId: row.id,
           packageSlug: row.slug,
@@ -183,9 +194,15 @@ export async function resolvePackageForOrder(
         },
         fallbackPackages,
       );
+      return {
+        ...overlaid,
+        packageSlug: publicPackageSlug(row.slug),
+      };
     }
 
-    const fb = fallbackPackages.find((p) => translationIdToSlug(p.id) === canonical);
+    const fb = fallbackPackages.find(
+      (p) => canonicalPackageSlug(translationIdToSlug(p.id)) === canonical,
+    );
     if (!fb) return null;
     const d = fromFallback(fb);
     return {

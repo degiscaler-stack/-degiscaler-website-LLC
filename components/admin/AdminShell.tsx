@@ -96,7 +96,7 @@ export function AdminShell({
       <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-[var(--ds-admin-border)] bg-[#080808] lg:flex">
         <div className="border-b border-[var(--ds-admin-border)] px-5 py-4">
           <div className="bg-gradient-to-r from-[#e8cc65] via-[#d6a700] to-[#ff8411] bg-clip-text text-lg font-semibold tracking-tight text-transparent">
-            DegiScaler
+            DigiScaler
           </div>
           <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-neutral-500">{dict.adminPanel}</p>
         </div>
@@ -130,7 +130,7 @@ export function AdminShell({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-10 flex items-center justify-end gap-4 border-b border-[var(--ds-admin-border)] bg-[#050505]/90 px-4 py-3 backdrop-blur-md lg:hidden">
           <div className="min-w-0 flex-1">
-            <div className="truncate text-sm font-medium text-neutral-300">DegiScaler · {dict.adminPanel}</div>
+            <div className="truncate text-sm font-medium text-neutral-300">DigiScaler · {dict.adminPanel}</div>
             <div className="truncate text-[11px] text-neutral-600">{dict.mobileNavHint}</div>
           </div>
           <LogoutButton />

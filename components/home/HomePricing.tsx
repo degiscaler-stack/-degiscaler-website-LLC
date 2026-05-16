@@ -2,10 +2,9 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
-import { isOrderableConsultationSlug } from '@/lib/packages/map-slug';
+import PackageCardFooter from '@/components/pricing/PackageCardFooter';
+import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
 import {
-
-
   ds,
   sectionPad,
   sectionIntroBottom,
@@ -16,7 +15,6 @@ import {
   cardSurfaceBgImage,
   iconWellSmGlyphClass,
   iconPricingWellClass,
-  pricingCardSecondaryBtnClass,
   pricingCardDividerClass,
 } from './homeTheme';
 
@@ -25,13 +23,15 @@ const PRICING_ICON_COLOR = '#e8cc65';
 const iconWrapClass = `${iconWellSmGlyphClass} ${iconPricingWellClass} mt-0.5 flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg border-0`;
 
 function packageCtaHref(slug: string): string {
-  return isOrderableConsultationSlug(slug)
+  return isOrderablePackageSlug(slug)
     ? `/order?package=${encodeURIComponent(slug)}`
     : '/contact';
 }
 
 export default function HomePricing({ packages }: { packages: DisplayPackage[] }) {
   const sectionT = useTranslations('home.pricing');
+  const cardUi = useTranslations('pricingPage');
+  const cardComplianceLines = (cardUi.raw('cardComplianceLines') as string[]) ?? [];
 
   return (
     <section
@@ -161,14 +161,12 @@ export default function HomePricing({ packages }: { packages: DisplayPackage[] }
                     ))}
                   </ul>
 
-                  <Link
-                    href={packageCtaHref(pkg.slug)}
-                    className={`${
-                      featuredVisual ? primaryBtnClass : pricingCardSecondaryBtnClass
-                    } block w-full text-center py-4 rounded-xl text-[15px] font-semibold mt-auto`}
-                  >
-                    {sectionT('getStarted')}
-                  </Link>
+                  <PackageCardFooter
+                    checkoutHref={packageCtaHref(pkg.slug)}
+                    checkoutLabel={cardUi('continueToCheckout')}
+                    complianceLines={cardComplianceLines}
+                    featuredVisual={featuredVisual}
+                  />
                 </div>
               </div>
             );

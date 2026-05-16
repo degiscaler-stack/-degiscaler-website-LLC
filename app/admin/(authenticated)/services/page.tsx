@@ -49,7 +49,7 @@ export default async function AdminServicesPage() {
           <form action={createServiceAction} className="grid gap-4 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label className="mb-1 block text-xs font-medium text-neutral-400">{d.slug}</label>
-              <input name="slug" required className={inputClass} placeholder="digital-consultation" />
+              <input name="slug" required className={inputClass} placeholder="starter-kit" />
             </div>
             <div className="sm:col-span-2">
               <label className="mb-1 block text-xs font-medium text-neutral-400">{d.title}</label>

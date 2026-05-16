@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "node scripts/hostinger-build.mjs",
     "build:local": "prisma generate && next build",
+    "demo-downloads": "node scripts/generate-demo-downloads.mjs",
     "start": "next start",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",

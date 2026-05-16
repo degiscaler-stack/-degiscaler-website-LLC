@@ -19,5 +19,5 @@ export default async function PricingPage({
     features: string[];
   }>;
   const packages = applyTranslatedPackageCopy(await loadDisplayPackages(fallbackPackages), fallbackPackages);
-  return <PricingPageView packages={packages} />;
+  return <PricingPageView packages={packages} locale={locale} />;
 }

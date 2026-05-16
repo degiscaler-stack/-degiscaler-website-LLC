@@ -1,7 +1,8 @@
+import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { Inter, Cairo } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
@@ -22,6 +23,37 @@ const cairo = Cairo({
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    return {};
+  }
+  const t = await getTranslations({ locale, namespace: 'metadata' });
+  const title = t('title');
+  const description = t('description');
+  return {
+    title: {
+      default: title,
+      template: '%s | DigiScaler',
+    },
+    description,
+    openGraph: {
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+    },
+  };
 }
 
 export default async function LocaleLayout({

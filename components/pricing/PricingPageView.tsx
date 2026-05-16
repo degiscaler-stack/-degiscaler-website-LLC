@@ -2,8 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import PageHero from '@/components/layout/PageHero';
+import PackageCardFooter from '@/components/pricing/PackageCardFooter';
+import PricingJsonLd from '@/components/pricing/PricingJsonLd';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
-import { isOrderableConsultationSlug } from '@/lib/packages/map-slug';
+import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
 import {
   contentMax,
   ds,
@@ -25,7 +27,7 @@ const PRICING_ICON_COLOR = '#e8cc65';
 const iconWrapClass = `${iconWellSmGlyphClass} ${iconPricingWellClass} mt-0.5 flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg border-0`;
 
 function packageCtaHref(slug: string): string {
-  return isOrderableConsultationSlug(slug)
+  return isOrderablePackageSlug(slug)
     ? `/order?package=${encodeURIComponent(slug)}`
     : '/contact';
 }
@@ -38,6 +40,7 @@ function PricingTierCard({
   t: Awaited<ReturnType<typeof getTranslations>>;
 }) {
   const featuredVisual = pkg.variant !== 'standard';
+  const cardComplianceLines = (t.raw('cardComplianceLines') as string[]) ?? [];
 
   const rimGradient =
     pkg.variant === 'premium' || pkg.variant === 'featured'
@@ -137,20 +140,24 @@ function PricingTierCard({
           ))}
         </ul>
 
-        <Link
-          href={packageCtaHref(pkg.slug)}
-          className={`${
-            featuredVisual ? primaryBtnClass : pricingCardSecondaryBtnClass
-          } block w-full text-center py-4 rounded-xl text-[15px] font-semibold mt-auto`}
-        >
-          {t('getStarted')}
-        </Link>
+        <PackageCardFooter
+          checkoutHref={packageCtaHref(pkg.slug)}
+          checkoutLabel={t('continueToCheckout')}
+          complianceLines={cardComplianceLines}
+          featuredVisual={featuredVisual}
+        />
       </div>
     </div>
   );
 }
 
-export default async function PricingPageView({ packages }: { packages: DisplayPackage[] }) {
+export default async function PricingPageView({
+  packages,
+  locale,
+}: {
+  packages: DisplayPackage[];
+  locale: string;
+}) {
   const t = await getTranslations('pricingPage');
   const included: string[] = (t.raw('includedItems') as string[]) ?? [];
   const howSteps: { title: string; detail: string }[] =
@@ -158,6 +165,7 @@ export default async function PricingPageView({ packages }: { packages: DisplayP
 
   return (
     <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
+      <PricingJsonLd packages={packages} locale={locale} />
       <section
         style={{
           backgroundColor: ds.bgDeep,
@@ -268,6 +276,21 @@ export default async function PricingPageView({ packages }: { packages: DisplayP
               {t('paymentNote')}
             </p>
           </div>
+        </div>
+      </section>
+
+      <section
+        className={`${sectionPad} border-t`}
+        style={{
+          borderColor: ds.borderStrong,
+          backgroundColor: ds.bgAlt,
+        }}
+      >
+        <div className={`px-4 sm:px-6 lg:px-10 ${contentMax} max-w-[46rem] mx-auto text-center`}>
+          <h2 className={`text-lg md:text-xl font-bold mb-3 ${accentEyebrowClass}`}>{t('trustCheckoutTitle')}</h2>
+          <p className="text-[15px] md:text-[1.02rem] leading-[1.75]" style={{ color: ds.textSecondary }}>
+            {t('trustCheckoutBody')}
+          </p>
         </div>
       </section>
 

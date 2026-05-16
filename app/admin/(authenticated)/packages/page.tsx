@@ -69,7 +69,7 @@ export default async function AdminPackagesPage({
         <form action={createPackageAction} className="grid gap-4 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <label className="mb-1 block text-xs font-medium text-neutral-400">{d.slug}</label>
-            <input name="slug" required className={inputClass} placeholder="starter-consultation" />
+            <input name="slug" required className={inputClass} placeholder="starter-website-kit" />
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-neutral-400">{d.title}</label>

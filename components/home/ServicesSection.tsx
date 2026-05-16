@@ -29,11 +29,11 @@ const serviceIcons = {
   landingPage: Zap,
   audit: Search,
   uiux: Eye,
-  consultation: MessageSquare,
+  growthPlanning: MessageSquare,
 };
 
 const primaryKeys = ['websiteDesign', 'ecommerce', 'landingPage'] as const;
-const secondaryKeys = ['audit', 'uiux', 'consultation'] as const;
+const secondaryKeys = ['audit', 'uiux', 'growthPlanning'] as const;
 
 export default function ServicesSection() {
   const t = useTranslations('home.services');

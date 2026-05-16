@@ -1,80 +1,88 @@
 {
   "common": {
-    "viewServices": "Voir les services",
+    "viewServices": "Parcourir les ressources numériques",
     "seePricing": "Voir les tarifs",
-    "getStarted": "Commencer",
-    "contactUs": "Nous contacter",
+    "getStarted": "Voir les kits",
+    "contactUs": "Support produit",
     "learnMore": "En savoir plus",
     "backToHome": "Retour à l'accueil",
     "readMore": "Lire la suite",
-    "companyName": "DegiScaler LLC"
+    "companyName": "DigiScaler LLC"
+  },
+  "metadata": {
+    "title": "DigiScaler — Kits numériques et modèles premium",
+    "description": "Kits d’optimisation web, modèles professionnels, checklists et bundles ZIP téléchargeables. Produits 100 % numériques — accès instantané après paiement.",
+    "ogTitle": "DigiScaler — Kits business numériques",
+    "ogDescription": "Téléchargements et livraison automatisée : modèles, guides PDF et kits pour opérateurs en ligne."
   },
   "nav": {
     "home": "Accueil",
-    "services": "Services",
+    "services": "Ressources",
     "pricing": "Tarifs",
     "about": "À propos",
     "contact": "Contact",
-    "faq": "Questions fréquentes",
-    "getStarted": "Commencer",
+    "faq": "FAQ",
+    "getStarted": "Voir les kits",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "languageSwitcher": "Changer de langue",
     "chooseLanguage": "Choisir la langue"
   },
   "footer": {
-    "tagline": "Services numériques professionnels et consultation commerciale pour les fondateurs et les entreprises en croissance.",
+    "tagline": "Ressources numériques premium téléchargeables pour les entreprises en ligne.",
     "company": "Entreprise",
     "legal": "Juridique",
     "contactTitle": "Contact",
     "supportEmail": "support@degiscaler.com",
     "responseTime": "Réponse sous 24 à 48 heures ouvrables",
     "links": {
-      "services": "Services",
+      "services": "Ressources",
       "pricing": "Tarifs",
       "about": "À propos",
       "contact": "Contact",
-      "faq": "Questions fréquentes",
+      "faq": "FAQ",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d'utilisation",
       "refund": "Politique de remboursement"
     },
-    "copyright": "DegiScaler LLC. Tous droits réservés.",
-    "disclaimer": "DegiScaler LLC est une société américaine enregistrée spécialisée dans les services numériques. Nous ne garantissons pas l'approbation des processeurs de paiement ni des résultats commerciaux spécifiques."
+    "copyright": "DigiScaler LLC. Tous droits réservés.",
+    "disclaimer": "DigiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
+    "digitalDelivery": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n'est fourni. L'accès est livré électroniquement après l'achat.",
+    "trustCheckout": "Paiement numérique sécurisé et livraison automatisée."
   },
   "chat": {
-    "launcherAriaOpen": "Ouvrir l’assistant DegiScaler",
-    "launcherAriaClose": "Fermer l’assistant DegiScaler",
-    "title": "Assistant DegiScaler",
+    "launcherAriaOpen": "Ouvrir l’assistant DigiScaler",
+    "launcherAriaClose": "Fermer l’assistant DigiScaler",
+    "title": "Assistant DigiScaler",
     "closeAria": "Fermer le chat",
     "sendAria": "Envoyer le message",
     "inputPlaceholder": "Écrivez votre question…",
-    "welcome": "Bonjour, je suis l’assistant DegiScaler. Je peux vous aider avec les services, les tarifs, les consultations, les audits de site et les questions de préparation au paiement.",
+    "welcome": "Bonjour, je suis l’assistant DigiScaler. Je peux vous aider sur les kits numériques, les tarifs, les téléchargements, les modèles et le support produit.",
     "fallback": "Je ne suis pas totalement sûr de la réponse. Écrivez « support » pour joindre l’équipe — nous continuons la conversation ici dans ce chat.",
     "answers": {
-      "company": "DegiScaler est une société de services numériques et de conseil business qui aide surtout les fondateurs et les petites structures à gagner une présence crédible en ligne.",
-      "services": "Nous travaillons sur : conception web, développement e‑commerce, page d’accroche, audit de site, revue UI/UX, et conseil numérique business. Demandez un sujet pour plus de précision.",
-      "pricing": "Forfaits de consultation publiés en USD : Consultation Starter — 9.99 $ ; Consultation Growth — 19.99 $ ; Consultation Pro — 29.99 $ ; Consultation Scale — 49.99 $ . Chaque niveau comprend un appel en direct et un récapitulatif écrit par email après l’appel — voir Tarifs pour les détails.",
-      "website_design": "La conception web vise lisibilité, hiérarchie visuelle sérieuse et chemins plus clairs vers l’objectif sans aspect « projet improvisé ».",
-      "ecommerce": "Le e‑commerce clarifie l’architecture boutique, les pages produits, le périmètre paiement/tunnel et le placement prudent des éléments de confiance.",
-      "landing_page": "La landing page réduit les distractions pour pousser un seul objectif avec un appel à l’action clair.",
-      "audit": "L’audit formule une liste réaliste de crédibilité, frictions UX et urgences corrigeables avant d’investir dans du design décoratif.",
-      "uiux": "La revue UI/UX étudie les parcours critiques — navigation, formulaires et périmètres adjacents au paiement — pour repérer les hésitations bloquantes.",
-      "consultation": "Les consultations donnent un cadre structuré et des livrables écrits adaptés au forfait choisi.",
-      "process": "Nous suivons en général quatre axes : découverte, diagnostic, construction, livraison. La profondeur dépend du forfait : les modules conseil poussent le diagnostic alors que les launches intègrent davantage de production lorsque pertinent.",
-      "contact": "Pour l’aide de l’équipe, tapez « support » dans ce chat — nous recueillons quelques informations ici sans quitter la page.",
-      "languages": "Le site existe en français, anglais et arabe via le sélecteur d’entête ; le nom DegiScaler ne se traduit pas.",
-      "payment_readiness": "Nous améliorons clarté, signaux de confiance et structure pour mieux passer la lecture tiers — sans promettre aucune validation.",
-      "payment_no_guarantee": "DegiScaler ne garantit aucune validation Stripe/PayPal/banque : ces décisions externes dépendent de leurs risques, politiques et du profil dossier.",
-      "refund": "Les consultations sont digitales : tout remboursement dépend fortement du début d’exécution ou de la livraison d’un rapport. Une consultation déjà livrée n’est généralement pas remboursable ; erreurs ou doubles paiements peuvent être examinés — voir la politique de remboursement.",
-      "timeline": "Réponse aux demandes généralement sous 24–48 h ouvrées. Les chantiers rémunérés varient suivant palier et réactivité des échanges prévus dans chaque fiche-forfait."
+      "company": "DigiScaler est une marque de produits numériques premium qui propose des kits d’optimisation de site web, des modèles professionnels, des checklists de conversion et des ressources de croissance téléchargeables pour les entreprises en ligne.",
+      "services": "DigiScaler vend des ressources téléchargeables : kits d’optimisation, checklists de préparation au paiement, modèles de pages d’atterrissage, modèles d’audit business, ressources UX et documents de planification — voir Ressources pour la liste complète.",
+      "pricing": "Kits publiés en USD : Starter Website Kit — 9,99 $ ; Growth Optimization Kit — 19,99 $ ; Pro Conversion Toolkit — 29,99 $ ; Scale Business Bundle — 49,99 $. Chaque palier ajoute modèles et bundles — voir Tarifs.",
+      "website_design": "Les kits incluent guides et modèles orientés mise en page lisible, structure crédible et messages clairs à appliquer vous‑même.",
+      "ecommerce": "À partir du niveau Growth, les packs couvrent fiches produit, checklists de tunnel et signaux de réassurance — le tout en téléchargement.",
+      "landing_page": "Les modèles de landing figurent parmi les types de ressources décrits sur la page Ressources.",
+      "audit": "Les modèles d’audit sont des documents que vous complétez vous‑même — pas une analyse ou une revue réalisée pour vous par un tiers.",
+      "uiux": "Les ressources UX des bundles mettent en évidence frictions et zones d’hésitation à corriger par vous‑même.",
+      "digital_products": "Chaque achat est un téléchargement ou bundle (PDF, feuilles, Notion, ZIP) avec livraison automatisée et accès sécurisé après paiement.",
+      "process": "Parcours type : choisir un kit sur Tarifs, payer en ligne, puis télécharger via lien sécurisé ou email. Tout est en libre‑service.",
+      "contact": "Pour le support produit, écrivez « support » ici ou utilisez le formulaire Support produit sur Contact.",
+      "languages": "Le site existe en français, anglais et arabe via le sélecteur ; le nom DigiScaler reste en caractères latins.",
+      "checkout_resources": "Les checklists de préparation au paiement et fichiers liés à la confiance sont inclus dans les kits.",
+      "payment_no_guarantee": "DigiScaler ne garantit pas ventes, revenus, classement ou résultats précis — ce sont des outils éducatifs dont l’effet dépend de votre mise en œuvre.",
+      "refund": "Les produits numériques suivent la Politique de remboursement ; l’éligibilité peut dépendre du statut d’accès ou de téléchargement.",
+      "timeline": "Réponse support généralement sous 24–48 h ouvrées. L’accès numérique arrive après paiement réussi sauf retard du fournisseur de messagerie."
     },
     "support": {
       "introPrepare": "Je vous mets en lien avec l’équipe. Répondez à quelques questions courtes — la demande est enregistrée en toute sécurité à la dernière étape.",
       "askName": "Quel est votre nom complet ?",
       "askEmail": "Merci — quelle adresse e‑mail devons-nous utiliser ?",
       "askWhatsapp": "Numéro WhatsApp (facultatif). Écrivez « skip » si vous préférez ne pas le partager.",
-      "askMessage": "Décrivez brièvement le sujet ou le projet (court paragraphe). Vous pouvez joindre une capture avec le bouton image.",
+      "askMessage": "Décrivez votre problème (accès, téléchargement, facturation). Vous pouvez joindre une capture avec le bouton image.",
       "agentPrefix": "",
       "teamLabel": "Équipe support",
       "onlineLabel": "En ligne",
@@ -97,15 +105,15 @@
   },
   "home": {
     "hero": {
-      "headline": "Créez un site haut de gamme qui inspire confiance avant la première interaction.",
-      "subheadline": "DegiScaler LLC aide les fondateurs et les petites entreprises à bâtir des sites crédibles, à clarifier le parcours de paiement et à préparer leur présence en ligne pour l'examen réel des clients et des plateformes de paiement.",
-      "ctaPrimary": "Voir nos services",
+      "headline": "Téléchargez des ressources numériques premium pour les entreprises en ligne",
+      "subheadline": "Des kits d'optimisation de site web, modèles professionnels, checklists de conversion et ressources numériques prêts à l'emploi pour améliorer la clarté, la confiance et la performance.",
+      "ctaPrimary": "Voir les kits numériques",
       "ctaSecondary": "Voir les tarifs",
       "badge": "LLC enregistrée aux États-Unis",
       "trust1": "LLC enregistrée aux États-Unis",
-      "trust2": "Tarifs fixes et publiés",
-      "trust3": "Sites web et e-commerce",
-      "trust4": "Aucune garantie d'approbation par les plateformes",
+      "trust2": "Tarifs USD publiés",
+      "trust3": "Téléchargements numériques",
+      "trust4": "Pas de promesse de résultats",
       "dashboardAria": "Exemple d'interface Rapport de préparation du site",
       "quickFindings": {
         "title": "Synthèse rapide",
@@ -120,7 +128,7 @@
           },
           {
             "label": "Pages politiques",
-            "detail": "Liées — harmoniser le texte avec les processeurs."
+            "detail": "Liées — harmonisez le libellé avec les politiques affichées sur votre boutique."
           }
         ]
       },
@@ -158,453 +166,461 @@
     },
     "trustBar": {
       "item1": "LLC enregistrée aux États-Unis",
-      "item2": "Tarifs fixes",
-      "item3": "Sites web et e-commerce",
-      "item4": "Consultation numérique",
-      "item5": "Processus transparent"
+      "item2": "Tarification transparente",
+      "item3": "Outils numériques",
+      "item4": "Accès instantané",
+      "item5": "Livraison sécurisée"
     },
     "problemSolution": {
       "problemLabel": "Le problème",
-      "headline": "Un site faible vous coute des clients chaque jour",
-      "subheadline": "Les visiteurs prennent une decision de confiance en moins de 3 secondes. Si votre site semble amateur, votre paiement est confus ou votre boutique est difficile a utiliser, ils partent et ne reviennent pas.",
+      "headline": "Un site fragile vous fait perdre des clients en continu",
+      "subheadline": "Les visiteurs décident en moins de trois secondes. Si votre site semble amateur, que le paiement est confus ou que la boutique est difficile à utiliser, ils partent et ne reviennent pas.",
       "problems": [
-        "Les visiteurs perdent confiance avant de lire un seul mot",
-        "Les processus de paiement confus poussent les clients a abandonner avant de payer",
-        "L absence de signaux de confiance souleve des inquietudes chez les clients et les plateformes",
-        "Un site non professionnel nuit a toute la credibilite de votre activite"
+        "Les visiteurs perdent confiance avant même de lire une ligne",
+        "Des parcours de paiement flous font abandonner avant l’achat",
+        "Des signaux de confiance absents ou faibles freinent l’achat",
+        "Une présence peu professionnelle fragilise toute votre crédibilité"
       ],
-      "solutionLabel": "Notre solution",
-      "solutionHeadline": "Nous construisons la credibilite dont votre activite a besoin pour convertir et grandir",
+      "solutionLabel": "Notre réponse",
+      "solutionHeadline": "DigiScaler vous fournit des kits structurés pour renforcer la confiance, la clarté et la préparation à la conversion",
       "solutions": [
-        "Design professionnel qui inspire confiance des la premiere impression",
-        "Processus de paiement clairs, concus pour guider, pas pour derouter",
-        "Signaux de confiance places strategiquement la ou les clients en ont besoin",
-        "Rapports d audit qui donnent une liste precise de corrections, sans resume vague"
+        "Guides et modèles téléchargeables applicables sans improvisation",
+        "Checklists de préparation au paiement et de confiance pour les doutes réels des acheteurs",
+        "Playbooks d’optimisation qui enchaînent les correctifs de façon réaliste",
+        "Bundles qui s’empilent de l’essentiel à une bibliothèque numérique complète"
       ]
     },
     "services": {
-      "sectionLabel": "Ce que nous faisons",
-      "headline": "Six services. Un resultat : une activite en ligne credible.",
-      "subheadline": "Chaque service que nous livrons est axe sur une chose, rendre votre activite professionnelle, claire et capable de convertir de vrais clients.",
-      "coreServicesLabel": "Services principaux",
-      "additionalServicesLabel": "Egalement disponibles",
+      "sectionLabel": "Ressources numériques",
+      "headline": "Kits d’optimisation web, modèles et checklists — pour les opérateurs en ligne",
+      "subheadline": "DigiScaler est une plateforme de ressources numériques premium : PDF pratiques, modèles Notion et Sheets, bundles ZIP à votre rythme.",
+      "coreServicesLabel": "Catégories phares",
+      "additionalServicesLabel": "Également dans les bundles",
       "items": {
         "websiteDesign": {
-          "title": "Conception de sites web",
-          "description": "Mises en page orientees confiance, chargement rapide et image d entreprise serie des le premier ecran.",
-          "outcome": "Un site qui inspire confiance avant que le client lise un mot"
+          "title": "Kits d’optimisation web",
+          "description": "Playbooks, checklists de confiance et guides de clarté pour resserrer le message du héros, les politiques et la structure.",
+          "outcome": "Un récit de site plus net sans tout reconstruire"
         },
         "ecommerce": {
-          "title": "Développement e-commerce",
-          "description": "Boutique complete — catalogue, paiement et parcours — structuree pour la clarte, les ventes et les examens de paiement.",
-          "outcome": "Une boutique prete pour de vrais clients et l examen des paiements"
+          "title": "Checklists de préparation au paiement",
+          "description": "Invites PDF étape par étape sur les frictions panier, la clarté de la page de paiement et les signaux de réassurance.",
+          "outcome": "Moins de moments « pourquoi payer ici ? »"
         },
         "landingPage": {
-          "title": "Conception de pages d'atterrissage",
-          "description": "Une page, un objectif : concevoir pour convertir sans encombrement ni distraction visuelle.",
-          "outcome": "Design focalise qui genere des conversions"
+          "title": "Modèles de pages d’atterrissage",
+          "description": "Plans et prompts de texte pour des offres ciblées — une action décisive par visite.",
+          "outcome": "Des landings plus nettes sans équipe dédiée"
         },
         "audit": {
-          "title": "Audit de site web",
-          "description": "Expertise sur ce qui vous coute des clients ou alerte les plateformes, avec priorites claires.",
-          "outcome": "Un rapport precis de ce qu il faut corriger et pourquoi"
+          "title": "Modèles d’audit business",
+          "description": "Audits façon feuille de travail sur signaux de confiance, fuites d’entonnoir et priorités.",
+          "outcome": "Une backlog actionnable plutôt que des opinions vagues"
         },
         "uiux": {
-          "title": "Revue d interface et d expérience",
-          "description": "Nous utilisons votre site comme un client reel pour reveler frictions, confusion et conversions manquees.",
-          "outcome": "Friction supprimee. Parcours client ameliore."
+          "title": "Ressources UX & clarté",
+          "description": "Cadres pour repérer les hésitations sur la navigation, les formulaires et les écrans proches du paiement.",
+          "outcome": "Des frictions que vous pouvez retirer avec assurance"
         },
-        "consultation": {
-          "title": "Consultation numérique d'entreprise",
-          "description": "Session structuree sur votre activite et votre site : conclusions nettes, recommandations et plan ecrit.",
-          "outcome": "Prochaines etapes precises, ecrites et livrees"
+        "growthPlanning": {
+          "title": "Documents de planification de croissance",
+          "description": "Les niveaux supérieurs ajoutent planificateurs sur plusieurs semaines, fiches de préparation à l’automatisation et docs d’optimisation avancés.",
+          "outcome": "Un rythme de croissance répétable à partir des kits"
         }
       },
-      "viewAll": "Voir tous les services"
+      "viewAll": "Voir toutes les ressources"
     },
     "whyUs": {
-      "sectionLabel": "Pourquoi DegiScaler",
-      "headline": "Pourquoi les fondateurs choisissent DegiScaler",
+      "sectionLabel": "Pourquoi DigiScaler",
+      "headline": "Pourquoi les opérateurs choisissent les kits DigiScaler",
       "items": [
         {
-          "title": "LLC americaine enregistree",
-          "description": "Vous travaillez avec une vraie societe americaine responsable, pas un freelance sans adresse. Documentation complete et responsabilite professionnelle derriere chaque projet."
+          "title": "LLC américaine enregistrée",
+          "description": "Achetez auprès d’une société américaine identifiable avec des politiques claires — pas un vendeur anonyme."
         },
         {
-          "title": "Livrables definis",
-          "description": "Chaque forfait specifie exactement ce que vous recevez. Pas d expansion de portee, pas de resultats vagues, pas de surprises a la livraison."
+          "title": "Bundles de fichiers définis",
+          "description": "Chaque niveau liste exactement quels PDF, modèles, trackers et packs ZIP vous recevez avant paiement."
         },
         {
-          "title": "Sites prets pour le paiement",
-          "description": "Nous construisons en gardant les exigences des plateformes a l esprit, design professionnel, signaux de confiance complets, pages de politique, et clarte du paiement integres des le depart."
+          "title": "Axé confiance & clarté",
+          "description": "Les contenus mettent l’accent sur la clarté d’accueil, la réassurance au paiement et des politiques crédibles."
         },
         {
-          "title": "Acces direct a l equipe",
-          "description": "Vous communiquez directement avec l equipe qui realise votre travail. Pas de chefs de compte, pas d intermediaires. Des reponses claires, rapidement."
+          "title": "Libre-service par conception",
+          "description": "Téléchargez, appliquez et itérez à votre rythme. Le support produit aide en cas de problème d’accès ou de fichiers."
         },
         {
-          "title": "Tarifs fixes et publies",
-          "description": "Tous les prix sont fixes et affiches avant que vous vous engagiez. Pas besoin d un appel de decouverte juste pour obtenir un devis."
+          "title": "Tarifs USD transparents",
+          "description": "Prix publiés — pas de devis caché ni de montées en gamme surprises dans un tunnel."
         },
         {
-          "title": "Honnetes sur les resultats",
-          "description": "Nous ne promettons pas l approbation des processeurs de paiement. Nous livrons un travail professionnel et vous offrons la meilleure base possible, la suite appartient aux plateformes."
+          "title": "Lucides sur les résultats",
+          "description": "Ce sont des outils éducatifs et pratiques. Nous ne promettons pas de revenus, de classement ni de hausses de conversion garanties."
         }
       ]
     },
     "process": {
       "sectionLabel": "Comment ça marche",
-      "headline": "De la premiere conversation a la livraison finale",
+      "headline": "Achetez une fois. Téléchargez tout de suite. Appliquez à votre rythme.",
       "steps": [
         {
           "number": "01",
-          "title": "Découverte",
-          "description": "Nous commencons par comprendre votre modele d activite, votre situation numerique actuelle et ce que le succes signifie pour vous."
+          "title": "Parcourir",
+          "description": "Consultez Ressources pour voir les kits, modèles et checklists adaptés à vos objectifs."
         },
         {
           "number": "02",
-          "title": "Diagnostic",
-          "description": "Nous auditons votre configuration existante, design, UX, signaux de confiance, processus de paiement, et identifions exactement ce qui doit changer."
+          "title": "Choisir un niveau",
+          "description": "Sélectionnez Starter, Growth, Pro ou Scale sur Tarifs — chaque palier ajoute des téléchargements."
         },
         {
           "number": "03",
-          "title": "Construction",
-          "description": "Nous concevons, developpons et mettons en oeuvre. Nouveau site, ameliorations ciblees ou rapport d audit complet, selon votre forfait."
+          "title": "Paiement",
+          "description": "Finalisez le paiement en sécurité. La livraison automatisée envoie les instructions par e-mail le cas échéant."
         },
         {
           "number": "04",
-          "title": "Livraison",
-          "description": "Nous remettons le travail termine avec une presentation complete, une documentation claire et des conseils precis pour vos prochaines etapes."
+          "title": "Télécharger & appliquer",
+          "description": "Ouvrez vos PDF, fichiers Notion, trackers Sheets ou bundles ZIP et avancez selon votre calendrier."
         }
       ]
     },
     "pricing": {
       "sectionLabel": "Tarifs",
-      "headline": "Tarifs clairs. Zero surprise.",
-      "subheadline": "Quatre formules de consultation ci-dessous. La durée de l’appel en direct varie selon le niveau, et chaque formule précise les informations de planification affichées sur la carte.",
-      "valueFraming": "Consultations en direct avec un récapitulatif écrit par email après l’appel — une offre structurée, pas un travail « bon marché » déguisé.",
+      "headline": "Tarifs clairs. Zéro surprise.",
+      "subheadline": "Quatre kits téléchargeables ci-dessous — chaque niveau ajoute modèles, PDF et bundles pour la confiance, la clarté et la préparation à la conversion.",
+      "valueFraming": "Téléchargements numériques premium avec accès instantané — prix affichés, livraison automatisée après paiement.",
       "viewAll": "Voir le détail des tarifs",
       "mostPopular": "Le plus populaire",
-      "premiumBadge": "Ideal pour le lancement",
-      "getStarted": "Commencer"
+      "premiumBadge": "Idéal pour le lancement",
+      "getStarted": "Acheter le kit numérique"
     },
     "faq": {
       "sectionLabel": "Questions fréquentes",
       "headline": "Les questions auxquelles vous pensez déjà",
       "items": [
         {
-          "question": "Comment la consultation est-elle livrée ?",
-          "answer": "La consultation est livrée via un appel en direct. Après l’appel, DigiScaler envoie un récapitulatif écrit par email avec les principaux points discutés."
+          "question": "Que reçois-je après achat ?",
+          "answer": "Des ressources numériques téléchargeables : guides PDF, modèles, checklists et bundles selon le produit acheté."
         },
         {
-          "question": "Garantissez-vous des ventes ou des résultats précis ?",
-          "answer": "Non. DigiScaler fournit uniquement une consultation professionnelle, une analyse et des recommandations. Nous ne garantissons pas les ventes, les revenus, le classement, les taux de conversion ou des résultats commerciaux précis."
+          "question": "S’agit-il de produits physiques ?",
+          "answer": "Non. Tout est numérique et livré en ligne."
         },
         {
-          "question": "Quand ma consultation sera-t-elle planifiée ?",
-          "answer": "La planification dépend du forfait choisi et commence après confirmation du paiement et réception des détails nécessaires du projet."
+          "question": "Comment les fichiers sont-ils livrés ?",
+          "answer": "Via un accès numérique sécurisé et/ou par e-mail après achat."
         },
         {
-          "question": "Que contient réellement une consultation numérique ?",
-          "answer": "Un examen structuré de votre présence en ligne : site, tunnel de paiement, signaux de confiance et configuration générale. Vous recevez un rapport écrit avec des recommandations claires que vous pouvez appliquer."
+          "question": "Dois-je échanger avec votre équipe pour utiliser les produits ?",
+          "answer": "Non. Les produits DigiScaler sont des ressources en libre-service, conçues pour être utilisées de façon autonome."
         },
         {
-          "question": "Garantissez-vous une acceptation par une plateforme de paiement ou une banque ?",
-          "answer": "Non. Nous ne garantissons aucune décision rendue par un prestataire de paiement, une passerelle ou un établissement financier tiers. Notre rôle consiste à améliorer le professionnalisme, la clarté documentaire et les signaux de confiance ; les validations finales dépendent exclusivement des plateformes concernées."
+          "question": "Puis-je demander un remboursement ?",
+          "answer": "Les remboursements suivent la Politique de remboursement. Comme les produits sont numériques, l’accès et les téléchargements peuvent influencer l’éligibilité."
         },
         {
-          "question": "Combien de temps cela prend-il ?",
-          "answer": "Les créneaux conseil vont de 30 à 90 minutes comme indiqué, puis les synthèses écrites suivent selon la formule. Le forfait incluant création complète prend typiquement plusieurs jours ouvrés selon vos retours."
-        },
-        {
-          "question": "Pouvez-vous concevoir mon site à partir de zéro ?",
-          "answer": "Oui via le forfait de création exhaustive décrit parmi nos tarifs. Les autres niveaux préparent la feuille de route avant toute mise en œuvre interne ou externe."
-        },
-        {
-          "question": "Proposez-vous des remboursements ?",
-          "answer": "Les prestations de conseil ne sont généralement pas remboursables une fois la session accomplie ou le rapport remis ; les exceptions éventuelles sont traitées comme indiqué dans notre politique de remboursement."
+          "question": "Garantissez-vous des résultats ?",
+          "answer": "Non. Ce sont des outils éducatifs et pratiques. Les résultats dépendent de la mise en œuvre, du modèle économique, de la qualité du site, du trafic et d’autres facteurs."
         }
       ],
       "viewAll": "Voir toutes les questions"
     },
     "testimonials": {
-      "sectionLabel": "AVIS CLIENTS",
-      "headline": "Ce que disent les clients sur leur collaboration avec DegiScaler",
-      "intro": "Retours de fondateurs et de dirigeants de petites structures qui voulaient une présence en ligne plus crédible et plus professionnelle.",
+      "sectionLabel": "AVIS ACHETEURS",
+      "headline": "Ce que disent les acheteurs des kits DigiScaler",
+      "intro": "Retours de fondateurs et d’opérateurs ayant utilisé les modèles et checklists téléchargeables.",
       "ratingOutOf": "/5",
       "items": [
         {
-          "name": "Camille Rousseau",
+          "name": "Jordan Mitchell",
           "role": "Fondatrice",
-          "meta": "Édition logicielle · Lyon, FR",
+          "meta": "SaaS · Austin, TX",
           "rating": "5.0",
-          "avatar": "/testimonials/woman-1.webp",
-          "quote": "La consultation a mis en lumière des points de confiance sur la page d'accueil et des ambiguïtés au moment du paiement que nous tournions en rond depuis des semaines. Les notes étaient directes et utiles—nous savions enfin quoi traiter en premier."
-        },
-        {
-          "name": "Mehdi Benali",
-          "role": "Commerçant indépendant",
-          "meta": "Mode · Bruxelles, BE",
-          "rating": "4.9",
           "avatar": "/testimonials/man-1.webp",
-          "quote": "L'audit a signalé des signaux de confiance faibles—politiques mal mises en avant, incohérences sur les moyens de contact. Une liste priorisée, sans effet spectacle, alignée sur la façon dont les clients parcourent vraiment le site."
+          "quote": "Le PDF checklist confiance nous a forcés à corriger le texte du héros et les liens politiques qu’on repoussait — enfin une liste priorisée au lieu de débats sans fin."
         },
         {
-          "name": "Sofia Lindström",
-          "role": "Vendeuse en ligne",
-          "meta": "Articles de consommation · SE",
-          "rating": "4.8",
-          "avatar": "/testimonials/woman-2.webp",
-          "quote": "Pas de promesses creuses. Les recommandations ont resserré les fiches produits et le parcours de paiement pour donner l'impression d'une boutique sérieuse, pas d'un projet improvisé."
-        },
-        {
-          "name": "Henrik Dahl",
-          "role": "Dirigeant de PME de services",
-          "meta": "Services B2B · Copenhague, DK",
-          "rating": "4.7",
-          "avatar": "/testimonials/man-2.webp",
-          "quote": "Le retour structuré était clair : quoi raccourcir, où renforcer la crédibilité, comment alléger les formulaires. Nous avons appliqué la majorité en interne sans deviner les priorités."
-        },
-        {
-          "name": "Élodie Martins",
-          "role": "Fondatrice de start-up",
-          "meta": "Phase amorçage · Marseille, FR",
-          "rating": "4.6",
+          "name": "Rosa Delgado",
+          "role": "Dirigeante de PME",
+          "meta": "Commerce · Valence, ES",
+          "rating": "4.9",
           "avatar": "/testimonials/woman-1.webp",
-          "quote": "Cadre précis au départ, synthèse rapide, aucune gymnastique commerciale. Pour notre niveau de formule le rapport qualité prix était sérieux—inutile de décider au feeling seul pour le site."
+          "quote": "Les modèles d’audit ont mis en évidence des politiques enfouies et des incohérences sur le contact — concret, pas tape-à-l’œil."
+        },
+        {
+          "name": "David Okonkwo",
+          "role": "Vendeur en ligne",
+          "meta": "Biens de consommation · Royaume-Uni",
+          "rating": "4.8",
+          "avatar": "/testimonials/man-2.webp",
+          "quote": "Le guide fiches produit et les prompts checkout ont resserré les textes boutique sans recruter une équipe externe."
+        },
+        {
+          "name": "Anita Bergström",
+          "role": "Dirigeante services",
+          "meta": "Services pros · Suède",
+          "rating": "4.7",
+          "avatar": "/testimonials/woman-2.webp",
+          "quote": "Des fiches simples : quoi raccourcir, où renforcer la crédibilité, comment alléger les formulaires. On a exécuté la majeure partie en interne."
+        },
+        {
+          "name": "Marcus Nguyen",
+          "role": "Fondateur start-up",
+          "meta": "Amorçage · Californie",
+          "rating": "4.6",
+          "avatar": "/testimonials/man-3.webp",
+          "quote": "Périmètre du bundle clair, téléchargement instantané, pas de circus commercial — utile pour arrêter de deviner quoi corriger sur le site."
         }
       ]
     },
     "cta": {
-      "headline": "Prêt à créer un site web en lequel vos clients peuvent avoir confiance ?",
-      "subheadline": "Obtenez une analyse structurée et un plan clair pour renforcer la crédibilité, la clarté du paiement et les signaux de confiance. Commencez par une consultation.",
+      "headline": "Prêt à faire évoluer votre site avec des kits téléchargeables ?",
+      "subheadline": "Parcourez des bundles d’optimisation, modèles et checklists pensés pour une mise en œuvre autonome.",
       "ctaPrimary": "Voir les tarifs",
-      "ctaSecondary": "Nous contacter"
+      "ctaSecondary": "Support produit"
     }
   },
   "servicesPage": {
-    "title": "Services",
-    "eyebrow": "Une exécution centrée sur la crédibilité",
-    "headline": "Des services pour valoriser sérieusement votre activité en ligne",
-    "subheadline": "DegiScaler aide les fondateurs et les petites entreprises à concevoir des sites web professionnels, des parcours de commerce en ligne, des pages d accroche publique, des audits, des analyses d interface et d expérience utilisateur, et des accompagnements numériques structurés — avec des résultats clairs et une portée réaliste.",
-    "gridLabel": "Ce que nous réalisons",
+    "title": "Ressources",
+    "eyebrow": "Téléchargements numériques",
+    "headline": "Des ressources numériques conçues pour la croissance des entreprises en ligne",
+    "subheadline": "Téléchargez des modèles, checklists, guides et kits pratiques pour améliorer la confiance, la clarté du checkout et la préparation à la conversion.",
+    "gridLabel": "Catégories de ressources",
+    "includedTitle": "Ce que vous recevez après l’achat",
+    "includedItems": [
+      "Guides PDF téléchargeables",
+      "Checklists business",
+      "Modèles Notion",
+      "Trackers Google Sheets",
+      "Documents d’audit de site",
+      "Ressources d’amélioration de conversion",
+      "Livraison par email et accès instantané"
+    ],
     "services": {
       "websiteDesign": {
-        "title": "Conception de sites web",
-        "description": "Composition, hiérarchie typographique, espaces et parcours conçus pour communiquer la fiabilité attendue par vos clients ou examinateurs dès la première vue.",
-        "outcome": "Une présentation globale qui renforce la légitimité depuis le premier écran jusqu aux points clés de conversion.",
-        "note": "Dispo en production autonome ou en recommandations guidées dans une offre de conseil."
+        "title": "Kits d’optimisation web",
+        "description": "Guides PDF et checklists groupés pour la clarté d’accueil, le placement de la confiance et des correctifs structurés à appliquer vous-même.",
+        "outcome": "Une feuille de route disciplinée pour resserrer la crédibilité sans externaliser l’exécution.",
+        "note": "Inclus dès Starter et niveaux supérieurs."
       },
       "ecommerce": {
-        "title": "Développement e-commerce",
-        "description": "Architecture boutique, fiches produits claires, tunnel de caisse et paiement, positionnement des éléments de confiance pour que l acheteur comprenne immédiatement son achat.",
-        "outcome": "Un parcours d achat plus lisible et mieux aligné avec vos politiques publiques.",
-        "note": "Le périmètre s ajuste au catalogue ; les projets élargis commencent souvent par un atelier de cadrage."
+        "title": "Checklists de préparation au checkout",
+        "description": "Invites téléchargeables sur le texte de réassurance, la transparence des frais, l’alignement des politiques et les hésitations des acheteurs.",
+        "outcome": "Des messages checkout plus clairs, alignés sur les habitudes d’achat en ligne.",
+        "note": "Mis en avant dans Growth Optimization Kit et au-delà."
       },
       "landingPage": {
-        "title": "Page de capture",
-        "description": "Une page, un objectif : structure visuelle nette, preuves placées au bon moment, appel à l action direct sans bruit qui dilue l intention.",
-        "outcome": "Une page ciblée poussant une action définie avec le minimum de friction.",
-        "note": "Souvent accompagnée d indicateurs que vous pourrez suivre après la mise en ligne."
+        "title": "Modèles de pages d’atterrissage",
+        "description": "Plans section par section et prompts de texte pour garder campagnes et offres concises et crédibles.",
+        "outcome": "Des landings publiables plus vite avec moins de allers-retours.",
+        "note": "Complète bien les checklists de conversion des niveaux Growth/Pro."
       },
       "audit": {
-        "title": "Audit de site",
-        "description": "Revue structurée des signaux de crédibilité, des risques techniques, de la clarté du contenu et des frictions qui nuisent à la conversion ou aux échanges avec des tiers.",
-        "outcome": "Une liste priorisée : quoi corriger, pourquoi, et par quoi commencer.",
-        "note": "Livrée comme un document exploitable par votre équipe ou un prestataire."
+        "title": "Modèles d’audit business",
+        "description": "Fiches à compléter pour documenter les lacunes de confiance, les étapes d’entonnoir et les priorités.",
+        "outcome": "Des priorités étayées plutôt que des impressions.",
+        "note": "Livrés dans Pro Conversion Toolkit et le bundle Scale."
       },
       "uiux": {
-        "title": "Revue d interface et d expérience",
-        "description": "Nous suivons les chemins critiques comme un visiteur réel — navigation, formulaires, périmètre paiement, zones d hésitation qui abandonnent silencieusement.",
-        "outcome": "Correctifs actionnables qui réduisent la friction étape par étape.",
-        "note": "Idéal lorsque le site fonctionne mais paraît lourd à comprendre."
+        "title": "Ressources UX & clarté",
+        "description": "Cadres pour revoir navigation, formulaires et frictions proches du paiement avec les fiches fournies.",
+        "outcome": "Des gains UX perceptibles avec votre stack actuelle.",
+        "note": "Répartis dans les packs téléchargeables Growth et Pro."
       },
-      "consultation": {
-        "title": "Consultation stratégique numérique",
-        "description": "Une session cadrée sur votre posture en ligne : positionnement, tunnel, signaux de confiance, écarts de préparation et plan écrit priorisé avec vos contraintes budgétaires.",
-        "outcome": "Constats clairs et suite de recommandations séquencées que vous pouvez valider ou déléguer.",
-        "note": "Beaucoup de clients commencent ici avant d ouvrir une production design plus large."
+      "growthPlanning": {
+        "title": "Documents de planification de croissance",
+        "description": "Les niveaux supérieurs ajoutent planificateurs multi-semaines, fiches de préparation à l’automatisation et bibliothèques d’optimisation avancées.",
+        "outcome": "Un rythme répétable pour itérer après le premier téléchargement.",
+        "note": "Voir Scale Business Bundle pour la pile bibliothèque complète."
       }
     },
-    "processCtaHeadline": "Commencez par clarifier avant un grand chantier production",
-    "processCtaSub": "Privilégiez un module de conseil si vous voulez une feuille de route, un alignement budgétaire et des notes écrites avant d investir massivement en design ou développement.",
+    "processCtaHeadline": "Choisissez le kit adapté à votre stade",
+    "processCtaSub": "Chaque niveau liste les fichiers exacts — passez au niveau supérieur quand vous voulez plus de modèles, trackers et playbooks.",
     "processCtaButton": "Voir les tarifs",
     "finalCtaPrimary": "Voir les tarifs",
-    "finalCtaSecondary": "Nous contacter"
+    "finalCtaSecondary": "Support produit"
   },
   "pricingPage": {
     "title": "Tarifs",
+    "eyebrow": "Tarification publique",
     "headline": "Des formules transparentes. Sans surprises.",
-    "subheadline": "Consultations numériques en direct avec récapitulatif écrit par email après l’appel. Choisissez la profondeur correspondant à votre stade actuel.",
+    "subheadline": "Kits numériques téléchargeables avec accès instantané après achat. Choisissez le niveau qui correspond à votre besoin.",
     "mostPopular": "Le plus populaire",
-    "getStarted": "Commencer",
+    "premiumBadge": "Idéal pour un lancement",
+    "getStarted": "Acheter le kit",
+    "continueToCheckout": "Continuer vers le paiement",
     "perPackage": "par forfait",
-    "disclaimer": "Les montants sont indiqués en dollars américains (USD). Il s agit de consultations numériques payantes en direct ; chaque formule inclut un récapitulatif écrit par email après l appel, comme décrit pour le forfait. DegiScaler LLC ne garantit pas les ventes, les revenus, le classement, les taux de conversion ni des résultats business ou d approbation par des plateformes précises. Les délais de planification et du parcours démarrent après confirmation du paiement et après réception des détails de votre projet ; ils dépendent aussi de la coordination pour fixer l appel.",
-    "ctaHeadline": "Des questions sur la formule qui suit votre feuille de route ?",
-    "ctaButton": "Nous contacter",
+    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DigiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails.",
+    "includedTitle": "Ce que recouvrent les formules",
+    "includedItems": [
+      "Accès numérique instantané après paiement réussi",
+      "Fichiers téléchargeables (PDF, modèles, bundles) comme décrit pour chaque kit",
+      "Livraison par email lorsque applicable",
+      "Ressources en libre-service pour une utilisation autonome",
+      "Périmètre produit clair avant achat"
+    ],
+    "howSteps": [
+      {
+        "title": "Choisir votre kit",
+        "detail": "Sélectionnez Starter, Growth, Pro ou Scale — chaque fiche liste les fichiers inclus."
+      },
+      {
+        "title": "Finaliser le paiement",
+        "detail": "Confirmez vos informations de facturation sur la page de paiement. L encaissement en ligne s activera lorsque la configuration du tunnel sera finalisée."
+      },
+      {
+        "title": "Télécharger et appliquer",
+        "detail": "Utilisez les liens sécurisés ou l’email pour récupérer PDFs, bundles ZIP, ressources Notion et trackers."
+      }
+    ],
+    "stepLabel": "Étape {n}",
+    "paymentNoteTitle": "Livraison numérique",
+    "paymentNote": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n’est fourni. L’accès est livré électroniquement après l’achat.",
+    "downloadDemo": "Télécharger la démo ZIP",
+    "cardComplianceLines": [
+      "L accès aux fichiers apparaît après la fin du tunnel sur la page de confirmation",
+      "Produit numérique uniquement — pas d’envoi physique",
+      "Livré électroniquement (accès sécurisé et/ou email)",
+      "Fichiers en libre-service — à votre rythme"
+    ],
+    "trustCheckoutTitle": "Paiement sécurisé",
+    "trustCheckoutBody": "Paiement numérique sécurisé et livraison automatisée.",
+    "faqPreviewText": "Vous hésitez encore ?",
+    "faqPreviewLink": "Consulter toutes les questions",
+    "ctaHeadline": "Besoin d’aide pour choisir un kit ou accéder aux fichiers ?",
+    "ctaButton": "Support produit",
+    "ctaSecondary": "Parcourir les ressources",
     "packages": [
       {
         "id": "starter",
-        "name": "Consultation Starter",
+        "name": "Starter Website Kit",
         "price": "$9.99",
-        "description": "Une consultation en direct ciblée pour les fondateurs qui ont besoin d’un avis rapide sur leur site et leur présence en ligne.",
+        "description": "Un pack numérique simple pour améliorer la confiance, la clarté et la préparation de votre site web.",
         "features": [
-          "Appel de consultation en direct de 30 minutes",
-          "Analyse de la crédibilité du site",
-          "Vérification de la clarté de la présence en ligne",
-          "3 recommandations clés d’amélioration",
-          "Récapitulatif par email après l’appel",
-          "Planification sous 48 heures ouvrables"
+          "Checklist de confiance du site en PDF",
+          "Guide de clarté de la page d’accueil",
+          "Checklist de préparation du checkout",
+          "Téléchargement numérique instantané",
+          "Ressources PDF incluses",
+          "Livraison par email incluse"
         ]
       },
       {
         "id": "growth",
-        "name": "Consultation Growth",
+        "name": "Growth Optimization Kit",
         "price": "$19.99",
-        "description": "Une consultation en direct structurée pour améliorer la clarté du site, le paiement, la confiance et le parcours client.",
+        "description": "Un kit numérique pratique pour améliorer la structure du site, le parcours client et les signaux de conversion.",
         "features": [
-          "Appel de consultation en direct de 45 minutes",
-          "Analyse du site et du paiement",
-          "Vérification du parcours client",
-          "5 recommandations d’amélioration",
-          "Évaluation des signaux de confiance",
-          "Planification sous 2-3 jours ouvrables"
+          "Tout le contenu du Starter",
+          "Checklist d’optimisation de conversion",
+          "Guide d’amélioration des pages produit",
+          "Checklist du parcours client",
+          "Pack SEO de base",
+          "Bundle ZIP téléchargeable"
         ]
       },
       {
         "id": "pro",
-        "name": "Consultation Pro",
+        "name": "Pro Conversion Toolkit",
         "price": "$29.99",
-        "description": "Une consultation complète en direct couvrant l’UX du site, la clarté du paiement, la confiance et la préparation au paiement.",
+        "description": "Un bundle premium de modèles et ressources pour améliorer la confiance, le checkout et le parcours client.",
         "features": [
-          "Appel de consultation en direct de 60 minutes",
-          "Analyse complète du site et de l’UX",
-          "Évaluation de la clarté du paiement",
-          "Revue de la préparation au paiement",
-          "Plan d’action discuté pendant l’appel",
-          "Récapitulatif détaillé par email après l’appel"
+          "Tout le contenu du Growth",
+          "Modèles d’audit business",
+          "Collection de modèles email",
+          "Ressources Notion",
+          "Tracker d’audit Google Sheets",
+          "Documents premium d’optimisation"
         ]
       },
       {
         "id": "scale",
-        "name": "Consultation Scale",
+        "name": "Scale Business Bundle",
         "price": "$49.99",
-        "description": "Une consultation stratégique premium pour une analyse plus approfondie de votre présence digitale, tunnel, confiance et priorités.",
+        "description": "Une bibliothèque complète de ressources numériques pour les entreprises en ligne qui veulent un système structuré.",
         "features": [
-          "Appel stratégique en direct de 90 minutes",
-          "Analyse complète du site et du tunnel",
-          "Analyse de la confiance et de la clarté de conversion",
-          "Revue du parcours de paiement",
-          "Plan de priorités discuté pendant l’appel",
-          "Récapitulatif détaillé par email après l’appel"
+          "Tout le contenu du Pro",
+          "Playbook complet d’optimisation web",
+          "Plan d’action croissance sur 90 jours",
+          "Checklist de planification d’automatisation",
+          "Modèles business premium",
+          "Bibliothèque avancée de ressources numériques"
         ]
       }
-    ],
-    "eyebrow": "Tarification publique",
-    "premiumBadge": "Idéal pour un lancement",
-    "includedTitle": "Ce que recouvrent les formules",
-    "includedItems": [
-      "Consultation délivrée lors d un appel planifié",
-      "Récapitulatif écrit par email après l appel avec les principaux points discutés",
-      "Durée d échange et priorités d analyse conformes à la fiche du niveau",
-      "Lecture honnête des risques, écarts et séquencement réaliste sans promesse creuse",
-      "Des frontières de périmètre lisibles avant le début réel des travaux"
-    ],
-    "howSteps": [
-      {
-        "title": "Réservation et contexte",
-        "detail": "Après confirmation du paiement et réception des détails de votre projet, nous indiquons comment vous préparer et quoi envoyer avant la consultation en direct."
-      },
-      {
-        "title": "Revue vivante et diagnostic",
-        "detail": "Nous parcourons l expérience avec vous — crédibilité, parcours sur écran, tunnel de paiement, politiques applicables à votre cas."
-      },
-      {
-        "title": "Supports écrits et suivis",
-        "detail": "Après l appel en direct, vous recevez un récapitulatif écrit par email avec les principaux points discutés, selon la profondeur du forfait."
-      }
-    ],
-    "stepLabel": "Étape {n}",
-    "paymentNoteTitle": "Décisions des plateformes de paiement",
-    "paymentNote": "Nous clarifions vos messages, vos signaux de confiance, votre documentation et votre préparation. Les décisions finales d approbation reviennent à des prestataires tiers—comme les plateformes ou banques—et échappent à DegiScaler.",
-    "faqPreviewText": "Vous hésitez encore ?",
-    "faqPreviewLink": "Consulter toutes les questions",
-    "ctaSecondary": "Revoir les services"
+    ]
   },
   "aboutPage": {
     "title": "À propos",
-    "eyebrow": "À propos de DegiScaler LLC",
-    "headline": "Une société américaine de services numériques et de conseil aux entreprises",
-    "subheadline": "DegiScaler LLC fonctionne comme LLC américaine assujettie à ses obligations, centrée sur des expériences web crédibles et des prestations numériques sans promesses artificielles.",
+    "eyebrow": "À propos de DigiScaler LLC",
+    "headline": "Une marque américaine de produits numériques pour les entreprises en ligne",
+    "subheadline": "DigiScaler LLC crée des ressources numériques téléchargeables pour les fondateurs, créateurs, boutiques en ligne et petites entreprises qui veulent des sites plus clairs, plus fiables et mieux structurés.",
     "missionLabel": "Mission",
-    "missionText": "Mettre en ligne des sites crédibles et des parcours digitaux plus lisibles — pour que les fondateurs inspirent confiance vite, expliquent leur offre avec assurance et réduisent les frictions aux moments cruciaux.",
+    "missionText": "Packager des savoir-faire d’optimisation pratiques dans des téléchargements premium — pour que les équipes renforcent clarté, confiance et sérénité des acheteurs sans prestations opaques.",
     "whoWeHelpLabel": "Pour qui",
-    "whoWeHelpText": "Fondateurs, petites structures, boutiques en ligne et entreprises de services qui souhaitent une présentation professionnelle et des conseils pragmatiques, sans narration marketing creuse.",
-    "howWeWorkLabel": "Notre mode opératoire",
-    "howWeWorkIntro": "Nous gardons les engagements lisibles : prix fixes lorsqu ils sont publiés, livrables écrits et périmètres définissables avant démarrage.",
+    "whoWeHelpText": "Fondateurs indépendants, opérateurs e-commerce, créateurs et petites équipes qui préfèrent des modèles en libre-service aux projets ouverts.",
+    "howWeWorkLabel": "Comment nous travaillons",
+    "howWeWorkIntro": "Chaque fiche précise types de fichiers, palliers cumulés et mode de livraison avant paiement.",
     "howWeWorkBullets": [
-      "La clarté passe avant tout — contraintes, compromis et séquencement réaliste",
-      "Les formules annoncées précisent durée de session et sorties attendues",
-      "Des livrables structurés pour que votre équipe ou vos partenaires les exécutent",
-      "Une lecture honnête — nous améliorons la préparation mais ne promettons pas les tiers"
+      "Paliers empilés transparents — de l’essentiel à une bibliothèque numérique complète",
+      "Livraison numérique automatisée dès paiement réussi",
+      "Support produit pour accès, facturation ou problèmes de téléchargement",
+      "Pas de promesses sur le chiffre ou le classement — uniquement des outils structurés que vous maîtrisez"
     ],
     "trustLabel": "Principes de confiance",
-    "trustIntro": "Communication transparente, aucune garantie fictive, périmètre écrit, livrables vérifiables.",
+    "trustIntro": "Des fiches directes, des limites assumées et des licences documentées dans chaque bundle.",
     "trustItems": [
       {
         "title": "Transparence",
-        "description": "Nous expliquons ce qui a été observé, ce que nous recommandons et ce qui reste de votre ressort."
+        "description": "Les pages produit décrivent exactement quels PDF, modèles, trackers ou packs ZIP accompagnent chaque niveau."
       },
       {
-        "title": "Pas de fausses garanties",
-        "description": "Nous n engageons pas l approbation d un prestataire de paiement ni un chiffre d affaires figé. Nous livrons une analyse et une exécution selon le cadre contractuel."
+        "title": "Pas de garanties fabriquées",
+        "description": "Nous ne promettons pas de résultats financiers ni d’« approbations » spécifiques — les kits sont des ressources éducatives."
       },
       {
-        "title": "Périmètre et itérations",
-        "description": "Les fiches produit listent l inclus. Tout dépassement fait l objet d un devis complémentaire si besoin."
+        "title": "Périmètre 100 % numérique",
+        "description": "L’achat donne des fichiers téléchargeables et un accès sécurisé — pas de réalisation sur mesure ni de développement dédié."
       },
       {
-        "title": "Supports écrits",
-        "description": "Les notes et rapports sont rédigés pour être actionnables sans interprétation fantaisiste."
+        "title": "Support utile",
+        "description": "Contactez le support produit si les liens échouent, si les fichiers ne s’ouvrent pas ou si la facturation est peu claire."
       }
     ],
     "pricingCta": "Voir les tarifs",
-    "contactCta": "Démarrer par une consultation",
+    "contactCta": "Parcourir les ressources numériques",
     "companyDetails": {
       "label": "Détails de la société",
       "nameLabel": "Société",
       "typeLabel": "Type",
       "focusLabel": "Spécialité",
       "emailLabel": "E-mail",
-      "name": "DegiScaler LLC",
+      "name": "DigiScaler LLC",
       "type": "Société à responsabilité limitée américaine",
-      "focus": "Services numériques et consultation commerciale",
+      "focus": "Produits numériques et ressources business téléchargeables",
       "email": "support@degiscaler.com"
     }
   },
   "contactPage": {
     "title": "Contact",
-    "eyebrow": "Planifions la suite",
-    "headline": "Dites nous ce que vous souhaitez créer ensuite.",
-    "subheadline": "Décrivez votre activité ou projet. Notre équipe lit chaque demande et répond selon les délais communiqués.",
+    "eyebrow": "Support produit",
+    "headline": "Besoin d’aide avec un produit numérique ?",
+    "subheadline": "Pour l’accès aux fichiers, les problèmes de téléchargement, la facturation ou le support général, écrivez-nous ci-dessous.",
     "form": {
-      "name": "Nom",
-      "namePlaceholder": "Votre nom",
       "fullName": "Nom complet",
       "fullNamePlaceholder": "Votre nom",
       "email": "E-mail",
       "emailPlaceholder": "vous@entreprise.com",
-      "whatsapp": "WhatsApp",
-      "whatsappPlaceholder": "Facultatif — ex. +33 … ou format international",
-      "businessProject": "Type d entreprise ou de projet",
-      "businessProjectPlaceholder": "Exemple : commerce de détail, progiciel en nuage présenté sur une courte page publique, services à la personne locale",
-      "budgetPackage": "Budget ou formule envisagée",
-      "budgetPackagePlaceholder": "Exemple : consultation approfondie, forfait de lancement complet, ou fourchette budgétaire",
+      "orderNumber": "Numéro de commande (facultatif)",
+      "orderNumberPlaceholder": "Si vous en avez un sur votre reçu",
+      "productName": "Nom du produit",
+      "productNamePlaceholder": "Exemple : Growth Optimization Kit",
       "message": "Message",
-      "messagePlaceholder": "Quels objectifs, calendriers et contraintes devons-nous connaître ?",
-      "submit": "Envoyer le formulaire",
+      "messagePlaceholder": "Décrivez votre question ou problème.",
+      "submit": "Envoyer le message",
       "submitting": "Envoi en cours…",
-      "mailtoSubject": "Demande via le site DegiScaler",
+      "mailtoSubject": "Support produit via le site DigiScaler",
       "mailtoName": "Nom",
       "mailtoEmail": "E-mail"
     },
@@ -613,76 +629,48 @@
       "email": "Merci d indiquer une adresse e-mail valide.",
       "server": "Une erreur est survenue. Réessayez dans un instant."
     },
-    "expectationTitle": "La suite du processus",
-    "expectationText": "Après votre message nous vérifions l adéquation avec nos prestations puis répondons avec les prochaines étapes. Tout périmètre élargi attend une confirmation écrite. Rien ne démarre sans alignement prix et contenus.",
-    "pricingFallbackCta": "Voir les tarifs si vous n êtes pas prêt à écrire",
+    "expectationTitle": "La suite",
+    "expectationText": "Nous traitons les demandes de support produit dans l’ordre et répondons dans le délai habituel. Indiquez le nom du produit et le numéro de commande quand vous les avez pour accélérer l’aide.",
+    "pricingFallbackCta": "Voir les tarifs",
     "info": {
       "emailLabel": "E-mail support",
       "email": "support@degiscaler.com",
       "responseLabel": "Délai de réponse habituel",
       "response": "Sous 24 à 48 heures ouvrées",
-      "scopeLine": "Conseils numériques, livrables web, audits et évaluations de préparation.",
-      "trustNote": "DegiScaler LLC est une société américaine enregistrée. Nous ne garantissons pas les décisions des plateformes de paiement ; nous concentrons la qualité de livraison et la documentation."
+      "scopeLine": "Accès aux produits, téléchargements, facturation et support général sur les ressources numériques.",
+      "trustNote": "DigiScaler LLC vend des ressources numériques téléchargeables. Ce formulaire sert au support produit — pas aux conseils juridiques, fiscaux ou financiers."
     }
   },
   "faqPage": {
     "title": "Questions fréquentes",
-    "eyebrow": "Centre d aide",
+    "eyebrow": "Centre d’aide",
     "headline": "Questions fréquentes",
-    "subheadline": "Réponses factuelles sur la teneur des consultations, les délais, les remboursements, le multilingue et ce que nous ne pouvons pas décider à votre place.",
-    "listIntro": "Ce que les clients demandent avant de commencer",
+    "subheadline": "Réponses sur les téléchargements numériques, la livraison, les remboursements et l’utilisation des kits.",
+    "listIntro": "Questions courantes",
     "items": [
       {
-        "question": "Comment la consultation est-elle livrée ?",
-        "answer": "La consultation est livrée via un appel en direct. Après l’appel, DigiScaler envoie un récapitulatif écrit par email avec les principaux points discutés."
+        "question": "Que reçois-je après achat ?",
+        "answer": "Des ressources numériques téléchargeables : guides PDF, modèles, checklists et bundles selon le produit acheté."
       },
       {
-        "question": "Garantissez-vous des ventes ou des résultats précis ?",
-        "answer": "Non. DigiScaler fournit uniquement une consultation professionnelle, une analyse et des recommandations. Nous ne garantissons pas les ventes, les revenus, le classement, les taux de conversion ou des résultats commerciaux précis."
+        "question": "S’agit-il de produits physiques ?",
+        "answer": "Non. Tout est numérique et livré en ligne."
       },
       {
-        "question": "Quand ma consultation sera-t-elle planifiée ?",
-        "answer": "La planification dépend du forfait choisi et commence après confirmation du paiement et réception des détails nécessaires du projet."
+        "question": "Comment les fichiers sont-ils livrés ?",
+        "answer": "Via un accès numérique sécurisé et/ou par e-mail après achat."
       },
       {
-        "question": "Que contient une consultation numérique ?",
-        "answer": "Une session cadrée qui examine votre présence en ligne — site, parcours sensibles, signaux de confiance, contraintes — suivie de notes ou d un rapport selon la formule. Vous obtenez des actions priorisées et réalistes."
+        "question": "Dois-je échanger avec votre équipe pour utiliser les produits ?",
+        "answer": "Non. Les produits DigiScaler sont des ressources en libre-service, conçues pour être utilisées de façon autonome."
       },
       {
-        "question": "Garantissez-vous l accord d un prestataire de paiement ?",
-        "answer": "Non. DegiScaler n engage pas l approbation d une banque ou d un opérateur tiers. Nous aidons à la clarté et à la préparation documentaire, mais la décision finale leur appartient."
+        "question": "Puis-je demander un remboursement ?",
+        "answer": "Les remboursements suivent la Politique de remboursement. Comme les produits sont numériques, l’accès et les téléchargements peuvent influencer l’éligibilité."
       },
       {
-        "question": "Combien de temps cela prend-il ?",
-        "answer": "Les sessions annoncées vont de 30 à 90 minutes. Les supports écrits suivent selon la profondeur. Le forfait de lancement complet s étale sur plusieurs jours ouvrés selon vos retours — ce n est pas instantané."
-      },
-      {
-        "question": "Pouvez-vous créer un site à partir de zéro ?",
-        "answer": "Oui via le forfait de lancement complet qui couvre conception et construction exhaustives. Les autres formules préparent la feuille de route avant toute production séparée ou devis complémentaire."
-      },
-      {
-        "question": "Proposez-vous des remboursements ?",
-        "answer": "Les prestations intellectuelles se comportent comme des missions professionnelles : une fois la session tenue ou le rapport remis, la rémunération est généralement due. Les demandes avant toute exécution sont examinées selon la politique de remboursement et la loi applicable."
-      },
-      {
-        "question": "Que se passe-t-il après l achat ?",
-        "answer": "Vous recevez les consignes d onboarding, éventuellement un lien de planification, et la modalité de livraison des livrables. Aucun travail additionnel facturé sans validation explicite."
-      },
-      {
-        "question": "Intervenez-vous pour les boutiques en ligne ?",
-        "answer": "Oui : clarté des fiches, tunnel d achat, pages légales et signaux de confiance autour du panier."
-      },
-      {
-        "question": "Peut-on livrer en arabe, français ou anglais ?",
-        "answer": "Oui si cela est figé par écrit, y compris une mise en page arabe de droite à gauche lorsque nécessaire. Seul le nom DegiScaler reste inchangé comme marque."
-      },
-      {
-        "question": "De quoi ai-je besoin avant de commencer ?",
-        "answer": "Une description d activité, l objectif principal, vos visuels de marque, les URL ou accès utiles, et une idée de calendrier. Le paiement passe par notre tunnel public avant toute production concrète."
-      },
-      {
-        "question": "Auditez-vous un site existant ?",
-        "answer": "Oui : nous identifions frictions, zones floues et priorités crédibles pour la conversion."
+        "question": "Garantissez-vous des résultats ?",
+        "answer": "Non. Ce sont des outils éducatifs et pratiques. Les résultats dépendent de la mise en œuvre, du modèle économique, de la qualité du site, du trafic et d’autres facteurs."
       }
     ]
   },
@@ -691,16 +679,16 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de confidentialité",
-    "intro": "DegiScaler LLC décrit ici, à un niveau général, comment des informations peuvent être traitées lorsque vous utilisez ce site ou nos services. Ce texte ne remplace pas un conseil juridique personnalisé.",
+    "intro": "DigiScaler LLC (« nous », « notre ») décrit — à un niveau général — comment des informations peuvent être traitées lorsque vous utilisez ce site ou achetez des produits numériques. Ce résumé ne constitue pas un conseil juridique.",
     "legalDisclaimer": "Cette page est fournie à titre informatif et ne constitue pas un avis juridique.",
     "sections": [
       {
         "title": "Informations susceptibles d être collectées",
-        "content": "Nous pouvons recevoir des données que vous transmettez volontairement : nom, e-mail, description d activité, notes de projet. L hébergement peut enregistrer des métadonnées techniques standard."
+        "content": "Nous pouvons collecter les données que vous fournissez volontairement : nom, e-mail, références de commande, notes produit et champs similaires via formulaires ou achats. Des données techniques (adresse IP, type d appareil, navigateur) peuvent être enregistrées automatiquement par l hébergement ou l infrastructure."
       },
       {
         "title": "Données issues des formulaires",
-        "content": "Les champs servent à répondre ou à orienter vers le bon service. Tant qu aucun backend sécurisé n est branché, évitez d y coller des secrets industriels sensibles."
+        "content": "Les champs soumis via le site servent uniquement à répondre au support produit ou aux demandes connexes. Évitez d y indiquer des informations hautement sensibles sauf nécessité."
       },
       {
         "title": "Paiements confiés à des tiers",
@@ -712,7 +700,7 @@
       },
       {
         "title": "Finalités d utilisation",
-        "content": "Répondre aux demandes, exécuter les prestations achetées, sécuriser le site, limiter les abus et informer sur des dossiers en cours. Pas de revente marketing opportuniste."
+        "content": "Nous utilisons ces informations pour répondre aux messages, livrer les produits numériques achetés, améliorer la fiabilité du site, prévenir les abus et communiquer sur les commandes ou tickets de support. Nous ne vendons pas de données personnelles à des fins de marketing sans lien."
       },
       {
         "title": "Partage",
@@ -724,7 +712,7 @@
       },
       {
         "title": "Sécurité",
-        "content": "Mesures raisonnables pour une société de services ; aucun système en ligne n est invulnérable."
+        "content": "Nous appliquons des mesures raisonnables adaptées à une activité de produits numériques ; aucun système en ligne n est totalement exempt de risques."
       },
       {
         "title": "Droits et demandes",
@@ -745,52 +733,52 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Conditions générales",
-    "intro": "Les présentes conditions encadrent l usage du site DegiScaler LLC et des prestations décrites sur la page tarifs. L achat implique l acceptation de ce cadre général.",
+    "intro": "Les présentes Conditions générales encadrent l utilisation du site de DigiScaler LLC et des produits numériques décrits sur nos pages tarifs. En achetant, vous acceptez ce cadre général.",
     "legalDisclaimer": "Texte informatif, non substitut d un conseil juridique.",
     "sections": [
       {
         "title": "Usage du site",
-        "content": "Navigation légale, sans tentative de perturbation. Le contenu est informatif ; copie massive interdite sans accord."
+        "content": "Vous vous engagez à utiliser ce site légalement et sans tenter d en perturber le fonctionnement. Le contenu informe sur DigiScaler LLC ; la copie ou l extraction massive sans autorisation est interdite."
       },
       {
-        "title": "Services et consultations",
-        "content": "DegiScaler LLC fournit des consultations numériques en direct et des services professionnels connexes (y compris, le cas échéant, conception web, e commerce, landing pages, audits et revues UI/UX publiées). Les forfaits de consultation décrits sont livrés par un appel en direct ; chaque consultation inclut un récapitulatif écrit par email après l appel comme indiqué sur la fiche. La planification et les délais associés commencent généralement après confirmation du paiement et réception des informations projet requises. DegiScaler ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats business spécifiques. Les livrables suivent le forfait acheté sauf périmètre écrit distinct."
+        "title": "Produits numériques",
+        "content": "DigiScaler LLC vend des produits numériques téléchargeables (guides PDF, modèles, checklists, ressources Notion, tableurs, bundles ZIP) comme décrit sur chaque fiche produit. La livraison est électronique — généralement via accès numérique sécurisé et/ou e-mail après paiement. Les produits sont des ressources en libre-service ; ce ne sont pas des prestations professionnelles individualisées et ils ne constituent pas un conseil juridique, fiscal ou financier. DigiScaler ne garantit pas ventes, revenus, classement, taux de conversion, trafic ou autres résultats commerciaux."
       },
       {
-        "title": "Aucune garantie d approbation paiement",
-        "content": "Nous n engageons pas l accord d un opérateur financier tiers ; seules ces entités tranchent."
+        "title": "Aucune garantie de résultats",
+        "content": "Les ressources sont des outils éducatifs et pratiques. Vos résultats dépendent de la mise en œuvre, du marché, de l adéquation produit-marché, de la qualité du site et de nombreux facteurs hors de notre contrôle."
       },
       {
-        "title": "Paiement",
-        "content": "Montants en USD sauf mention contraire. Règlement généralement avant travaux opérationnels. Conditions du prestataire de paiement applicables."
+        "title": "Paiement et tarifs",
+        "content": "Les prix publiés sont en USD sauf mention contraire. Le paiement est requis avant la livraison numérique. Les prestataires de paiement tiers traitent les données carte ; leurs conditions s appliquent également."
       },
       {
-        "title": "Responsabilités client",
-        "content": "Informations exactes, collaboration rapide, droits sur les contenus fournis. Manœuvre dolosive : suspension possible."
+        "title": "Responsabilités du client",
+        "content": "Vous devez fournir des coordonnées exactes, protéger vos liens de téléchargement et utiliser les contenus légalement. Usage abusif, redistribution contraire à la licence ou achats frauduleux peuvent entraîner une suspension d accès."
       },
       {
-        "title": "Périmètre et itérations",
-        "content": "La formule liste l inclus. Au delà, devis complémentaire. Les cycles de retouche raisonnables sont ceux annoncés contractuellement."
+        "title": "Périmètre produit",
+        "content": "Chaque fiche décrit les fichiers inclus et les paliers. Les niveaux supérieurs cumulent des téléchargements comme indiqué. Sauf mention expresse, les achats n incluent pas de travail sur mesure."
       },
       {
         "title": "Propriété intellectuelle",
-        "content": "Transfert ou licence selon accord et après paiement intégral ; certains éléments tiers restent soumis à leurs licences."
+        "content": "Les produits numériques sont concédés pour votre usage professionnel interne comme précisé à l achat. Redistribution, revente ou republication publique peuvent être limitées — respectez les conditions d usage jointes à chaque bundle."
       },
       {
-        "title": "Prestations numériques",
-        "content": "Les conseils sous formule consultation sont dispensés lors d un appel planifié, puis suivis d un récapitulatif écrit par email après l appel comme décrit pour votre niveau. D autres livrables numériques (audits ou rapports, le cas échéant) sont réputés fournis lorsqu ils sont délivrés comme décrit. Tout remboursement applicable est traité selon la politique de remboursement."
+        "title": "Livraison numérique",
+        "content": "Les produits sont réputés livrés lorsque les fichiers téléchargeables ou les liens d accès sont mis à disposition comme décrit. Les remboursements éventuels suivent la Politique de remboursement."
       },
       {
         "title": "Limitation de responsabilité",
-        "content": "Dans la limite permise, pas de dommages indirects ; plafond aligné sur les honoraires payés pour la mission concernée sauf obligation légale contraire."
+        "content": "Dans la mesure permise par la loi, DigiScaler LLC décline les dommages indirects ou consécutifs. La responsabilité globale liée à un achat donné est limitée aux frais payés pour ce produit, sauf obligation légale contraire."
       },
       {
         "title": "Droit applicable",
-        "content": "Droit des États Unis, avec recherche prioritaire d un règlement amiable."
+        "content": "Les présentes conditions sont régies par le droit des États-Unis. Les litiges doivent d abord faire l objet d un dialogue de bonne foi."
       },
       {
         "title": "Modifications",
-        "content": "Conditions actualisables ; les nouveaux achats suivent la version publiée."
+        "content": "Nous pouvons mettre à jour ces conditions ; les achats ultérieurs après publication valent acceptation de la version révisée pour les nouvelles commandes."
       },
       {
         "title": "Contact",
@@ -803,28 +791,24 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de remboursement",
-    "intro": "DegiScaler LLC vend des consultations numériques en direct professionnelles et des services connexes. Ce texte fixe des attentes équitables sur les remboursements ; tout remboursement est traité selon cette politique et la loi applicable.",
+    "intro": "DigiScaler LLC vend des produits numériques téléchargeables. Cette politique explique les attentes en matière de remboursement dans un langage courant. Les remboursements sont traités conformément à cette politique et au droit applicable.",
     "legalDisclaimer": "Information générale, pas un avis juridique.",
     "sections": [
       {
-        "title": "Consultations numériques",
-        "content": "Les consultations sont des prestations dispensées lors d un appel en direct, suivies d un récapitulatif écrit par email après l appel comme décrit pour votre formule. Une fois la session accomplie ou le récapitulatif pertinent fourni, les honoraires sont généralement dus et non remboursables sauf disposition légale impérative. DegiScaler ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats business précis."
+        "title": "Téléchargements numériques",
+        "content": "Les produits étant des biens numériques intangibles, l éligibilité au remboursement peut dépendre de l accès ou des téléchargements effectués et de ce qu impose la loi dans votre juridiction. DigiScaler ne garantit pas ventes, revenus, classement, taux de conversion ou autres résultats commerciaux."
       },
       {
-        "title": "Avant tout démarrage",
-        "content": "Sans session ni livrable, contactez support@degiscaler.com avec votre référence d achat. Examen de bonne foi sans promesse automatique."
+        "title": "Avant toute utilisation significative",
+        "content": "Si vous pensez avoir acheté par erreur avant une utilisation notable des fichiers, écrivez rapidement à support@degiscaler.com avec les détails de commande. Les demandes de bonne foi sont examinées au cas par cas ; une acceptation n est jamais garantie au-delà des exigences légales."
       },
       {
-        "title": "Production sur mesure",
-        "content": "Les missions de conception ou de développement sur mesure impliquent une exécution personnalisée. Après début réel du travail personnalisé, un remboursement devient généralement impossible car les coûts sont engagés. L admissibilité avant démarrage est examinée selon cette politique."
+        "title": "Rétrofacturations et litiges",
+        "content": "Ouvrir un litige de paiement sans nous avoir contactés au préalable peut limiter notre capacité à résoudre un problème de livraison ou d accès."
       },
       {
-        "title": "Décisions des plateformes de paiement",
-        "content": "Un désaccord avec un opérateur tiers ne vaut pas défaut de prestation DegiScaler."
-      },
-      {
-        "title": "Procédure et délais",
-        "content": "Écrivez à support@degiscaler.com ; réponse type sous trois à cinq jours ouvrés aux États Unis."
+        "title": "Demander un examen",
+        "content": "Envoyez les informations de commande et une brève explication à support@degiscaler.com. Nous visons à accuser réception de la plupart des demandes sous trois à cinq jours ouvrés aux États-Unis."
       },
       {
         "title": "Contact",
@@ -833,25 +817,40 @@
     ]
   },
   "orderPage": {
-    "title": "Finaliser votre demande",
-    "subtitle": "Indiquez comment vous joindre. Nous confirmerons votre formule et la suite.",
-    "deliveryNote": "Le délai commence après confirmation du paiement et réception des détails de votre projet.",
-    "summaryLabel": "Formule choisie",
+    "title": "Paiement",
+    "subtitle": "Vérifiez votre kit, vos informations de facturation et les conditions de livraison numérique. Les liens de téléchargement n apparaissent que sur la page de confirmation après la fin du tunnel.",
+    "deliveryNote": "Les produits sont livrés numériquement. Les instructions d accès figurent sur la page de remerciement une fois le tunnel terminé.",
+    "deliveryComplianceTitle": "Information produit numérique",
+    "deliveryComplianceLines": [
+      "Les fichiers se débloquent sur la page de confirmation après le paiement",
+      "Aucun envoi physique — biens numériques uniquement",
+      "Livraison électronique via liens sécurisés ou email"
+    ],
+    "orderSummaryTitle": "Récapitulatif de commande",
+    "totalLabel": "Total",
+    "paymentsPausedTitle": "Paiements suspendus",
+    "paymentsPausedBody": "Les paiements sont temporairement indisponibles pendant la finalisation du tunnel de paiement.",
+    "secureCheckoutTitle": "Paiement sécurisé",
+    "secureCheckoutBody": "Paiement numérique sécurisé et livraison automatisée. La capture par carte sera connectée lorsque les paiements seront activés.",
+    "billingSectionTitle": "Informations de facturation",
+    "demoCheckoutHint": "Ce flux enregistre vos informations pour contrôle conformité et vous redirige vers l accès aux fichiers sans encaissement par carte.",
+    "completePurchaseDemo": "Finaliser l achat (paiement démo)",
+    "summaryLabel": "Kit sélectionné",
     "fallbackSummaryLabel": "Résumé de la demande",
-    "fallbackSummaryTitle": "Demande de projet",
-    "fallbackSummaryDescription": "Indiquez vos besoins. L équipe vous répondra avec des options et les prochaines étapes.",
-    "fallbackPackageNotice": "Les détails live du forfait sont indisponibles pour le moment. Votre demande sera tout de même transmise.",
-    "genericRequestHint": "Consultez les tarifs pour les paliers de consultation, ou envoyez une demande générale ci dessous.",
-    "unknownPackage": "Ce lien de formule est invalide. Choisissez une consultation sur la page Tarifs.",
+    "fallbackSummaryTitle": "Aide à l achat",
+    "fallbackSummaryDescription": "Indiquez quel kit vous souhaitiez. Notre équipe vous enverra les instructions d accès.",
+    "fallbackPackageNotice": "Les détails du kit ne peuvent pas être chargés pour le moment. Votre demande sera tout de même transmise en toute sécurité.",
+    "genericRequestHint": "Consultez les Tarifs pour les kits numériques, ou décrivez votre besoin ci-dessous.",
+    "unknownPackage": "Ce lien produit n est pas valide. Choisissez un kit sur la page Tarifs.",
     "fields": {
       "fullName": "Nom complet",
       "fullNamePlaceholder": "Votre nom",
       "email": "E-mail",
       "emailPlaceholder": "vous@entreprise.com",
-      "whatsapp": "Numéro WhatsApp",
-      "whatsappPlaceholder": "Facultatif — indiquez l indicatif pays",
-      "message": "Message / notes",
-      "messagePlaceholder": "Facultatif — objectifs, délais ou contraintes"
+      "whatsapp": "Téléphone / WhatsApp (facultatif)",
+      "whatsappPlaceholder": "Facultatif — inclure l indicatif pays",
+      "message": "Notes (facultatif)",
+      "messagePlaceholder": "Facultatif — incohérence de facturation, problème d accès, etc."
     },
     "submit": "Envoyer la demande",
     "errors": {
@@ -863,7 +862,14 @@
   },
   "thankYouPage": {
     "orderTitle": "Merci",
-    "orderBody": "Merci. Votre demande a été reçue. Un membre de l'équipe vous contactera bientôt.",
+    "orderConfirmationSubtitle": "Étape de paiement terminée.",
+    "orderRecordedLead": "Confirmation de commande enregistrée pour contrôle conformité.",
+    "digitalFulfillmentNote": "Téléchargement ou accès numérique instantané. Produit numérique uniquement — pas d’envoi physique. Livraison électronique.",
+    "downloadSectionTitle": "Accès téléchargement",
+    "saveFilesSecurely": "Vos fichiers numériques sont disponibles ci-dessous. Enregistrez-les en lieu sûr.",
+    "downloadKitZip": "Télécharger le kit (ZIP)",
+    "downloadUnavailable": "Nous n avons pas pu joindre le fichier du kit à cette confirmation. Écrivez au support avec vos informations et le nom du kit.",
+    "supportIntro": "Besoin d’aide pour accéder aux fichiers ?",
     "contactTitle": "Merci",
     "contactBody": "Merci. Votre message a été reçu.",
     "backHome": "Retour à l accueil",

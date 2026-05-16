@@ -163,7 +163,7 @@ export async function submitOrderAction(
   return {
     error: null,
     ok: true,
-    redirectTo: `/${locale}/thank-you?type=order`,
+    redirectTo: `/${locale}/thank-you?type=order&pkg=${encodeURIComponent(packageSlug)}`,
   };
 }
 
