@@ -52,9 +52,17 @@ export function canonicalPublicSlug(slug: string): string {
   return canonicalPackageSlug(slug);
 }
 
-/** Filename under /public/downloads/ for demo bundle (canonical slug). */
-export function demoZipFilename(publicSlug: string): string | null {
+/** Canonical package slug → shipped digital product filename under /public/downloads/. */
+const PACKAGE_PRODUCT_ZIP: Record<string, string> = {
+  'starter-website-kit': 'Starter_Website_Kit.zip',
+  'growth-optimization-kit': 'Growth_Optimization_Kit.zip',
+  'pro-conversion-toolkit': 'Pro_Conversion_Toolkit.zip',
+  'scale-business-bundle': 'Scale_Business_Bundle.zip',
+};
+
+/** Filename under /public/downloads/ for the purchased kit (canonical slug). */
+export function productZipFilename(publicSlug: string): string | null {
   const canon = canonicalPackageSlug(publicSlug);
   if (!ORDERABLE_SLUGS.has(canon)) return null;
-  return `${canon}.zip`;
+  return PACKAGE_PRODUCT_ZIP[canon] ?? null;
 }

@@ -6,8 +6,8 @@ import PageHero from '@/components/layout/PageHero';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
 import {
   canonicalPublicSlug,
-  demoZipFilename,
   isOrderablePackageSlug,
+  productZipFilename,
 } from '@/lib/packages/map-slug';
 import {
   cardSurfaceBgImage,
@@ -70,7 +70,7 @@ export default async function ThankYouPage({
     try {
       const resolved = await resolvePackageForOrder(pkgRaw, fallbackPackages);
       productTitle = resolved?.packageTitle ?? null;
-      const z = demoZipFilename(canonicalPublicSlug(pkgRaw));
+      const z = productZipFilename(canonicalPublicSlug(pkgRaw));
       zipHref = z ? `/downloads/${z}` : null;
     } catch (err) {
       console.error('[ThankYouPage] resolve package', err);

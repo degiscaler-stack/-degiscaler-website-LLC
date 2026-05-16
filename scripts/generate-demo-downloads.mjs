@@ -1,5 +1,6 @@
 /**
- * Builds demo ZIPs under public/downloads/ for local preview and compliance demos.
+ * Builds small placeholder ZIPs under public/downloads/_dev-generated-demos/ for local preview only.
+ * Shipped customer kits live at public/downloads/*.zip (see lib/packages/map-slug.ts — productZipFilename).
  * Requires `tar` (Windows 10+) or falls back to PowerShell Compress-Archive.
  */
 import { mkdirSync, writeFileSync, rmSync } from 'fs';
@@ -242,4 +243,4 @@ for (const folder of Object.keys(kits)) {
 }
 
 rmSync(buildRoot, { recursive: true, force: true });
-console.log('Demo downloads written to public/downloads/');
+console.log('Demo downloads written to public/downloads/_dev-generated-demos/');

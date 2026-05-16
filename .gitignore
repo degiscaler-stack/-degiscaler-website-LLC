@@ -49,3 +49,4 @@ next-env.d.ts
 
 # transient demo bundle staging (scripts/generate-demo-downloads.mjs)
 /scripts/.demo-build/
+public/downloads/_dev-generated-demos/
