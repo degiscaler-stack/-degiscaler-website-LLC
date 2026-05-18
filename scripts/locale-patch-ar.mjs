@@ -7,7 +7,7 @@ Object.assign(j.common, {
   viewServices: 'تصفح الموارد الرقمية',
   getStarted: 'تصفح الأدوات',
   contactUs: 'دعم المنتجات',
-  companyName: 'DigiScaler LLC',
+  companyName: 'DegiScaler LLC',
 });
 
 j.nav.services = 'الموارد';
@@ -18,9 +18,9 @@ Object.assign(j.footer, {
   digitalDelivery:
     'جميع المنتجات رقمية وقابلة للتحميل. لا يوجد شحن مادي. يتم إرسال الوصول إلكترونياً بعد الشراء.',
   links: { ...j.footer.links, services: 'الموارد' },
-  copyright: 'DigiScaler LLC. جميع الحقوق محفوظة.',
+  copyright: 'DegiScaler LLC. جميع الحقوق محفوظة.',
   disclaimer:
-    'DigiScaler LLC شركة أمريكية تبيع منتجات رقمية. الموارد أدوات تعليمية وعملية؛ لا نضمن نتائج مالية أو مبيعات أو ترتيباً محدداً.',
+    'DegiScaler LLC شركة أمريكية تبيع منتجات رقمية. الموارد أدوات تعليمية وعملية؛ لا نضمن نتائج مالية أو مبيعات أو ترتيباً محدداً.',
 });
 
 j.home.hero.headline = 'حمّل أدوات رقمية احترافية لتحسين موقعك وبزنسك';

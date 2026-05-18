@@ -41,7 +41,7 @@ const kits = {
     [
       'README.txt',
       `DigiScaler — Starter Website Kit (demo bundle)
-© ${new Date().getFullYear()} DigiScaler LLC. This is a non-commercial demo archive with placeholder materials.
+© ${new Date().getFullYear()} DegiScaler LLC. This is a non-commercial demo archive with placeholder materials.
 
 What this demo contains
 • Plain-text guides and checklists you can adapt for your own workflows.

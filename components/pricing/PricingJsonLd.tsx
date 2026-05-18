@@ -20,7 +20,7 @@ export default function PricingJsonLd({
     {
       '@type': 'Organization',
       '@id': `${origin}/#organization`,
-      name: 'DigiScaler LLC',
+      name: 'DegiScaler LLC',
       url: origin,
       email: 'support@degiscaler.com',
       description:

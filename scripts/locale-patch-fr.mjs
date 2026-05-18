@@ -7,7 +7,7 @@ Object.assign(j.common, {
   viewServices: 'Parcourir les ressources numériques',
   getStarted: 'Voir les kits',
   contactUs: 'Support produit',
-  companyName: 'DigiScaler LLC',
+  companyName: 'DegiScaler LLC',
 });
 
 j.nav.services = 'Ressources';
@@ -20,9 +20,9 @@ Object.assign(j.footer, {
   digitalDelivery:
     "Tous les produits sont des téléchargements numériques. Aucun envoi physique n'est fourni. L'accès est livré électroniquement après l'achat.",
   links: { ...j.footer.links, services: 'Ressources' },
-  copyright: 'DigiScaler LLC. Tous droits réservés.',
+  copyright: 'DegiScaler LLC. Tous droits réservés.',
   disclaimer:
-    "DigiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
+    "DegiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
 });
 
 fs.writeFileSync(p, `${JSON.stringify(j, null, 2)}\n`);

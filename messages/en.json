@@ -7,7 +7,7 @@
     "learnMore": "Learn More",
     "backToHome": "Back to Home",
     "readMore": "Read More",
-    "companyName": "DigiScaler LLC"
+    "companyName": "DegiScaler LLC"
   },
   "metadata": {
     "title": "DigiScaler — Premium Digital Kits & Templates",
@@ -48,8 +48,8 @@
       "refund": "Refund Policy",
       "digitalDelivery": "Digital Delivery Policy"
     },
-    "copyright": "DigiScaler LLC. All rights reserved.",
-    "disclaimer": "DigiScaler LLC is a U.S.-registered seller of digital products. Resources are educational and practical tools; we do not guarantee business outcomes, rankings, or revenue.",
+    "copyright": "DegiScaler LLC. All rights reserved.",
+    "disclaimer": "DegiScaler LLC is a U.S.-registered seller of digital products. Resources are educational and practical tools; we do not guarantee business outcomes, rankings, or revenue.",
     "complianceDisclaimer": "DegiScaler LLC sells pre-made downloadable digital resources only. We do not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical products."
   },
   "chat": {
@@ -76,7 +76,7 @@
       "languages": "We support English, Arabic, and French — switch languages from the header. The DigiScaler brand name stays in Roman characters.",
       "checkout_resources": "Checkout readiness checklists and trust-focused PDFs are included in the kits so you can improve clarity on your own site.",
       "payment_no_guarantee": "DigiScaler does not guarantee sales, revenue, rankings, or specific business results. Resources are educational tools; outcomes depend on how you use them.",
-      "refund": "Digital products follow the Refund Policy. Eligibility may depend on download/access status — mistaken or duplicate payments may be reviewed case by case.",
+      "refund": "Customers may request a refund within 14 days of purchase. Email support@degiscaler.com with your order details to submit a request. See the Refund Policy for full details.",
       "timeline": "Support replies within about 24–48 business hours. Digital access is delivered right after successful purchase unless email providers delay messages."
     },
     "support": {
@@ -315,7 +315,7 @@
         },
         {
           "question": "Can I request a refund?",
-          "answer": "Refunds are handled according to the Refund Policy. Because products are digital, access and download status may affect refund eligibility."
+          "answer": "Customers may request a refund within 14 days of purchase. Email support@degiscaler.com with your order details to submit a request."
         },
         {
           "question": "Do you guarantee results?",
@@ -449,7 +449,7 @@
     "getStarted": "Buy Digital Kit",
     "continueToCheckout": "Continue to checkout",
     "perPackage": "per package",
-    "disclaimer": "All prices are in USD. Products are pre-made downloadable digital resources with automated delivery—typically via secure digital access and/or email after checkout completes. DigiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided. Access timing can depend on payment confirmation and email deliverability.",
+    "disclaimer": "All prices are in USD. Products are pre-made downloadable digital resources with automated delivery—typically via secure digital access and/or email after checkout completes. DegiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided. Access timing can depend on payment confirmation and email deliverability.",
     "includedTitle": "What is included",
     "includedItems": [
       "Instant digital access after successful checkout",
@@ -550,9 +550,9 @@
   },
   "aboutPage": {
     "title": "About",
-    "eyebrow": "About DigiScaler LLC",
+    "eyebrow": "About DegiScaler LLC",
     "headline": "A U.S.-registered digital products brand for online business resources",
-    "subheadline": "DigiScaler LLC creates downloadable digital resources for founders, creators, online stores, and small businesses that want clearer websites, stronger trust signals, and better customer journeys.",
+    "subheadline": "DegiScaler LLC creates downloadable digital resources for founders, creators, online stores, and small businesses that want clearer websites, stronger trust signals, and better customer journeys.",
     "missionLabel": "Mission",
     "missionText": "Package practical optimization knowledge into premium downloads—so teams can improve clarity, trust, and shopper confidence without opaque engagements.",
     "whoWeHelpLabel": "Who we help",
@@ -593,7 +593,7 @@
       "typeLabel": "Type",
       "focusLabel": "Focus",
       "emailLabel": "Email",
-      "name": "DigiScaler LLC",
+      "name": "DegiScaler LLC",
       "type": "U.S. Limited Liability Company",
       "focus": "Digital Products & Downloadable Business Resources",
       "email": "support@degiscaler.com"
@@ -635,7 +635,7 @@
       "responseLabel": "Typical response time",
       "response": "Within 24–48 business hours",
       "scopeLine": "Product access, downloads, billing questions, and general digital product support.",
-      "trustNote": "DigiScaler LLC sells downloadable digital resources. This form is for product support—not legal, tax, or financial advice."
+      "trustNote": "DegiScaler LLC sells downloadable digital resources. This form is for product support—not legal, tax, or financial advice."
     }
   },
   "faqPage": {
@@ -661,22 +661,22 @@
         "question": "Do I need to work directly with your team to use the products?",
         "answer": "No. DigiScaler products are self-service digital resources designed to be used independently. No consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, or manual reviews are included or provided."
       },
-      {
-        "question": "Can I request a refund?",
-        "answer": "Refunds are handled according to the Refund Policy. Because products are digital downloads, access and download status may affect refund eligibility."
-      },
-      {
-        "question": "Do you guarantee results?",
-        "answer": "No. The resources are pre-made educational and practical tools. No revenue, rankings, conversion rates, traffic, or any specific business outcome is guaranteed. Results depend on implementation, business model, website quality, traffic, and many factors outside our control."
-      }
-    ]
-  },
+        {
+          "question": "Can I request a refund?",
+          "answer": "Customers may request a refund within 14 days of purchase. Email support@degiscaler.com with your order details to submit a request."
+        },
+        {
+          "question": "Do you guarantee results?",
+          "answer": "No. The resources are pre-made educational and practical tools. No revenue, rankings, conversion rates, traffic, or any specific business outcome is guaranteed. Results depend on implementation, business model, website quality, traffic, and many factors outside our control."
+        }
+      ]
+    },
   "privacyPage": {
     "title": "Privacy Policy",
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Privacy Policy",
-    "intro": "DigiScaler LLC (\"we\", \"our\", or \"us\") describes—at a general level—how information may be handled when you use this website or purchase digital products. This summary is not legal advice.",
+    "intro": "DegiScaler LLC (\"we\", \"our\", or \"us\") describes—at a general level—how information may be handled when you use this website or purchase digital products. This summary is not legal advice.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice. Consult qualified counsel for your situation.",
     "sections": [
       {
@@ -730,16 +730,16 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Terms of Service",
-    "intro": "These Terms of Service govern use of the DigiScaler LLC website and the digital products described on our pricing pages. By purchasing, you agree to this general framework.",
+    "intro": "These Terms of Service govern use of the DegiScaler LLC website and the digital products described on our pricing pages. By purchasing, you agree to this general framework.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
         "title": "Use of website",
-        "content": "You agree to use this site lawfully and without attempting to disrupt its operation. Content is provided for information about DigiScaler LLC; copying or scraping without permission is not allowed."
+        "content": "You agree to use this site lawfully and without attempting to disrupt its operation. Content is provided for information about DegiScaler LLC; copying or scraping without permission is not allowed."
       },
       {
         "title": "Digital products",
-        "content": "DigiScaler LLC sells pre-made downloadable digital products (such as PDF guides, worksheets, templates, checklists, Notion resources, spreadsheets, and ZIP bundles) as described on each product page. Delivery is electronic—typically via secure digital access and/or email—after checkout completes. Products are self-service resources; they are not individualized professional services and do not constitute legal, tax, or financial advice. DigiScaler does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, or manual reviews. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, traffic, or other business outcomes."
+        "content": "DegiScaler LLC sells pre-made downloadable digital products (such as PDF guides, worksheets, templates, checklists, Notion resources, spreadsheets, and ZIP bundles) as described on each product page. Delivery is electronic—typically via secure digital access and/or email—after checkout completes. Products are self-service resources; they are not individualized professional services and do not constitute legal, tax, or financial advice. DigiScaler does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, or manual reviews. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, traffic, or other business outcomes."
       },
       {
         "title": "No outcome guarantees",
@@ -767,7 +767,7 @@
       },
       {
         "title": "Limitation of liability",
-        "content": "To the maximum extent permitted by law, DigiScaler LLC is not liable for indirect or consequential damages. Aggregate liability relating to a given purchase is limited to fees paid for that product unless a law requires otherwise."
+        "content": "To the maximum extent permitted by law, DegiScaler LLC is not liable for indirect or consequential damages. Aggregate liability relating to a given purchase is limited to fees paid for that product unless a law requires otherwise."
       },
       {
         "title": "Governing law",
@@ -788,28 +788,28 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Refund policy",
-    "intro": "DigiScaler LLC sells pre-made downloadable digital products. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
+    "intro": "DegiScaler LLC sells pre-made downloadable digital products. This policy explains our refund terms clearly. Refunds are handled according to this policy and applicable law.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
-        "title": "Digital downloads",
-        "content": "Because products are intangible digital goods, refund eligibility may depend on whether files were accessed or downloaded and what the law requires in your jurisdiction. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, or other business outcomes."
+        "title": "14-day refund window",
+        "content": "Customers may request a refund within 14 days of purchase. To submit a refund request, email support@degiscaler.com with your order details."
       },
       {
-        "title": "Before access is used",
-        "content": "If you believe you purchased in error before meaningful use of the files, email support@degiscaler.com promptly with order details. Good-faith requests are reviewed individually; approval is never guaranteed beyond legal requirements."
+        "title": "What to include in your request",
+        "content": "Please include your full name, the email address used at checkout, and the name of the product purchased. This helps us process your request promptly."
+      },
+      {
+        "title": "How refunds are processed",
+        "content": "Approved refunds are returned to the original payment method when possible. We aim to respond to refund requests within 3–5 U.S. business days."
       },
       {
         "title": "Chargebacks & disputes",
-        "content": "Opening a payment dispute without contacting support first may limit our ability to troubleshoot delivery or access issues."
-      },
-      {
-        "title": "How to request review",
-        "content": "Send order information and a concise explanation to support@degiscaler.com. We aim to acknowledge most requests within 3–5 U.S. business days."
+        "content": "If you have a billing or access issue, please contact support@degiscaler.com before opening a payment dispute. This allows us to resolve issues quickly."
       },
       {
         "title": "Contact",
-        "content": "support@degiscaler.com"
+        "content": "To request a refund or for billing questions, contact: support@degiscaler.com"
       }
     ]
   },
@@ -818,16 +818,16 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Digital Delivery Policy",
-    "intro": "DigiScaler LLC sells pre-made downloadable digital resources only. This page explains how digital delivery works after a successful purchase.",
+    "intro": "DegiScaler LLC sells pre-made downloadable digital resources only. This page explains how digital delivery works after a successful purchase.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
         "title": "All products are digital downloads",
-        "content": "Every product sold by DigiScaler LLC is a pre-made downloadable digital resource. No physical products are sold or shipped. Product types may include PDFs, worksheets, templates, checklists, planners, Notion resources, Google Sheets resources, and ZIP bundles."
+        "content": "Every product sold by DegiScaler LLC is a pre-made downloadable digital resource. No physical products are sold or shipped. Product types may include PDFs, worksheets, templates, checklists, planners, Notion resources, Google Sheets resources, and ZIP bundles."
       },
       {
         "title": "No physical shipping",
-        "content": "DigiScaler LLC does not ship physical products. There is no physical delivery, no tracking number, and no shipping fee. All fulfillment is electronic."
+        "content": "DegiScaler LLC does not ship physical products. There is no physical delivery, no tracking number, and no shipping fee. All fulfillment is electronic."
       },
       {
         "title": "How access is delivered",
@@ -839,7 +839,7 @@
       },
       {
         "title": "Saving your files",
-        "content": "Please save your files securely after downloading. DigiScaler LLC is not responsible for lost access due to device failure, expired links, or failure to save downloaded files. If you need assistance with re-access, contact product support."
+        "content": "Please save your files securely after downloading. DegiScaler LLC is not responsible for lost access due to device failure, expired links, or failure to save downloaded files. If you need assistance with re-access, contact product support."
       },
       {
         "title": "If you cannot access your files",
@@ -851,7 +851,7 @@
       },
       {
         "title": "No consulting or custom services",
-        "content": "DigiScaler LLC does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, manual reviews, or any form of personalized service delivery. All products are self-service downloadable resources."
+        "content": "DegiScaler LLC does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, manual reviews, or any form of personalized service delivery. All products are self-service downloadable resources."
       },
       {
         "title": "Contact",

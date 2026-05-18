@@ -7,7 +7,7 @@
     "learnMore": "En savoir plus",
     "backToHome": "Retour à l'accueil",
     "readMore": "Lire la suite",
-    "companyName": "DigiScaler LLC"
+    "companyName": "DegiScaler LLC"
   },
   "metadata": {
     "title": "DigiScaler — Kits numériques et modèles premium",
@@ -46,8 +46,8 @@
       "refund": "Politique de remboursement",
       "digitalDelivery": "Politique de livraison numérique"
     },
-    "copyright": "DigiScaler LLC. Tous droits réservés.",
-    "disclaimer": "DigiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
+    "copyright": "DegiScaler LLC. Tous droits réservés.",
+    "disclaimer": "DegiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
     "complianceDisclaimer": "DegiScaler LLC vend uniquement des ressources numériques prêtes au téléchargement. Nous ne fournissons pas de services de conseil, de services clés en main, d'implémentation personnalisée, de services gérés, de services d'agence, d'appels stratégiques, d'examens manuels ou de produits physiques.",
     "digitalDelivery": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n'est fourni. L'accès est livré électroniquement après l'achat.",
     "trustCheckout": "Paiement numérique sécurisé et livraison automatisée."
@@ -76,7 +76,7 @@
       "languages": "Le site existe en français, anglais et arabe via le sélecteur ; le nom DigiScaler reste en caractères latins.",
       "checkout_resources": "Les checklists de préparation au paiement et fichiers liés à la confiance sont inclus dans les kits.",
       "payment_no_guarantee": "DigiScaler ne garantit pas ventes, revenus, classement ou résultats précis — ce sont des outils éducatifs dont l’effet dépend de votre mise en œuvre.",
-      "refund": "Les produits numériques suivent la Politique de remboursement ; l’éligibilité peut dépendre du statut d’accès ou de téléchargement.",
+      "refund": "Les clients peuvent demander un remboursement dans les 14 jours suivant l’achat. Envoyez un e-mail à support@degiscaler.com avec vos informations de commande. Consultez la Politique de remboursement pour plus de détails.",
       "timeline": "Réponse support généralement sous 24–48 h ouvrées. L’accès numérique arrive après paiement réussi sauf retard du fournisseur de messagerie."
     },
     "support": {
@@ -320,7 +320,7 @@
         },
         {
           "question": "Puis-je demander un remboursement ?",
-          "answer": "Les remboursements suivent la Politique de remboursement. Comme les produits sont numériques, l’accès et les téléchargements peuvent influencer l’éligibilité."
+          "answer": "Les clients peuvent demander un remboursement dans les 14 jours suivant l’achat. Envoyez un e-mail à support@degiscaler.com avec vos informations de commande pour soumettre une demande."
         },
         {
           "question": "Garantissez-vous des résultats ?",
@@ -454,7 +454,7 @@
     "getStarted": "Acheter le kit",
     "continueToCheckout": "Continuer vers le paiement",
     "perPackage": "par forfait",
-    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DigiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni.",
+    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DegiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni.",
     "includedTitle": "Ce que recouvrent les formules",
     "includedItems": [
       "Accès numérique instantané après paiement réussi",
@@ -555,9 +555,9 @@
   },
   "aboutPage": {
     "title": "À propos",
-    "eyebrow": "À propos de DigiScaler LLC",
+    "eyebrow": "À propos de DegiScaler LLC",
     "headline": "Une marque américaine de produits numériques pour les entreprises en ligne",
-    "subheadline": "DigiScaler LLC crée des ressources numériques téléchargeables pour les fondateurs, créateurs, boutiques en ligne et petites entreprises qui veulent des sites plus clairs, plus fiables et mieux structurés.",
+    "subheadline": "DegiScaler LLC crée des ressources numériques téléchargeables pour les fondateurs, créateurs, boutiques en ligne et petites entreprises qui veulent des sites plus clairs, plus fiables et mieux structurés.",
     "missionLabel": "Mission",
     "missionText": "Packager des savoir-faire d’optimisation pratiques dans des téléchargements premium — pour que les équipes renforcent clarté, confiance et sérénité des acheteurs sans prestations opaques.",
     "whoWeHelpLabel": "Pour qui",
@@ -598,7 +598,7 @@
       "typeLabel": "Type",
       "focusLabel": "Spécialité",
       "emailLabel": "E-mail",
-      "name": "DigiScaler LLC",
+      "name": "DegiScaler LLC",
       "type": "Société à responsabilité limitée américaine",
       "focus": "Produits numériques et ressources business téléchargeables",
       "email": "support@degiscaler.com"
@@ -640,7 +640,7 @@
       "responseLabel": "Délai de réponse habituel",
       "response": "Sous 24 à 48 heures ouvrées",
       "scopeLine": "Accès aux produits, téléchargements, facturation et support général sur les ressources numériques.",
-      "trustNote": "DigiScaler LLC vend des ressources numériques téléchargeables. Ce formulaire sert au support produit — pas aux conseils juridiques, fiscaux ou financiers."
+      "trustNote": "DegiScaler LLC vend des ressources numériques téléchargeables. Ce formulaire sert au support produit — pas aux conseils juridiques, fiscaux ou financiers."
     }
   },
   "faqPage": {
@@ -668,7 +668,7 @@
       },
       {
         "question": "Puis-je demander un remboursement ?",
-        "answer": "Les remboursements suivent la Politique de remboursement. Comme les produits sont numériques, l’accès et les téléchargements peuvent influencer l’éligibilité."
+        "answer": "Les clients peuvent demander un remboursement dans les 14 jours suivant l’achat. Envoyez un e-mail à support@degiscaler.com avec vos informations de commande pour soumettre une demande."
       },
       {
         "question": "Garantissez-vous des résultats ?",
@@ -681,7 +681,7 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de confidentialité",
-    "intro": "DigiScaler LLC (« nous », « notre ») décrit — à un niveau général — comment des informations peuvent être traitées lorsque vous utilisez ce site ou achetez des produits numériques. Ce résumé ne constitue pas un conseil juridique.",
+    "intro": "DegiScaler LLC (« nous », « notre ») décrit — à un niveau général — comment des informations peuvent être traitées lorsque vous utilisez ce site ou achetez des produits numériques. Ce résumé ne constitue pas un conseil juridique.",
     "legalDisclaimer": "Cette page est fournie à titre informatif et ne constitue pas un avis juridique.",
     "sections": [
       {
@@ -735,16 +735,16 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Conditions générales",
-    "intro": "Les présentes Conditions générales encadrent l utilisation du site de DigiScaler LLC et des produits numériques décrits sur nos pages tarifs. En achetant, vous acceptez ce cadre général.",
+    "intro": "Les présentes Conditions générales encadrent l utilisation du site de DegiScaler LLC et des produits numériques décrits sur nos pages tarifs. En achetant, vous acceptez ce cadre général.",
     "legalDisclaimer": "Texte informatif, non substitut d un conseil juridique.",
     "sections": [
       {
         "title": "Usage du site",
-        "content": "Vous vous engagez à utiliser ce site légalement et sans tenter d en perturber le fonctionnement. Le contenu informe sur DigiScaler LLC ; la copie ou l extraction massive sans autorisation est interdite."
+        "content": "Vous vous engagez à utiliser ce site légalement et sans tenter d en perturber le fonctionnement. Le contenu informe sur DegiScaler LLC ; la copie ou l extraction massive sans autorisation est interdite."
       },
       {
         "title": "Produits numériques",
-        "content": "DigiScaler LLC vend des produits numériques téléchargeables (guides PDF, modèles, checklists, ressources Notion, tableurs, bundles ZIP) comme décrit sur chaque fiche produit. La livraison est électronique — généralement via accès numérique sécurisé et/ou e-mail après paiement. Les produits sont des ressources en libre-service ; ce ne sont pas des prestations professionnelles individualisées et ils ne constituent pas un conseil juridique, fiscal ou financier. DigiScaler ne garantit pas ventes, revenus, classement, taux de conversion, trafic ou autres résultats commerciaux."
+        "content": "DegiScaler LLC vend des produits numériques téléchargeables (guides PDF, modèles, checklists, ressources Notion, tableurs, bundles ZIP) comme décrit sur chaque fiche produit. La livraison est électronique — généralement via accès numérique sécurisé et/ou e-mail après paiement. Les produits sont des ressources en libre-service ; ce ne sont pas des prestations professionnelles individualisées et ils ne constituent pas un conseil juridique, fiscal ou financier. DigiScaler ne garantit pas ventes, revenus, classement, taux de conversion, trafic ou autres résultats commerciaux."
       },
       {
         "title": "Aucune garantie de résultats",
@@ -772,7 +772,7 @@
       },
       {
         "title": "Limitation de responsabilité",
-        "content": "Dans la mesure permise par la loi, DigiScaler LLC décline les dommages indirects ou consécutifs. La responsabilité globale liée à un achat donné est limitée aux frais payés pour ce produit, sauf obligation légale contraire."
+        "content": "Dans la mesure permise par la loi, DegiScaler LLC décline les dommages indirects ou consécutifs. La responsabilité globale liée à un achat donné est limitée aux frais payés pour ce produit, sauf obligation légale contraire."
       },
       {
         "title": "Droit applicable",
@@ -793,28 +793,28 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de remboursement",
-    "intro": "DigiScaler LLC vend des produits numériques téléchargeables. Cette politique explique les attentes en matière de remboursement dans un langage courant. Les remboursements sont traités conformément à cette politique et au droit applicable.",
+    "intro": "DegiScaler LLC vend des produits numériques téléchargeables. Cette politique explique clairement nos conditions de remboursement. Les remboursements sont traités conformément à cette politique et au droit applicable.",
     "legalDisclaimer": "Information générale, pas un avis juridique.",
     "sections": [
       {
-        "title": "Téléchargements numériques",
-        "content": "Les produits étant des biens numériques intangibles, l éligibilité au remboursement peut dépendre de l accès ou des téléchargements effectués et de ce qu impose la loi dans votre juridiction. DigiScaler ne garantit pas ventes, revenus, classement, taux de conversion ou autres résultats commerciaux."
+        "title": "Fenêtre de remboursement de 14 jours",
+        "content": "Les clients peuvent demander un remboursement dans les 14 jours suivant l'achat. Pour soumettre une demande, envoyez un e-mail à support@degiscaler.com avec vos informations de commande."
       },
       {
-        "title": "Avant toute utilisation significative",
-        "content": "Si vous pensez avoir acheté par erreur avant une utilisation notable des fichiers, écrivez rapidement à support@degiscaler.com avec les détails de commande. Les demandes de bonne foi sont examinées au cas par cas ; une acceptation n est jamais garantie au-delà des exigences légales."
+        "title": "Ce qu'il faut inclure dans votre demande",
+        "content": "Veuillez indiquer votre nom complet, l'adresse e-mail utilisée lors du paiement et le nom du produit acheté. Cela nous permet de traiter votre demande rapidement."
+      },
+      {
+        "title": "Comment les remboursements sont traités",
+        "content": "Les remboursements approuvés sont restitués sur le moyen de paiement d'origine dans la mesure du possible. Nous visons à répondre aux demandes dans un délai de 3 à 5 jours ouvrés."
       },
       {
         "title": "Rétrofacturations et litiges",
-        "content": "Ouvrir un litige de paiement sans nous avoir contactés au préalable peut limiter notre capacité à résoudre un problème de livraison ou d accès."
-      },
-      {
-        "title": "Demande de remboursement",
-        "content": "Envoyez les informations de commande et une brève explication à support@degiscaler.com. Nous visons à accuser réception de la plupart des demandes sous trois à cinq jours ouvrés aux États-Unis."
+        "content": "En cas de problème de facturation ou d'accès, veuillez contacter support@degiscaler.com avant d'ouvrir un litige de paiement. Cela nous permet de résoudre les problèmes rapidement."
       },
       {
         "title": "Contact",
-        "content": "support@degiscaler.com"
+        "content": "Pour demander un remboursement ou pour toute question de facturation : support@degiscaler.com"
       }
     ]
   },
@@ -873,16 +873,16 @@
     "eyebrow": "Juridique",
     "lastUpdated": "Dernière mise à jour : mai 2026",
     "headline": "Politique de livraison numérique",
-    "intro": "DigiScaler LLC vend uniquement des ressources numériques prêtes au téléchargement. Cette page explique le fonctionnement de la livraison numérique après un achat réussi.",
+    "intro": "DegiScaler LLC vend uniquement des ressources numériques prêtes au téléchargement. Cette page explique le fonctionnement de la livraison numérique après un achat réussi.",
     "legalDisclaimer": "Cette page est fournie à titre d'information générale et ne constitue pas un conseil juridique.",
     "sections": [
       {
         "title": "Tous les produits sont des téléchargements numériques",
-        "content": "Chaque produit vendu par DigiScaler LLC est une ressource numérique prête au téléchargement. Aucun produit physique n'est vendu ni expédié. Les types de fichiers peuvent inclure : guides PDF, fiches de travail, modèles, checklists, planificateurs, ressources Notion, ressources Google Sheets et bundles ZIP."
+        "content": "Chaque produit vendu par DegiScaler LLC est une ressource numérique prête au téléchargement. Aucun produit physique n'est vendu ni expédié. Les types de fichiers peuvent inclure : guides PDF, fiches de travail, modèles, checklists, planificateurs, ressources Notion, ressources Google Sheets et bundles ZIP."
       },
       {
         "title": "Aucun envoi physique",
-        "content": "DigiScaler LLC n'expédie pas de produits physiques. Il n'y a pas de livraison physique, de numéro de suivi ni de frais de port. Toute l'exécution est électronique."
+        "content": "DegiScaler LLC n'expédie pas de produits physiques. Il n'y a pas de livraison physique, de numéro de suivi ni de frais de port. Toute l'exécution est électronique."
       },
       {
         "title": "Comment l'accès est livré",
@@ -894,7 +894,7 @@
       },
       {
         "title": "Sauvegarder vos fichiers",
-        "content": "Veuillez sauvegarder vos fichiers en toute sécurité après téléchargement. DigiScaler LLC n'est pas responsable de la perte d'accès due à une défaillance de l'appareil, des liens expirés ou un échec de sauvegarde."
+        "content": "Veuillez sauvegarder vos fichiers en toute sécurité après téléchargement. DegiScaler LLC n'est pas responsable de la perte d'accès due à une défaillance de l'appareil, des liens expirés ou un échec de sauvegarde."
       },
       {
         "title": "Si vous ne pouvez pas accéder à vos fichiers",
@@ -906,7 +906,7 @@
       },
       {
         "title": "Aucun conseil ni service personnalisé",
-        "content": "DigiScaler LLC ne fournit pas de services de conseil, de services clés en main, d'implémentation personnalisée, de services gérés, de services d'agence, d'appels stratégiques, d'examens manuels. Tous les produits sont des ressources numériques téléchargeables en libre-service."
+        "content": "DegiScaler LLC ne fournit pas de services de conseil, de services clés en main, d'implémentation personnalisée, de services gérés, de services d'agence, d'appels stratégiques, d'examens manuels. Tous les produits sont des ressources numériques téléchargeables en libre-service."
       },
       {
         "title": "Contact",
