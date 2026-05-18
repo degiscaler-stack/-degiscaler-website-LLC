@@ -183,17 +183,19 @@ function TestimonialCard({
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex items-center gap-0.5" aria-hidden>
-          {[0, 1, 2, 3, 4].map((i) => (
-            <GradientStar key={i} gradientId={starGradientId} state={starFillState(item.rating, i)} />
-          ))}
+      {item.rating ? (
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-0.5" aria-hidden>
+            {[0, 1, 2, 3, 4].map((i) => (
+              <GradientStar key={i} gradientId={starGradientId} state={starFillState(item.rating, i)} />
+            ))}
+          </div>
+          <span className="text-[13.5px] font-bold tabular-nums" style={{ color: '#ffffff' }}>
+            {item.rating}
+            {ratingSuffix}
+          </span>
         </div>
-        <span className="text-[13.5px] font-bold tabular-nums" style={{ color: '#ffffff' }}>
-          {item.rating}
-          {ratingSuffix}
-        </span>
-      </div>
+      ) : null}
 
       <blockquote className="border-s-2 ps-4" style={{ borderColor: ds.warmIconBorder }}>
         <p className="text-[14.5px] md:text-[15px] leading-[1.72] text-pretty text-start" style={{ color: ds.textSecondary }}>

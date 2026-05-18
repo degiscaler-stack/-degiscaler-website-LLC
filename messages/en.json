@@ -13,7 +13,7 @@
     "title": "DigiScaler — Premium Digital Kits & Templates",
     "description": "Downloadable website optimization kits, business templates, conversion checklists, and ZIP bundles for online businesses. Digital products only — instant access after checkout.",
     "ogTitle": "DigiScaler — Digital Business Kits",
-    "ogDescription": "Digital downloads and automated delivery: templates, PDF guides, and optimization kits for online operators."
+    "ogDescription": "Digital downloads and automated delivery: templates, PDF guides, and optimization kits for online businesses."
   },
   "nav": {
     "home": "Home",
@@ -45,10 +45,12 @@
       "faq": "FAQ",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "refund": "Refund Policy"
+      "refund": "Refund Policy",
+      "digitalDelivery": "Digital Delivery Policy"
     },
     "copyright": "DigiScaler LLC. All rights reserved.",
-    "disclaimer": "DigiScaler LLC is a U.S.-registered seller of digital products. Resources are educational and practical tools; we do not guarantee business outcomes, rankings, or revenue."
+    "disclaimer": "DigiScaler LLC is a U.S.-registered seller of digital products. Resources are educational and practical tools; we do not guarantee business outcomes, rankings, or revenue.",
+    "complianceDisclaimer": "DegiScaler LLC sells pre-made downloadable digital resources only. We do not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical products."
   },
   "chat": {
     "launcherAriaOpen": "Open DigiScaler assistant chat",
@@ -61,12 +63,12 @@
     "fallback": "I'm not fully sure about that yet. Type \"support\" if you want to reach our team — we'll continue the conversation right here in chat.",
     "answers": {
       "company": "DigiScaler is a premium digital products brand that provides downloadable website optimization kits, business templates, conversion checklists, and growth resources for online businesses.",
-      "services": "DigiScaler sells downloadable resources such as website optimization kits, checkout readiness checklists, landing page templates, business audit templates, UX clarity resources, and growth planning documents — see Resources for the full list.",
+      "services": "DigiScaler sells downloadable resources such as website optimization kits, checkout readiness checklists, landing page templates, business review worksheets, UX clarity resources, and growth planning documents — see Resources for the full list.",
       "pricing": "Published USD kits: Starter Website Kit — $9.99; Growth Optimization Kit — $19.99; Pro Conversion Toolkit — $29.99; Scale Business Bundle — $49.99. Each tier stacks more templates and bundles — see Pricing for details.",
       "website_design": "Our kits include practical guides and templates focused on clear layout, readability, and credible structure you can apply to your own site.",
       "ecommerce": "Growth-tier-and-up materials cover product pages, checkout clarity checklists, and customer-journey prompts — all as downloadable resources.",
       "landing_page": "Landing Page Templates are included among the resource types described on the Resources page.",
-      "audit": "Business audit templates and website audit documents are part of the downloadable kits — worksheets you complete yourself, not a human-delivered review.",
+      "audit": "Business review worksheets and website review documents are part of the downloadable kits — self-service worksheets you complete yourself. No human-delivered review or consulting is provided.",
       "uiux": "UX clarity resources in the bundles highlight friction points and improvements you can implement yourself.",
       "digital_products": "Every purchase is a digital download or bundle (PDFs, sheets, Notion files, ZIP packs) with automated delivery and secure digital access after checkout.",
       "process": "Typical flow: choose a kit on Pricing, complete checkout, then download files from secure links or email. Everything is self-service.",
@@ -187,7 +189,7 @@
     },
     "services": {
       "sectionLabel": "Digital Resources",
-      "headline": "Website optimization kits, templates, and checklists—built for online operators",
+      "headline": "Website optimization kits, templates, and checklists—built for online businesses",
       "subheadline": "DigiScaler is a premium digital resources platform: practical PDFs, Notion and Sheets templates, and ZIP bundles you implement on your own timeline.",
       "coreServicesLabel": "Featured resource categories",
       "additionalServicesLabel": "Also inside the bundles",
@@ -200,7 +202,7 @@
         "ecommerce": {
           "title": "Checkout Readiness Checklists",
           "description": "Step-by-step PDF prompts covering cart friction, payment-page clarity, and reassurance cues shoppers expect.",
-          "outcome": "Fewer “why should I pay here?” moments"
+          "outcome": "Fewer \u201cwhy should I pay here?\u201d moments"
         },
         "landingPage": {
           "title": "Landing Page Templates",
@@ -208,8 +210,8 @@
           "outcome": "Sharper landing pages without hiring a team"
         },
         "audit": {
-          "title": "Business Audit Templates",
-          "description": "Worksheet-style audits you fill in—covering trust signals, funnel leaks, and prioritised fixes.",
+          "title": "Business Review Worksheets",
+          "description": "Worksheet-style self-service documents you fill in—covering trust signals, funnel steps, and prioritised fixes.",
           "outcome": "An actionable backlog instead of vague opinions"
         },
         "uiux": {
@@ -227,7 +229,7 @@
     },
     "whyUs": {
       "sectionLabel": "Why DigiScaler",
-      "headline": "Why operators choose DigiScaler kits",
+      "headline": "Why online businesses choose DigiScaler kits",
       "items": [
         {
           "title": "Registered U.S. LLC",
@@ -297,19 +299,19 @@
       "items": [
         {
           "question": "What do I receive after purchase?",
-          "answer": "You receive downloadable digital resources such as PDF guides, templates, checklists, and resource bundles depending on the product purchased."
+          "answer": "You receive pre-made downloadable digital resources such as PDF guides, worksheets, templates, checklists, and ZIP bundles depending on the product purchased. No physical products are shipped and no consulting or custom services are included."
         },
         {
           "question": "Are these physical products?",
-          "answer": "No. All products are digital and delivered online."
+          "answer": "No. All products are digital and delivered electronically. No physical shipping is provided."
         },
         {
           "question": "How are the files delivered?",
-          "answer": "Files are delivered through secure digital access and/or email after purchase."
+          "answer": "Files are delivered through secure digital access on the confirmation page and/or by email after purchase. Please save your files securely after downloading. If you cannot access your files, contact support@degiscaler.com with your order details."
         },
         {
           "question": "Do I need to work directly with your team to use the products?",
-          "answer": "No. DigiScaler products are self-service digital resources designed to be used independently."
+          "answer": "No. DigiScaler products are self-service digital resources designed for independent use. No consulting, done-for-you services, custom implementation, managed services, or strategy calls are included or provided."
         },
         {
           "question": "Can I request a refund?",
@@ -317,56 +319,56 @@
         },
         {
           "question": "Do you guarantee results?",
-          "answer": "No. The resources are educational and practical tools. Results depend on implementation, business model, website quality, traffic, and other factors."
+          "answer": "No. The resources are pre-made educational and practical tools. No revenue, rankings, conversion rates, traffic, or business outcome is guaranteed. Results depend on implementation, business model, website quality, traffic, and many other factors."
         }
       ],
       "viewAll": "View All FAQs"
     },
     "testimonials": {
-      "sectionLabel": "CLIENT FEEDBACK",
-      "headline": "What buyers say about DigiScaler kits",
-      "intro": "Feedback from founders and operators who used the downloadable templates and checklists.",
-      "ratingOutOf": "/5",
+      "sectionLabel": "BUYER FEEDBACK",
+      "headline": "Buyer Feedback",
+      "intro": "Feedback from buyers who used the downloadable worksheets, templates, and checklists.",
+      "ratingOutOf": "",
       "items": [
         {
-          "name": "Jordan Mitchell",
-          "role": "Founder",
-          "meta": "SaaS · Austin, TX",
-          "rating": "5.0",
-          "avatar": "/testimonials/man-1.webp",
-          "quote": "The trust checklist PDF forced us to fix hero copy and policy links we kept postponing—finally a prioritized list instead of debates."
+          "name": "Website Owner",
+          "role": "Website owner",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "The worksheets made it easier to organize our website improvement priorities."
         },
         {
-          "name": "Rosa Delgado",
-          "role": "Small business owner",
-          "meta": "Retail · Valencia, ES",
-          "rating": "4.9",
-          "avatar": "/testimonials/woman-1.webp",
-          "quote": "The audit templates highlighted buried policies and inconsistent contact cues—practical, not flashy."
+          "name": "Online Business Owner",
+          "role": "Online business owner",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "The checklists helped us review our product pages in a more structured way."
         },
         {
-          "name": "David Okonkwo",
-          "role": "E‑commerce seller",
-          "meta": "Consumer goods · UK",
-          "rating": "4.8",
-          "avatar": "/testimonials/man-2.webp",
-          "quote": "The product-page guide and checkout prompts tightened our storefront copy without hiring an outside team."
+          "name": "Digital Product Seller",
+          "role": "Digital product seller",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "The templates were clear, practical, and easy to use."
         },
         {
-          "name": "Anita Bergström",
-          "role": "Service company owner",
-          "meta": "Professional services · SE",
-          "rating": "4.7",
-          "avatar": "/testimonials/woman-2.webp",
-          "quote": "Plain-language worksheets—what to shorten, where to reinforce credibility, how to simplify forms. We executed most of it internally."
+          "name": "Online Business Owner",
+          "role": "Online business owner",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "The bundle gave us a simple framework for reviewing our brand and website content."
         },
         {
-          "name": "Marcus Nguyen",
-          "role": "Startup founder",
-          "meta": "Early‑stage · CA",
-          "rating": "4.6",
-          "avatar": "/testimonials/man-3.webp",
-          "quote": "Clear bundle scope, instant download, no upsell circus—worth it to stop guessing our site fixes."
+          "name": "Ecommerce Operator",
+          "role": "Ecommerce operator",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "The trust checklists and policy worksheet templates were practical and straightforward to follow."
         }
       ]
     },
@@ -389,7 +391,7 @@
       "Business checklists",
       "Notion workspace templates",
       "Google Sheets trackers",
-      "Website audit documents",
+      "Website review worksheets",
       "Conversion improvement resources",
       "Email delivery and instant access"
     ],
@@ -413,8 +415,8 @@
         "note": "Pairs well with conversion checklists in Growth/Pro tiers."
       },
       "audit": {
-        "title": "Business Audit Templates",
-        "description": "Fill-in worksheets for documenting gaps in trust, funnel steps, and prioritised fixes.",
+        "title": "Business Review Worksheets",
+        "description": "Fill-in self-service worksheets for documenting gaps in trust, funnel steps, and prioritised fixes. No consulting or human review is included.",
         "outcome": "Evidence-backed priorities instead of guesswork.",
         "note": "Ships inside Pro Conversion Toolkit and Scale bundle."
       },
@@ -447,7 +449,7 @@
     "getStarted": "Buy Digital Kit",
     "continueToCheckout": "Continue to checkout",
     "perPackage": "per package",
-    "disclaimer": "All prices are in USD. Products are digital downloads with automated delivery—typically via secure digital access and/or email after checkout completes. DigiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. Access timing can depend on payment confirmation and email deliverability.",
+    "disclaimer": "All prices are in USD. Products are pre-made downloadable digital resources with automated delivery—typically via secure digital access and/or email after checkout completes. DigiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided. Access timing can depend on payment confirmation and email deliverability.",
     "includedTitle": "What is included",
     "includedItems": [
       "Instant digital access after successful checkout",
@@ -472,7 +474,7 @@
     ],
     "stepLabel": "Step {n}",
     "paymentNoteTitle": "Digital delivery",
-    "paymentNote": "All products are digital downloads. No physical shipping is provided. Access is delivered electronically after purchase.",
+    "paymentNote": "All products are pre-made downloadable digital resources. No physical shipping is provided. Access is delivered electronically after purchase. No consulting, custom implementation, managed services, agency services, strategy calls, or manual reviews are included.",
     "downloadDemo": "Download sample ZIP",
     "cardComplianceLines": [
       "File access is shown only after checkout completes",
@@ -481,7 +483,7 @@
       "Self-service files — use on your own timeline"
     ],
     "trustCheckoutTitle": "Secure checkout",
-    "trustCheckoutBody": "Secure digital checkout and automated delivery.",
+    "trustCheckoutBody": "Secure digital checkout and automated delivery. All products are pre-made downloadable resources.",
     "faqPreviewText": "Still weighing options?",
     "faqPreviewLink": "Browse the FAQ",
     "ctaHeadline": "Need help choosing a kit or accessing files?",
@@ -523,10 +525,10 @@
         "description": "A premium bundle of templates and resources for improving website trust, checkout readiness, and customer flow.",
         "features": [
           "Everything in Growth",
-          "Business Audit Templates",
+          "Business Review Worksheets",
           "Email Template Collection",
           "Notion Workflow Resources",
-          "Google Sheets Audit Tracker",
+          "Google Sheets Review Tracker",
           "Premium Optimization Documents"
         ]
       },
@@ -554,7 +556,7 @@
     "missionLabel": "Mission",
     "missionText": "Package practical optimization knowledge into premium downloads—so teams can improve clarity, trust, and shopper confidence without opaque engagements.",
     "whoWeHelpLabel": "Who we help",
-    "whoWeHelpText": "Independent founders, ecommerce operators, creators, and small teams that prefer self-service templates over open-ended projects.",
+    "whoWeHelpText": "Independent founders, online store owners, creators, and small teams that prefer self-service templates over open-ended projects.",
     "howWeWorkLabel": "How we work",
     "howWeWorkIntro": "Every listing spells out file types, stacking tiers, and delivery method before you pay.",
     "howWeWorkBullets": [
@@ -576,7 +578,7 @@
       },
       {
         "title": "Digital-only scope",
-        "description": "Purchases grant downloadable assets and secure access—not custom execution or bespoke development."
+        "description": "Purchases grant downloadable assets and secure access—not custom execution, consulting, or bespoke development."
       },
       {
         "title": "Support where it matters",
@@ -645,27 +647,27 @@
     "items": [
       {
         "question": "What do I receive after purchase?",
-        "answer": "You receive downloadable digital resources such as PDF guides, templates, checklists, and resource bundles depending on the product purchased."
+        "answer": "You receive pre-made downloadable digital resources such as PDF guides, worksheets, templates, checklists, and ZIP bundles depending on the product purchased. No physical products are shipped. No consulting, done-for-you services, custom implementation, managed services, or agency services are included."
       },
       {
         "question": "Are these physical products?",
-        "answer": "No. All products are digital and delivered online."
+        "answer": "No. All products are digital downloads and are delivered electronically. No physical products are shipped."
       },
       {
         "question": "How are the files delivered?",
-        "answer": "Files are delivered through secure digital access and/or email after purchase."
+        "answer": "Files are delivered through secure digital access on the confirmation or thank-you page after checkout completes. Email access may also be provided when applicable. Please save your files securely after downloading. If you cannot access your files after payment, contact support@degiscaler.com with your order details."
       },
       {
         "question": "Do I need to work directly with your team to use the products?",
-        "answer": "No. DigiScaler products are self-service digital resources designed to be used independently."
+        "answer": "No. DigiScaler products are self-service digital resources designed to be used independently. No consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, or manual reviews are included or provided."
       },
       {
         "question": "Can I request a refund?",
-        "answer": "Refunds are handled according to the Refund Policy. Because products are digital, access and download status may affect refund eligibility."
+        "answer": "Refunds are handled according to the Refund Policy. Because products are digital downloads, access and download status may affect refund eligibility."
       },
       {
         "question": "Do you guarantee results?",
-        "answer": "No. The resources are educational and practical tools. Results depend on implementation, business model, website quality, traffic, and other factors."
+        "answer": "No. The resources are pre-made educational and practical tools. No revenue, rankings, conversion rates, traffic, or any specific business outcome is guaranteed. Results depend on implementation, business model, website quality, traffic, and many factors outside our control."
       }
     ]
   },
@@ -737,11 +739,11 @@
       },
       {
         "title": "Digital products",
-        "content": "DigiScaler LLC sells downloadable digital products (such as PDF guides, templates, checklists, Notion resources, spreadsheets, and ZIP bundles) as described on each product page. Delivery is electronic—typically via secure digital access and/or email—after checkout completes. Products are self-service resources; they are not individualized professional services and do not constitute legal, tax, or financial advice. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, traffic, or other business outcomes."
+        "content": "DigiScaler LLC sells pre-made downloadable digital products (such as PDF guides, worksheets, templates, checklists, Notion resources, spreadsheets, and ZIP bundles) as described on each product page. Delivery is electronic—typically via secure digital access and/or email—after checkout completes. Products are self-service resources; they are not individualized professional services and do not constitute legal, tax, or financial advice. DigiScaler does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, or manual reviews. DigiScaler does not guarantee sales, revenue, rankings, conversion rates, traffic, or other business outcomes."
       },
       {
         "title": "No outcome guarantees",
-        "content": "Resources are educational and practical tools. Your results depend on implementation, market conditions, product-market fit, website quality, and many factors outside our control."
+        "content": "Resources are pre-made educational and practical tools. Your results depend on implementation, market conditions, product-market fit, website quality, and many factors outside our control. No revenue, rankings, conversion rates, traffic, or business outcome is guaranteed."
       },
       {
         "title": "Payment & pricing",
@@ -753,7 +755,7 @@
       },
       {
         "title": "Product scope",
-        "content": "Each listing describes included files and tiers. Higher tiers stack additional downloads as stated. Unless expressly stated, purchases do not include custom work."
+        "content": "Each listing describes included files and tiers. Higher tiers stack additional downloads as stated. Purchases do not include custom work, consulting, or any service delivery."
       },
       {
         "title": "Intellectual property",
@@ -761,7 +763,7 @@
       },
       {
         "title": "Digital delivery",
-        "content": "Products are deemed delivered when downloadable files or access links are made available as described. Refunds, where applicable, follow the Refund Policy."
+        "content": "Products are deemed delivered when downloadable files or access links are made available as described. No physical shipping is provided. Refunds, where applicable, follow the Refund Policy."
       },
       {
         "title": "Limitation of liability",
@@ -786,7 +788,7 @@
     "eyebrow": "Legal",
     "lastUpdated": "Last updated: May 2026",
     "headline": "Refund policy",
-    "intro": "DigiScaler LLC sells downloadable digital products. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
+    "intro": "DigiScaler LLC sells pre-made downloadable digital products. This policy explains refund expectations in everyday language. Refunds are handled according to this policy and applicable law.",
     "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
     "sections": [
       {
@@ -811,6 +813,52 @@
       }
     ]
   },
+  "digitalDeliveryPage": {
+    "title": "Digital Delivery Policy",
+    "eyebrow": "Legal",
+    "lastUpdated": "Last updated: May 2026",
+    "headline": "Digital Delivery Policy",
+    "intro": "DigiScaler LLC sells pre-made downloadable digital resources only. This page explains how digital delivery works after a successful purchase.",
+    "legalDisclaimer": "This page is for general information and should not be considered legal advice.",
+    "sections": [
+      {
+        "title": "All products are digital downloads",
+        "content": "Every product sold by DigiScaler LLC is a pre-made downloadable digital resource. No physical products are sold or shipped. Product types may include PDFs, worksheets, templates, checklists, planners, Notion resources, Google Sheets resources, and ZIP bundles."
+      },
+      {
+        "title": "No physical shipping",
+        "content": "DigiScaler LLC does not ship physical products. There is no physical delivery, no tracking number, and no shipping fee. All fulfillment is electronic."
+      },
+      {
+        "title": "How access is delivered",
+        "content": "Access to your purchased digital files is delivered electronically after a successful checkout. Download links or access instructions are shown on the confirmation or thank-you page immediately after payment is completed. Email access may also be provided when applicable, depending on the product and email deliverability."
+      },
+      {
+        "title": "Files included",
+        "content": "Depending on the product purchased, your download may include one or more of the following file types: PDF guides, worksheets, templates, checklists, planners, Notion workspace resources, Google Sheets resources, and ZIP bundle archives."
+      },
+      {
+        "title": "Saving your files",
+        "content": "Please save your files securely after downloading. DigiScaler LLC is not responsible for lost access due to device failure, expired links, or failure to save downloaded files. If you need assistance with re-access, contact product support."
+      },
+      {
+        "title": "If you cannot access your files",
+        "content": "If you cannot access your files after a successful payment, please contact support@degiscaler.com with your order details (name, email address used at checkout, and product purchased). Our support team will assist you within the typical response window."
+      },
+      {
+        "title": "Support response time",
+        "content": "Typical product support response time is 24–48 business hours. Support is available by email at support@degiscaler.com."
+      },
+      {
+        "title": "No consulting or custom services",
+        "content": "DigiScaler LLC does not provide consulting, done-for-you services, custom implementation, managed services, agency services, strategy calls, manual reviews, or any form of personalized service delivery. All products are self-service downloadable resources."
+      },
+      {
+        "title": "Contact",
+        "content": "For download or access assistance, contact: support@degiscaler.com"
+      }
+    ]
+  },
   "orderPage": {
     "title": "Secure checkout",
     "subtitle": "Review your selected digital kit and complete your order securely. Download access is shown only after checkout is completed.",
@@ -829,6 +877,7 @@
     "fallbackSummaryDescription": "Tell us which kit you wanted. Our team will follow up with access instructions.",
     "genericRequestHint": "Choose a kit from Pricing to see your order summary here.",
     "unknownPackage": "This product link is not valid. Please choose a kit from Pricing.",
+    "complianceNotice": "All products are pre-made downloadable digital resources. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided.",
     "fields": {
       "fullName": "Full name",
       "fullNamePlaceholder": "Your name",

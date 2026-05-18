@@ -198,6 +198,10 @@ export default function OrderFormClient({
         </div>
       </div>
 
+      <p className="text-[12px] leading-relaxed" style={{ color: ds.textMuted }}>
+        {t('complianceNotice')}
+      </p>
+
       {state?.error ? (
         <div
           className="rounded-lg border border-red-500/35 bg-red-950/30 px-4 py-3 text-sm text-red-100"

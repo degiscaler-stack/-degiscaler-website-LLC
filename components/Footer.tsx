@@ -62,6 +62,7 @@ export default function Footer() {
                   ['privacy', '/privacy-policy'],
                   ['terms', '/terms-of-service'],
                   ['refund', '/refund-policy'],
+                  ['digitalDelivery', '/digital-delivery-policy'],
                 ] as const
               ).map(([key, href]) => (
                 <li key={key}>
@@ -114,9 +115,14 @@ export default function Footer() {
           <p className="text-[13.5px] leading-relaxed" style={{ color: ds.textMuted }} suppressHydrationWarning>
             &copy; {new Date().getFullYear()} {t('copyright')}
           </p>
-          <p className="text-[13px] md:text-[13.5px] max-w-2xl leading-[1.7]" style={{ color: ds.textMuted, opacity: 0.92 }}>
-            {t('disclaimer')}
-          </p>
+          <div className="flex flex-col gap-3 max-w-2xl">
+            <p className="text-[13px] md:text-[13.5px] leading-[1.7]" style={{ color: ds.textMuted, opacity: 0.92 }}>
+              {t('disclaimer')}
+            </p>
+            <p className="text-[12.5px] md:text-[13px] leading-[1.7]" style={{ color: ds.textMuted, opacity: 0.78 }}>
+              {t('complianceDisclaimer')}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

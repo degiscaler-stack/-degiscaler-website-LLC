@@ -13,7 +13,7 @@
     "title": "DigiScaler — Kits numériques et modèles premium",
     "description": "Kits d’optimisation web, modèles professionnels, checklists et bundles ZIP téléchargeables. Produits 100 % numériques — accès instantané après paiement.",
     "ogTitle": "DigiScaler — Kits business numériques",
-    "ogDescription": "Téléchargements et livraison automatisée : modèles, guides PDF et kits pour opérateurs en ligne."
+    "ogDescription": "Téléchargements et livraison automatisée : modèles, guides PDF et kits pour les entreprises en ligne."
   },
   "nav": {
     "home": "Accueil",
@@ -43,10 +43,12 @@
       "faq": "FAQ",
       "privacy": "Politique de confidentialité",
       "terms": "Conditions d'utilisation",
-      "refund": "Politique de remboursement"
+      "refund": "Politique de remboursement",
+      "digitalDelivery": "Politique de livraison numérique"
     },
     "copyright": "DigiScaler LLC. Tous droits réservés.",
     "disclaimer": "DigiScaler LLC est une marque américaine de produits numériques premium. Les ressources sont des outils éducatifs ; nous ne garantissons pas de chiffre d'affaires, de classement ou de résultats commerciaux spécifiques.",
+    "complianceDisclaimer": "DegiScaler LLC vend uniquement des ressources numériques prêtes au téléchargement. Nous ne fournissons pas de services de conseil, de services clés en main, d'implémentation personnalisée, de services gérés, de services d'agence, d'appels stratégiques, d'examens manuels ou de produits physiques.",
     "digitalDelivery": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n'est fourni. L'accès est livré électroniquement après l'achat.",
     "trustCheckout": "Paiement numérique sécurisé et livraison automatisée."
   },
@@ -192,7 +194,7 @@
     },
     "services": {
       "sectionLabel": "Ressources numériques",
-      "headline": "Kits d’optimisation web, modèles et checklists — pour les opérateurs en ligne",
+      "headline": "Kits d'optimisation web, modèles et checklists — pour les entreprises en ligne",
       "subheadline": "DigiScaler est une plateforme de ressources numériques premium : PDF pratiques, modèles Notion et Sheets, bundles ZIP à votre rythme.",
       "coreServicesLabel": "Catégories phares",
       "additionalServicesLabel": "Également dans les bundles",
@@ -213,8 +215,8 @@
           "outcome": "Des landings plus nettes sans équipe dédiée"
         },
         "audit": {
-          "title": "Modèles d’audit business",
-          "description": "Audits façon feuille de travail sur signaux de confiance, fuites d’entonnoir et priorités.",
+          "title": "Fiches de révision business",
+          "description": "Fiches de travail en libre-service sur signaux de confiance, fuites d'entonnoir et priorités. Aucun conseil ou examen externe inclus.",
           "outcome": "Une backlog actionnable plutôt que des opinions vagues"
         },
         "uiux": {
@@ -232,7 +234,7 @@
     },
     "whyUs": {
       "sectionLabel": "Pourquoi DigiScaler",
-      "headline": "Pourquoi les opérateurs choisissent les kits DigiScaler",
+      "headline": "Pourquoi les entreprises en ligne choisissent les kits DigiScaler",
       "items": [
         {
           "title": "LLC américaine enregistrée",
@@ -329,49 +331,49 @@
     },
     "testimonials": {
       "sectionLabel": "AVIS ACHETEURS",
-      "headline": "Ce que disent les acheteurs des kits DigiScaler",
-      "intro": "Retours de fondateurs et d’opérateurs ayant utilisé les modèles et checklists téléchargeables.",
-      "ratingOutOf": "/5",
+      "headline": "Avis Acheteurs",
+      "intro": "Retours d'acheteurs ayant utilisé les fiches de travail, modèles et checklists téléchargeables.",
+      "ratingOutOf": "",
       "items": [
         {
-          "name": "Jordan Mitchell",
-          "role": "Fondatrice",
-          "meta": "SaaS · Austin, TX",
-          "rating": "5.0",
-          "avatar": "/testimonials/man-1.webp",
-          "quote": "Le PDF checklist confiance nous a forcés à corriger le texte du héros et les liens politiques qu’on repoussait — enfin une liste priorisée au lieu de débats sans fin."
+          "name": "Propriétaire de site",
+          "role": "Propriétaire de site",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "Les fiches de travail ont facilité l'organisation de nos priorités d'amélioration du site."
         },
         {
-          "name": "Rosa Delgado",
-          "role": "Dirigeante de PME",
-          "meta": "Commerce · Valence, ES",
-          "rating": "4.9",
-          "avatar": "/testimonials/woman-1.webp",
-          "quote": "Les modèles d’audit ont mis en évidence des politiques enfouies et des incohérences sur le contact — concret, pas tape-à-l’œil."
+          "name": "Entrepreneur en ligne",
+          "role": "Entrepreneur en ligne",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "Les checklists nous ont aidés à examiner nos fiches produit de manière plus structurée."
         },
         {
-          "name": "David Okonkwo",
-          "role": "Vendeur en ligne",
-          "meta": "Biens de consommation · Royaume-Uni",
-          "rating": "4.8",
-          "avatar": "/testimonials/man-2.webp",
-          "quote": "Le guide fiches produit et les prompts checkout ont resserré les textes boutique sans recruter une équipe externe."
+          "name": "Vendeur de produits numériques",
+          "role": "Vendeur de produits numériques",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "Les modèles étaient clairs, pratiques et faciles à utiliser."
         },
         {
-          "name": "Anita Bergström",
-          "role": "Dirigeante services",
-          "meta": "Services pros · Suède",
-          "rating": "4.7",
-          "avatar": "/testimonials/woman-2.webp",
-          "quote": "Des fiches simples : quoi raccourcir, où renforcer la crédibilité, comment alléger les formulaires. On a exécuté la majeure partie en interne."
+          "name": "Entrepreneur en ligne",
+          "role": "Entrepreneur en ligne",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "Le bundle nous a fourni un cadre simple pour revoir le contenu et l'image de marque du site."
         },
         {
-          "name": "Marcus Nguyen",
-          "role": "Fondateur start-up",
-          "meta": "Amorçage · Californie",
-          "rating": "4.6",
-          "avatar": "/testimonials/man-3.webp",
-          "quote": "Périmètre du bundle clair, téléchargement instantané, pas de circus commercial — utile pour arrêter de deviner quoi corriger sur le site."
+          "name": "Opérateur e-commerce",
+          "role": "Opérateur e-commerce",
+          "meta": "",
+          "rating": "",
+          "avatar": "",
+          "quote": "Les checklists de confiance et les modèles de fiches de politique étaient pratiques et faciles à suivre."
         }
       ]
     },
@@ -418,8 +420,8 @@
         "note": "Complète bien les checklists de conversion des niveaux Growth/Pro."
       },
       "audit": {
-        "title": "Modèles d’audit business",
-        "description": "Fiches à compléter pour documenter les lacunes de confiance, les étapes d’entonnoir et les priorités.",
+        "title": "Fiches de révision business",
+        "description": "Fiches de travail en libre-service pour documenter les lacunes de confiance, les étapes d'entonnoir et les priorités. Aucun conseil ni examen externe inclus.",
         "outcome": "Des priorités étayées plutôt que des impressions.",
         "note": "Livrés dans Pro Conversion Toolkit et le bundle Scale."
       },
@@ -452,7 +454,7 @@
     "getStarted": "Acheter le kit",
     "continueToCheckout": "Continuer vers le paiement",
     "perPackage": "par forfait",
-    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DigiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails.",
+    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DigiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni.",
     "includedTitle": "Ce que recouvrent les formules",
     "includedItems": [
       "Accès numérique instantané après paiement réussi",
@@ -477,7 +479,7 @@
     ],
     "stepLabel": "Étape {n}",
     "paymentNoteTitle": "Livraison numérique",
-    "paymentNote": "Tous les produits sont des téléchargements numériques. Aucun envoi physique n’est fourni. L’accès est livré électroniquement après l’achat.",
+    "paymentNote": "Tous les produits sont des ressources numériques prêtes au téléchargement. Aucun envoi physique n'est fourni. L'accès est livré électroniquement après l'achat. Aucun conseil, implémentation personnalisée, service géré ou appel stratégique n'est inclus.",
     "downloadDemo": "Télécharger l’extrait ZIP",
     "cardComplianceLines": [
       "L accès aux fichiers apparaît après la fin du tunnel sur la page de confirmation",
@@ -486,7 +488,7 @@
       "Fichiers en libre-service — à votre rythme"
     ],
     "trustCheckoutTitle": "Paiement sécurisé",
-    "trustCheckoutBody": "Paiement numérique sécurisé et livraison automatisée.",
+    "trustCheckoutBody": "Paiement numérique sécurisé et livraison automatisée. Tous les produits sont des ressources numériques prêtes au téléchargement.",
     "faqPreviewText": "Vous hésitez encore ?",
     "faqPreviewLink": "Consulter toutes les questions",
     "ctaHeadline": "Besoin d’aide pour choisir un kit ou accéder aux fichiers ?",
@@ -528,10 +530,10 @@
         "description": "Un bundle premium de modèles et ressources pour améliorer la confiance, le checkout et le parcours client.",
         "features": [
           "Tout le contenu du Growth",
-          "Modèles d’audit business",
+          "Fiches de révision business",
           "Collection de modèles email",
           "Ressources Notion",
-          "Tracker d’audit Google Sheets",
+          "Fiches de révision business",
           "Documents premium d’optimisation"
         ]
       },
@@ -559,7 +561,7 @@
     "missionLabel": "Mission",
     "missionText": "Packager des savoir-faire d’optimisation pratiques dans des téléchargements premium — pour que les équipes renforcent clarté, confiance et sérénité des acheteurs sans prestations opaques.",
     "whoWeHelpLabel": "Pour qui",
-    "whoWeHelpText": "Fondateurs indépendants, opérateurs e-commerce, créateurs et petites équipes qui préfèrent des modèles en libre-service aux projets ouverts.",
+    "whoWeHelpText": "Fondateurs indépendants, propriétaires de boutiques en ligne, créateurs et petites équipes qui préfèrent les modèles en libre-service aux projets ouverts.",
     "howWeWorkLabel": "Comment nous travaillons",
     "howWeWorkIntro": "Chaque fiche précise types de fichiers, palliers cumulés et mode de livraison avant paiement.",
     "howWeWorkBullets": [
@@ -848,7 +850,8 @@
       "email": "Merci d indiquer une adresse e-mail valide.",
       "package": "La formule sélectionnée n est pas disponible.",
       "server": "Une erreur est survenue. Réessayez dans un instant."
-    }
+    },
+    "complianceNotice": "Tous les produits sont des ressources numériques prêtes au téléchargement. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni."
   },
   "thankYouPage": {
     "orderTitle": "Merci",
@@ -864,5 +867,51 @@
     "contactBody": "Merci. Votre message a été reçu.",
     "backHome": "Retour à l accueil",
     "backToPricing": "Retour aux tarifs"
+  },
+  "digitalDeliveryPage": {
+    "title": "Politique de livraison numérique",
+    "eyebrow": "Juridique",
+    "lastUpdated": "Dernière mise à jour : mai 2026",
+    "headline": "Politique de livraison numérique",
+    "intro": "DigiScaler LLC vend uniquement des ressources numériques prêtes au téléchargement. Cette page explique le fonctionnement de la livraison numérique après un achat réussi.",
+    "legalDisclaimer": "Cette page est fournie à titre d'information générale et ne constitue pas un conseil juridique.",
+    "sections": [
+      {
+        "title": "Tous les produits sont des téléchargements numériques",
+        "content": "Chaque produit vendu par DigiScaler LLC est une ressource numérique prête au téléchargement. Aucun produit physique n'est vendu ni expédié. Les types de fichiers peuvent inclure : guides PDF, fiches de travail, modèles, checklists, planificateurs, ressources Notion, ressources Google Sheets et bundles ZIP."
+      },
+      {
+        "title": "Aucun envoi physique",
+        "content": "DigiScaler LLC n'expédie pas de produits physiques. Il n'y a pas de livraison physique, de numéro de suivi ni de frais de port. Toute l'exécution est électronique."
+      },
+      {
+        "title": "Comment l'accès est livré",
+        "content": "L'accès à vos fichiers achetés est livré électroniquement après un paiement réussi. Les liens de téléchargement ou instructions d'accès apparaissent sur la page de confirmation immédiatement après le paiement. Un accès par e-mail peut également être fourni le cas échéant."
+      },
+      {
+        "title": "Fichiers inclus",
+        "content": "Selon le produit acheté, votre téléchargement peut inclure : guides PDF, fiches de travail, modèles, checklists, planificateurs, ressources Notion, ressources Google Sheets et archives ZIP."
+      },
+      {
+        "title": "Sauvegarder vos fichiers",
+        "content": "Veuillez sauvegarder vos fichiers en toute sécurité après téléchargement. DigiScaler LLC n'est pas responsable de la perte d'accès due à une défaillance de l'appareil, des liens expirés ou un échec de sauvegarde."
+      },
+      {
+        "title": "Si vous ne pouvez pas accéder à vos fichiers",
+        "content": "Si vous ne pouvez pas accéder à vos fichiers après un paiement réussi, veuillez contacter support@degiscaler.com avec les détails de votre commande (nom, e-mail utilisé au paiement et produit acheté)."
+      },
+      {
+        "title": "Délai de réponse du support",
+        "content": "Le délai de réponse habituel du support produit est de 24 à 48 heures ouvrables. Le support est disponible par e-mail à support@degiscaler.com."
+      },
+      {
+        "title": "Aucun conseil ni service personnalisé",
+        "content": "DigiScaler LLC ne fournit pas de services de conseil, de services clés en main, d'implémentation personnalisée, de services gérés, de services d'agence, d'appels stratégiques, d'examens manuels. Tous les produits sont des ressources numériques téléchargeables en libre-service."
+      },
+      {
+        "title": "Contact",
+        "content": "Pour toute aide concernant le téléchargement ou l'accès : support@degiscaler.com"
+      }
+    ]
   }
 }
