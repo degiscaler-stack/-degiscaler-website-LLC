@@ -4,10 +4,12 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { Inter, Cairo } from 'next/font/google';
+import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/chat/ChatWidget';
+import PaddleProvider from '@/components/paddle/PaddleProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -80,6 +82,11 @@ export default async function LocaleLayout({
           __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(isRtl ? 'rtl' : 'ltr')};`,
         }}
       />
+      {/* Paddle Billing v2 — loaded after page is interactive to avoid blocking render */}
+      <Script
+        src="https://cdn.paddle.com/paddle/v2/paddle.js"
+        strategy="afterInteractive"
+      />
       <div
         className={`flex flex-col min-h-screen ${fontVars}`}
         style={{
@@ -91,6 +98,7 @@ export default async function LocaleLayout({
         }}
       >
         <NextIntlClientProvider messages={messages}>
+          <PaddleProvider />
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">{children}</main>

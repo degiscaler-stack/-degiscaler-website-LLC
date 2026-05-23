@@ -6,6 +6,7 @@ import PackageCardFooter from '@/components/pricing/PackageCardFooter';
 import PricingJsonLd from '@/components/pricing/PricingJsonLd';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
 import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
+import { getPaddlePriceId } from '@/lib/paddle/config';
 import {
   contentMax,
   ds,
@@ -145,6 +146,7 @@ function PricingTierCard({
           checkoutLabel={t('continueToCheckout')}
           complianceLines={cardComplianceLines}
           featuredVisual={featuredVisual}
+          priceId={getPaddlePriceId(pkg.slug) ?? undefined}
         />
       </div>
     </div>

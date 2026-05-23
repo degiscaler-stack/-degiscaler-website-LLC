@@ -4,6 +4,7 @@ import { Check, ArrowRight, Star } from 'lucide-react';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
 import PackageCardFooter from '@/components/pricing/PackageCardFooter';
 import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
+import { getPaddlePriceId } from '@/lib/paddle/config';
 import {
   ds,
   sectionPad,
@@ -166,6 +167,7 @@ export default function HomePricing({ packages }: { packages: DisplayPackage[] }
                     checkoutLabel={cardUi('continueToCheckout')}
                     complianceLines={cardComplianceLines}
                     featuredVisual={featuredVisual}
+                    priceId={getPaddlePriceId(pkg.slug) ?? undefined}
                   />
                 </div>
               </div>
