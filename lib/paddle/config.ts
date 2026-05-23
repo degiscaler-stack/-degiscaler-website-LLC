@@ -19,7 +19,21 @@ export const PADDLE_PRICE_IDS: Record<string, string> = {
   'scale-business-bundle':   'pri_01krxphdej0qp3c741vj94ms96',
 };
 
+const SCALE_BUSINESS_BUNDLE_PRICE_ID = 'pri_01krxphdej0qp3c741vj94ms96';
+
 /** Returns the Paddle price ID for a given package slug, or null if unknown. */
 export function getPaddlePriceId(slug: string): string | null {
-  return PADDLE_PRICE_IDS[slug] ?? null;
+  const key = slug.trim().toLowerCase();
+
+  if (
+    key === 'scale-business-bundle' ||
+    key === 'scale' ||
+    key === 'scale-consultation' ||
+    key === 'advanced-consultation' ||
+    key === 'elite-launch-package'
+  ) {
+    return SCALE_BUSINESS_BUNDLE_PRICE_ID;
+  }
+
+  return PADDLE_PRICE_IDS[key] ?? null;
 }
