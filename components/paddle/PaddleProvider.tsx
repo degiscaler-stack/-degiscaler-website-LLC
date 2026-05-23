@@ -38,7 +38,11 @@ export default function PaddleProvider() {
             }
 
             if (event.name === 'checkout.error') {
-              console.error('[Paddle] Checkout error:', event.data);
+              // Full error body logged for debugging in browser DevTools
+              console.error(
+                '[Paddle] checkout.error — full data:',
+                JSON.stringify(event.data, null, 2),
+              );
               window.dispatchEvent(
                 new CustomEvent('paddle:checkout:error', { detail: event.data }),
               );

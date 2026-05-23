@@ -7,7 +7,6 @@ import {
   primaryBtnClass,
   pricingCardSecondaryBtnClass,
 } from '@/components/home/homeTheme';
-import { toPaddleLocale } from '@/lib/paddle/config';
 
 type CheckoutState = 'idle' | 'waiting' | 'loading' | 'success' | 'error';
 
@@ -20,6 +19,10 @@ interface Props {
 /**
  * Opens a Paddle Billing (v2) overlay checkout — production/live mode.
  *
+ * Paddle.Checkout.open() uses ONLY items[] to avoid 400 errors from
+ * the transaction-checkout endpoint.  locale / successUrl are NOT sent
+ * to the API; post-payment redirect is handled via the checkout.completed event.
+ *
  * States:
  *   idle    — normal buy button
  *   waiting — Paddle.js is still loading; retries automatically
@@ -31,13 +34,13 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
   const [state, setState] = useState<CheckoutState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const locale = useLocale();
-  const pendingCheckout = useRef(false); // track if user clicked while Paddle was loading
+  const pendingCheckout = useRef(false);
 
-  // ── React to Paddle events ──────────────────────────────────────────────────
+  // ── React to global Paddle events bridged by PaddleProvider ────────────────
   useEffect(() => {
     function onSuccess() {
       setState('success');
-      console.log('[PaddleCheckout] Payment completed — redirecting to /thank-you');
+      console.log('[PaddleCheckout] checkout.completed — redirecting to /thank-you');
       setTimeout(() => {
         window.location.href = `/${locale}/thank-you`;
       }, 1600);
@@ -45,10 +48,14 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
 
     function onError(e: Event) {
       const detail = (e as CustomEvent<Record<string, unknown>>).detail;
+      // Log everything for debugging — visible in browser DevTools console
+      console.error('[PaddleCheckout] checkout.error full detail:', JSON.stringify(detail, null, 2));
       const msg =
         typeof detail?.message === 'string'
           ? detail.message
-          : 'Payment failed. Please try again.';
+          : typeof detail?.error === 'string'
+            ? detail.error
+            : 'Payment failed. Please try again.';
       setState('error');
       setErrorMsg(msg);
       setTimeout(() => {
@@ -57,7 +64,6 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
       }, 7000);
     }
 
-    // Once Paddle becomes ready, auto-open checkout if the user already clicked
     function onReady() {
       if (pendingCheckout.current) {
         pendingCheckout.current = false;
@@ -73,42 +79,46 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
       window.removeEventListener('paddle:checkout:error', onError);
       window.removeEventListener('paddle:ready', onReady);
     };
+  // openCheckout is stable — defined in the same closure
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale]);
 
-  // ── Core checkout function ──────────────────────────────────────────────────
+  // ── Core checkout opener ────────────────────────────────────────────────────
   function openCheckout() {
     if (!window.Paddle || !window._paddleInitialized) {
-      // Paddle hasn't finished initializing — set waiting state and retry via paddle:ready
       setState('waiting');
       pendingCheckout.current = true;
-      console.log('[PaddleCheckout] Paddle not ready yet — will open once initialized');
+      console.log('[PaddleCheckout] Paddle not ready — will open on paddle:ready');
       return;
     }
 
     setState('loading');
-    console.log('[PaddleCheckout] Opening overlay checkout', { priceId, locale });
+    console.log('[PaddleCheckout] Calling Paddle.Checkout.open', { priceId });
 
-    // Small frame delay so the loading spinner is visible before the overlay renders
     requestAnimationFrame(() => {
       try {
+        /**
+         * MINIMAL call — only items[] is sent to the transaction-checkout API.
+         * Do NOT add: locale, successUrl, customData, productId, or customer.
+         * Those fields cause 400 Bad Request from checkout-service.paddle.com.
+         *
+         * displayMode / theme are purely client-side overlay UI hints and are
+         * safe to include; they are not forwarded to the API endpoint.
+         */
         window.Paddle!.Checkout.open({
           items: [{ priceId, quantity: 1 }],
           settings: {
             displayMode: 'overlay',
             theme: 'dark',
-            locale: toPaddleLocale(locale),
-            successUrl: `${window.location.origin}/${locale}/thank-you`,
           },
         });
 
-        console.log('[PaddleCheckout] Overlay opened successfully');
-        // Reset loading — the real success signal comes via paddle:checkout:completed
+        console.log('[PaddleCheckout] Overlay opened — awaiting checkout.completed');
         setState('idle');
       } catch (err) {
         const message =
           err instanceof Error ? err.message : 'Failed to open checkout. Please try again.';
-        console.error('[PaddleCheckout] Error:', err);
+        console.error('[PaddleCheckout] Checkout.open threw:', err);
         setState('error');
         setErrorMsg(message);
         setTimeout(() => {
@@ -124,7 +134,7 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
     if (state === 'loading' || state === 'success' || state === 'waiting') return;
     openCheckout();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state, priceId, locale]);
+  }, [state, priceId]);
 
   // ── Render ──────────────────────────────────────────────────────────────────
   const baseBtnClass = featuredVisual ? primaryBtnClass : pricingCardSecondaryBtnClass;
@@ -157,11 +167,15 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
         type="button"
         onClick={handleClick}
         disabled={isDisabled}
-        className={`${baseBtnClass} ${layout} ${isDisabled ? 'opacity-70 cursor-wait' : 'cursor-pointer'}`}
+        className={`${baseBtnClass} ${layout} ${
+          isDisabled ? 'opacity-70 cursor-wait' : 'cursor-pointer'
+        }`}
         aria-label={
-          state === 'loading' ? 'Opening checkout…'
-          : state === 'waiting' ? 'Checkout loading…'
-          : label
+          state === 'loading'
+            ? 'Opening checkout…'
+            : state === 'waiting'
+              ? 'Checkout loading…'
+              : label
         }
         aria-busy={isDisabled}
       >
