@@ -57,6 +57,8 @@ interface PaddleInstance {
 declare global {
   interface Window {
     Paddle?: PaddleInstance;
+    /** Set to true by PaddleProvider after Paddle.Initialize() succeeds. */
+    _paddleInitialized?: boolean;
   }
 }
 

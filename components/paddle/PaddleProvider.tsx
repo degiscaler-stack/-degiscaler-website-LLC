@@ -4,22 +4,18 @@ import { useEffect } from 'react';
 import { PADDLE_CLIENT_TOKEN } from '@/lib/paddle/config';
 
 /**
- * Initializes Paddle Billing (v2) once the Paddle.js script has loaded.
- * Bridges internal Paddle events to window custom events so checkout buttons
- * can react without prop drilling.
+ * Initializes Paddle Billing (v2) — production/live mode only.
+ * Never calls Paddle.Environment.set(), which would switch to sandbox.
+ *
+ * After Paddle.Initialize() succeeds this component:
+ *  - Sets window._paddleInitialized = true
+ *  - Dispatches a 'paddle:ready' custom event
+ *  - Bridges checkout.completed / checkout.error to window custom events
  *
  * Renders nothing — mount once inside the locale layout.
  */
 export default function PaddleProvider() {
   useEffect(() => {
-    if (!PADDLE_CLIENT_TOKEN) {
-      console.warn(
-        '[Paddle] NEXT_PUBLIC_PADDLE_CLIENT_TOKEN is not set. ' +
-          'Add it to .env.local to enable checkout.',
-      );
-      return;
-    }
-
     let initialized = false;
 
     function init() {
@@ -28,6 +24,7 @@ export default function PaddleProvider() {
       initialized = true;
 
       try {
+        // Production mode — do NOT call Paddle.Environment.set('sandbox')
         window.Paddle.Initialize({
           token: PADDLE_CLIENT_TOKEN,
           eventCallback(event) {
@@ -49,33 +46,36 @@ export default function PaddleProvider() {
           },
         });
 
-        console.log('[Paddle] Initialized successfully (production)');
+        // Mark Paddle as ready so checkout buttons know they can proceed
+        window._paddleInitialized = true;
+        window.dispatchEvent(new CustomEvent('paddle:ready'));
+        console.log('[Paddle] Initialized — production/live mode');
       } catch (err) {
         console.error('[Paddle] Initialization failed:', err);
       }
     }
 
-    // Paddle might already be present (script loaded before React hydration)
+    // Script may already be present (loaded before React hydration)
     if (window.Paddle) {
       init();
       return;
     }
 
-    // Poll until the script injects window.Paddle (max 12 s)
-    const MAX_WAIT = 12_000;
-    const INTERVAL = 120;
+    // Poll until paddle.js injects window.Paddle (max 15 s, 80 ms intervals)
+    const MAX_WAIT = 15_000;
+    const TICK = 80;
     let elapsed = 0;
 
     const poll = setInterval(() => {
-      elapsed += INTERVAL;
+      elapsed += TICK;
       if (window.Paddle) {
         clearInterval(poll);
         init();
       } else if (elapsed >= MAX_WAIT) {
         clearInterval(poll);
-        console.warn('[Paddle] Script did not load within 12 s.');
+        console.warn('[Paddle] Script did not load within 15 s — checkout disabled.');
       }
-    }, INTERVAL);
+    }, TICK);
 
     return () => clearInterval(poll);
   }, []);
