@@ -16,10 +16,10 @@ export const PADDLE_PRICE_IDS: Record<string, string> = {
   'starter-website-kit':     'pri_01krxpqy3yhpm8yhaq6n19x2h5',
   'growth-optimization-kit': 'pri_01krxppkpm5wsd53fat02vn9h9',
   'pro-conversion-toolkit':  'pri_01krxpmw00ssf3xfmf88c71sf5',
-  'scale-business-bundle':   'pri_01krxphdej0qp3c741vj94ms96',
+  'scale-business-bundle':   'pri_01krxphdej0gp3c741vj94ms96',
 };
 
-const SCALE_BUSINESS_BUNDLE_PRICE_ID = 'pri_01krxphdej0qp3c741vj94ms96';
+const SCALE_BUSINESS_BUNDLE_PRICE_ID = 'pri_01krxphdej0gp3c741vj94ms96';
 
 /** Returns the Paddle price ID for a given package slug, or null if unknown. */
 export function getPaddlePriceId(slug: string): string | null {
