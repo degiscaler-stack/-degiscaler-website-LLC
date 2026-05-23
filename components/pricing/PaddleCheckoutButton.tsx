@@ -19,9 +19,10 @@ interface Props {
 /**
  * Opens a Paddle Billing (v2) overlay checkout — production/live mode.
  *
- * Paddle.Checkout.open() uses ONLY items[] to avoid 400 errors from
- * the transaction-checkout endpoint.  locale / successUrl are NOT sent
- * to the API; post-payment redirect is handled via the checkout.completed event.
+ * Paddle.Checkout.open() intentionally sends ONLY items[] to avoid 400
+ * errors from the transaction-checkout endpoint. Do not pass settings,
+ * customer, customData, locale, country, productId, or successUrl here.
+ * Post-payment redirect is handled via the checkout.completed event.
  *
  * States:
  *   idle    — normal buy button
@@ -93,25 +94,15 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
     }
 
     setState('loading');
-    console.log('[PaddleCheckout] Calling Paddle.Checkout.open', { priceId });
+    const checkoutRequest = {
+      items: [{ priceId, quantity: 1 }],
+    };
+
+    console.log('[PaddleCheckout] Calling Paddle.Checkout.open', checkoutRequest);
 
     requestAnimationFrame(() => {
       try {
-        /**
-         * MINIMAL call — only items[] is sent to the transaction-checkout API.
-         * Do NOT add: locale, successUrl, customData, productId, or customer.
-         * Those fields cause 400 Bad Request from checkout-service.paddle.com.
-         *
-         * displayMode / theme are purely client-side overlay UI hints and are
-         * safe to include; they are not forwarded to the API endpoint.
-         */
-        window.Paddle!.Checkout.open({
-          items: [{ priceId, quantity: 1 }],
-          settings: {
-            displayMode: 'overlay',
-            theme: 'dark',
-          },
-        });
+        window.Paddle!.Checkout.open(checkoutRequest);
 
         console.log('[PaddleCheckout] Overlay opened — awaiting checkout.completed');
         setState('idle');

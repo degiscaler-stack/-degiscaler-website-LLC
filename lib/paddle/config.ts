@@ -23,12 +23,3 @@ export const PADDLE_PRICE_IDS: Record<string, string> = {
 export function getPaddlePriceId(slug: string): string | null {
   return PADDLE_PRICE_IDS[slug] ?? null;
 }
-
-/**
- * Maps next-intl locale codes to Paddle-supported locales.
- * Arabic is not supported by Paddle Billing checkout; falls back to English.
- */
-export function toPaddleLocale(locale: string): string {
-  const map: Record<string, string> = { en: 'en', fr: 'fr', ar: 'en' };
-  return map[locale] ?? 'en';
-}

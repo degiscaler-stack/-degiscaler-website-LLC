@@ -3,30 +3,13 @@
  * Loaded via https://cdn.paddle.com/paddle/v2/paddle.js
  */
 
-interface PaddleCheckoutSettings {
-  displayMode?: 'overlay' | 'inline';
-  theme?: 'dark' | 'light';
-  locale?: string;
-  successUrl?: string;
-  frameTarget?: string;
-  frameInitialHeight?: number;
-  frameStyle?: string;
-}
-
 interface PaddleCheckoutItem {
   priceId: string;
   quantity?: number;
 }
 
-interface PaddleCheckoutCustomer {
-  email?: string;
-}
-
 interface PaddleCheckoutOpenParams {
   items: PaddleCheckoutItem[];
-  settings?: PaddleCheckoutSettings;
-  customer?: PaddleCheckoutCustomer;
-  customData?: Record<string, string>;
 }
 
 interface PaddleEventData {
@@ -45,7 +28,7 @@ interface PaddleCheckout {
 }
 
 interface PaddleEnvironment {
-  set(env: 'production' | 'sandbox'): void;
+  set(env: 'production'): void;
 }
 
 interface PaddleInstance {

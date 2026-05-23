@@ -5,7 +5,7 @@ import { PADDLE_CLIENT_TOKEN } from '@/lib/paddle/config';
 
 /**
  * Initializes Paddle Billing (v2) — production/live mode only.
- * Never calls Paddle.Environment.set(), which would switch to sandbox.
+ * Explicitly sets Paddle.Environment to production before initialization.
  *
  * After Paddle.Initialize() succeeds this component:
  *  - Sets window._paddleInitialized = true
@@ -24,7 +24,7 @@ export default function PaddleProvider() {
       initialized = true;
 
       try {
-        // Production mode — do NOT call Paddle.Environment.set('sandbox')
+        window.Paddle.Environment.set('production');
         window.Paddle.Initialize({
           token: PADDLE_CLIENT_TOKEN,
           eventCallback(event) {
