@@ -20,7 +20,7 @@ export default function CheckoutLayout({ children }: { children: ReactNode }) {
         strategy="afterInteractive"
       />
       <div
-        className="flex min-h-screen items-center justify-center bg-[#050505] px-5 py-10 text-[#F5F2E9]"
+        className="min-h-screen bg-black"
         style={{
           fontFamily: "var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)",
         }}

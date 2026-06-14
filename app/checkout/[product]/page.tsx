@@ -4,19 +4,15 @@ import { getPaddlePriceId } from '@/lib/paddle/config';
 
 const DIRECT_CHECKOUT_PRODUCTS = {
   starter: {
-    name: 'Starter Website Kit',
     packageSlug: 'starter-website-kit',
   },
   growth: {
-    name: 'Growth Optimization Kit',
     packageSlug: 'growth-optimization-kit',
   },
   pro: {
-    name: 'Pro Conversion Toolkit',
     packageSlug: 'pro-conversion-toolkit',
   },
   scale: {
-    name: 'Scale Business Bundle',
     packageSlug: 'scale-business-bundle',
   },
 } as const;
@@ -43,10 +39,5 @@ export default async function DirectCheckoutPage({
     notFound();
   }
 
-  return (
-    <DirectCheckoutClient
-      priceId={priceId}
-      productName={checkoutProduct.name}
-    />
-  );
+  return <DirectCheckoutClient priceId={priceId} />;
 }

@@ -10,7 +10,7 @@ import { PADDLE_CLIENT_TOKEN } from '@/lib/paddle/config';
  * After Paddle.Initialize() succeeds this component:
  *  - Sets window._paddleInitialized = true
  *  - Dispatches a 'paddle:ready' custom event
- *  - Bridges checkout.completed / checkout.error / checkout.closed to window custom events
+ *  - Bridges checkout.completed / checkout.error / checkout.failed / checkout.closed to window custom events
  *
  * Renders nothing — mount once inside the locale layout.
  */
@@ -45,6 +45,12 @@ export default function PaddleProvider() {
               );
               window.dispatchEvent(
                 new CustomEvent('paddle:checkout:error', { detail: event.data }),
+              );
+            }
+
+            if (event.name === 'checkout.failed') {
+              window.dispatchEvent(
+                new CustomEvent('paddle:checkout:failed', { detail: event.data }),
               );
             }
 
