@@ -32,6 +32,10 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname === '/checkout' || pathname.startsWith('/checkout/')) {
+    return NextResponse.next();
+  }
+
   if (pathname.startsWith('/admin')) {
     const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
     let valid = false;

@@ -1,0 +1,33 @@
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import Script from 'next/script';
+import PaddleProvider from '@/components/paddle/PaddleProvider';
+
+export const metadata: Metadata = {
+  title: 'Secure Checkout | DigiScaler',
+  description: 'Complete your DigiScaler digital product purchase securely.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+export default function CheckoutLayout({ children }: { children: ReactNode }) {
+  return (
+    <>
+      <Script
+        src="https://cdn.paddle.com/paddle/v2/paddle.js"
+        strategy="afterInteractive"
+      />
+      <div
+        className="flex min-h-screen items-center justify-center bg-[#050505] px-5 py-10 text-[#F5F2E9]"
+        style={{
+          fontFamily: "var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)",
+        }}
+      >
+        <PaddleProvider />
+        {children}
+      </div>
+    </>
+  );
+}
