@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 const PADDLE_READY_TIMEOUT_MS = 15_000;
@@ -11,8 +12,10 @@ function redirectToPricing(path: string) {
 }
 
 export default function DirectCheckoutClient({
+  children,
   priceId,
 }: {
+  children?: ReactNode;
   priceId: string;
 }) {
   const hasOpenedCheckout = useRef(false);
@@ -73,5 +76,5 @@ export default function DirectCheckoutClient({
     };
   }, [openCheckout]);
 
-  return null;
+  return children ?? null;
 }
