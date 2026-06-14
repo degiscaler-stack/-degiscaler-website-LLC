@@ -85,7 +85,7 @@ export default async function AdminPackagesPage({
           </div>
           <div>
             <label className="mb-1 block text-xs font-medium text-neutral-400">{d.currency}</label>
-            <input name="currency" defaultValue="USD" className={inputClass} />
+            <input name="currency" defaultValue="EUR" className={inputClass} />
           </div>
           <div className="sm:col-span-2">
             <label className="mb-1 block text-xs font-medium text-neutral-400">{d.description}</label>

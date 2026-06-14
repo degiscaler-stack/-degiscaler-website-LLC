@@ -28,7 +28,7 @@ j.home.hero.subheadline =
   'ملفات PDF، قوالب، قوائم تحقق، وأدوات جاهزة تساعد أصحاب المواقع والمتاجر على تحسين الثقة، وضوح العرض، وتجربة الزبون، والتحويلات.';
 j.home.hero.ctaPrimary = 'تصفح الأدوات الرقمية';
 j.home.hero.ctaSecondary = 'عرض الأسعار';
-j.home.hero.trust2 = 'أسعار USD معلنة';
+j.home.hero.trust2 = 'أسعار EUR معلنة';
 j.home.hero.trust3 = 'تحميل رقمي';
 j.home.hero.trust4 = 'لا ضمانات للنتائج';
 

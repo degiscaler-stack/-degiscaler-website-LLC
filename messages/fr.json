@@ -64,7 +64,7 @@
     "answers": {
       "company": "DigiScaler est une marque de produits numériques premium qui propose des kits d’optimisation de site web, des modèles professionnels, des checklists de conversion et des ressources de croissance téléchargeables pour les entreprises en ligne.",
       "services": "DigiScaler vend des ressources téléchargeables : kits d’optimisation, checklists de préparation au paiement, modèles de pages d’atterrissage, modèles d’audit business, ressources UX et documents de planification — voir Ressources pour la liste complète.",
-      "pricing": "Kits publiés en USD : Starter Website Kit — 9,99 $ ; Growth Optimization Kit — 19,99 $ ; Pro Conversion Toolkit — 29,99 $ ; Scale Business Bundle — 49,99 $. Chaque palier ajoute modèles et bundles — voir Tarifs.",
+      "pricing": "Kits publiés en EUR : Starter Website Kit — €9.99 ; Growth Optimization Kit — €19.99 ; Pro Conversion Toolkit — €29.99 ; Scale Business Bundle — €49.99. Chaque palier ajoute modèles et bundles — voir Tarifs.",
       "website_design": "Les kits incluent guides et modèles orientés mise en page lisible, structure crédible et messages clairs à appliquer vous‑même.",
       "ecommerce": "À partir du niveau Growth, les packs couvrent fiches produit, checklists de tunnel et signaux de réassurance — le tout en téléchargement.",
       "landing_page": "Les modèles de landing figurent parmi les types de ressources décrits sur la page Ressources.",
@@ -113,7 +113,7 @@
       "ctaSecondary": "Voir les tarifs",
       "badge": "LLC enregistrée aux États-Unis",
       "trust1": "LLC enregistrée aux États-Unis",
-      "trust2": "Tarifs USD publiés",
+      "trust2": "Tarifs EUR publiés",
       "trust3": "Téléchargements numériques",
       "trust4": "Pas de promesse de résultats",
       "dashboardAria": "Exemple d'interface Rapport de préparation du site",
@@ -253,7 +253,7 @@
           "description": "Téléchargez, appliquez et itérez à votre rythme. Le support produit aide en cas de problème d’accès ou de fichiers."
         },
         {
-          "title": "Tarifs USD transparents",
+          "title": "Tarifs EUR transparents",
           "description": "Prix publiés — pas de devis caché ni de montées en gamme surprises dans un tunnel."
         },
         {
@@ -454,7 +454,7 @@
     "getStarted": "Acheter le kit",
     "continueToCheckout": "Continuer vers le paiement",
     "perPackage": "par forfait",
-    "disclaimer": "Montants en USD. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DegiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni.",
+    "disclaimer": "Montants en EUR. Les produits sont des téléchargements numériques avec livraison automatisée — généralement via accès numérique sécurisé et/ou email après paiement. DegiScaler LLC ne garantit pas les ventes, revenus, classement, taux de conversion ou résultats commerciaux spécifiques. Les délais d’accès peuvent dépendre de la confirmation du paiement et de la délivrabilité des emails. Aucun conseil, implémentation personnalisée, service géré, appel stratégique, examen manuel ou envoi physique n'est fourni.",
     "includedTitle": "Ce que recouvrent les formules",
     "includedItems": [
       "Accès numérique instantané après paiement réussi",
@@ -498,7 +498,7 @@
       {
         "id": "starter",
         "name": "Starter Website Kit",
-        "price": "$9.99",
+        "price": "€9.99",
         "description": "Un pack numérique simple pour améliorer la confiance, la clarté et la préparation de votre site web.",
         "features": [
           "Checklist de confiance du site en PDF",
@@ -512,7 +512,7 @@
       {
         "id": "growth",
         "name": "Growth Optimization Kit",
-        "price": "$19.99",
+        "price": "€19.99",
         "description": "Un kit numérique pratique pour améliorer la structure du site, le parcours client et les signaux de conversion.",
         "features": [
           "Tout le contenu du Starter",
@@ -526,7 +526,7 @@
       {
         "id": "pro",
         "name": "Pro Conversion Toolkit",
-        "price": "$29.99",
+        "price": "€29.99",
         "description": "Un bundle premium de modèles et ressources pour améliorer la confiance, le checkout et le parcours client.",
         "features": [
           "Tout le contenu du Growth",
@@ -540,7 +540,7 @@
       {
         "id": "scale",
         "name": "Scale Business Bundle",
-        "price": "$49.99",
+        "price": "€49.99",
         "description": "Une bibliothèque complète de ressources numériques pour les entreprises en ligne qui veulent un système structuré.",
         "features": [
           "Tout le contenu du Pro",
@@ -752,7 +752,7 @@
       },
       {
         "title": "Paiement et tarifs",
-        "content": "Les prix publiés sont en USD sauf mention contraire. Le paiement est requis avant la livraison numérique. Les prestataires de paiement tiers traitent les données carte ; leurs conditions s appliquent également."
+        "content": "Les prix publiés sont en EUR sauf mention contraire. Le paiement est requis avant la livraison numérique. Les prestataires de paiement tiers traitent les données carte ; leurs conditions s appliquent également."
       },
       {
         "title": "Responsabilités du client",

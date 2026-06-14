@@ -6,6 +6,8 @@ import {
   translationIdToSlug,
 } from '@/lib/packages/map-slug';
 
+const PUBLIC_PACKAGE_CURRENCY = 'EUR';
+
 export type DisplayPackage = {
   slug: string;
   title: string;
@@ -46,7 +48,7 @@ function fromDbRow(p: DbPackage): DisplayPackage {
     title: p.title,
     subtitle: p.subtitle ?? null,
     price: p.price,
-    currency: p.currency,
+    currency: PUBLIC_PACKAGE_CURRENCY,
     description: p.description,
     features: parseFeaturesJson(p.features),
     isPopular: p.isPopular,
@@ -61,7 +63,7 @@ function fromFallback(p: FallbackPkg): DisplayPackage {
     title: p.name,
     subtitle: null,
     price: p.price,
-    currency: 'USD',
+    currency: PUBLIC_PACKAGE_CURRENCY,
     description: p.description,
     features: p.features,
     isPopular: p.id === 'pro',
@@ -188,7 +190,7 @@ export async function resolvePackageForOrder(
           packageSlug: row.slug,
           packageTitle: row.title,
           packagePrice: row.price,
-          currency: row.currency,
+          currency: PUBLIC_PACKAGE_CURRENCY,
           description: row.description,
           features: parseFeaturesJson(row.features),
         },

@@ -35,7 +35,7 @@ model Package {
   title       String
   subtitle    String?
   price       String
-  currency    String   @default("USD")
+  currency    String   @default("EUR")
   description String   @db.Text
   features    Json
   isPopular   Boolean  @default(false)

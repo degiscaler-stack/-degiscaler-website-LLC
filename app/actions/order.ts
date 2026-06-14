@@ -83,7 +83,7 @@ export async function submitOrderAction(
   let packageSlug = pkgSlugRaw || FALLBACK_ORDER_SLUG;
   let packageTitle = snapTitle;
   let packagePrice = snapPrice || '—';
-  let currency = snapCurrency || 'USD';
+  let currency = snapCurrency || 'EUR';
   let descriptionSnapshot = snapDesc;
   let packageId: string | null = null;
 
@@ -116,7 +116,7 @@ export async function submitOrderAction(
         }
       }
       if (!snapPrice) packagePrice = '—';
-      if (!snapCurrency) currency = 'USD';
+      if (!snapCurrency) currency = 'EUR';
     }
   } else {
     if (!packageTitle) {
@@ -138,7 +138,7 @@ export async function submitOrderAction(
     }
     packageSlug = FALLBACK_ORDER_SLUG;
     if (!snapPrice) packagePrice = '—';
-    if (!snapCurrency) currency = 'USD';
+    if (!snapCurrency) currency = 'EUR';
   }
 
   const insertPayload = {

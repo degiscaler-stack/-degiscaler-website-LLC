@@ -21,7 +21,7 @@ export async function createPackageAction(formData: FormData) {
   const title = String(formData.get('title') ?? '').trim();
   const subtitleRaw = String(formData.get('subtitle') ?? '').trim();
   const price = String(formData.get('price') ?? '').trim();
-  const currency = String(formData.get('currency') ?? '').trim() || 'USD';
+  const currency = String(formData.get('currency') ?? '').trim() || 'EUR';
   const description = String(formData.get('description') ?? '').trim();
   const featuresRaw = String(formData.get('features') ?? '');
   const sortOrder = Number.parseInt(String(formData.get('sortOrder') ?? '0'), 10);
@@ -58,7 +58,7 @@ export async function updatePackageAction(formData: FormData) {
   const title = String(formData.get('title') ?? '').trim();
   const subtitleRaw = String(formData.get('subtitle') ?? '').trim();
   const price = String(formData.get('price') ?? '').trim();
-  const currency = String(formData.get('currency') ?? '').trim() || 'USD';
+  const currency = String(formData.get('currency') ?? '').trim() || 'EUR';
   const description = String(formData.get('description') ?? '').trim();
   const featuresRaw = String(formData.get('features') ?? '');
   const sortOrder = Number.parseInt(String(formData.get('sortOrder') ?? '0'), 10);

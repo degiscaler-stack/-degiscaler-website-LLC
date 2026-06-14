@@ -64,7 +64,7 @@
     "answers": {
       "company": "DigiScaler is a premium digital products brand that provides downloadable website optimization kits, business templates, conversion checklists, and growth resources for online businesses.",
       "services": "DigiScaler sells downloadable resources such as website optimization kits, checkout readiness checklists, landing page templates, business review worksheets, UX clarity resources, and growth planning documents — see Resources for the full list.",
-      "pricing": "Published USD kits: Starter Website Kit — $9.99; Growth Optimization Kit — $19.99; Pro Conversion Toolkit — $29.99; Scale Business Bundle — $49.99. Each tier stacks more templates and bundles — see Pricing for details.",
+      "pricing": "Published EUR kits: Starter Website Kit — €9.99; Growth Optimization Kit — €19.99; Pro Conversion Toolkit — €29.99; Scale Business Bundle — €49.99. Each tier stacks more templates and bundles — see Pricing for details.",
       "website_design": "Our kits include practical guides and templates focused on clear layout, readability, and credible structure you can apply to your own site.",
       "ecommerce": "Growth-tier-and-up materials cover product pages, checkout clarity checklists, and customer-journey prompts — all as downloadable resources.",
       "landing_page": "Landing Page Templates are included among the resource types described on the Resources page.",
@@ -113,7 +113,7 @@
       "ctaSecondary": "View Pricing",
       "badge": "U.S.-Registered LLC",
       "trust1": "U.S.-registered LLC",
-      "trust2": "Published USD pricing",
+      "trust2": "Published EUR pricing",
       "trust3": "Digital downloads",
       "trust4": "No outcome guarantees",
       "dashboardAria": "Example Website Readiness Report interface",
@@ -248,7 +248,7 @@
           "description": "Download, apply, and iterate on your schedule. Product support is available if access or files need help."
         },
         {
-          "title": "Transparent USD pricing",
+          "title": "Transparent EUR pricing",
           "description": "Published prices—no hidden quotes or upsells buried in a funnel."
         },
         {
@@ -449,7 +449,7 @@
     "getStarted": "Buy Digital Kit",
     "continueToCheckout": "Continue to checkout",
     "perPackage": "per package",
-    "disclaimer": "All prices are in USD. Products are pre-made downloadable digital resources with automated delivery—typically via secure digital access and/or email after checkout completes. DegiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided. Access timing can depend on payment confirmation and email deliverability.",
+    "disclaimer": "All prices are in EUR. Products are pre-made downloadable digital resources with automated delivery—typically via secure digital access and/or email after checkout completes. DegiScaler LLC does not guarantee sales, revenue, rankings, conversion rates, or any specific business outcome. No consulting, custom implementation, managed services, agency services, strategy calls, manual reviews, or physical shipping is provided. Access timing can depend on payment confirmation and email deliverability.",
     "includedTitle": "What is included",
     "includedItems": [
       "Instant digital access after successful checkout",
@@ -493,7 +493,7 @@
       {
         "id": "starter",
         "name": "Starter Website Kit",
-        "price": "$9.99",
+        "price": "€9.99",
         "description": "A compact digital resource pack for improving the basic trust, clarity, and readiness of your website.",
         "features": [
           "Website Trust Checklist PDF",
@@ -507,7 +507,7 @@
       {
         "id": "growth",
         "name": "Growth Optimization Kit",
-        "price": "$19.99",
+        "price": "€19.99",
         "description": "A practical digital toolkit for improving website structure, customer journey clarity, and conversion signals.",
         "features": [
           "Everything in Starter",
@@ -521,7 +521,7 @@
       {
         "id": "pro",
         "name": "Pro Conversion Toolkit",
-        "price": "$29.99",
+        "price": "€29.99",
         "description": "A premium bundle of templates and resources for improving website trust, checkout readiness, and customer flow.",
         "features": [
           "Everything in Growth",
@@ -535,7 +535,7 @@
       {
         "id": "scale",
         "name": "Scale Business Bundle",
-        "price": "$49.99",
+        "price": "€49.99",
         "description": "A complete digital resource library for online businesses that want a structured optimization system.",
         "features": [
           "Everything in Pro",
@@ -747,7 +747,7 @@
       },
       {
         "title": "Payment & pricing",
-        "content": "Published prices are in USD unless stated otherwise. Payment is required before digital delivery. Third-party payment providers handle card data; their terms also apply."
+        "content": "Published prices are in EUR unless stated otherwise. Payment is required before digital delivery. Third-party payment providers handle card data; their terms also apply."
       },
       {
         "title": "Customer responsibilities",

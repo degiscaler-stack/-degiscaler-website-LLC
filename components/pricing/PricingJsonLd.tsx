@@ -1,7 +1,7 @@
 import type { DisplayPackage } from '@/lib/packages/public-packages';
 import { buildPublicUrl, getPublicOrigin } from '@/lib/public-url';
 
-function parseUsdPrice(priceLabel: string): string | undefined {
+function parsePriceLabel(priceLabel: string): string | undefined {
   const m = priceLabel.replace(/,/g, '').match(/(\d+(?:\.\d+)?)/);
   return m?.[1];
 }
@@ -41,7 +41,7 @@ export default function PricingJsonLd({
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       numberOfItems: packages.length,
       itemListElement: packages.map((pkg, idx) => {
-        const price = parseUsdPrice(pkg.price);
+        const price = parsePriceLabel(pkg.price);
         return {
           '@type': 'ListItem',
           position: idx + 1,
@@ -55,7 +55,7 @@ export default function PricingJsonLd({
             offers: {
               '@type': 'Offer',
               url: buildPublicUrl(`/${locale}/order?package=${encodeURIComponent(pkg.slug)}`),
-              priceCurrency: 'USD',
+              priceCurrency: 'EUR',
               ...(price ? { price } : {}),
               availability: 'https://schema.org/InStock',
               itemCondition: 'https://schema.org/NewCondition',

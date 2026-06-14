@@ -97,8 +97,8 @@ async function seedPackages() {
       slug: 'starter-website-kit',
       title: 'Starter Website Kit',
       subtitle: null,
-      price: '$9.99',
-      currency: 'USD',
+      price: '€9.99',
+      currency: 'EUR',
       description:
         'A compact digital resource pack for improving the basic trust, clarity, and readiness of your website.',
       features: STARTER_FEATURES,
@@ -109,8 +109,8 @@ async function seedPackages() {
       slug: 'growth-optimization-kit',
       title: 'Growth Optimization Kit',
       subtitle: null,
-      price: '$19.99',
-      currency: 'USD',
+      price: '€19.99',
+      currency: 'EUR',
       description:
         'A practical digital toolkit for improving website structure, customer journey clarity, and conversion signals.',
       features: GROWTH_FEATURES,
@@ -121,8 +121,8 @@ async function seedPackages() {
       slug: 'pro-conversion-toolkit',
       title: 'Pro Conversion Toolkit',
       subtitle: null,
-      price: '$29.99',
-      currency: 'USD',
+      price: '€29.99',
+      currency: 'EUR',
       description:
         'A premium bundle of templates and resources for improving website trust, checkout readiness, and customer flow.',
       features: PRO_FEATURES,
@@ -133,8 +133,8 @@ async function seedPackages() {
       slug: 'scale-business-bundle',
       title: 'Scale Business Bundle',
       subtitle: null,
-      price: '$49.99',
-      currency: 'USD',
+      price: '€49.99',
+      currency: 'EUR',
       description:
         'A complete digital resource library for online businesses that want a structured optimization system.',
       features: SCALE_FEATURES,

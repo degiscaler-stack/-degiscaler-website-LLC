@@ -11,7 +11,7 @@ export const PADDLE_CLIENT_TOKEN =
   process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN ||
   'live_161611987544b1027904accc5ad';
 
-/** Canonical package slug → Paddle Billing price ID (production) */
+/** Canonical package slug → Paddle Billing EUR price ID (production) */
 export const PADDLE_PRICE_IDS: Record<string, string> = {
   'starter-website-kit':     'pri_01krxpqy3yhpm8yhaq6n19x2h5',
   'growth-optimization-kit': 'pri_01krxppkpm5wsd53fat02vn9h9',

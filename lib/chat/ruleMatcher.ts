@@ -75,9 +75,9 @@ const KEYWORDS: Record<BotIntent, Record<Locale, readonly string[]> & { all: rea
     all: [],
   },
   pricing: {
-    en: ['price', 'pricing', 'cost', 'how much', 'fee', 'dollar'],
-    ar: ['سعر', 'أسعار', 'تكلفة', 'بكم', 'دولار', 'usd'],
-    fr: ['prix', 'tarif', 'tarifs', 'combien', 'usd', 'dollar'],
+    en: ['price', 'pricing', 'cost', 'how much', 'fee', 'euro', 'eur'],
+    ar: ['سعر', 'أسعار', 'تكلفة', 'بكم', 'يورو', 'eur'],
+    fr: ['prix', 'tarif', 'tarifs', 'combien', 'eur', 'euro'],
     all: [],
   },
   website_design: {
