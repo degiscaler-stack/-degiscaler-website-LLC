@@ -17,9 +17,8 @@ const DIRECT_CHECKOUT_PRODUCTS = {
   },
 } as const;
 
-export function generateStaticParams() {
-  return Object.keys(DIRECT_CHECKOUT_PRODUCTS).map((product) => ({ product }));
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function DirectCheckoutPage({
   params,

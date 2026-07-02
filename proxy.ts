@@ -3,6 +3,7 @@ import { NextResponse, NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 import { verifyAdminJwt } from '@/lib/auth/admin-jwt';
+import { applyCheckoutNoCacheHeaders } from '@/lib/checkout/no-cache';
 import { applyPublicOriginToRedirect, buildPublicUrl } from '@/lib/public-url';
 
 const intlMiddleware = createMiddleware(routing);
@@ -54,11 +55,13 @@ export async function proxy(request: NextRequest) {
   if (checkoutPath && checkoutPath !== pathname) {
     const redirectUrl = new URL(buildPublicUrl(checkoutPath));
     redirectUrl.search = request.nextUrl.search;
-    return NextResponse.redirect(redirectUrl.toString(), 308);
+    return applyCheckoutNoCacheHeaders(
+      NextResponse.redirect(redirectUrl.toString(), 308),
+    );
   }
 
   if (pathname === '/checkout' || pathname.startsWith('/checkout/')) {
-    return NextResponse.next();
+    return applyCheckoutNoCacheHeaders(NextResponse.next());
   }
 
   if (pathname.startsWith('/admin')) {

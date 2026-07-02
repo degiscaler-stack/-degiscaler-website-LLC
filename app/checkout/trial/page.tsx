@@ -1,5 +1,8 @@
 import DirectCheckoutClient from '@/app/checkout/DirectCheckoutClient';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const TRIAL_PRICE_ID = 'pri_01kv288raxgwa5q3t2g7c6fam1';
 
 export default function TrialCheckoutPage() {
