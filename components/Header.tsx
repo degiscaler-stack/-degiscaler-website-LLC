@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/navigation';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import LanguageSwitcher from './LanguageSwitcher';
 import BrandLogo from './BrandLogo';
 import { primaryBtnClass, accentEyebrowClass } from '@/components/home/homeTheme';
 
@@ -53,14 +53,12 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <LanguageSwitcher />
             <Link href="/contact" className={`${primaryBtnClass} px-5 lg:px-6 py-2.5 rounded-lg text-[14px]`}>
               {t('getStarted')}
             </Link>
           </div>
 
           <div className="md:hidden flex items-center gap-2">
-            <LanguageSwitcher />
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}

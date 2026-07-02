@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
 import PackageCardFooter from '@/components/pricing/PackageCardFooter';

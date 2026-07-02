@@ -2,7 +2,6 @@
 
 import { getTranslations } from 'next-intl/server';
 import type { ContactActionState } from '@/lib/actions/public-form-state';
-import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
 import { safeCreateContactMessage } from '@/lib/db/public-safe';
 
@@ -10,10 +9,7 @@ export async function submitContactAction(
   _prev: ContactActionState,
   formData: FormData,
 ): Promise<ContactActionState> {
-  const localeRaw = String(formData.get('locale') ?? '').trim().toLowerCase();
-  const locale = routing.locales.includes(localeRaw as (typeof routing.locales)[number])
-    ? localeRaw
-    : routing.defaultLocale;
+  const locale = 'en';
 
   const fullName =
     String(formData.get('fullName') ?? formData.get('name') ?? '').trim();
@@ -31,7 +27,7 @@ export async function submitContactAction(
   };
   let tErr = (k: string) => errFallback[k] ?? k;
   try {
-    const gt = await getTranslations({ locale, namespace: 'contactPage.errors' });
+    const gt = await getTranslations('contactPage.errors');
     tErr = (k: string) => gt(k as never);
   } catch (err) {
     console.error('[submitContactAction] getTranslations', err);
@@ -61,7 +57,7 @@ export async function submitContactAction(
   return {
     error: null,
     ok: true,
-    redirectTo: `/${locale}/thank-you?type=contact`,
+    redirectTo: '/thank-you?type=contact',
   };
 }
 

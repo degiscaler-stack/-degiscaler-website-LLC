@@ -1,15 +1,9 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import LegalPage from '@/components/LegalPage';
 
 type Section = { title: string; content: string };
 
-export default async function DigitalDeliveryPolicyPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default async function DigitalDeliveryPolicyPage() {
   const t = await getTranslations('digitalDeliveryPage');
   const sections: Section[] = t.raw('sections') as Section[];
 

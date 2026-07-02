@@ -1,29 +1,14 @@
-import createMiddleware from 'next-intl/middleware';
 import { NextResponse, NextRequest } from 'next/server';
-import { routing } from './i18n/routing';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 import { verifyAdminJwt } from '@/lib/auth/admin-jwt';
 import { applyCheckoutNoCacheHeaders } from '@/lib/checkout/no-cache';
-import { applyPublicOriginToRedirect, buildPublicUrl } from '@/lib/public-url';
+import { buildPublicUrl } from '@/lib/public-url';
 
-const intlMiddleware = createMiddleware(routing);
-
-/** /{locale}/checkout/... → /checkout/... so shared links work from WhatsApp and mobile browsers. */
-function canonicalCheckoutPath(pathname: string): string | null {
-  for (const locale of routing.locales) {
-    const prefix = `/${locale}/checkout`;
-    if (pathname === prefix) return '/checkout';
-    if (pathname.startsWith(`${prefix}/`)) {
-      return `/checkout${pathname.slice(prefix.length)}`;
-    }
-  }
-
-  const generic = pathname.match(/^\/[a-z]{2}(?:-[a-z]{2})?\/checkout(\/.*)?$/i);
-  if (generic) {
-    return `/checkout${generic[1] ?? ''}`;
-  }
-
-  return null;
+/** /{locale}/... → /... (English-only site; strip legacy language prefixes). */
+function stripLocalePrefix(pathname: string): string | null {
+  const match = pathname.match(/^\/[a-z]{2}(?:-[a-z]{2})?(\/.*)?$/i);
+  if (!match) return null;
+  return match[1] || '/';
 }
 
 export async function proxy(request: NextRequest) {
@@ -51,13 +36,15 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const checkoutPath = canonicalCheckoutPath(pathname);
-  if (checkoutPath && checkoutPath !== pathname) {
-    const redirectUrl = new URL(buildPublicUrl(checkoutPath));
+  const unprefixed = stripLocalePrefix(pathname);
+  if (unprefixed && unprefixed !== pathname) {
+    const redirectUrl = new URL(buildPublicUrl(unprefixed));
     redirectUrl.search = request.nextUrl.search;
-    return applyCheckoutNoCacheHeaders(
-      NextResponse.redirect(redirectUrl.toString(), 308),
-    );
+    const response = NextResponse.redirect(redirectUrl.toString(), 308);
+    if (unprefixed === '/checkout' || unprefixed.startsWith('/checkout/')) {
+      return applyCheckoutNoCacheHeaders(response);
+    }
+    return response;
   }
 
   if (pathname === '/checkout' || pathname.startsWith('/checkout/')) {
@@ -90,8 +77,7 @@ export async function proxy(request: NextRequest) {
     return NextResponse.next({ request: { headers: req.headers } });
   }
 
-  const intlResponse = intlMiddleware(request);
-  return applyPublicOriginToRedirect(intlResponse);
+  return NextResponse.next();
 }
 
 export const config = {

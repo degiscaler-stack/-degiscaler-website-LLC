@@ -1,5 +1,5 @@
-﻿import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { Mail, Clock } from 'lucide-react';
 import BrandLogo from '@/components/BrandLogo';
 import { ds } from '@/components/home/homeTheme';

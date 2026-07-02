@@ -1,9 +1,8 @@
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import OrderFormClient from '@/components/order/OrderFormClient';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
@@ -54,21 +53,13 @@ const ORDER_COPY_FALLBACK = {
 };
 
 export default async function OrderPage({
-  params,
   searchParams,
 }: {
-  params: Promise<{ locale: string }>;
   searchParams: Promise<{ package?: string }>;
 }) {
-  const { locale } = await params;
   const q = await searchParams;
   const pkgParam = typeof q.package === 'string' ? q.package.trim() : '';
 
-  try {
-    setRequestLocale(locale);
-  } catch (err) {
-    console.error('[OrderPage] setRequestLocale', err);
-  }
 
   let orderCopy = { ...ORDER_COPY_FALLBACK };
   let fallbackPackages: Array<{
@@ -80,8 +71,8 @@ export default async function OrderPage({
   }> = [];
 
   try {
-    const tOrd = await getTranslations({ locale, namespace: 'orderPage' });
-    const tPrice = await getTranslations({ locale, namespace: 'pricingPage' });
+    const tOrd = await getTranslations('orderPage');
+    const tPrice = await getTranslations('pricingPage');
     orderCopy = {
       title: tOrd('title'),
       subtitle: tOrd('subtitle'),
@@ -164,7 +155,7 @@ export default async function OrderPage({
               </p>
             ) : null}
 
-            <OrderFormClient locale={locale} display={display} />
+            <OrderFormClient display={display} />
 
             <Link
               href="/pricing"

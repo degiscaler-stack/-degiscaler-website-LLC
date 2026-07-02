@@ -6,15 +6,9 @@ function parsePriceLabel(priceLabel: string): string | undefined {
   return m?.[1];
 }
 
-export default function PricingJsonLd({
-  packages,
-  locale,
-}: {
-  packages: DisplayPackage[];
-  locale: string;
-}) {
+export default function PricingJsonLd({ packages }: { packages: DisplayPackage[] }) {
   const origin = getPublicOrigin();
-  const pricingUrl = buildPublicUrl(`/${locale}/pricing`);
+  const pricingUrl = buildPublicUrl('/pricing');
 
   const graph: Record<string, unknown>[] = [
     {
@@ -32,7 +26,7 @@ export default function PricingJsonLd({
       url: origin,
       name: 'DigiScaler',
       publisher: { '@id': `${origin}/#organization` },
-      inLanguage: ['en', 'fr', 'ar'],
+      inLanguage: ['en'],
     },
     {
       '@type': 'ItemList',
@@ -54,7 +48,7 @@ export default function PricingJsonLd({
             category: 'DigitalDownload',
             offers: {
               '@type': 'Offer',
-              url: buildPublicUrl(`/${locale}/order?package=${encodeURIComponent(pkg.slug)}`),
+              url: buildPublicUrl(`/order?package=${encodeURIComponent(pkg.slug)}`),
               priceCurrency: 'EUR',
               ...(price ? { price } : {}),
               availability: 'https://schema.org/InStock',

@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 const PADDLE_READY_TIMEOUT_MS = 15_000;
-const PRICING_URL = '/en/pricing';
+const PRICING_URL = '/pricing';
 const CHECKOUT_ERROR_URL = `${PRICING_URL}?checkout=error`;
 
 function redirectToPricing(path: string) {

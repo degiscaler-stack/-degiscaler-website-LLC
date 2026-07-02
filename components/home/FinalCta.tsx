@@ -1,5 +1,5 @@
-﻿import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { contentMax, ds, sectionPad, sectionTitleClass, primaryBtnStrongClass, secondaryBtnClass, cardSurfaceBgImage, cardTopHighlight } from './homeTheme';
 

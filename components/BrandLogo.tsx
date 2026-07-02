@@ -1,6 +1,6 @@
 'use client';
 
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { logoBrandClass } from '@/components/home/homeTheme';
 
 /** Shared header + footer wordmark — Degi (white) + Scaler (accent gradient). Always LTR so RTL never reverses to “ScalerDegi”. */

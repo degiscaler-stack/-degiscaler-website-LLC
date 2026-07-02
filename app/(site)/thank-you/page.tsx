@@ -1,6 +1,5 @@
-import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { Download } from 'lucide-react';
 import PageHero from '@/components/layout/PageHero';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
@@ -36,24 +35,20 @@ function safePricingPackages(tPricing: { raw: (key: string) => unknown }): Array
 }
 
 export default async function ThankYouPage({
-  params,
   searchParams,
 }: {
-  params: Promise<{ locale: string }>;
   searchParams: Promise<{ type?: string; pkg?: string }>;
 }) {
-  const { locale } = await params;
   const q = await searchParams;
   const type = typeof q.type === 'string' ? q.type.trim() : '';
   const pkgRaw = typeof q.pkg === 'string' ? q.pkg.trim() : '';
 
-  setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: 'thankYouPage' });
+  const t = await getTranslations('thankYouPage');
 
   let fallbackPackages: ReturnType<typeof safePricingPackages> = [];
   try {
-    const tPrice = await getTranslations({ locale, namespace: 'pricingPage' });
+    const tPrice = await getTranslations('pricingPage');
     fallbackPackages = safePricingPackages(tPrice);
   } catch (err) {
     console.error('[ThankYouPage] pricing translations', err);

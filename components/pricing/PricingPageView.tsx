@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { Check, ArrowRight, Star } from 'lucide-react';
 import PageHero from '@/components/layout/PageHero';
 import PackageCardFooter from '@/components/pricing/PackageCardFooter';
@@ -155,10 +155,8 @@ function PricingTierCard({
 
 export default async function PricingPageView({
   packages,
-  locale,
 }: {
   packages: DisplayPackage[];
-  locale: string;
 }) {
   const t = await getTranslations('pricingPage');
   const included: string[] = (t.raw('includedItems') as string[]) ?? [];
@@ -167,7 +165,7 @@ export default async function PricingPageView({
 
   return (
     <div className={pageMainTopClass} style={{ backgroundColor: ds.bgMain }}>
-      <PricingJsonLd packages={packages} locale={locale} />
+      <PricingJsonLd packages={packages} />
       <section
         style={{
           backgroundColor: ds.bgDeep,

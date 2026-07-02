@@ -1,4 +1,3 @@
-import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { loadDisplayPackages, applyTranslatedPackageCopy } from '@/lib/packages/public-packages';
 import Hero from '@/components/home/Hero';
@@ -12,15 +11,9 @@ import HomeFaq from '@/components/home/HomeFaq';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import FinalCta from '@/components/home/FinalCta';
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default async function HomePage() {
 
-  const tPricing = await getTranslations({ locale, namespace: 'pricingPage' });
+  const tPricing = await getTranslations('pricingPage');
   const fallbackPackages = tPricing.raw('packages') as Array<{
     id: string;
     name: string;

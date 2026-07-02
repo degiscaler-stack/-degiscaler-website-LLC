@@ -18,7 +18,7 @@ import {
   iconWellGlyphClass,
 } from '@/components/home/homeTheme';
 
-export default function ContactFormClient({ locale }: { locale: string }) {
+export default function ContactFormClient() {
   const t = useTranslations('contactPage');
   const router = useRouter();
   const [state, formAction, pending] = useActionState<ContactActionState, FormData>(
@@ -116,7 +116,7 @@ export default function ContactFormClient({ locale }: { locale: string }) {
           }}
           noValidate
         >
-          <input type="hidden" name="locale" value={locale} />
+          <input type="hidden" name="locale" value="en" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>

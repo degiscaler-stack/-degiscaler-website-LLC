@@ -5,7 +5,7 @@
  */
 
 import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Send, ImagePlus } from 'lucide-react';
 import { matchIntent, normalizeUserMessage, shouldStartSupportFlow } from '@/lib/chat/ruleMatcher';
 import type { BotIntent } from '@/lib/chat/knowledge';
@@ -127,7 +127,7 @@ function isLikelySafeImageDataUrl(url: string): boolean {
 
 export default function ChatWidget() {
   const t = useTranslations('chat');
-  const locale = useLocale();
+  const locale = 'en';
   const messagesRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const welcomeLock = useRef(false);

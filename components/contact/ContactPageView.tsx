@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import ContactFormClient from '@/components/contact/ContactFormClient';
 import {
@@ -17,11 +17,11 @@ const CONTACT_FALLBACK = {
   pricingFallbackCta: 'View pricing',
 };
 
-export default async function ContactPageView({ locale }: { locale: string }) {
+export default async function ContactPageView() {
   let copy = { ...CONTACT_FALLBACK };
 
   try {
-    const t = await getTranslations({ locale, namespace: 'contactPage' });
+    const t = await getTranslations('contactPage');
     copy = {
       eyebrow: t('eyebrow'),
       headline: t('headline'),
@@ -52,7 +52,7 @@ export default async function ContactPageView({ locale }: { locale: string }) {
         }}
       >
         <div className={`px-4 sm:px-6 lg:px-10 ${contentMax}`}>
-          <ContactFormClient locale={locale} />
+          <ContactFormClient />
         </div>
       </section>
 

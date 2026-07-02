@@ -8,7 +8,7 @@ export function LoginHeader() {
   return (
     <div className="mb-8 text-center">
       <Link
-        href="/en"
+        href="/"
         className="inline-block bg-gradient-to-r from-[#e8cc65] via-[#d6a700] to-[#ff8411] bg-clip-text text-xl font-semibold tracking-tight text-transparent"
       >
         DigiScaler

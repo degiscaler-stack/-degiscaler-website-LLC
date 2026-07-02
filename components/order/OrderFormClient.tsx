@@ -27,10 +27,8 @@ export type OrderFormDisplay = {
 };
 
 export default function OrderFormClient({
-  locale,
   display,
 }: {
-  locale: string;
   display: OrderFormDisplay;
 }) {
   const t = useTranslations('orderPage');
@@ -80,7 +78,7 @@ export default function OrderFormClient({
       }}
       noValidate
     >
-      <input type="hidden" name="locale" value={locale} />
+      <input type="hidden" name="locale" value="en" />
       <input type="hidden" name="packageSlug" value={display.packageSlug ?? ''} />
       <input type="hidden" name="packageTitleSnapshot" value={display.packageTitle} />
       <input type="hidden" name="packagePriceSnapshot" value={display.packagePrice ?? ''} />

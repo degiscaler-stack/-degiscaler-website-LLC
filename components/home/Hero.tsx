@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import { useId } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import {
   ArrowRight,
   BadgeCheck,

@@ -2,7 +2,6 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { ShoppingCart, Loader2, CheckCircle, AlertCircle, Clock } from 'lucide-react';
-import { useLocale } from 'next-intl';
 import {
   primaryBtnClass,
   pricingCardSecondaryBtnClass,
@@ -34,7 +33,6 @@ interface Props {
 export default function PaddleCheckoutButton({ priceId, label, featuredVisual }: Props) {
   const [state, setState] = useState<CheckoutState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const locale = useLocale();
   const pendingCheckout = useRef(false);
 
   // ── React to global Paddle events bridged by PaddleProvider ────────────────
@@ -43,7 +41,7 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
       setState('success');
       console.log('[PaddleCheckout] checkout.completed — redirecting to /thank-you');
       setTimeout(() => {
-        window.location.href = `/${locale}/thank-you`;
+        window.location.href = '/thank-you';
       }, 1600);
     }
 
@@ -82,7 +80,7 @@ export default function PaddleCheckoutButton({ priceId, label, featuredVisual }:
     };
   // openCheckout is stable — defined in the same closure
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locale]);
+  }, []);
 
   // ── Core checkout opener ────────────────────────────────────────────────────
   function openCheckout() {

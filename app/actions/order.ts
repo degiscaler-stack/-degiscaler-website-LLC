@@ -2,7 +2,6 @@
 
 import { getTranslations } from 'next-intl/server';
 import type { OrderActionState } from '@/lib/actions/public-form-state';
-import { routing } from '@/i18n/routing';
 import { isValidEmail } from '@/lib/validation/email';
 import { resolvePackageForOrder } from '@/lib/packages/public-packages';
 import { safeCreateOrder } from '@/lib/db/public-safe';
@@ -36,10 +35,7 @@ export async function submitOrderAction(
   _prev: OrderActionState,
   formData: FormData,
 ): Promise<OrderActionState> {
-  const localeRaw = String(formData.get('locale') ?? '').trim().toLowerCase();
-  const locale = routing.locales.includes(localeRaw as (typeof routing.locales)[number])
-    ? localeRaw
-    : routing.defaultLocale;
+  const locale = 'en';
 
   const pkgSlugRaw = String(formData.get('packageSlug') ?? '').trim();
   const fullName = String(formData.get('fullName') ?? '').trim();
@@ -59,7 +55,7 @@ export async function submitOrderAction(
   };
   let tErr = (k: string) => tErrLookup[k] ?? k;
   try {
-    const gt = await getTranslations({ locale, namespace: 'orderPage.errors' });
+    const gt = await getTranslations('orderPage.errors');
     tErr = (k: string) => gt(k as never);
   } catch (err) {
     console.error('[submitOrderAction] getTranslations errors', err);
@@ -74,7 +70,7 @@ export async function submitOrderAction(
 
   let fallbackPackages: ReturnType<typeof safePricingFallbackPackages> = [];
   try {
-    const tPricing = await getTranslations({ locale, namespace: 'pricingPage' });
+    const tPricing = await getTranslations('pricingPage');
     fallbackPackages = safePricingFallbackPackages(tPricing);
   } catch (err) {
     console.error('[submitOrderAction] pricing translations', err);
@@ -100,7 +96,7 @@ export async function submitOrderAction(
       packageSlug = sanitizeOrderSlug(pkgSlugRaw);
       if (!packageTitle) {
         try {
-          const tOrder = await getTranslations({ locale, namespace: 'orderPage' });
+          const tOrder = await getTranslations('orderPage');
           packageTitle = tOrder('fallbackSummaryTitle');
         } catch {
           packageTitle = 'Project request';
@@ -108,7 +104,7 @@ export async function submitOrderAction(
       }
       if (!descriptionSnapshot) {
         try {
-          const tOrder = await getTranslations({ locale, namespace: 'orderPage' });
+          const tOrder = await getTranslations('orderPage');
           descriptionSnapshot = tOrder('fallbackSummaryDescription');
         } catch {
           descriptionSnapshot =
@@ -121,7 +117,7 @@ export async function submitOrderAction(
   } else {
     if (!packageTitle) {
       try {
-        const tOrder = await getTranslations({ locale, namespace: 'orderPage' });
+        const tOrder = await getTranslations('orderPage');
         packageTitle = tOrder('fallbackSummaryTitle');
       } catch {
         packageTitle = 'Project request';
@@ -129,7 +125,7 @@ export async function submitOrderAction(
     }
     if (!descriptionSnapshot) {
       try {
-        const tOrder = await getTranslations({ locale, namespace: 'orderPage' });
+        const tOrder = await getTranslations('orderPage');
         descriptionSnapshot = tOrder('fallbackSummaryDescription');
       } catch {
         descriptionSnapshot =
@@ -163,7 +159,7 @@ export async function submitOrderAction(
   return {
     error: null,
     ok: true,
-    redirectTo: `/${locale}/thank-you?type=order&pkg=${encodeURIComponent(packageSlug)}`,
+    redirectTo: `/thank-you?type=order&pkg=${encodeURIComponent(packageSlug)}`,
   };
 }
 

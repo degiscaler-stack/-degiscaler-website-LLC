@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { Building2, Target, ClipboardList, BadgeCheck, ArrowRight } from 'lucide-react';
 import PageHero from '@/components/layout/PageHero';
 import {
