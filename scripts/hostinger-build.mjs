@@ -1,4 +1,5 @@
-import { spawnSync } from 'node:child_process';
+import { spawnSync, execSync } from 'node:child_process';
+import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -45,5 +46,22 @@ if (databaseUrl) {
     '[hostinger-build] DATABASE_URL is not set — skipping prisma migrate deploy and prisma:seed (OK for local/offline builds).'
   );
 }
+
+let deployCommit = 'unknown';
+try {
+  deployCommit = execSync('git rev-parse HEAD', { cwd: rootDir, encoding: 'utf8' }).trim();
+} catch {
+  // Non-git environments (e.g. some CI snapshots) — health still works.
+}
+
+fs.writeFileSync(
+  path.join(rootDir, 'lib', 'deploy-info.ts'),
+  [
+    '// Generated at build time by scripts/hostinger-build.mjs — do not edit.',
+    `export const DEPLOY_COMMIT = ${JSON.stringify(deployCommit)};`,
+    `export const DEPLOY_BUILT_AT = ${JSON.stringify(new Date().toISOString())};`,
+    '',
+  ].join('\n'),
+);
 
 run('npx', ['next', 'build']);
