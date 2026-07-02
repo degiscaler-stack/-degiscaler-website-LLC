@@ -2,13 +2,32 @@ import { NextResponse, NextRequest } from 'next/server';
 import { ADMIN_SESSION_COOKIE } from '@/lib/auth/admin-cookie';
 import { verifyAdminJwt } from '@/lib/auth/admin-jwt';
 import { applyCheckoutNoCacheHeaders } from '@/lib/checkout/no-cache';
+import { canonicalCheckoutPath } from '@/lib/checkout/products';
 import { buildPublicUrl } from '@/lib/public-url';
 
-/** /{locale}/... → /... (English-only site; strip legacy language prefixes). */
+const LEGACY_LOCALE_PREFIXES = new Set(['en', 'fr', 'ar', 'de']);
+
+/** /{locale}/... → /... for legacy multilingual URLs only. */
 function stripLocalePrefix(pathname: string): string | null {
-  const match = pathname.match(/^\/[a-z]{2}(?:-[a-z]{2})?(\/.*)?$/i);
-  if (!match) return null;
-  return match[1] || '/';
+  const match = pathname.match(/^\/([a-z]{2})(?:-[a-z]{2})?(\/.*)?$/i);
+  if (!match) {
+    return null;
+  }
+
+  const locale = match[1].toLowerCase();
+  if (!LEGACY_LOCALE_PREFIXES.has(locale)) {
+    return null;
+  }
+
+  return match[2] || '/';
+}
+
+function checkoutRedirect(pathname: string, search: string): NextResponse {
+  const redirectUrl = new URL(buildPublicUrl(pathname));
+  redirectUrl.search = search;
+  return applyCheckoutNoCacheHeaders(
+    NextResponse.redirect(redirectUrl.toString(), 308),
+  );
 }
 
 export async function proxy(request: NextRequest) {
@@ -38,13 +57,12 @@ export async function proxy(request: NextRequest) {
 
   const unprefixed = stripLocalePrefix(pathname);
   if (unprefixed && unprefixed !== pathname) {
-    const redirectUrl = new URL(buildPublicUrl(unprefixed));
-    redirectUrl.search = request.nextUrl.search;
-    const response = NextResponse.redirect(redirectUrl.toString(), 308);
-    if (unprefixed === '/checkout' || unprefixed.startsWith('/checkout/')) {
-      return applyCheckoutNoCacheHeaders(response);
-    }
-    return response;
+    return checkoutRedirect(unprefixed, request.nextUrl.search);
+  }
+
+  const normalizedCheckout = canonicalCheckoutPath(pathname);
+  if (normalizedCheckout) {
+    return checkoutRedirect(normalizedCheckout, request.nextUrl.search);
   }
 
   if (pathname === '/checkout' || pathname.startsWith('/checkout/')) {

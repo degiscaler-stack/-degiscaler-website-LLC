@@ -1,13 +1,12 @@
 import DirectCheckoutClient from '@/app/checkout/DirectCheckoutClient';
+import { TRIAL_CHECKOUT_PRICE_ID } from '@/lib/checkout/products';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const TRIAL_PRICE_ID = 'pri_01kv288raxgwa5q3t2g7c6fam1';
-
 export default function TrialCheckoutPage() {
   return (
-    <DirectCheckoutClient priceId={TRIAL_PRICE_ID}>
+    <DirectCheckoutClient priceId={TRIAL_CHECKOUT_PRICE_ID}>
       <main className="flex min-h-screen items-center justify-center px-5 py-10">
         <section className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-7 text-center shadow-2xl shadow-black/40">
           <h1 className="text-lg font-semibold tracking-tight text-white">
