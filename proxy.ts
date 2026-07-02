@@ -7,6 +7,24 @@ import { applyPublicOriginToRedirect, buildPublicUrl } from '@/lib/public-url';
 
 const intlMiddleware = createMiddleware(routing);
 
+/** /{locale}/checkout/... → /checkout/... so shared links work from WhatsApp and mobile browsers. */
+function canonicalCheckoutPath(pathname: string): string | null {
+  for (const locale of routing.locales) {
+    const prefix = `/${locale}/checkout`;
+    if (pathname === prefix) return '/checkout';
+    if (pathname.startsWith(`${prefix}/`)) {
+      return `/checkout${pathname.slice(prefix.length)}`;
+    }
+  }
+
+  const generic = pathname.match(/^\/[a-z]{2}(?:-[a-z]{2})?\/checkout(\/.*)?$/i);
+  if (generic) {
+    return `/checkout${generic[1] ?? ''}`;
+  }
+
+  return null;
+}
+
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -30,6 +48,13 @@ export async function proxy(request: NextRequest) {
 
   if (pathname.startsWith('/api')) {
     return NextResponse.next();
+  }
+
+  const checkoutPath = canonicalCheckoutPath(pathname);
+  if (checkoutPath && checkoutPath !== pathname) {
+    const redirectUrl = new URL(buildPublicUrl(checkoutPath));
+    redirectUrl.search = request.nextUrl.search;
+    return NextResponse.redirect(redirectUrl.toString(), 308);
   }
 
   if (pathname === '/checkout' || pathname.startsWith('/checkout/')) {
