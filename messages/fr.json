@@ -64,7 +64,7 @@
     "answers": {
       "company": "DigiScaler est une marque de produits numériques premium qui propose des kits d’optimisation de site web, des modèles professionnels, des checklists de conversion et des ressources de croissance téléchargeables pour les entreprises en ligne.",
       "services": "DigiScaler vend des ressources téléchargeables : kits d’optimisation, checklists de préparation au paiement, modèles de pages d’atterrissage, modèles d’audit business, ressources UX et documents de planification — voir Ressources pour la liste complète.",
-      "pricing": "Kits publiés en EUR : Starter Website Kit — €12.99 ; Growth Optimization Kit — €24.99 ; Pro Conversion Toolkit — €39.99 ; Scale Business Bundle — €59.99. Chaque palier ajoute modèles et bundles — voir Tarifs.",
+      "pricing": "Kits publiés en EUR : Starter Website Kit — €9.99 ; Growth Optimization Kit — €19.99 ; Pro Conversion Toolkit — €29.99 ; Scale Business Bundle — €49.99. Chaque palier ajoute modèles et bundles — voir Tarifs.",
       "website_design": "Les kits incluent guides et modèles orientés mise en page lisible, structure crédible et messages clairs à appliquer vous‑même.",
       "ecommerce": "À partir du niveau Growth, les packs couvrent fiches produit, checklists de tunnel et signaux de réassurance — le tout en téléchargement.",
       "landing_page": "Les modèles de landing figurent parmi les types de ressources décrits sur la page Ressources.",
@@ -498,7 +498,7 @@
       {
         "id": "starter",
         "name": "Starter Website Kit",
-        "price": "€12.99",
+        "price": "€9.99",
         "description": "Un pack numérique simple pour améliorer la confiance, la clarté et la préparation de votre site web.",
         "features": [
           "Checklist de confiance du site en PDF",
@@ -512,7 +512,7 @@
       {
         "id": "growth",
         "name": "Growth Optimization Kit",
-        "price": "€24.99",
+        "price": "€19.99",
         "description": "Un kit numérique pratique pour améliorer la structure du site, le parcours client et les signaux de conversion.",
         "features": [
           "Tout le contenu du Starter",
@@ -526,7 +526,7 @@
       {
         "id": "pro",
         "name": "Pro Conversion Toolkit",
-        "price": "€39.99",
+        "price": "€29.99",
         "description": "Un bundle premium de modèles et ressources pour améliorer la confiance, le checkout et le parcours client.",
         "features": [
           "Tout le contenu du Growth",
@@ -540,7 +540,7 @@
       {
         "id": "scale",
         "name": "Scale Business Bundle",
-        "price": "€59.99",
+        "price": "€49.99",
         "description": "Une bibliothèque complète de ressources numériques pour les entreprises en ligne qui veulent un système structuré.",
         "features": [
           "Tout le contenu du Pro",
