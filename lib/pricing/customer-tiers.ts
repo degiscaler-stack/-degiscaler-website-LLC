@@ -1,16 +1,24 @@
 /**
  * Customer plan-type tabs (Personal → Enterprise).
- * Prices stay fixed on each kit card; only the feature list swaps per tab.
+ * Tabs swap feature lists, display prices, and Paddle Price IDs together.
  */
+
+import {
+  formatEuroAmount,
+  getPriceConfiguration,
+  type PricingTier,
+  type ProductKey,
+  productKeyFromSlug,
+} from '@/lib/paddle/config';
+
+export type CustomerTier = PricingTier;
 
 export const CUSTOMER_TIERS = [
   'personal',
   'freelancer',
   'agency',
   'enterprise',
-] as const;
-
-export type CustomerTier = (typeof CUSTOMER_TIERS)[number];
+] as const satisfies readonly CustomerTier[];
 
 export const DEFAULT_CUSTOMER_TIER: CustomerTier = 'personal';
 
@@ -72,3 +80,23 @@ export function isCustomerTier(value: string): value is CustomerTier {
 export function featuresForTier(tier: CustomerTier): readonly string[] {
   return TIER_FEATURES[tier];
 }
+
+export function displayPriceForTier(
+  tier: CustomerTier,
+  slug: string,
+): string | null {
+  const product = productKeyFromSlug(slug);
+  if (!product) return null;
+  return formatEuroAmount(getPriceConfiguration(tier, product).amount);
+}
+
+export function paddlePriceIdForTier(
+  tier: CustomerTier,
+  slug: string,
+): string | null {
+  const product = productKeyFromSlug(slug);
+  if (!product) return null;
+  return getPriceConfiguration(tier, product).paddlePriceId;
+}
+
+export type { ProductKey };

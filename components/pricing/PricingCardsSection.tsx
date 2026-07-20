@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import type { DisplayPackage } from '@/lib/packages/public-packages';
 import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
-import { getPaddlePriceId } from '@/lib/paddle/config';
 import {
   DEFAULT_CUSTOMER_TIER,
+  displayPriceForTier,
   featuresForTier,
+  paddlePriceIdForTier,
   type CustomerTier,
 } from '@/lib/pricing/customer-tiers';
 import PackageCardFooter from '@/components/pricing/PackageCardFooter';
@@ -60,7 +61,8 @@ function PricingTierCard({
   showPerPackage?: boolean;
 }) {
   const featuredVisual = pkg.variant !== 'standard';
-  const priceId = getPaddlePriceId(pkg.slug) ?? undefined;
+  const price = displayPriceForTier(tier, pkg.slug) ?? pkg.price;
+  const priceId = paddlePriceIdForTier(tier, pkg.slug) ?? undefined;
 
   const rimGradient =
     pkg.variant === 'premium' || pkg.variant === 'featured'
@@ -129,14 +131,15 @@ function PricingTierCard({
         </p>
         <div className="flex flex-wrap items-baseline gap-1 gap-y-1">
           <span
-            className={`text-[2.5rem] md:text-[2.75rem] font-bold tracking-tight tabular-nums leading-none ${
+            key={`${tier}-${pkg.slug}-price`}
+            className={`pricing-card-price text-[2.5rem] md:text-[2.75rem] font-bold tracking-tight tabular-nums leading-none ${
               featuredVisual ? priceFeaturedClass : 'text-[#F5F2E9]'
             }`}
             style={
               featuredVisual ? undefined : { textShadow: '0 0 36px rgba(232,204,101,0.08)' }
             }
           >
-            {pkg.price}
+            {price}
           </span>
           {showPerPackage && labels.perPackage ? (
             <span className="text-[12px] font-medium whitespace-nowrap" style={{ color: ds.textMuted }}>
@@ -154,7 +157,7 @@ function PricingTierCard({
         <div className={`mb-6 ${pricingCardDividerClass}`} role="separator" />
 
         <ul
-          key={tier}
+          key={`${tier}-features`}
           className="pricing-card-features space-y-[0.95rem] flex-1 mb-8"
           role="list"
         >
@@ -171,6 +174,7 @@ function PricingTierCard({
         </ul>
 
         <PackageCardFooter
+          key={`${tier}-${pkg.slug}-${priceId ?? 'link'}`}
           checkoutHref={packageCtaHref(pkg.slug)}
           checkoutLabel={labels.continueToCheckout}
           complianceLines={labels.cardComplianceLines}
@@ -183,7 +187,7 @@ function PricingTierCard({
 }
 
 /**
- * Interactive pricing grid: plan-type tabs swap feature lists only (prices stay fixed).
+ * Interactive pricing grid: tier tabs update prices, features, and Paddle Price IDs.
  */
 export default function PricingCardsSection({
   packages,

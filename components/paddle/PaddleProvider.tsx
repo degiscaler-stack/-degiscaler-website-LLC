@@ -21,6 +21,14 @@ export default function PaddleProvider() {
     function init() {
       if (initialized) return;
       if (typeof window === 'undefined' || !window.Paddle) return;
+
+      // Prevent duplicate Initialize() when provider mounts more than once
+      if (window._paddleInitialized) {
+        initialized = true;
+        window.dispatchEvent(new CustomEvent('paddle:ready'));
+        return;
+      }
+
       initialized = true;
 
       try {
@@ -68,6 +76,7 @@ export default function PaddleProvider() {
         console.log('[Paddle] Initialized — production/live mode');
       } catch (err) {
         console.error('[Paddle] Initialization failed:', err);
+        initialized = false;
       }
     }
 

@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import DirectCheckoutClient from '@/app/checkout/DirectCheckoutClient';
 import {
   getDirectCheckoutPriceId,
-  type DirectCheckoutSlug,
+  type DirectCheckoutProduct,
+  type DirectCheckoutTier,
 } from '@/lib/checkout/products';
 
 export const dynamic = 'force-dynamic';
@@ -10,10 +11,12 @@ export const revalidate = 0;
 
 export default function DirectCheckoutProductPage({
   product,
+  tier = 'personal',
 }: {
-  product: DirectCheckoutSlug;
+  product: DirectCheckoutProduct | 'trial';
+  tier?: DirectCheckoutTier;
 }) {
-  const priceId = getDirectCheckoutPriceId(product);
+  const priceId = getDirectCheckoutPriceId(product, tier);
   if (!priceId) {
     notFound();
   }

@@ -433,7 +433,7 @@ body {
   box-shadow: 0 0 18px rgba(232, 204, 101, 0.1);
 }
 
-/* Smooth feature-list swap when switching plan-type tabs */
+/* Smooth feature-list + price swap when switching plan-type tabs */
 @keyframes pricing-features-in {
   from {
     opacity: 0;
@@ -449,8 +449,14 @@ body {
   animation: pricing-features-in 0.35s ease-out;
 }
 
+.pricing-card-price {
+  display: inline-block;
+  animation: pricing-features-in 0.32s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .pricing-card-features {
+  .pricing-card-features,
+  .pricing-card-price {
     animation: none;
   }
 }
