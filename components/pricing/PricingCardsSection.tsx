@@ -7,7 +7,7 @@ import { isOrderablePackageSlug } from '@/lib/packages/map-slug';
 import { getPaddlePriceId } from '@/lib/paddle/config';
 import {
   DEFAULT_CUSTOMER_TIER,
-  displayPriceFor,
+  featuresForTier,
   type CustomerTier,
 } from '@/lib/pricing/customer-tiers';
 import PackageCardFooter from '@/components/pricing/PackageCardFooter';
@@ -49,17 +49,18 @@ type Props = {
 function PricingTierCard({
   pkg,
   tier,
+  features,
   labels,
   showPerPackage,
 }: {
   pkg: DisplayPackage;
   tier: CustomerTier;
+  features: readonly string[];
   labels: Labels;
   showPerPackage?: boolean;
 }) {
   const featuredVisual = pkg.variant !== 'standard';
-  const price = displayPriceFor(tier, pkg.slug) ?? pkg.price;
-  const priceId = getPaddlePriceId(pkg.slug, tier) ?? undefined;
+  const priceId = getPaddlePriceId(pkg.slug) ?? undefined;
 
   const rimGradient =
     pkg.variant === 'premium' || pkg.variant === 'featured'
@@ -128,15 +129,14 @@ function PricingTierCard({
         </p>
         <div className="flex flex-wrap items-baseline gap-1 gap-y-1">
           <span
-            key={`${tier}-${pkg.slug}-price`}
-            className={`pricing-card-price text-[2.5rem] md:text-[2.75rem] font-bold tracking-tight tabular-nums leading-none ${
+            className={`text-[2.5rem] md:text-[2.75rem] font-bold tracking-tight tabular-nums leading-none ${
               featuredVisual ? priceFeaturedClass : 'text-[#F5F2E9]'
             }`}
             style={
               featuredVisual ? undefined : { textShadow: '0 0 36px rgba(232,204,101,0.08)' }
             }
           >
-            {price}
+            {pkg.price}
           </span>
           {showPerPackage && labels.perPackage ? (
             <span className="text-[12px] font-medium whitespace-nowrap" style={{ color: ds.textMuted }}>
@@ -153,8 +153,12 @@ function PricingTierCard({
 
         <div className={`mb-6 ${pricingCardDividerClass}`} role="separator" />
 
-        <ul className="space-y-[0.95rem] flex-1 mb-8" role="list">
-          {pkg.features.map((feat) => (
+        <ul
+          key={tier}
+          className="pricing-card-features space-y-[0.95rem] flex-1 mb-8"
+          role="list"
+        >
+          {features.map((feat) => (
             <li key={feat} className="flex items-start gap-3.5">
               <div className={iconWrapClass}>
                 <Check size={16} strokeWidth={2.25} style={{ color: PRICING_ICON_COLOR }} aria-hidden />
@@ -167,7 +171,6 @@ function PricingTierCard({
         </ul>
 
         <PackageCardFooter
-          key={`${tier}-${pkg.slug}-${priceId ?? 'link'}`}
           checkoutHref={packageCtaHref(pkg.slug)}
           checkoutLabel={labels.continueToCheckout}
           complianceLines={labels.cardComplianceLines}
@@ -180,7 +183,7 @@ function PricingTierCard({
 }
 
 /**
- * Interactive pricing grid: tier tabs update all four cards instantly (no reload).
+ * Interactive pricing grid: plan-type tabs swap feature lists only (prices stay fixed).
  */
 export default function PricingCardsSection({
   packages,
@@ -188,6 +191,7 @@ export default function PricingCardsSection({
   showPerPackage = false,
 }: Props) {
   const [tier, setTier] = useState<CustomerTier>(DEFAULT_CUSTOMER_TIER);
+  const features = featuresForTier(tier);
 
   return (
     <div>
@@ -201,14 +205,14 @@ export default function PricingCardsSection({
         id="pricing-cards-panel"
         role="tabpanel"
         aria-labelledby={`pricing-tier-${tier}`}
-        key={tier}
-        className="pricing-cards-tier-panel grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 xl:gap-8 items-stretch"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 xl:gap-8 items-stretch"
       >
         {packages.map((pkg) => (
           <PricingTierCard
             key={pkg.slug}
             pkg={pkg}
             tier={tier}
+            features={features}
             labels={labels}
             showPerPackage={showPerPackage}
           />

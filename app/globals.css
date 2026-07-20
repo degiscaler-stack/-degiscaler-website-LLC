@@ -433,11 +433,11 @@ body {
   box-shadow: 0 0 18px rgba(232, 204, 101, 0.1);
 }
 
-/* Smooth swap when switching customer tiers */
-@keyframes pricing-tier-panel-in {
+/* Smooth feature-list swap when switching plan-type tabs */
+@keyframes pricing-features-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -445,29 +445,12 @@ body {
   }
 }
 
-.pricing-cards-tier-panel {
-  animation: pricing-tier-panel-in 0.35s ease-out;
-}
-
-@keyframes pricing-card-price-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pricing-card-price {
-  display: inline-block;
-  animation: pricing-card-price-in 0.32s ease-out;
+.pricing-card-features {
+  animation: pricing-features-in 0.35s ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pricing-cards-tier-panel,
-  .pricing-card-price {
+  .pricing-card-features {
     animation: none;
   }
 }
