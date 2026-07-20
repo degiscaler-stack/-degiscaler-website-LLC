@@ -416,6 +416,62 @@ body {
   );
 }
 
+/* Customer-tier tabs (Personal / Freelancer / Agency / Enterprise) */
+.pricing-tier-tab--active {
+  border: 1px solid rgba(232, 204, 101, 0.85);
+  background-image: linear-gradient(135deg, #ff8411 0%, #d6a700 48%, #e8cc65 100%);
+  box-shadow:
+    0 0 16px rgba(232, 204, 101, 0.22),
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  color: #0a0a0a;
+}
+
+.pricing-tier-tab:not(.pricing-tier-tab--active):hover {
+  border-color: rgba(232, 204, 101, 0.48) !important;
+  background-color: rgba(17, 18, 20, 0.98) !important;
+  box-shadow: 0 0 18px rgba(232, 204, 101, 0.1);
+}
+
+/* Smooth swap when switching customer tiers */
+@keyframes pricing-tier-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-cards-tier-panel {
+  animation: pricing-tier-panel-in 0.35s ease-out;
+}
+
+@keyframes pricing-card-price-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card-price {
+  display: inline-block;
+  animation: pricing-card-price-in 0.32s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-cards-tier-panel,
+  .pricing-card-price {
+    animation: none;
+  }
+}
+
 .lang-switcher-trigger {
   background-color: #111214;
   border: 1px solid rgba(255, 255, 255, 0.09);
