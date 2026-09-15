@@ -1,4 +1,5 @@
 import type { DisplayPackage } from '@/lib/packages/public-packages';
+import { buildPremiumBundlesItemList } from '@/components/pricing/PremiumBundlesJsonLd';
 import { buildPublicUrl, getPublicOrigin } from '@/lib/public-url';
 
 function parsePriceLabel(priceLabel: string): string | undefined {
@@ -59,6 +60,7 @@ export default function PricingJsonLd({ packages }: { packages: DisplayPackage[]
         };
       }),
     },
+    buildPremiumBundlesItemList(),
   ];
 
   const json = JSON.stringify({

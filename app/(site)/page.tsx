@@ -7,6 +7,8 @@ import ServicesSection from '@/components/home/ServicesSection';
 import WhyUs from '@/components/home/WhyUs';
 import ProcessSection from '@/components/home/ProcessSection';
 import HomePricing from '@/components/home/HomePricing';
+import PremiumBundlesSection from '@/components/home/PremiumBundlesSection';
+import PremiumBundlesJsonLd from '@/components/pricing/PremiumBundlesJsonLd';
 import HomeFaq from '@/components/home/HomeFaq';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import FinalCta from '@/components/home/FinalCta';
@@ -33,6 +35,8 @@ export default async function HomePage() {
       <WhyUs />
       <ProcessSection />
       <HomePricing packages={homePreview} />
+      <PremiumBundlesJsonLd />
+      <PremiumBundlesSection />
       <HomeFaq />
       <TestimonialsSection />
       <FinalCta />

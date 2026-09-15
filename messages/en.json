@@ -293,6 +293,12 @@
       "premiumBadge": "Best for launch",
       "getStarted": "Buy Digital Kit"
     },
+    "premiumBundles": {
+      "eyebrow": "Premium Digital Bundles",
+      "headline": "Complete Resource Bundles for Serious Growth",
+      "description": "Get a broader collection of DigiScaler digital resources in one package. Choose the bundle that matches the depth of tools, templates, guides, and optimization resources you need.",
+      "trustLine": "One-time purchase • Instant digital access • No subscription"
+    },
     "faq": {
       "sectionLabel": "FAQ",
       "headline": "Questions you probably already have",
