@@ -2,8 +2,11 @@ import { spawnSync, execSync } from 'node:child_process';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { ensurePrismaEnginesExecutable } from './ensure-prisma-engines-executable.mjs';
 
 const rootDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+ensurePrismaEnginesExecutable();
 
 /**
  * @param {string} command

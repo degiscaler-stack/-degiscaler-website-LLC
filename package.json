@@ -15,7 +15,7 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "node scripts/ensure-prisma-engines-executable.mjs && prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
