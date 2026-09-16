@@ -5,6 +5,7 @@ import {
   type PricingTier,
   type ProductKey,
 } from '@/lib/paddle/config';
+import { getLivePremiumBundlePriceIdBySlug } from '@/lib/pricing/premium-bundles';
 
 export const DIRECT_CHECKOUT_PRODUCTS = [
   'starter',
@@ -59,6 +60,10 @@ export function getDirectCheckoutPriceId(
   if (key === 'trial') {
     return TRIAL_CHECKOUT_PRICE_ID;
   }
+  const bundlePriceId = getLivePremiumBundlePriceIdBySlug(key);
+  if (bundlePriceId) {
+    return bundlePriceId;
+  }
   if (!isProductKey(key)) {
     return null;
   }
@@ -81,6 +86,14 @@ export function canonicalCheckoutPath(pathname: string): string | null {
   const trial = pathname.match(/^\/checkout\/(trial)\/?$/i);
   if (trial) {
     const canonical = '/checkout/trial';
+    return canonical === pathname ? null : canonical;
+  }
+
+  const premiumBundle = pathname.match(
+    /^\/checkout\/(digital-edge|momentum-suite|apex-collection)\/?$/i,
+  );
+  if (premiumBundle) {
+    const canonical = `/checkout/${premiumBundle[1].toLowerCase()}`;
     return canonical === pathname ? null : canonical;
   }
 

@@ -105,6 +105,13 @@ export const PREMIUM_BUNDLES: readonly PremiumBundleDefinition[] = [
   },
 ] as const;
 
+export function getPremiumBundleBySlug(
+  slug: string,
+): PremiumBundleDefinition | undefined {
+  const key = slug.trim().toLowerCase();
+  return PREMIUM_BUNDLES.find((bundle) => bundle.id === key);
+}
+
 export function getPremiumBundlePriceId(bundle: PremiumBundleDefinition): string {
   return premiumBundlePriceIds[bundle.priceIdKey];
 }
@@ -114,4 +121,10 @@ export function getLivePremiumBundlePriceId(
 ): string | undefined {
   const id = getPremiumBundlePriceId(bundle);
   return isConfiguredPaddlePriceId(id) ? id.trim() : undefined;
+}
+
+export function getLivePremiumBundlePriceIdBySlug(slug: string): string | undefined {
+  const bundle = getPremiumBundleBySlug(slug);
+  if (!bundle) return undefined;
+  return getLivePremiumBundlePriceId(bundle);
 }

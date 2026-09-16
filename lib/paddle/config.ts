@@ -207,16 +207,12 @@ export function getPaddlePriceId(
 
 /**
  * Premium homepage bundles — separate from Personal/Freelancer/Agency/Enterprise.
- * Replace empty strings with live `pri_…` IDs when Paddle products exist.
- * Until then, checkout must not open against the 16-kit matrix above.
+ * Live Paddle Price IDs. Never reuse the 16-kit matrix above.
  */
 export const premiumBundlePriceIds = {
-  digitalEdgePriceId:
-    process.env.NEXT_PUBLIC_PADDLE_PRICE_DIGITAL_EDGE?.trim() ?? '',
-  momentumSuitePriceId:
-    process.env.NEXT_PUBLIC_PADDLE_PRICE_MOMENTUM_SUITE?.trim() ?? '',
-  apexCollectionPriceId:
-    process.env.NEXT_PUBLIC_PADDLE_PRICE_APEX_COLLECTION?.trim() ?? '',
+  digitalEdgePriceId: 'pri_01m2kr10evmb8spbytetygd2rw',
+  momentumSuitePriceId: 'pri_01m2kr7rjbrg752xwrg5xw5wnf',
+  apexCollectionPriceId: 'pri_01m2krt39cb15jwpvmjhps98kn',
 } as const;
 
 export type PremiumBundlePriceIdKey = keyof typeof premiumBundlePriceIds;
